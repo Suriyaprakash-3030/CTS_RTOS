@@ -1,0 +1,133 @@
+\doxysection{Initialize.\+c}
+\hypertarget{_initialize_8c_source}{}\label{_initialize_8c_source}\index{Src/Initialize.c@{Src/Initialize.c}}
+\mbox{\hyperlink{_initialize_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00002}00002\ \textcolor{comment}{\ *\ Initialize.c}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00003}00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00004}00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Sep\ 6,\ 2024}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ mhmaq}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00006}00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{main_8h}{main.h}}>}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_initialize_8h}{Initialize.h}}>}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00011}00011\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{_initialize_8c_a15557488667550f30956f8bb13762c3a}{valuetosend}};}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00012}00012\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_initialize_8c_a220dc8a96d6110bcb9f013eca22d069d}{InitializeMachine2}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00014}\mbox{\hyperlink{_initialize_8h_a38660f6581d495a5dcf3ed3b0e4dfa58}{00014}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_initialize_8c_a7c8708bb47964a8d64e62c5581b6176b}{InitializeMachine}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{_global_8h_ab638ec988aee940d7931b24b9f961f22}{InitComp}}\ =\ \mbox{\hyperlink{_global_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}};}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_aa53c9d40f3aa552a9974cd55ac510cb3}{LCD\_Init}}();}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_initialize_8c_a220dc8a96d6110bcb9f013eca22d069d}{InitializeMachine2}}();}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_Delay(1000);}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00020}00020\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{while}(\mbox{\hyperlink{_i_s_r_8h_a0dd6456a4244c5dd899964e7ccf90024}{isClampLimitSwitchReached}}\ ==\ \mbox{\hyperlink{_global_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\ ||\ \mbox{\hyperlink{_i_s_r_8h_a9f753385f263fc40b10c16b028bde1dd}{isSpindleLimitSwitchReached}}\ ==\ \mbox{\hyperlink{_global_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_global_8h_ab638ec988aee940d7931b24b9f961f22}{InitComp}}\ =\ \mbox{\hyperlink{_global_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}};}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00025}\mbox{\hyperlink{_initialize_8h_a220dc8a96d6110bcb9f013eca22d069d}{00025}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_initialize_8c_a220dc8a96d6110bcb9f013eca22d069d}{InitializeMachine2}}(\textcolor{keywordtype}{void})\ \{\textcolor{comment}{//Close\ valves,\ Drive\ down\ the\ Probe,\ Open\ clamps,\ tare\ load\ cells}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00026}00026\ \ \ \ \ \textcolor{comment}{//\ Print\ beginning\ initialization\ message}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(\textcolor{stringliteral}{"{}Begin\ Initialize"{}});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00028}00028\ \ \ \ \ HAL\_Delay(500);}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{_i_s_r_8h_a9afdc73666802411201b3e9fe602c8de}{Clamp\_M2\_EncA\_Pulses}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{_i_s_r_8h_a85b46fa72af59c2326de2f00c0aa9885}{Clamp\_M2\_EncB\_Pulses}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{_i_s_r_8h_a2f9df0008a2a82c8bb12d1be70504c3d}{Spindle\_M3\_EncA\_Pulses}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{_i_s_r_8h_a950bab6fe475152299089fcfbe1f4ad9}{Spindle\_M3\_EncB\_Pulses}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//\ Make\ sure\ valve\ is\ closed}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//moveMotor(VALVEMOTOR,\ OFF,\ INT\_INF);\ //\ Assuming\ 0\ is\ a\ valid\ target\ point\ for\ VALVEMOTOR}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//moveMotor(VALVEMOTOR,\ OFF,\ INT\_INF);}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(\textcolor{stringliteral}{"{}Read\ limits"{}});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (HAL\_GPIO\_ReadPin(\mbox{\hyperlink{main_8h_a7ab74e303e58bd4e196e50bde8764bf9}{Clamp\_M2\_Prox\_Interrupt\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_a05382d9b0baa24b5018a9e49af1d235f}{Clamp\_M2\_Prox\_Interrupt\_Pin}})\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00039}00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_i_s_r_8h_a9afdc73666802411201b3e9fe602c8de}{Clamp\_M2\_EncA\_Pulses}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_i_s_r_8h_a85b46fa72af59c2326de2f00c0aa9885}{Clamp\_M2\_EncB\_Pulses}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{pwm_8h_a382b151b1848474b825c62e2fc12bff4}{pwm}}(\mbox{\hyperlink{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022dda4c2b81a600105f62748d723d884c3197}{Clamp\_M2\_PWM}},\ 0);}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_i_s_r_8h_a0dd6456a4244c5dd899964e7ccf90024}{isClampLimitSwitchReached}}\ =\ \mbox{\hyperlink{_global_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}};}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00043}00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_af7a13111f23cd864e4151358bc176a46}{SerialPrint}}(\textcolor{stringliteral}{"{}M2\ Limit\ HIGH\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00044}00044\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_i_s_r_8h_a0dd6456a4244c5dd899964e7ccf90024}{isClampLimitSwitchReached}}\ =\ \mbox{\hyperlink{_global_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}};}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_af7a13111f23cd864e4151358bc176a46}{SerialPrint}}(\textcolor{stringliteral}{"{}M2\ Limit\ LOW\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (HAL\_GPIO\_ReadPin(\mbox{\hyperlink{main_8h_a57bd6305445de620f7134c7e61d3f427}{Spindle\_M3\_Prox\_Interrupt\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_a4a048b59b78a1926d50eb3b31d29b857}{Spindle\_M3\_Prox\_Interrupt\_Pin}})\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_i_s_r_8h_a2f9df0008a2a82c8bb12d1be70504c3d}{Spindle\_M3\_EncA\_Pulses}}=0;}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_i_s_r_8h_a950bab6fe475152299089fcfbe1f4ad9}{Spindle\_M3\_EncB\_Pulses}}=0;}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00052}00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{pwm_8h_a382b151b1848474b825c62e2fc12bff4}{pwm}}(\mbox{\hyperlink{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022ddab92e1c99a4aad3bdd4273def233fbaa0}{Spindle\_M3\_PWM}},\ 0);}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00053}00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_i_s_r_8h_a9f753385f263fc40b10c16b028bde1dd}{isSpindleLimitSwitchReached}}\ =\ \mbox{\hyperlink{_global_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}};}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00054}00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_af7a13111f23cd864e4151358bc176a46}{SerialPrint}}(\textcolor{stringliteral}{"{}M3\ Limit\ HIGH\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00055}00055\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00056}00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_i_s_r_8h_a9f753385f263fc40b10c16b028bde1dd}{isSpindleLimitSwitchReached}}\ =\ \mbox{\hyperlink{_global_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}};}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00057}00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_af7a13111f23cd864e4151358bc176a46}{SerialPrint}}(\textcolor{stringliteral}{"{}M3\ Limit\ LOW\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00058}00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(\textcolor{stringliteral}{"{}Servo\ Close"{}});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00059}00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_servo_8h_a2edf7a5eac0c0a95130cc3cc54286598}{Servo\_SetPercent}}(40);\ \textcolor{comment}{//Normally\ set\ to\ ValveClose}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00061}00061\ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(\textcolor{stringliteral}{"{}Check\ M3\ position"{}});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//\ Read\ the\ state\ of\ Motor2\ limit\ switch\ and\ reset\ its\ position}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_i_s_r_8h_a9f753385f263fc40b10c16b028bde1dd}{isSpindleLimitSwitchReached}}\ ==\ \mbox{\hyperlink{_global_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}})\ \{}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(\textcolor{stringliteral}{"{}Move\ M3"{}});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//moveMotorSpindleToLocBlock(M2POS1VAL);}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00067}00067\ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(\textcolor{stringliteral}{"{}Check\ M1\ position"{}});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00068}00068\ \ \ \ \ \textcolor{comment}{//\ Read\ the\ state\ of\ Motor1\ limit\ switch\ and\ reset\ its\ position}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_i_s_r_8h_a0dd6456a4244c5dd899964e7ccf90024}{isClampLimitSwitchReached}}\ ==\ \mbox{\hyperlink{_global_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}})\ \{}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00070}00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(\textcolor{stringliteral}{"{}Move\ M2"{}});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//moveMotorClampToLocBlock(M1POS1VAL);}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00074}00074\ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(\textcolor{stringliteral}{"{}Servo\ Close"{}});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00075}00075\ \ \ \ \ \mbox{\hyperlink{_servo_8h_a2edf7a5eac0c0a95130cc3cc54286598}{Servo\_SetPercent}}(40);\ \ \textcolor{comment}{//Normally\ set\ to\ ValveClose}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00077}00077\ \ \ \ \ \textcolor{comment}{//\ Delay\ to\ give\ time\ for\ load\ cell\ values\ to\ stabilize\ after\ motor\ movement\ ends}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00078}00078\ \ \ \ \ HAL\_Delay(1);\ \textcolor{comment}{//\ Use\ HAL\_Delay\ for\ STM32}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00079}00079\ \ \ \ \ \textcolor{comment}{//SerialPrintln("{}Zero\ load\ cells"{});}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00080}00080\ \ \ \ \ \textcolor{comment}{//\ Tare\ load\ cells}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00081}00081\ \ \ \ \ \textcolor{comment}{//ZeroLoadCell();}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00083}00083\ \ \ \ \ \textcolor{comment}{//\ Print\ finishing\ initialization\ message}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00084}00084\ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(\textcolor{stringliteral}{"{}Finish\ Initialize"{}});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00085}00085\ \}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00087}\mbox{\hyperlink{_initialize_8h_a1b56bf4a16c066a3d319abccbc00a918}{00087}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_initialize_8c_ab698aa0a48f68845ab4fa8a5a7bdea54}{SubInit}}()\{}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_aa53c9d40f3aa552a9974cd55ac510cb3}{LCD\_Init}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Initialize\ LCD}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00089}00089\ \ \ \ \ HAL\_Delay(500);}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_ae60d0b62d7eb3fa31266c095d7b3c245}{LCD\_Clear}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Clear\ LCD}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00091}00091\ \ \ \ \ HAL\_Delay(500);}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00092}00092\ \ \ \ \ HAL\_Delay(1000);\textcolor{comment}{//\ Wait\ for\ a\ second\ after\ initializing}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00093}00093\ \ \ \ \ \textcolor{comment}{//char*\ data\ =\ (char*)\ valuetosend;\ //\ Assigning\ the\ pointer\ to\ data}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00095}00095\ \ \ \ \ \textcolor{keywordtype}{char}\ data[10];\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Buffer\ to\ store\ the\ string\ representation}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00096}00096\ \ \ \ \ sprintf(data,\ \textcolor{stringliteral}{"{}\%d"{}},\ \mbox{\hyperlink{_initialize_8c_a15557488667550f30956f8bb13762c3a}{valuetosend}});\ \ \textcolor{comment}{//\ Convert\ integer\ to\ string}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00097}00097\ \ \ \ \ \textcolor{comment}{//\ this\ just\ for\ now\ later\ it\ will\ be\ changes\ after\ talking\ with\ EE}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00098}00098\ \ \ \ \ \mbox{\hyperlink{_l_p_c___u_a_r_t_8h_a9602409c4c776e41d7bfaa7a254155c1}{LPC\_UART\_Send}}(data);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Zero\ All\ the\ Load\ Cells}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00100}00100\ \}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00102}\mbox{\hyperlink{_initialize_8h_a96d82eb51fcc411bae93d32092b96501}{00102}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_initialize_8c_ae2da94e03570cd696d5e1ef31169b6f3}{goToSleep}}()\ \{\ \textcolor{comment}{//Function\ goToSleep\ is\ only\ called\ by\ setup\ as\ it\ is\ a\ blocking\ function}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00103}00103\ \ \ \ \ \textcolor{comment}{//\ Turn\ OFF\ LCD\ RGB}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00104}00104\ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a72e6c60b9bc089c15b5e469fe6f55770}{LCDRGBControl}}(\mbox{\hyperlink{_global_8h_a29e413f6725b2ba32d165ffaa35b01e5}{OFF}});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00106}00106\ \ \ \ \ \textcolor{comment}{//\ Turn\ off\ power\ LED\ and\ stop\ loading\ screen}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00107}00107\ \ \ \ \ \mbox{\hyperlink{_keypad_8h_a8ca2ff5fc8cdd825a8eaaf8f673ec33d}{LoadingFunc}}(\mbox{\hyperlink{_global_8h_a29e413f6725b2ba32d165ffaa35b01e5}{OFF}},\ \mbox{\hyperlink{_keypad_8h_af1a376128671e7b2af0b111b665a9b0d}{NOT\_LOADING}});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00109}00109\ \ \ \ \ \textcolor{comment}{//\ Initialize\ the\ machine\ (the\ same\ initialization\ is\ used\ for\ shutdown\ and\ startup)}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00110}00110\ \ \ \ \ \mbox{\hyperlink{_initialize_8c_a7c8708bb47964a8d64e62c5581b6176b}{InitializeMachine}}();}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00112}00112\ \ \ \ \ \textcolor{comment}{//\ Print\ message\ to\ Serial}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00113}00113\ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(\textcolor{stringliteral}{"{}Sleeping.."{}});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00115}00115\ \ \ \ \ \textcolor{comment}{//\ Delay\ for\ a\ short\ period}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00116}00116\ \ \ \ \ HAL\_Delay(500);}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00118}00118\ \ \ \ \ \textcolor{comment}{//\ Wait\ while\ the\ machine\ is\ off}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00119}00119\ \ \ \ \ \textcolor{keywordflow}{while}(\mbox{\hyperlink{_global_8h_a74aa740f54f847c37642cf5b12d5b177}{isMachineOn}}\ ==\ \mbox{\hyperlink{_global_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}})\ \{}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00120}00120\ \ \ \ \ \ \ \ \ HAL\_Delay(10);\ \textcolor{comment}{//\ Use\ HAL\_Delay\ instead\ of\ delay}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00121}00121\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00123}00123\ \ \ \ \ \textcolor{comment}{//\ On\ waking\ up,\ print\ message\ to\ Serial}}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00124}00124\ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(\textcolor{stringliteral}{"{}Waking\ up.."{}});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00125}00125\ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a72e6c60b9bc089c15b5e469fe6f55770}{LCDRGBControl}}(\mbox{\hyperlink{_l_c_d_8h_a87b537f5fa5c109d3c05c13d6b18f382}{WHITE}});}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00126}00126\ \ \ \ \ \mbox{\hyperlink{_initialize_8c_a7c8708bb47964a8d64e62c5581b6176b}{InitializeMachine}}();}
+\DoxyCodeLine{\Hypertarget{_initialize_8c_source_l00127}00127\ \}}
+
+\end{DoxyCode}

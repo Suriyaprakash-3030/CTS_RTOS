@@ -1,0 +1,56 @@
+\doxysection{Keypad.\+h}
+\hypertarget{_keypad_8h_source}{}\label{_keypad_8h_source}\index{Inc/Keypad.h@{Inc/Keypad.h}}
+\mbox{\hyperlink{_keypad_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00002}00002\ \textcolor{comment}{\ *\ Keypad.h}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00003}00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Sep\ 2,\ 2024}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ mhmaq}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00006}00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00008}00008\ \textcolor{preprocessor}{\#ifndef\ KEYPAD\_H}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00009}00009\ \textcolor{preprocessor}{\#define\ KEYPAD\_H}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{main_8h}{main.h}}>}\ \ \textcolor{comment}{//\ Include\ if\ needed\ for\ GPIO\ definitions}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00013}00013\ \textcolor{comment}{//*\ Keypad\ Defines}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00014}\mbox{\hyperlink{_keypad_8h_a792478b8ebd30fc1b0a1365aa9ef1a8f}{00014}}\ \textcolor{preprocessor}{\#define\ BUTTON\_POWER\_ACTIVE\_TIME\ 2400\ }\textcolor{comment}{//How\ many\ mS\ to\ state\ that\ power\ button\ is\ press\ is\ effective\ after}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00015}\mbox{\hyperlink{_keypad_8h_aa7ae641840a5e6388fc07d25c84b0f3c}{00015}}\ \textcolor{preprocessor}{\#define\ NUMPAD\ 1}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00016}\mbox{\hyperlink{_keypad_8h_a1edd1ea8bddaf4d9c5eb3eae1ee1726a}{00016}}\ \textcolor{preprocessor}{\#define\ ALL\ 0}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00017}\mbox{\hyperlink{_keypad_8h_a553a124e1d5855773c74cb5561dec040}{00017}}\ \textcolor{preprocessor}{\#define\ CONTROL\ 2}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00018}\mbox{\hyperlink{_keypad_8h_adf608dfdafc6ae0e69128d9d207f33ed}{00018}}\ \textcolor{preprocessor}{\#define\ COMMAKEY\ 10}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00019}\mbox{\hyperlink{_keypad_8h_a94edc76852477ad7d610991193ac4d4e}{00019}}\ \textcolor{preprocessor}{\#define\ ENTERKEY\ 11}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00020}\mbox{\hyperlink{_keypad_8h_ace79a224651a859ca9773b639986369a}{00020}}\ \textcolor{preprocessor}{\#define\ MANAUTOKEY\ 12}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00021}\mbox{\hyperlink{_keypad_8h_aafd46898281717e1548d1791930dd384}{00021}}\ \textcolor{preprocessor}{\#define\ PLAYSTOPKEY\ 13}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00022}\mbox{\hyperlink{_keypad_8h_adb5ce1680b5ec047cfc1f0de10f4e3f0}{00022}}\ \textcolor{preprocessor}{\#define\ DELKEY\ 14}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00023}\mbox{\hyperlink{_keypad_8h_a004b9c0dbb8ed037a710ce18ab08c197}{00023}}\ \textcolor{preprocessor}{\#define\ CLEANKEY\ 15}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00024}\mbox{\hyperlink{_keypad_8h_a38eec52a7dccb94ff563e30eda32c891}{00024}}\ \textcolor{preprocessor}{\#define\ BLINK\ 2}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00025}\mbox{\hyperlink{_keypad_8h_a20b45ad3666cdddd0954424fb9d6fbb9}{00025}}\ \textcolor{preprocessor}{\#define\ LOADING\ 1}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00026}\mbox{\hyperlink{_keypad_8h_af1a376128671e7b2af0b111b665a9b0d}{00026}}\ \textcolor{preprocessor}{\#define\ NOT\_LOADING\ 0}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00027}\mbox{\hyperlink{_keypad_8h_a655c84af1b0034986ff56e12e84f983d}{00027}}\ \textcolor{preprocessor}{\#define\ NONE\ -\/1}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00030}00030\ \textcolor{keyword}{extern}\ uint32\_t\ \mbox{\hyperlink{_keypad_8h_a46f4d9e355d06b097d9848df86f1e311}{PowerButtonPressTime}};\textcolor{comment}{//\ =\ 0;\ //\ Time\ when\ power\ button\ is\ pressed}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00031}00031\ \textcolor{keyword}{extern}\ uint8\_t\ \mbox{\hyperlink{_keypad_8h_afaaf75a8547eb937ee91f439b74e84f9}{isAutoOperation}};\textcolor{comment}{//\ =\ TRUE;\ //\ Auto\ operation\ state}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00032}00032\ \textcolor{keyword}{extern}\ uint8\_t\ \mbox{\hyperlink{_keypad_8h_a5d4be5830b050d178dba49fd86569f07}{isCleaningOperation}};\textcolor{comment}{//\ =\ FALSE;\ //\ Cleaning\ operation\ state}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00033}00033\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_keypad_8h_a74e00b05dbee1427501caa6b3480837e}{lastKeyPressed}};\textcolor{comment}{//\ =\ 255;\ //\ Last\ key\ pressed}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00034}00034\ \textcolor{keyword}{extern}\ uint8\_t\ \mbox{\hyperlink{_keypad_8h_a7f268075d0081379a58847e91b242f82}{isPausedOperation}};\textcolor{comment}{//\ =\ FALSE;\ //\ Paused\ operation\ state}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00035}00035\ \textcolor{keyword}{extern}\ uint8\_t\ \mbox{\hyperlink{_keypad_8h_a91f44bf55deb9b20360da1285f9151b6}{monitorEnterKey}};\textcolor{comment}{//\ =\ FALSE;\ //\ Monitor\ enter\ key\ state}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00036}00036\ \textcolor{keyword}{extern}\ uint8\_t\ \mbox{\hyperlink{_keypad_8h_a019f7fa1d68dbe17ba66714688ef2f2e}{EnterPressed}};\textcolor{comment}{//\ =\ FALSE;\ //\ Enter\ key\ pressed\ state}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00037}00037\ \textcolor{keyword}{extern}\ uint8\_t\ \mbox{\hyperlink{_keypad_8h_a95f17785c03ac2c0ff362dadbdda87af}{monitorCleanKey}};\textcolor{comment}{//\ =\ FALSE;\ //\ Monitor\ clean\ key\ state}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00038}00038\ \textcolor{keyword}{extern}\ uint8\_t\ \mbox{\hyperlink{_keypad_8h_a1f47a873f64119d43bd885cb1b0e08de}{cleanLongPressed}};\textcolor{comment}{//\ =\ FALSE;\ //\ State\ of\ long\ press\ of\ clean\ key}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00039}00039\ \textcolor{keyword}{extern}\ uint8\_t\ \mbox{\hyperlink{_keypad_8h_a221ffe0b086a7832f683e0a946d593c5}{delLongPressed}};\textcolor{comment}{//\ =\ FALSE;\ //\ State\ of\ long\ press\ of\ del\ key}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00040}00040\ \textcolor{keyword}{extern}\ uint8\_t\ \mbox{\hyperlink{_keypad_8h_ac60a0a612ea3a0c2e948d1c41d408919}{isDemoCleaning}};\textcolor{comment}{//\ =\ FALSE;\ //\ Demo\ cleaning\ state}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00042}00042\ \textcolor{comment}{//\ Function\ prototype}}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00043}00043\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_keypad_8h_aaf589f693a560feb75d11f25d637c6d8}{ReadKeypadVar}}(\textcolor{keywordtype}{int}\ group);}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00044}00044\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_keypad_8h_a46a5bf7179bd814efded60c93f395042}{readKeypadNonBlock}}(\textcolor{keywordtype}{int}\ group);}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00045}00045\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_keypad_8h_a853ca9c9a2cca59a7a44282eb869e1d3}{readKeypad}}(\textcolor{keywordtype}{int}\ group);}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00046}00046\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_keypad_8h_a8ca2ff5fc8cdd825a8eaaf8f673ec33d}{LoadingFunc}}(\textcolor{keywordtype}{int}\ blinkLED,\ uint8\_t\ ScreenLoad);}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00047}00047\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_keypad_8h_a9b5ffa21783f4976e15c74aabf26b5de}{Take2RowEntries}}(\textcolor{keywordtype}{char}\ *Row1StaticString,\ \textcolor{keywordtype}{char}\ *Row2StaticString);}
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_keypad_8h_source_l00050}00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ KEYPAD\_H}}
+
+\end{DoxyCode}

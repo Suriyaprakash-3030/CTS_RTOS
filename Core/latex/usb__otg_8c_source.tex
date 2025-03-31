@@ -1,0 +1,93 @@
+\doxysection{usb\+\_\+otg.\+c}
+\hypertarget{usb__otg_8c_source}{}\label{usb__otg_8c_source}\index{Src/usb\_otg.c@{Src/usb\_otg.c}}
+\mbox{\hyperlink{usb__otg_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00001}00001\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ Header\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00019}00019\ \textcolor{comment}{/*\ USER\ CODE\ END\ Header\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00020}00020\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{usb__otg_8h}{usb\_otg.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00023}00023\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00025}00025\ \textcolor{comment}{/*\ USER\ CODE\ END\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00027}\mbox{\hyperlink{usb__otg_8h_a135943d3578f7906d4be1d774650ecd0}{00027}}\ HCD\_HandleTypeDef\ \mbox{\hyperlink{usb__otg_8c_a135943d3578f7906d4be1d774650ecd0}{hhcd\_USB\_OTG\_FS}};}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00029}00029\ \textcolor{comment}{/*\ USB\_OTG\_FS\ init\ function\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00031}\mbox{\hyperlink{usb__otg_8h_a59d5646c414f475f0101a2ec11147926}{00031}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{usb__otg_8c_a59d5646c414f475f0101a2ec11147926}{MX\_USB\_OTG\_FS\_HCD\_Init}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00032}00032\ \{}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00034}00034\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ USB\_OTG\_FS\_Init\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00036}00036\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ USB\_OTG\_FS\_Init\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00038}00038\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ USB\_OTG\_FS\_Init\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00040}00040\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ USB\_OTG\_FS\_Init\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00041}00041\ \ \ \mbox{\hyperlink{usb__otg_8c_a135943d3578f7906d4be1d774650ecd0}{hhcd\_USB\_OTG\_FS}}.Instance\ =\ USB\_OTG\_FS;}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00042}00042\ \ \ \mbox{\hyperlink{usb__otg_8c_a135943d3578f7906d4be1d774650ecd0}{hhcd\_USB\_OTG\_FS}}.Init.Host\_channels\ =\ 8;}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00043}00043\ \ \ \mbox{\hyperlink{usb__otg_8c_a135943d3578f7906d4be1d774650ecd0}{hhcd\_USB\_OTG\_FS}}.Init.speed\ =\ HCD\_SPEED\_FULL;}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00044}00044\ \ \ \mbox{\hyperlink{usb__otg_8c_a135943d3578f7906d4be1d774650ecd0}{hhcd\_USB\_OTG\_FS}}.Init.dma\_enable\ =\ DISABLE;}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00045}00045\ \ \ \mbox{\hyperlink{usb__otg_8c_a135943d3578f7906d4be1d774650ecd0}{hhcd\_USB\_OTG\_FS}}.Init.phy\_itface\ =\ HCD\_PHY\_EMBEDDED;}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00046}00046\ \ \ \mbox{\hyperlink{usb__otg_8c_a135943d3578f7906d4be1d774650ecd0}{hhcd\_USB\_OTG\_FS}}.Init.Sof\_enable\ =\ DISABLE;}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00047}00047\ \ \ \textcolor{keywordflow}{if}\ (HAL\_HCD\_Init(\&\mbox{\hyperlink{usb__otg_8c_a135943d3578f7906d4be1d774650ecd0}{hhcd\_USB\_OTG\_FS}})\ !=\ HAL\_OK)}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00048}00048\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00050}00050\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00051}00051\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ USB\_OTG\_FS\_Init\ 2\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00053}00053\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ USB\_OTG\_FS\_Init\ 2\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00055}00055\ \}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00057}\mbox{\hyperlink{usb__otg_8c_ab745cd1515a40bf26795a7b946cf76c0}{00057}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{usb__otg_8c_ab745cd1515a40bf26795a7b946cf76c0}{HAL\_HCD\_MspInit}}(HCD\_HandleTypeDef*\ hcdHandle)}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00058}00058\ \{}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00060}00060\ \ \ GPIO\_InitTypeDef\ GPIO\_InitStruct\ =\ \{0\};}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00061}00061\ \ \ \textcolor{keywordflow}{if}(hcdHandle-\/>Instance==USB\_OTG\_FS)}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00062}00062\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00063}00063\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ USB\_OTG\_FS\_MspInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00065}00065\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ USB\_OTG\_FS\_MspInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00067}00067\ \ \ \ \ \_\_HAL\_RCC\_GPIOA\_CLK\_ENABLE();}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00072}00072\ \ \ \ \ GPIO\_InitStruct.Pin\ =\ GPIO\_PIN\_11|GPIO\_PIN\_12;}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00073}00073\ \ \ \ \ GPIO\_InitStruct.Mode\ =\ GPIO\_MODE\_AF\_PP;}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00074}00074\ \ \ \ \ GPIO\_InitStruct.Pull\ =\ GPIO\_NOPULL;}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00075}00075\ \ \ \ \ GPIO\_InitStruct.Speed\ =\ GPIO\_SPEED\_FREQ\_VERY\_HIGH;}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00076}00076\ \ \ \ \ GPIO\_InitStruct.Alternate\ =\ GPIO\_AF10\_OTG\_FS;}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00077}00077\ \ \ \ \ HAL\_GPIO\_Init(GPIOA,\ \&GPIO\_InitStruct);}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00079}00079\ \ \ \ \ \textcolor{comment}{/*\ USB\_OTG\_FS\ clock\ enable\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00080}00080\ \ \ \ \ \_\_HAL\_RCC\_USB\_OTG\_FS\_CLK\_ENABLE();}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00081}00081\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ USB\_OTG\_FS\_MspInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00083}00083\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ USB\_OTG\_FS\_MspInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00084}00084\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00085}00085\ \}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00087}\mbox{\hyperlink{usb__otg_8c_a2200e3ef34340f2ba54596ea36f63e43}{00087}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{usb__otg_8c_a2200e3ef34340f2ba54596ea36f63e43}{HAL\_HCD\_MspDeInit}}(HCD\_HandleTypeDef*\ hcdHandle)}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00088}00088\ \{}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00090}00090\ \ \ \textcolor{keywordflow}{if}(hcdHandle-\/>Instance==USB\_OTG\_FS)}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00091}00091\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00092}00092\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ USB\_OTG\_FS\_MspDeInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00094}00094\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ USB\_OTG\_FS\_MspDeInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00095}00095\ \ \ \ \ \textcolor{comment}{/*\ Peripheral\ clock\ disable\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00096}00096\ \ \ \ \ \_\_HAL\_RCC\_USB\_OTG\_FS\_CLK\_DISABLE();}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00102}00102\ \ \ \ \ HAL\_GPIO\_DeInit(GPIOA,\ GPIO\_PIN\_11|GPIO\_PIN\_12);}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00104}00104\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ USB\_OTG\_FS\_MspDeInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00106}00106\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ USB\_OTG\_FS\_MspDeInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00107}00107\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00108}00108\ \}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00110}00110\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{usb__otg_8c_source_l00112}00112\ \textcolor{comment}{/*\ USER\ CODE\ END\ 1\ */}}
+
+\end{DoxyCode}

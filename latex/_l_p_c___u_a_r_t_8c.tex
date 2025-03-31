@@ -1,0 +1,79 @@
+\doxysection{Core/\+Src/\+LPC\+\_\+\+UART.c File Reference}
+\hypertarget{_l_p_c___u_a_r_t_8c}{}\label{_l_p_c___u_a_r_t_8c}\index{Core/Src/LPC\_UART.c@{Core/Src/LPC\_UART.c}}
+{\ttfamily \#include "{}LPC\+\_\+\+UART.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_l_p_c___u_a_r_t_8c_a9602409c4c776e41d7bfaa7a254155c1}{LPC\+\_\+\+UART\+\_\+\+Send}} (const char \texorpdfstring{$\ast$}{*}Data)
+\item 
+void \mbox{\hyperlink{_l_p_c___u_a_r_t_8c_a8422a7cdc9878559a4298e6f967a8c7c}{LPC\+\_\+\+UART\+\_\+\+Sendln}} (const char \texorpdfstring{$\ast$}{*}Data)
+\item 
+void \mbox{\hyperlink{_l_p_c___u_a_r_t_8c_adb043c2ecf67def1cf7c26efb246152c}{LPC\+\_\+\+UART\+\_\+\+Sendln\+INT}} (int Data)
+\item 
+void \mbox{\hyperlink{_l_p_c___u_a_r_t_8c_ab502aef536ec81620ec2e3b0bc68d2e4}{LPC\+\_\+\+UART\+\_\+\+Send\+INT}} (int Data)
+\item 
+void \mbox{\hyperlink{_l_p_c___u_a_r_t_8c_a2faa30288eff2d710f9fd7132032821c}{LPC\+\_\+\+UART\+\_\+\+Receive}} (void)
+\item 
+void \mbox{\hyperlink{_l_p_c___u_a_r_t_8c_af627e13d7a6b626ca52e9b05cdedbd58}{Clear\+LPC\+\_\+\+UART\+\_\+\+Rx\+Buffer}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+UART\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{_l_p_c___u_a_r_t_8c_ab7c63c1b0f65db92b6a4ea19edf957e1}{huart3}}
+\item 
+char \mbox{\hyperlink{_l_p_c___u_a_r_t_8c_ae1d8e16d410226058cbda648df605491}{LPC\+\_\+\+UART\+\_\+\+Rx\+Buffer}} \mbox{[}30\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_l_p_c___u_a_r_t_8c_af627e13d7a6b626ca52e9b05cdedbd58}\index{LPC\_UART.c@{LPC\_UART.c}!ClearLPC\_UART\_RxBuffer@{ClearLPC\_UART\_RxBuffer}}
+\index{ClearLPC\_UART\_RxBuffer@{ClearLPC\_UART\_RxBuffer}!LPC\_UART.c@{LPC\_UART.c}}
+\doxysubsubsection{\texorpdfstring{ClearLPC\_UART\_RxBuffer()}{ClearLPC\_UART\_RxBuffer()}}
+{\footnotesize\ttfamily \label{_l_p_c___u_a_r_t_8c_af627e13d7a6b626ca52e9b05cdedbd58} 
+void Clear\+LPC\+\_\+\+UART\+\_\+\+Rx\+Buffer (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_p_c___u_a_r_t_8c_a2faa30288eff2d710f9fd7132032821c}\index{LPC\_UART.c@{LPC\_UART.c}!LPC\_UART\_Receive@{LPC\_UART\_Receive}}
+\index{LPC\_UART\_Receive@{LPC\_UART\_Receive}!LPC\_UART.c@{LPC\_UART.c}}
+\doxysubsubsection{\texorpdfstring{LPC\_UART\_Receive()}{LPC\_UART\_Receive()}}
+{\footnotesize\ttfamily \label{_l_p_c___u_a_r_t_8c_a2faa30288eff2d710f9fd7132032821c} 
+void LPC\+\_\+\+UART\+\_\+\+Receive (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_p_c___u_a_r_t_8c_a9602409c4c776e41d7bfaa7a254155c1}\index{LPC\_UART.c@{LPC\_UART.c}!LPC\_UART\_Send@{LPC\_UART\_Send}}
+\index{LPC\_UART\_Send@{LPC\_UART\_Send}!LPC\_UART.c@{LPC\_UART.c}}
+\doxysubsubsection{\texorpdfstring{LPC\_UART\_Send()}{LPC\_UART\_Send()}}
+{\footnotesize\ttfamily \label{_l_p_c___u_a_r_t_8c_a9602409c4c776e41d7bfaa7a254155c1} 
+void LPC\+\_\+\+UART\+\_\+\+Send (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{Data}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_p_c___u_a_r_t_8c_ab502aef536ec81620ec2e3b0bc68d2e4}\index{LPC\_UART.c@{LPC\_UART.c}!LPC\_UART\_SendINT@{LPC\_UART\_SendINT}}
+\index{LPC\_UART\_SendINT@{LPC\_UART\_SendINT}!LPC\_UART.c@{LPC\_UART.c}}
+\doxysubsubsection{\texorpdfstring{LPC\_UART\_SendINT()}{LPC\_UART\_SendINT()}}
+{\footnotesize\ttfamily \label{_l_p_c___u_a_r_t_8c_ab502aef536ec81620ec2e3b0bc68d2e4} 
+void LPC\+\_\+\+UART\+\_\+\+Send\+INT (\begin{DoxyParamCaption}\item[{int}]{Data}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_p_c___u_a_r_t_8c_a8422a7cdc9878559a4298e6f967a8c7c}\index{LPC\_UART.c@{LPC\_UART.c}!LPC\_UART\_Sendln@{LPC\_UART\_Sendln}}
+\index{LPC\_UART\_Sendln@{LPC\_UART\_Sendln}!LPC\_UART.c@{LPC\_UART.c}}
+\doxysubsubsection{\texorpdfstring{LPC\_UART\_Sendln()}{LPC\_UART\_Sendln()}}
+{\footnotesize\ttfamily \label{_l_p_c___u_a_r_t_8c_a8422a7cdc9878559a4298e6f967a8c7c} 
+void LPC\+\_\+\+UART\+\_\+\+Sendln (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{Data}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_p_c___u_a_r_t_8c_adb043c2ecf67def1cf7c26efb246152c}\index{LPC\_UART.c@{LPC\_UART.c}!LPC\_UART\_SendlnINT@{LPC\_UART\_SendlnINT}}
+\index{LPC\_UART\_SendlnINT@{LPC\_UART\_SendlnINT}!LPC\_UART.c@{LPC\_UART.c}}
+\doxysubsubsection{\texorpdfstring{LPC\_UART\_SendlnINT()}{LPC\_UART\_SendlnINT()}}
+{\footnotesize\ttfamily \label{_l_p_c___u_a_r_t_8c_adb043c2ecf67def1cf7c26efb246152c} 
+void LPC\+\_\+\+UART\+\_\+\+Sendln\+INT (\begin{DoxyParamCaption}\item[{int}]{Data}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_l_p_c___u_a_r_t_8c_ab7c63c1b0f65db92b6a4ea19edf957e1}\index{LPC\_UART.c@{LPC\_UART.c}!huart3@{huart3}}
+\index{huart3@{huart3}!LPC\_UART.c@{LPC\_UART.c}}
+\doxysubsubsection{\texorpdfstring{huart3}{huart3}}
+{\footnotesize\ttfamily \label{_l_p_c___u_a_r_t_8c_ab7c63c1b0f65db92b6a4ea19edf957e1} 
+UART\+\_\+\+Handle\+Type\+Def huart3\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{_l_p_c___u_a_r_t_8c_ae1d8e16d410226058cbda648df605491}\index{LPC\_UART.c@{LPC\_UART.c}!LPC\_UART\_RxBuffer@{LPC\_UART\_RxBuffer}}
+\index{LPC\_UART\_RxBuffer@{LPC\_UART\_RxBuffer}!LPC\_UART.c@{LPC\_UART.c}}
+\doxysubsubsection{\texorpdfstring{LPC\_UART\_RxBuffer}{LPC\_UART\_RxBuffer}}
+{\footnotesize\ttfamily \label{_l_p_c___u_a_r_t_8c_ae1d8e16d410226058cbda648df605491} 
+char LPC\+\_\+\+UART\+\_\+\+Rx\+Buffer\mbox{[}30\mbox{]}}
+

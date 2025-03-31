@@ -1,0 +1,1849 @@
+\doxysection{Inc/main.h File Reference}
+\hypertarget{main_8h}{}\label{main_8h}\index{Inc/main.h@{Inc/main.h}}
+
+
+\+: Header for \doxylink{main_8c}{main.\+c} file. This file contains the common defines of the application.  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$Analog\+Read.\+h$>$}\newline
+{\ttfamily \#include $<$Digital\+Read.\+h$>$}\newline
+{\ttfamily \#include $<$Digital\+Write.\+h$>$}\newline
+{\ttfamily \#include $<$Global.\+h$>$}\newline
+{\ttfamily \#include $<$Hardware\+Level.\+h$>$}\newline
+{\ttfamily \#include $<$Initialize.\+h$>$}\newline
+{\ttfamily \#include $<$ISR.\+h$>$}\newline
+{\ttfamily \#include $<$Keypad.\+h$>$}\newline
+{\ttfamily \#include $<$LCD.\+h$>$}\newline
+{\ttfamily \#include $<$pwm.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$Serial\+Handler.\+h$>$}\newline
+{\ttfamily \#include $<$LPC\+\_\+\+UART.\+h$>$}\newline
+{\ttfamily \#include $<$ESP\+\_\+\+UART.\+h$>$}\newline
+{\ttfamily \#include $<$Servo.\+h$>$}\newline
+{\ttfamily \#include $<$Test.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8h_a3f8ee3c69a0e8a4576da7506099f9dae}{Servo}}
+\item 
+\#define \mbox{\hyperlink{main_8h_addb0c037a01bd73baaf9f7d5a0379ac4}{PH0\+\_\+\+OSC\+\_\+\+IN\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+0
+\item 
+\#define \mbox{\hyperlink{main_8h_af8885fc2f50640cd8bb5084cd998088b}{PH0\+\_\+\+OSC\+\_\+\+IN\+\_\+\+GPIO\+\_\+\+Port}}~GPIOH
+\item 
+\#define \mbox{\hyperlink{main_8h_ac4d4c1fdbc6cd7491c705bd332f15693}{PH1\+\_\+\+OSC\+\_\+\+OUT\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+1
+\item 
+\#define \mbox{\hyperlink{main_8h_a5b80653bbe01e9d4f334c74bdc5bc9f6}{PH1\+\_\+\+OSC\+\_\+\+OUT\+\_\+\+GPIO\+\_\+\+Port}}~GPIOH
+\item 
+\#define \mbox{\hyperlink{main_8h_ad307e9a1778ed6950df3569c0a8f204c}{Power\+\_\+\+LED\+\_\+\+Output\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+3
+\item 
+\#define \mbox{\hyperlink{main_8h_a84eaf27909e0ec3053f54051869ecb16}{Power\+\_\+\+LED\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port}}~GPIOA
+\item 
+\#define \mbox{\hyperlink{main_8h_a91164e110e2e3b41ad86b83b1f4e119b}{EN\+\_\+\+DCDC\+\_\+5\+V\+\_\+\+Output\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+14
+\item 
+\#define \mbox{\hyperlink{main_8h_ad65fd538af48f8ffe2e7642e6bfde044}{EN\+\_\+\+DCDC\+\_\+5\+V\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port}}~GPIOC
+\item 
+\#define \mbox{\hyperlink{main_8h_acde35056e1f0d88eacb40dcd85af96b1}{EN\+\_\+\+DCDC\+\_\+8\+V\+\_\+\+Output\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+15
+\item 
+\#define \mbox{\hyperlink{main_8h_a97f99f142480eedbeeb348d2a3cc66c9}{EN\+\_\+\+DCDC\+\_\+8\+V\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port}}~GPIOC
+\item 
+\#define \mbox{\hyperlink{main_8h_a2ec153f6ca415f2b13881ebcdaf099f4}{Relay\+\_\+\+Output\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+9
+\item 
+\#define \mbox{\hyperlink{main_8h_adda62a1624de948adf678d2d1508177b}{Relay\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port}}~GPIOD
+\item 
+\#define \mbox{\hyperlink{main_8h_a1c4b4c42af98b76029a29d756e5d8b74}{Clamp\+\_\+\+M2\+\_\+\+PWM\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+12
+\item 
+\#define \mbox{\hyperlink{main_8h_aa1c1297a793d3aa28ecdcea0d3f83230}{Clamp\+\_\+\+M2\+\_\+\+PWM\+\_\+\+GPIO\+\_\+\+Port}}~GPIOD
+\item 
+\#define \mbox{\hyperlink{main_8h_ae501a61fb2db660009143c29606a47fe}{Spindle\+\_\+\+M3\+\_\+\+PWM\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+13
+\item 
+\#define \mbox{\hyperlink{main_8h_a4cf5364f97d6ad8a05b84ba52a5e1246}{Spindle\+\_\+\+M3\+\_\+\+PWM\+\_\+\+GPIO\+\_\+\+Port}}~GPIOD
+\item 
+\#define \mbox{\hyperlink{main_8h_ad842afd98b05b30933f2ee39509444e9}{Servo\+DC\+\_\+\+M1\+\_\+\+PWM\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+8
+\item 
+\#define \mbox{\hyperlink{main_8h_a3314d1ee9d4a50bfc2e453fdef7f550c}{Servo\+DC\+\_\+\+M1\+\_\+\+PWM\+\_\+\+GPIO\+\_\+\+Port}}~GPIOC
+\item 
+\#define \mbox{\hyperlink{main_8h_a3feb696cae6fed88a7714f13431da683}{Spindle\+\_\+\+M3\+\_\+\+Dir\+\_\+\+Output\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+10
+\item 
+\#define \mbox{\hyperlink{main_8h_a632ffd724c65f3b1d38e360a523ab705}{Spindle\+\_\+\+M3\+\_\+\+Dir\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port}}~GPIOD
+\item 
+\#define \mbox{\hyperlink{main_8h_a9239c0fb268785f4b1f836d8ddb25286}{Clamp\+\_\+\+M2\+\_\+\+Dir\+\_\+\+Output\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+14
+\item 
+\#define \mbox{\hyperlink{main_8h_aa10fbf9b2585e7e1d94c471905b1e6b1}{Clamp\+\_\+\+M2\+\_\+\+Dir\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port}}~GPIOD
+\item 
+\#define \mbox{\hyperlink{main_8h_ace11d991ecc8a7d2cee8377042537dbf}{Servo\+DC\+\_\+\+M1\+\_\+\+Dir\+\_\+\+Output\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+15
+\item 
+\#define \mbox{\hyperlink{main_8h_a629e8fc5d6e158f95d6957a36f9fdfc3}{Servo\+DC\+\_\+\+M1\+\_\+\+Dir\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port}}~GPIOB
+\item 
+\#define \mbox{\hyperlink{main_8h_a05382d9b0baa24b5018a9e49af1d235f}{Clamp\+\_\+\+M2\+\_\+\+Prox\+\_\+\+Interrupt\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+0
+\item 
+\#define \mbox{\hyperlink{main_8h_a7ab74e303e58bd4e196e50bde8764bf9}{Clamp\+\_\+\+M2\+\_\+\+Prox\+\_\+\+Interrupt\+\_\+\+GPIO\+\_\+\+Port}}~GPIOC
+\item 
+\#define \mbox{\hyperlink{main_8h_a052fcc9f3742bdba1a273f8dcf18149c}{Clamp\+\_\+\+M2\+\_\+\+Prox\+\_\+\+Interrupt\+\_\+\+EXTI\+\_\+\+IRQn}}~EXTI0\+\_\+\+IRQn
+\item 
+\#define \mbox{\hyperlink{main_8h_a56a3d7ef63069253be2ec2d84c80b244}{Clamp\+\_\+\+M2\+\_\+\+Enc\+B\+\_\+\+\_\+\+Interrupt\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+1
+\item 
+\#define \mbox{\hyperlink{main_8h_a7f433b9a9945ef96ae04cd7491437f43}{Clamp\+\_\+\+M2\+\_\+\+Enc\+B\+\_\+\+\_\+\+Interrupt\+\_\+\+GPIO\+\_\+\+Port}}~GPIOC
+\item 
+\#define \mbox{\hyperlink{main_8h_a9d2b87503df4ee4103473b288a3ed0e3}{Clamp\+\_\+\+M2\+\_\+\+Enc\+B\+\_\+\+\_\+\+Interrupt\+\_\+\+EXTI\+\_\+\+IRQn}}~EXTI1\+\_\+\+IRQn
+\item 
+\#define \mbox{\hyperlink{main_8h_a1f1b5dbc74ada51f6e3b17854fee1a90}{Clamp\+\_\+\+M2\+\_\+\+Enc\+A\+\_\+\+Interrupt\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+5
+\item 
+\#define \mbox{\hyperlink{main_8h_ad77c20fb322f3224efdf7717d11b4fa7}{Clamp\+\_\+\+M2\+\_\+\+Enc\+A\+\_\+\+Interrupt\+\_\+\+GPIO\+\_\+\+Port}}~GPIOE
+\item 
+\#define \mbox{\hyperlink{main_8h_acdea5f3679309b9a75b26001cb5b9ffb}{Clamp\+\_\+\+M2\+\_\+\+Enc\+A\+\_\+\+Interrupt\+\_\+\+EXTI\+\_\+\+IRQn}}~EXTI9\+\_\+5\+\_\+\+IRQn
+\item 
+\#define \mbox{\hyperlink{main_8h_a4a048b59b78a1926d50eb3b31d29b857}{Spindle\+\_\+\+M3\+\_\+\+Prox\+\_\+\+Interrupt\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+10
+\item 
+\#define \mbox{\hyperlink{main_8h_a57bd6305445de620f7134c7e61d3f427}{Spindle\+\_\+\+M3\+\_\+\+Prox\+\_\+\+Interrupt\+\_\+\+GPIO\+\_\+\+Port}}~GPIOA
+\item 
+\#define \mbox{\hyperlink{main_8h_a5a4d6f2e2a202fb21e77f201bf3660cd}{Spindle\+\_\+\+M3\+\_\+\+Prox\+\_\+\+Interrupt\+\_\+\+EXTI\+\_\+\+IRQn}}~EXTI15\+\_\+10\+\_\+\+IRQn
+\item 
+\#define \mbox{\hyperlink{main_8h_a3904ee1f8d95877d6353f45849e02317}{Spindle\+\_\+\+M3\+\_\+\+Enc\+A\+\_\+\+Interrupt\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+6
+\item 
+\#define \mbox{\hyperlink{main_8h_af6b7614f5893990b292b9cc8dc260f38}{Spindle\+\_\+\+M3\+\_\+\+Enc\+A\+\_\+\+Interrupt\+\_\+\+GPIO\+\_\+\+Port}}~GPIOE
+\item 
+\#define \mbox{\hyperlink{main_8h_a3b61b240a5826a19e3127493e815f3b8}{Spindle\+\_\+\+M3\+\_\+\+Enc\+A\+\_\+\+Interrupt\+\_\+\+EXTI\+\_\+\+IRQn}}~EXTI9\+\_\+5\+\_\+\+IRQn
+\item 
+\#define \mbox{\hyperlink{main_8h_aca2dde7e30d3d5115681202f28602bdb}{Spindle\+\_\+\+M3\+\_\+\+Enc\+B\+\_\+\+Interrupt\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+13
+\item 
+\#define \mbox{\hyperlink{main_8h_aeeaa357346892b10b1bb9b00cea40139}{Spindle\+\_\+\+M3\+\_\+\+Enc\+B\+\_\+\+Interrupt\+\_\+\+GPIO\+\_\+\+Port}}~GPIOC
+\item 
+\#define \mbox{\hyperlink{main_8h_aa14aea1a34db2de41b1eb10690ebb8ab}{Spindle\+\_\+\+M3\+\_\+\+Enc\+B\+\_\+\+Interrupt\+\_\+\+EXTI\+\_\+\+IRQn}}~EXTI15\+\_\+10\+\_\+\+IRQn
+\item 
+\#define \mbox{\hyperlink{main_8h_a7a10698054a5f3ab68dad66239cf47ad}{Servo\+DC\+\_\+\+M1\+\_\+\+Prox\+\_\+\+Interrupt\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+8
+\item 
+\#define \mbox{\hyperlink{main_8h_a0b6ed9faba4c46f381e142ea70ba50be}{Servo\+DC\+\_\+\+M1\+\_\+\+Prox\+\_\+\+Interrupt\+\_\+\+GPIO\+\_\+\+Port}}~GPIOA
+\item 
+\#define \mbox{\hyperlink{main_8h_a7a83c5d393607fec47fc373d4bdf755a}{Servo\+DC\+\_\+\+M1\+\_\+\+Prox\+\_\+\+Interrupt\+\_\+\+EXTI\+\_\+\+IRQn}}~EXTI9\+\_\+5\+\_\+\+IRQn
+\item 
+\#define \mbox{\hyperlink{main_8h_aeb316f2d067a453e7c83ad8ef05ba752}{Servo\+DC\+\_\+\+M1\+\_\+\+Enc\+B\+\_\+\+Interrupt\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+15
+\item 
+\#define \mbox{\hyperlink{main_8h_a71a10fa550d691d874b9c2f79e01847b}{Servo\+DC\+\_\+\+M1\+\_\+\+Enc\+B\+\_\+\+Interrupt\+\_\+\+GPIO\+\_\+\+Port}}~GPIOD
+\item 
+\#define \mbox{\hyperlink{main_8h_a18367d7d5cc42206a0d7d225b78e81a0}{Servo\+DC\+\_\+\+M1\+\_\+\+Enc\+B\+\_\+\+Interrupt\+\_\+\+EXTI\+\_\+\+IRQn}}~EXTI15\+\_\+10\+\_\+\+IRQn
+\item 
+\#define \mbox{\hyperlink{main_8h_aa97925ee1239f8e5b31e14bc3fce5de9}{Servo\+\_\+\+PWM\+\_\+\+OR\+\_\+\+DC\+\_\+\+M1\+\_\+\+Enc\+A\+\_\+\+Interrupt\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+9
+\item 
+\#define \mbox{\hyperlink{main_8h_a5cb01d1b18a800d086cc4308aaa7c693}{Servo\+\_\+\+PWM\+\_\+\+OR\+\_\+\+DC\+\_\+\+M1\+\_\+\+Enc\+A\+\_\+\+Interrupt\+\_\+\+GPIO\+\_\+\+Port}}~GPIOB
+\item 
+\#define \mbox{\hyperlink{main_8h_a42be503e0333a8947b4e492103f0a096}{Curr\+\_\+\+Sensor\+\_\+\+Servo\+DC\+\_\+\+ADC\+\_\+\+Input\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+2
+\item 
+\#define \mbox{\hyperlink{main_8h_aab2c8b572fe337f46e2a3abc302cf190}{Curr\+\_\+\+Sensor\+\_\+\+Servo\+DC\+\_\+\+ADC\+\_\+\+Input\+\_\+\+GPIO\+\_\+\+Port}}~GPIOC
+\item 
+\#define \mbox{\hyperlink{main_8h_a53c28d048be2c0cf640aa9f4cfc7be58}{Curr\+\_\+\+Sensor\+\_\+\+Clamp\+\_\+\+ADC\+\_\+\+Input\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+3
+\item 
+\#define \mbox{\hyperlink{main_8h_ab8ebcd2d67414e396dd40335214e0aac}{Curr\+\_\+\+Sensor\+\_\+\+Clamp\+\_\+\+ADC\+\_\+\+Input\+\_\+\+GPIO\+\_\+\+Port}}~GPIOC
+\item 
+\#define \mbox{\hyperlink{main_8h_abe6443277c88f2259ad25802bd5bc0ee}{Curr\+\_\+\+Sensor\+\_\+\+Spindle\+\_\+\+ADC\+\_\+\+Input\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+0
+\item 
+\#define \mbox{\hyperlink{main_8h_afb3fba738b4fc7f12e01cd4662e80cb4}{Sensor\+\_\+\+Bottle\+Position\+\_\+\+Input\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+2
+\item 
+\#define \mbox{\hyperlink{main_8h_a809b2bc5a3750de7b32b9bd4ff0894c5}{Sensor\+\_\+\+Bottle\+Position\+\_\+\+Input\+\_\+\+GPIO\+\_\+\+Port}}~GPIOE
+\item 
+\#define \mbox{\hyperlink{main_8h_aeded7a9c7aea7c98deb3a295ad639926}{Sensor\+\_\+\+RES\+\_\+\+Input\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+4
+\item 
+\#define \mbox{\hyperlink{main_8h_a83494dbf7ac444f70e521d6351ab1ad0}{Sensor\+\_\+\+RES\+\_\+\+Input\+\_\+\+GPIO\+\_\+\+Port}}~GPIOE
+\item 
+\#define \mbox{\hyperlink{main_8h_a3a939f702b81c3ea5a64ead29ef3d195}{Curr\+\_\+\+Sensor\+\_\+\+Spindle\+\_\+\+ADC\+\_\+\+Input\+\_\+\+GPIO\+\_\+\+Port}}~GPIOA
+\item 
+\#define \mbox{\hyperlink{main_8h_a639a90d426f56f8cb5ed93bec342ffe6}{V12\+\_\+\+ADC\+\_\+\+Input\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+1
+\item 
+\#define \mbox{\hyperlink{main_8h_a87941fed03402afa022fc793c299b65c}{V12\+\_\+\+ADC\+\_\+\+Input\+\_\+\+GPIO\+\_\+\+Port}}~GPIOA
+\item 
+\#define \mbox{\hyperlink{main_8h_a10b6f461bd6edc998e945234f2f9567a}{Sensor\+\_\+\+Pressure\+\_\+\+ADC\+\_\+\+Input\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+4
+\item 
+\#define \mbox{\hyperlink{main_8h_aa0591eb27335af469250f9c0b24960c1}{Sensor\+\_\+\+Pressure\+\_\+\+ADC\+\_\+\+Input\+\_\+\+GPIO\+\_\+\+Port}}~GPIOC
+\item 
+\#define \mbox{\hyperlink{main_8h_abfff0803c8e123f65d527c65fe32ac51}{Button\+\_\+\+Clean\+\_\+\+Interrupt\+\_\+\+Pull\+Up\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+2
+\item 
+\#define \mbox{\hyperlink{main_8h_a376d85bf2797e36c9bd279d6dce8ce35}{Button\+\_\+\+Clean\+\_\+\+Interrupt\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port}}~GPIOA
+\item 
+\#define \mbox{\hyperlink{main_8h_ad2265a3f6abb606b60ead61ff36189e1}{Button\+\_\+\+Clean\+\_\+\+Interrupt\+\_\+\+Pull\+Up\+\_\+\+EXTI\+\_\+\+IRQn}}~EXTI2\+\_\+\+IRQn
+\item 
+\#define \mbox{\hyperlink{main_8h_a38bbd447cbff02935df30c83e58a481c}{Button\+\_\+\+Power\+\_\+\+Interrupt\+\_\+\+Pull\+Up\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+4
+\item 
+\#define \mbox{\hyperlink{main_8h_a0e214b421e1c52cf914f4dae02f03bf2}{Button\+\_\+\+Power\+\_\+\+Interrupt\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port}}~GPIOA
+\item 
+\#define \mbox{\hyperlink{main_8h_aa6f8fe7ae3bc5e7d2d5e108c232e0946}{Button\+\_\+\+Power\+\_\+\+Interrupt\+\_\+\+Pull\+Up\+\_\+\+EXTI\+\_\+\+IRQn}}~EXTI4\+\_\+\+IRQn
+\item 
+\#define \mbox{\hyperlink{main_8h_ac3573efffbb8f32fb545cff74eb5119f}{Button\+\_\+\+Man\+Auto\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+5
+\item 
+\#define \mbox{\hyperlink{main_8h_aa4da77ad1e3bb24dd1f8c81ed9b9620c}{Button\+\_\+\+Man\+Auto\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port}}~GPIOA
+\item 
+\#define \mbox{\hyperlink{main_8h_a4680dd429c0b8eb35c26396455fd9a4a}{Button\+\_\+\+Play\+Stop\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+6
+\item 
+\#define \mbox{\hyperlink{main_8h_a010b6b95dffb1c00b53b595c9c615422}{Button\+\_\+\+Play\+Stop\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port}}~GPIOA
+\item 
+\#define \mbox{\hyperlink{main_8h_a70308283f07e614d11e38b5de82a7d11}{Button\+\_\+\+Del\+Back\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+7
+\item 
+\#define \mbox{\hyperlink{main_8h_a97ad5e14b9c72dfdb8c4d04276cc978d}{Button\+\_\+\+Del\+Back\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port}}~GPIOA
+\item 
+\#define \mbox{\hyperlink{main_8h_a4fe63b2dc552de1763170017d41a415d}{Button\+\_\+1\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+5
+\item 
+\#define \mbox{\hyperlink{main_8h_a5519d593abdc2076a12b2fa1e06aa4d4}{Button\+\_\+1\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port}}~GPIOC
+\item 
+\#define \mbox{\hyperlink{main_8h_aa699eda09e5a31107690906585fa046b}{Button\+\_\+2\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+0
+\item 
+\#define \mbox{\hyperlink{main_8h_a33ce556cd7d4ff328958942d264e046d}{Button\+\_\+2\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port}}~GPIOB
+\item 
+\#define \mbox{\hyperlink{main_8h_aa6608ea3ab4d6cf264a50bd7490c0109}{Button\+\_\+3\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+1
+\item 
+\#define \mbox{\hyperlink{main_8h_abd5c14f1af83b2e32981941fde68419f}{Button\+\_\+3\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port}}~GPIOB
+\item 
+\#define \mbox{\hyperlink{main_8h_a6fb540619af34b8ec892fbdba3066b5e}{Button\+\_\+4\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+2
+\item 
+\#define \mbox{\hyperlink{main_8h_a9a0dd00fb751868673cf513d7d3df971}{Button\+\_\+4\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port}}~GPIOB
+\item 
+\#define \mbox{\hyperlink{main_8h_af3a970686b91646c32eb22e681cd34fe}{Button\+\_\+5\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+7
+\item 
+\#define \mbox{\hyperlink{main_8h_a2a41656a26ed577c0032dd9bf6dc5319}{Button\+\_\+5\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port}}~GPIOE
+\item 
+\#define \mbox{\hyperlink{main_8h_ad1fca6822abd18caa50732644fb41452}{Button\+\_\+6\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+8
+\item 
+\#define \mbox{\hyperlink{main_8h_a10656a806d481a40a69ab11378eea56b}{Button\+\_\+6\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port}}~GPIOE
+\item 
+\#define \mbox{\hyperlink{main_8h_a5cc6c64afcb9bec51bc748120b1841af}{Button\+\_\+7\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+9
+\item 
+\#define \mbox{\hyperlink{main_8h_a149cdb871b7b737cc4cd3825ba0b1411}{Button\+\_\+7\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port}}~GPIOE
+\item 
+\#define \mbox{\hyperlink{main_8h_a4373c2e74fc40ce061ef5ffd5346b83c}{Button\+\_\+8\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+10
+\item 
+\#define \mbox{\hyperlink{main_8h_a7557d572c84fde6220f6fee9c0d20b0a}{Button\+\_\+8\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port}}~GPIOE
+\item 
+\#define \mbox{\hyperlink{main_8h_a6ff316691c01db77e0b9334368102976}{Button\+\_\+9\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+11
+\item 
+\#define \mbox{\hyperlink{main_8h_a43eb3078406a8410ed2c3e9c97f38009}{Button\+\_\+9\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port}}~GPIOE
+\item 
+\#define \mbox{\hyperlink{main_8h_aa9e0fa06c53af9cd139dacfea68e3e21}{Button\+\_\+0\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+12
+\item 
+\#define \mbox{\hyperlink{main_8h_afcba0894ee70a45aa55b67ba47421ef9}{Button\+\_\+0\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port}}~GPIOE
+\item 
+\#define \mbox{\hyperlink{main_8h_aadefbe18cf967c0d45f79cabaf6e3a2e}{Button\+\_\+\+Enter\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+13
+\item 
+\#define \mbox{\hyperlink{main_8h_aa96399b89507a33f2a36895490698033}{Button\+\_\+\+Enter\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port}}~GPIOE
+\item 
+\#define \mbox{\hyperlink{main_8h_a19d77dff3d4411932941ee6a209ac248}{Button\+\_\+\+Comma\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+14
+\item 
+\#define \mbox{\hyperlink{main_8h_a090ac49c9b542c9438fca84b52a60c13}{Button\+\_\+\+Comma\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port}}~GPIOE
+\item 
+\#define \mbox{\hyperlink{main_8h_a65b1445e76cdd22516da1a01851d4c18}{LCD\+\_\+\+Contrast\+\_\+\+PWM\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+6
+\item 
+\#define \mbox{\hyperlink{main_8h_a4c3d826a406dae3ea6e088928da5fa02}{LCD\+\_\+\+Contrast\+\_\+\+PWM\+\_\+\+GPIO\+\_\+\+Port}}~GPIOC
+\item 
+\#define \mbox{\hyperlink{main_8h_ace9a12c8b073c014ee9485012c057d7f}{LCD\+\_\+\+LED\+\_\+\+PWM\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+7
+\item 
+\#define \mbox{\hyperlink{main_8h_af9e752914cfe1e36b406f0182cacc906}{LCD\+\_\+\+LED\+\_\+\+PWM\+\_\+\+GPIO\+\_\+\+Port}}~GPIOC
+\item 
+\#define \mbox{\hyperlink{main_8h_afd1f29c0c8096b76a2d8bd09b67cf15c}{LCD\+\_\+\+RS\+\_\+\+Output\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+1
+\item 
+\#define \mbox{\hyperlink{main_8h_a528352df81203d99e7175f54c516f3a9}{LCD\+\_\+\+RS\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port}}~GPIOD
+\item 
+\#define \mbox{\hyperlink{main_8h_a27df7cb0ee37c925c83fcad974501658}{LCD\+\_\+\+EN\+\_\+\+Output\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+2
+\item 
+\#define \mbox{\hyperlink{main_8h_ae1c9c65b1420b9f6995c81daf799eade}{LCD\+\_\+\+EN\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port}}~GPIOD
+\item 
+\#define \mbox{\hyperlink{main_8h_acc87fbc2dcde57eede61e876bfe7fb42}{LCD\+\_\+\+D4\+\_\+\+Output\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+3
+\item 
+\#define \mbox{\hyperlink{main_8h_af160c46bba79e6ffef166d28efd18b35}{LCD\+\_\+\+D4\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port}}~GPIOD
+\item 
+\#define \mbox{\hyperlink{main_8h_adc35134a442ed2e12830e028423bf4c3}{LCD\+\_\+\+D5\+\_\+\+Output\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+4
+\item 
+\#define \mbox{\hyperlink{main_8h_aa47ab935a7ba13d802863f32dee7a78d}{LCD\+\_\+\+D5\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port}}~GPIOD
+\item 
+\#define \mbox{\hyperlink{main_8h_a5bc81caa5af3ea604e0b9d61e7954077}{LCD\+\_\+\+D6\+\_\+\+Output\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+6
+\item 
+\#define \mbox{\hyperlink{main_8h_ae178f43df35628a704979de316429af1}{LCD\+\_\+\+D6\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port}}~GPIOD
+\item 
+\#define \mbox{\hyperlink{main_8h_abac0d3026773a299b1d99288a87e179b}{LCD\+\_\+\+D7\+\_\+\+Output\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+7
+\item 
+\#define \mbox{\hyperlink{main_8h_aad97169142fafbe76404c32c9fa30734}{LCD\+\_\+\+D7\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port}}~GPIOD
+\item 
+\#define \mbox{\hyperlink{main_8h_ad12635a0f2c0b8bd7f29bbe3155462a1}{STMUART4\+\_\+\+TX\+\_\+\+ESPUART1\+RX\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+10
+\item 
+\#define \mbox{\hyperlink{main_8h_a73f7cd0ad85c91eb55dd1b4006fa8875}{STMUART4\+\_\+\+TX\+\_\+\+ESPUART1\+RX\+\_\+\+GPIO\+\_\+\+Port}}~GPIOC
+\item 
+\#define \mbox{\hyperlink{main_8h_a1cbb1ca5ae9389cf5d7d3e1899e2c20b}{STMUART4\+\_\+\+RX\+\_\+\+ESPUART1\+TX\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+11
+\item 
+\#define \mbox{\hyperlink{main_8h_a955323df118a189bd380031d0166148d}{STMUART4\+\_\+\+RX\+\_\+\+ESPUART1\+TX\+\_\+\+GPIO\+\_\+\+Port}}~GPIOC
+\item 
+\#define \mbox{\hyperlink{main_8h_a9c51784c4e9bbdd053a6a09aa46788a7}{SPI\+\_\+n\+SS\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+15
+\item 
+\#define \mbox{\hyperlink{main_8h_afa04f499dba41dd6dfe3db23cfeda779}{SPI\+\_\+n\+SS\+\_\+\+GPIO\+\_\+\+Port}}~GPIOA
+\item 
+\#define \mbox{\hyperlink{main_8h_a4d945ae8ab12a775e471548bfe0dcf73}{SPI\+\_\+\+SCK\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+3
+\item 
+\#define \mbox{\hyperlink{main_8h_af11fcfd383a93709c4c4bf7733d1577c}{SPI\+\_\+\+SCK\+\_\+\+GPIO\+\_\+\+Port}}~GPIOB
+\item 
+\#define \mbox{\hyperlink{main_8h_a96f125c65f6d8a90050ebb72cf459e95}{SPI\+\_\+\+MISO\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+4
+\item 
+\#define \mbox{\hyperlink{main_8h_acefbb4f623273b9808c5dd75f0f0c7ee}{SPI\+\_\+\+MISO\+\_\+\+GPIO\+\_\+\+Port}}~GPIOB
+\item 
+\#define \mbox{\hyperlink{main_8h_a4312169e5b462272dc4be10d4ffa4e40}{SPI\+\_\+\+MOSI\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+5
+\item 
+\#define \mbox{\hyperlink{main_8h_af86c484e6065ee32b61f1b141cb0014e}{SPI\+\_\+\+MOSI\+\_\+\+GPIO\+\_\+\+Port}}~GPIOB
+\item 
+\#define \mbox{\hyperlink{main_8h_a67815959222f5479e13c699e5c25dc9d}{USBFlag\+\_\+\+Interrupt\+\_\+\+Pull\+Up\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+12
+\item 
+\#define \mbox{\hyperlink{main_8h_aaf59637db163d80796def34a606c2341}{USBFlag\+\_\+\+Interrupt\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port}}~GPIOB
+\item 
+\#define \mbox{\hyperlink{main_8h_aa0d6c8ac35df56d803b6f222ce7b333f}{USBFlag\+\_\+\+Interrupt\+\_\+\+Pull\+Up\+\_\+\+EXTI\+\_\+\+IRQn}}~EXTI15\+\_\+10\+\_\+\+IRQn
+\item 
+\#define \mbox{\hyperlink{main_8h_a7bcc35d9dc9f7683bf3b75b88033e597}{USB\+\_\+\+EN\+\_\+\+Output\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+8
+\item 
+\#define \mbox{\hyperlink{main_8h_a55e840a2d282407ffcfb7fb02a9b7ede}{USB\+\_\+\+EN\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port}}~GPIOB
+\item 
+\#define \mbox{\hyperlink{main_8h_a9f0cd5c822f98b96d977ce97e848c580}{UART1\+\_\+\+TX\+\_\+\+STLINK\+\_\+\+RX\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+6
+\item 
+\#define \mbox{\hyperlink{main_8h_aa92d693f702912a0cc4fd99638b24df3}{UART1\+\_\+\+TX\+\_\+\+STLINK\+\_\+\+RX\+\_\+\+GPIO\+\_\+\+Port}}~GPIOB
+\item 
+\#define \mbox{\hyperlink{main_8h_a52d21170f07cf0187613e828be703ab8}{UART1\+\_\+\+RX\+\_\+\+STLINK\+\_\+\+TX\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+7
+\item 
+\#define \mbox{\hyperlink{main_8h_ad76fa91e3d2b36d5c9bc8f450fa907fd}{UART1\+\_\+\+RX\+\_\+\+STLINK\+\_\+\+TX\+\_\+\+GPIO\+\_\+\+Port}}~GPIOB
+\item 
+\#define \mbox{\hyperlink{main_8h_a07c2700872282625b05bb245c542bcd2}{UART3\+TX\+\_\+\+FC1\+RX\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+10
+\item 
+\#define \mbox{\hyperlink{main_8h_a4b0bf7a5216b6b777745f1df2b43596b}{UART3\+TX\+\_\+\+FC1\+RX\+\_\+\+GPIO\+\_\+\+Port}}~GPIOB
+\item 
+\#define \mbox{\hyperlink{main_8h_a63332c478c8a85e37a32692b5d61d0f7}{UART3\+RX\+\_\+\+FC1\+TX\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+11
+\item 
+\#define \mbox{\hyperlink{main_8h_a55e3b6a60ba2c26dfdf6c88d0ad87a94}{UART3\+RX\+\_\+\+FC1\+TX\+\_\+\+GPIO\+\_\+\+Port}}~GPIOB
+\item 
+\#define \mbox{\hyperlink{main_8h_adf80495a1ccb4306cab9b817be20be3b}{UART3\+CTS\+\_\+\+FC1\+RTS\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+13
+\item 
+\#define \mbox{\hyperlink{main_8h_abb95d18d95cb5e1afae5aef420f7b697}{UART3\+CTS\+\_\+\+FC1\+RTS\+\_\+\+GPIO\+\_\+\+Port}}~GPIOB
+\item 
+\#define \mbox{\hyperlink{main_8h_a94e82dece778e2ab48ada0ee3473cb22}{UART3\+RTS\+\_\+\+FC1\+CTS\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+14
+\item 
+\#define \mbox{\hyperlink{main_8h_abce7743b22a261322113a4aeb54cad48}{UART3\+RTS\+\_\+\+FC1\+CTS\+\_\+\+GPIO\+\_\+\+Port}}~GPIOB
+\item 
+\#define \mbox{\hyperlink{main_8h_adebf4dca8469340c099f6df9b04c74fe}{n\+RESET\+\_\+\+LPC\+\_\+\+Output\+\_\+\+Pin}}~GPIO\+\_\+\+PIN\+\_\+8
+\item 
+\#define \mbox{\hyperlink{main_8h_ab10b2013116b10d71d9b0af93e3c6376}{n\+RESET\+\_\+\+LPC\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port}}~GPIOD
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: Header for \doxylink{main_8c}{main.\+c} file. This file contains the common defines of the application. 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2024 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+Definition in file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{main_8h_afcba0894ee70a45aa55b67ba47421ef9}\index{main.h@{main.h}!Button\_0\_Input\_PullUp\_GPIO\_Port@{Button\_0\_Input\_PullUp\_GPIO\_Port}}
+\index{Button\_0\_Input\_PullUp\_GPIO\_Port@{Button\_0\_Input\_PullUp\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_0\_Input\_PullUp\_GPIO\_Port}{Button\_0\_Input\_PullUp\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_afcba0894ee70a45aa55b67ba47421ef9} 
+\#define Button\+\_\+0\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port~GPIOE}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00351}{351}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aa9e0fa06c53af9cd139dacfea68e3e21}\index{main.h@{main.h}!Button\_0\_Input\_PullUp\_Pin@{Button\_0\_Input\_PullUp\_Pin}}
+\index{Button\_0\_Input\_PullUp\_Pin@{Button\_0\_Input\_PullUp\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_0\_Input\_PullUp\_Pin}{Button\_0\_Input\_PullUp\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_aa9e0fa06c53af9cd139dacfea68e3e21} 
+\#define Button\+\_\+0\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+12}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00350}{350}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a5519d593abdc2076a12b2fa1e06aa4d4}\index{main.h@{main.h}!Button\_1\_Input\_PullUp\_GPIO\_Port@{Button\_1\_Input\_PullUp\_GPIO\_Port}}
+\index{Button\_1\_Input\_PullUp\_GPIO\_Port@{Button\_1\_Input\_PullUp\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_1\_Input\_PullUp\_GPIO\_Port}{Button\_1\_Input\_PullUp\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a5519d593abdc2076a12b2fa1e06aa4d4} 
+\#define Button\+\_\+1\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port~GPIOC}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00333}{333}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a4fe63b2dc552de1763170017d41a415d}\index{main.h@{main.h}!Button\_1\_Input\_PullUp\_Pin@{Button\_1\_Input\_PullUp\_Pin}}
+\index{Button\_1\_Input\_PullUp\_Pin@{Button\_1\_Input\_PullUp\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_1\_Input\_PullUp\_Pin}{Button\_1\_Input\_PullUp\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a4fe63b2dc552de1763170017d41a415d} 
+\#define Button\+\_\+1\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+5}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00332}{332}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a33ce556cd7d4ff328958942d264e046d}\index{main.h@{main.h}!Button\_2\_Input\_PullUp\_GPIO\_Port@{Button\_2\_Input\_PullUp\_GPIO\_Port}}
+\index{Button\_2\_Input\_PullUp\_GPIO\_Port@{Button\_2\_Input\_PullUp\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_2\_Input\_PullUp\_GPIO\_Port}{Button\_2\_Input\_PullUp\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a33ce556cd7d4ff328958942d264e046d} 
+\#define Button\+\_\+2\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port~GPIOB}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00335}{335}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aa699eda09e5a31107690906585fa046b}\index{main.h@{main.h}!Button\_2\_Input\_PullUp\_Pin@{Button\_2\_Input\_PullUp\_Pin}}
+\index{Button\_2\_Input\_PullUp\_Pin@{Button\_2\_Input\_PullUp\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_2\_Input\_PullUp\_Pin}{Button\_2\_Input\_PullUp\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_aa699eda09e5a31107690906585fa046b} 
+\#define Button\+\_\+2\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+0}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00334}{334}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_abd5c14f1af83b2e32981941fde68419f}\index{main.h@{main.h}!Button\_3\_Input\_PullUp\_GPIO\_Port@{Button\_3\_Input\_PullUp\_GPIO\_Port}}
+\index{Button\_3\_Input\_PullUp\_GPIO\_Port@{Button\_3\_Input\_PullUp\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_3\_Input\_PullUp\_GPIO\_Port}{Button\_3\_Input\_PullUp\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_abd5c14f1af83b2e32981941fde68419f} 
+\#define Button\+\_\+3\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port~GPIOB}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00337}{337}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aa6608ea3ab4d6cf264a50bd7490c0109}\index{main.h@{main.h}!Button\_3\_Input\_PullUp\_Pin@{Button\_3\_Input\_PullUp\_Pin}}
+\index{Button\_3\_Input\_PullUp\_Pin@{Button\_3\_Input\_PullUp\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_3\_Input\_PullUp\_Pin}{Button\_3\_Input\_PullUp\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_aa6608ea3ab4d6cf264a50bd7490c0109} 
+\#define Button\+\_\+3\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+1}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00336}{336}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a9a0dd00fb751868673cf513d7d3df971}\index{main.h@{main.h}!Button\_4\_Input\_PullUp\_GPIO\_Port@{Button\_4\_Input\_PullUp\_GPIO\_Port}}
+\index{Button\_4\_Input\_PullUp\_GPIO\_Port@{Button\_4\_Input\_PullUp\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_4\_Input\_PullUp\_GPIO\_Port}{Button\_4\_Input\_PullUp\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a9a0dd00fb751868673cf513d7d3df971} 
+\#define Button\+\_\+4\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port~GPIOB}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00339}{339}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a6fb540619af34b8ec892fbdba3066b5e}\index{main.h@{main.h}!Button\_4\_Input\_PullUp\_Pin@{Button\_4\_Input\_PullUp\_Pin}}
+\index{Button\_4\_Input\_PullUp\_Pin@{Button\_4\_Input\_PullUp\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_4\_Input\_PullUp\_Pin}{Button\_4\_Input\_PullUp\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a6fb540619af34b8ec892fbdba3066b5e} 
+\#define Button\+\_\+4\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+2}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00338}{338}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a2a41656a26ed577c0032dd9bf6dc5319}\index{main.h@{main.h}!Button\_5\_Input\_PullUp\_GPIO\_Port@{Button\_5\_Input\_PullUp\_GPIO\_Port}}
+\index{Button\_5\_Input\_PullUp\_GPIO\_Port@{Button\_5\_Input\_PullUp\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_5\_Input\_PullUp\_GPIO\_Port}{Button\_5\_Input\_PullUp\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a2a41656a26ed577c0032dd9bf6dc5319} 
+\#define Button\+\_\+5\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port~GPIOE}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00341}{341}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_af3a970686b91646c32eb22e681cd34fe}\index{main.h@{main.h}!Button\_5\_Input\_PullUp\_Pin@{Button\_5\_Input\_PullUp\_Pin}}
+\index{Button\_5\_Input\_PullUp\_Pin@{Button\_5\_Input\_PullUp\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_5\_Input\_PullUp\_Pin}{Button\_5\_Input\_PullUp\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_af3a970686b91646c32eb22e681cd34fe} 
+\#define Button\+\_\+5\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+7}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00340}{340}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a10656a806d481a40a69ab11378eea56b}\index{main.h@{main.h}!Button\_6\_Input\_PullUp\_GPIO\_Port@{Button\_6\_Input\_PullUp\_GPIO\_Port}}
+\index{Button\_6\_Input\_PullUp\_GPIO\_Port@{Button\_6\_Input\_PullUp\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_6\_Input\_PullUp\_GPIO\_Port}{Button\_6\_Input\_PullUp\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a10656a806d481a40a69ab11378eea56b} 
+\#define Button\+\_\+6\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port~GPIOE}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00343}{343}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_ad1fca6822abd18caa50732644fb41452}\index{main.h@{main.h}!Button\_6\_Input\_PullUp\_Pin@{Button\_6\_Input\_PullUp\_Pin}}
+\index{Button\_6\_Input\_PullUp\_Pin@{Button\_6\_Input\_PullUp\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_6\_Input\_PullUp\_Pin}{Button\_6\_Input\_PullUp\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_ad1fca6822abd18caa50732644fb41452} 
+\#define Button\+\_\+6\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+8}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00342}{342}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a149cdb871b7b737cc4cd3825ba0b1411}\index{main.h@{main.h}!Button\_7\_Input\_PullUp\_GPIO\_Port@{Button\_7\_Input\_PullUp\_GPIO\_Port}}
+\index{Button\_7\_Input\_PullUp\_GPIO\_Port@{Button\_7\_Input\_PullUp\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_7\_Input\_PullUp\_GPIO\_Port}{Button\_7\_Input\_PullUp\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a149cdb871b7b737cc4cd3825ba0b1411} 
+\#define Button\+\_\+7\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port~GPIOE}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00345}{345}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a5cc6c64afcb9bec51bc748120b1841af}\index{main.h@{main.h}!Button\_7\_Input\_PullUp\_Pin@{Button\_7\_Input\_PullUp\_Pin}}
+\index{Button\_7\_Input\_PullUp\_Pin@{Button\_7\_Input\_PullUp\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_7\_Input\_PullUp\_Pin}{Button\_7\_Input\_PullUp\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a5cc6c64afcb9bec51bc748120b1841af} 
+\#define Button\+\_\+7\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+9}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00344}{344}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a7557d572c84fde6220f6fee9c0d20b0a}\index{main.h@{main.h}!Button\_8\_Input\_PullUp\_GPIO\_Port@{Button\_8\_Input\_PullUp\_GPIO\_Port}}
+\index{Button\_8\_Input\_PullUp\_GPIO\_Port@{Button\_8\_Input\_PullUp\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_8\_Input\_PullUp\_GPIO\_Port}{Button\_8\_Input\_PullUp\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a7557d572c84fde6220f6fee9c0d20b0a} 
+\#define Button\+\_\+8\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port~GPIOE}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00347}{347}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a4373c2e74fc40ce061ef5ffd5346b83c}\index{main.h@{main.h}!Button\_8\_Input\_PullUp\_Pin@{Button\_8\_Input\_PullUp\_Pin}}
+\index{Button\_8\_Input\_PullUp\_Pin@{Button\_8\_Input\_PullUp\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_8\_Input\_PullUp\_Pin}{Button\_8\_Input\_PullUp\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a4373c2e74fc40ce061ef5ffd5346b83c} 
+\#define Button\+\_\+8\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+10}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00346}{346}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a43eb3078406a8410ed2c3e9c97f38009}\index{main.h@{main.h}!Button\_9\_Input\_PullUp\_GPIO\_Port@{Button\_9\_Input\_PullUp\_GPIO\_Port}}
+\index{Button\_9\_Input\_PullUp\_GPIO\_Port@{Button\_9\_Input\_PullUp\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_9\_Input\_PullUp\_GPIO\_Port}{Button\_9\_Input\_PullUp\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a43eb3078406a8410ed2c3e9c97f38009} 
+\#define Button\+\_\+9\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port~GPIOE}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00349}{349}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a6ff316691c01db77e0b9334368102976}\index{main.h@{main.h}!Button\_9\_Input\_PullUp\_Pin@{Button\_9\_Input\_PullUp\_Pin}}
+\index{Button\_9\_Input\_PullUp\_Pin@{Button\_9\_Input\_PullUp\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_9\_Input\_PullUp\_Pin}{Button\_9\_Input\_PullUp\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a6ff316691c01db77e0b9334368102976} 
+\#define Button\+\_\+9\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+11}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00348}{348}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_ad2265a3f6abb606b60ead61ff36189e1}\index{main.h@{main.h}!Button\_Clean\_Interrupt\_PullUp\_EXTI\_IRQn@{Button\_Clean\_Interrupt\_PullUp\_EXTI\_IRQn}}
+\index{Button\_Clean\_Interrupt\_PullUp\_EXTI\_IRQn@{Button\_Clean\_Interrupt\_PullUp\_EXTI\_IRQn}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_Clean\_Interrupt\_PullUp\_EXTI\_IRQn}{Button\_Clean\_Interrupt\_PullUp\_EXTI\_IRQn}}
+{\footnotesize\ttfamily \label{main_8h_ad2265a3f6abb606b60ead61ff36189e1} 
+\#define Button\+\_\+\+Clean\+\_\+\+Interrupt\+\_\+\+Pull\+Up\+\_\+\+EXTI\+\_\+\+IRQn~EXTI2\+\_\+\+IRQn}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00322}{322}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a376d85bf2797e36c9bd279d6dce8ce35}\index{main.h@{main.h}!Button\_Clean\_Interrupt\_PullUp\_GPIO\_Port@{Button\_Clean\_Interrupt\_PullUp\_GPIO\_Port}}
+\index{Button\_Clean\_Interrupt\_PullUp\_GPIO\_Port@{Button\_Clean\_Interrupt\_PullUp\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_Clean\_Interrupt\_PullUp\_GPIO\_Port}{Button\_Clean\_Interrupt\_PullUp\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a376d85bf2797e36c9bd279d6dce8ce35} 
+\#define Button\+\_\+\+Clean\+\_\+\+Interrupt\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port~GPIOA}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00321}{321}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_abfff0803c8e123f65d527c65fe32ac51}\index{main.h@{main.h}!Button\_Clean\_Interrupt\_PullUp\_Pin@{Button\_Clean\_Interrupt\_PullUp\_Pin}}
+\index{Button\_Clean\_Interrupt\_PullUp\_Pin@{Button\_Clean\_Interrupt\_PullUp\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_Clean\_Interrupt\_PullUp\_Pin}{Button\_Clean\_Interrupt\_PullUp\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_abfff0803c8e123f65d527c65fe32ac51} 
+\#define Button\+\_\+\+Clean\+\_\+\+Interrupt\+\_\+\+Pull\+Up\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+2}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00320}{320}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a090ac49c9b542c9438fca84b52a60c13}\index{main.h@{main.h}!Button\_Comma\_Input\_PullUp\_GPIO\_Port@{Button\_Comma\_Input\_PullUp\_GPIO\_Port}}
+\index{Button\_Comma\_Input\_PullUp\_GPIO\_Port@{Button\_Comma\_Input\_PullUp\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_Comma\_Input\_PullUp\_GPIO\_Port}{Button\_Comma\_Input\_PullUp\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a090ac49c9b542c9438fca84b52a60c13} 
+\#define Button\+\_\+\+Comma\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port~GPIOE}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00355}{355}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a19d77dff3d4411932941ee6a209ac248}\index{main.h@{main.h}!Button\_Comma\_Input\_PullUp\_Pin@{Button\_Comma\_Input\_PullUp\_Pin}}
+\index{Button\_Comma\_Input\_PullUp\_Pin@{Button\_Comma\_Input\_PullUp\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_Comma\_Input\_PullUp\_Pin}{Button\_Comma\_Input\_PullUp\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a19d77dff3d4411932941ee6a209ac248} 
+\#define Button\+\_\+\+Comma\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+14}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00354}{354}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a97ad5e14b9c72dfdb8c4d04276cc978d}\index{main.h@{main.h}!Button\_DelBack\_Input\_PullUp\_GPIO\_Port@{Button\_DelBack\_Input\_PullUp\_GPIO\_Port}}
+\index{Button\_DelBack\_Input\_PullUp\_GPIO\_Port@{Button\_DelBack\_Input\_PullUp\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_DelBack\_Input\_PullUp\_GPIO\_Port}{Button\_DelBack\_Input\_PullUp\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a97ad5e14b9c72dfdb8c4d04276cc978d} 
+\#define Button\+\_\+\+Del\+Back\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port~GPIOA}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00331}{331}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a70308283f07e614d11e38b5de82a7d11}\index{main.h@{main.h}!Button\_DelBack\_Input\_PullUp\_Pin@{Button\_DelBack\_Input\_PullUp\_Pin}}
+\index{Button\_DelBack\_Input\_PullUp\_Pin@{Button\_DelBack\_Input\_PullUp\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_DelBack\_Input\_PullUp\_Pin}{Button\_DelBack\_Input\_PullUp\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a70308283f07e614d11e38b5de82a7d11} 
+\#define Button\+\_\+\+Del\+Back\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+7}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00330}{330}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aa96399b89507a33f2a36895490698033}\index{main.h@{main.h}!Button\_Enter\_Input\_PullUp\_GPIO\_Port@{Button\_Enter\_Input\_PullUp\_GPIO\_Port}}
+\index{Button\_Enter\_Input\_PullUp\_GPIO\_Port@{Button\_Enter\_Input\_PullUp\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_Enter\_Input\_PullUp\_GPIO\_Port}{Button\_Enter\_Input\_PullUp\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_aa96399b89507a33f2a36895490698033} 
+\#define Button\+\_\+\+Enter\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port~GPIOE}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00353}{353}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aadefbe18cf967c0d45f79cabaf6e3a2e}\index{main.h@{main.h}!Button\_Enter\_Input\_PullUp\_Pin@{Button\_Enter\_Input\_PullUp\_Pin}}
+\index{Button\_Enter\_Input\_PullUp\_Pin@{Button\_Enter\_Input\_PullUp\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_Enter\_Input\_PullUp\_Pin}{Button\_Enter\_Input\_PullUp\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_aadefbe18cf967c0d45f79cabaf6e3a2e} 
+\#define Button\+\_\+\+Enter\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+13}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00352}{352}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aa4da77ad1e3bb24dd1f8c81ed9b9620c}\index{main.h@{main.h}!Button\_ManAuto\_Input\_PullUp\_GPIO\_Port@{Button\_ManAuto\_Input\_PullUp\_GPIO\_Port}}
+\index{Button\_ManAuto\_Input\_PullUp\_GPIO\_Port@{Button\_ManAuto\_Input\_PullUp\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_ManAuto\_Input\_PullUp\_GPIO\_Port}{Button\_ManAuto\_Input\_PullUp\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_aa4da77ad1e3bb24dd1f8c81ed9b9620c} 
+\#define Button\+\_\+\+Man\+Auto\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port~GPIOA}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00327}{327}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_ac3573efffbb8f32fb545cff74eb5119f}\index{main.h@{main.h}!Button\_ManAuto\_Input\_PullUp\_Pin@{Button\_ManAuto\_Input\_PullUp\_Pin}}
+\index{Button\_ManAuto\_Input\_PullUp\_Pin@{Button\_ManAuto\_Input\_PullUp\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_ManAuto\_Input\_PullUp\_Pin}{Button\_ManAuto\_Input\_PullUp\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_ac3573efffbb8f32fb545cff74eb5119f} 
+\#define Button\+\_\+\+Man\+Auto\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+5}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00326}{326}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a010b6b95dffb1c00b53b595c9c615422}\index{main.h@{main.h}!Button\_PlayStop\_Input\_PullUp\_GPIO\_Port@{Button\_PlayStop\_Input\_PullUp\_GPIO\_Port}}
+\index{Button\_PlayStop\_Input\_PullUp\_GPIO\_Port@{Button\_PlayStop\_Input\_PullUp\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_PlayStop\_Input\_PullUp\_GPIO\_Port}{Button\_PlayStop\_Input\_PullUp\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a010b6b95dffb1c00b53b595c9c615422} 
+\#define Button\+\_\+\+Play\+Stop\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port~GPIOA}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00329}{329}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a4680dd429c0b8eb35c26396455fd9a4a}\index{main.h@{main.h}!Button\_PlayStop\_Input\_PullUp\_Pin@{Button\_PlayStop\_Input\_PullUp\_Pin}}
+\index{Button\_PlayStop\_Input\_PullUp\_Pin@{Button\_PlayStop\_Input\_PullUp\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_PlayStop\_Input\_PullUp\_Pin}{Button\_PlayStop\_Input\_PullUp\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a4680dd429c0b8eb35c26396455fd9a4a} 
+\#define Button\+\_\+\+Play\+Stop\+\_\+\+Input\+\_\+\+Pull\+Up\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+6}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00328}{328}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aa6f8fe7ae3bc5e7d2d5e108c232e0946}\index{main.h@{main.h}!Button\_Power\_Interrupt\_PullUp\_EXTI\_IRQn@{Button\_Power\_Interrupt\_PullUp\_EXTI\_IRQn}}
+\index{Button\_Power\_Interrupt\_PullUp\_EXTI\_IRQn@{Button\_Power\_Interrupt\_PullUp\_EXTI\_IRQn}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_Power\_Interrupt\_PullUp\_EXTI\_IRQn}{Button\_Power\_Interrupt\_PullUp\_EXTI\_IRQn}}
+{\footnotesize\ttfamily \label{main_8h_aa6f8fe7ae3bc5e7d2d5e108c232e0946} 
+\#define Button\+\_\+\+Power\+\_\+\+Interrupt\+\_\+\+Pull\+Up\+\_\+\+EXTI\+\_\+\+IRQn~EXTI4\+\_\+\+IRQn}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00325}{325}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a0e214b421e1c52cf914f4dae02f03bf2}\index{main.h@{main.h}!Button\_Power\_Interrupt\_PullUp\_GPIO\_Port@{Button\_Power\_Interrupt\_PullUp\_GPIO\_Port}}
+\index{Button\_Power\_Interrupt\_PullUp\_GPIO\_Port@{Button\_Power\_Interrupt\_PullUp\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_Power\_Interrupt\_PullUp\_GPIO\_Port}{Button\_Power\_Interrupt\_PullUp\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a0e214b421e1c52cf914f4dae02f03bf2} 
+\#define Button\+\_\+\+Power\+\_\+\+Interrupt\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port~GPIOA}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00324}{324}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a38bbd447cbff02935df30c83e58a481c}\index{main.h@{main.h}!Button\_Power\_Interrupt\_PullUp\_Pin@{Button\_Power\_Interrupt\_PullUp\_Pin}}
+\index{Button\_Power\_Interrupt\_PullUp\_Pin@{Button\_Power\_Interrupt\_PullUp\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Button\_Power\_Interrupt\_PullUp\_Pin}{Button\_Power\_Interrupt\_PullUp\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a38bbd447cbff02935df30c83e58a481c} 
+\#define Button\+\_\+\+Power\+\_\+\+Interrupt\+\_\+\+Pull\+Up\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+4}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00323}{323}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aa10fbf9b2585e7e1d94c471905b1e6b1}\index{main.h@{main.h}!Clamp\_M2\_Dir\_Output\_GPIO\_Port@{Clamp\_M2\_Dir\_Output\_GPIO\_Port}}
+\index{Clamp\_M2\_Dir\_Output\_GPIO\_Port@{Clamp\_M2\_Dir\_Output\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Clamp\_M2\_Dir\_Output\_GPIO\_Port}{Clamp\_M2\_Dir\_Output\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_aa10fbf9b2585e7e1d94c471905b1e6b1} 
+\#define Clamp\+\_\+\+M2\+\_\+\+Dir\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port~GPIOD}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00264}{264}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a9239c0fb268785f4b1f836d8ddb25286}\index{main.h@{main.h}!Clamp\_M2\_Dir\_Output\_Pin@{Clamp\_M2\_Dir\_Output\_Pin}}
+\index{Clamp\_M2\_Dir\_Output\_Pin@{Clamp\_M2\_Dir\_Output\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Clamp\_M2\_Dir\_Output\_Pin}{Clamp\_M2\_Dir\_Output\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a9239c0fb268785f4b1f836d8ddb25286} 
+\#define Clamp\+\_\+\+M2\+\_\+\+Dir\+\_\+\+Output\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+14}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00263}{263}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_acdea5f3679309b9a75b26001cb5b9ffb}\index{main.h@{main.h}!Clamp\_M2\_EncA\_Interrupt\_EXTI\_IRQn@{Clamp\_M2\_EncA\_Interrupt\_EXTI\_IRQn}}
+\index{Clamp\_M2\_EncA\_Interrupt\_EXTI\_IRQn@{Clamp\_M2\_EncA\_Interrupt\_EXTI\_IRQn}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Clamp\_M2\_EncA\_Interrupt\_EXTI\_IRQn}{Clamp\_M2\_EncA\_Interrupt\_EXTI\_IRQn}}
+{\footnotesize\ttfamily \label{main_8h_acdea5f3679309b9a75b26001cb5b9ffb} 
+\#define Clamp\+\_\+\+M2\+\_\+\+Enc\+A\+\_\+\+Interrupt\+\_\+\+EXTI\+\_\+\+IRQn~EXTI9\+\_\+5\+\_\+\+IRQn}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00278}{278}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_ad77c20fb322f3224efdf7717d11b4fa7}\index{main.h@{main.h}!Clamp\_M2\_EncA\_Interrupt\_GPIO\_Port@{Clamp\_M2\_EncA\_Interrupt\_GPIO\_Port}}
+\index{Clamp\_M2\_EncA\_Interrupt\_GPIO\_Port@{Clamp\_M2\_EncA\_Interrupt\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Clamp\_M2\_EncA\_Interrupt\_GPIO\_Port}{Clamp\_M2\_EncA\_Interrupt\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_ad77c20fb322f3224efdf7717d11b4fa7} 
+\#define Clamp\+\_\+\+M2\+\_\+\+Enc\+A\+\_\+\+Interrupt\+\_\+\+GPIO\+\_\+\+Port~GPIOE}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00277}{277}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a1f1b5dbc74ada51f6e3b17854fee1a90}\index{main.h@{main.h}!Clamp\_M2\_EncA\_Interrupt\_Pin@{Clamp\_M2\_EncA\_Interrupt\_Pin}}
+\index{Clamp\_M2\_EncA\_Interrupt\_Pin@{Clamp\_M2\_EncA\_Interrupt\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Clamp\_M2\_EncA\_Interrupt\_Pin}{Clamp\_M2\_EncA\_Interrupt\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a1f1b5dbc74ada51f6e3b17854fee1a90} 
+\#define Clamp\+\_\+\+M2\+\_\+\+Enc\+A\+\_\+\+Interrupt\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+5}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00276}{276}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a9d2b87503df4ee4103473b288a3ed0e3}\index{main.h@{main.h}!Clamp\_M2\_EncB\_\_Interrupt\_EXTI\_IRQn@{Clamp\_M2\_EncB\_\_Interrupt\_EXTI\_IRQn}}
+\index{Clamp\_M2\_EncB\_\_Interrupt\_EXTI\_IRQn@{Clamp\_M2\_EncB\_\_Interrupt\_EXTI\_IRQn}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Clamp\_M2\_EncB\_\_Interrupt\_EXTI\_IRQn}{Clamp\_M2\_EncB\_\_Interrupt\_EXTI\_IRQn}}
+{\footnotesize\ttfamily \label{main_8h_a9d2b87503df4ee4103473b288a3ed0e3} 
+\#define Clamp\+\_\+\+M2\+\_\+\+Enc\+B\+\_\+\+\_\+\+Interrupt\+\_\+\+EXTI\+\_\+\+IRQn~EXTI1\+\_\+\+IRQn}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00275}{275}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a7f433b9a9945ef96ae04cd7491437f43}\index{main.h@{main.h}!Clamp\_M2\_EncB\_\_Interrupt\_GPIO\_Port@{Clamp\_M2\_EncB\_\_Interrupt\_GPIO\_Port}}
+\index{Clamp\_M2\_EncB\_\_Interrupt\_GPIO\_Port@{Clamp\_M2\_EncB\_\_Interrupt\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Clamp\_M2\_EncB\_\_Interrupt\_GPIO\_Port}{Clamp\_M2\_EncB\_\_Interrupt\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a7f433b9a9945ef96ae04cd7491437f43} 
+\#define Clamp\+\_\+\+M2\+\_\+\+Enc\+B\+\_\+\+\_\+\+Interrupt\+\_\+\+GPIO\+\_\+\+Port~GPIOC}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00274}{274}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a56a3d7ef63069253be2ec2d84c80b244}\index{main.h@{main.h}!Clamp\_M2\_EncB\_\_Interrupt\_Pin@{Clamp\_M2\_EncB\_\_Interrupt\_Pin}}
+\index{Clamp\_M2\_EncB\_\_Interrupt\_Pin@{Clamp\_M2\_EncB\_\_Interrupt\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Clamp\_M2\_EncB\_\_Interrupt\_Pin}{Clamp\_M2\_EncB\_\_Interrupt\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a56a3d7ef63069253be2ec2d84c80b244} 
+\#define Clamp\+\_\+\+M2\+\_\+\+Enc\+B\+\_\+\+\_\+\+Interrupt\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+1}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00273}{273}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a052fcc9f3742bdba1a273f8dcf18149c}\index{main.h@{main.h}!Clamp\_M2\_Prox\_Interrupt\_EXTI\_IRQn@{Clamp\_M2\_Prox\_Interrupt\_EXTI\_IRQn}}
+\index{Clamp\_M2\_Prox\_Interrupt\_EXTI\_IRQn@{Clamp\_M2\_Prox\_Interrupt\_EXTI\_IRQn}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Clamp\_M2\_Prox\_Interrupt\_EXTI\_IRQn}{Clamp\_M2\_Prox\_Interrupt\_EXTI\_IRQn}}
+{\footnotesize\ttfamily \label{main_8h_a052fcc9f3742bdba1a273f8dcf18149c} 
+\#define Clamp\+\_\+\+M2\+\_\+\+Prox\+\_\+\+Interrupt\+\_\+\+EXTI\+\_\+\+IRQn~EXTI0\+\_\+\+IRQn}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00272}{272}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a7ab74e303e58bd4e196e50bde8764bf9}\index{main.h@{main.h}!Clamp\_M2\_Prox\_Interrupt\_GPIO\_Port@{Clamp\_M2\_Prox\_Interrupt\_GPIO\_Port}}
+\index{Clamp\_M2\_Prox\_Interrupt\_GPIO\_Port@{Clamp\_M2\_Prox\_Interrupt\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Clamp\_M2\_Prox\_Interrupt\_GPIO\_Port}{Clamp\_M2\_Prox\_Interrupt\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a7ab74e303e58bd4e196e50bde8764bf9} 
+\#define Clamp\+\_\+\+M2\+\_\+\+Prox\+\_\+\+Interrupt\+\_\+\+GPIO\+\_\+\+Port~GPIOC}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00271}{271}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a05382d9b0baa24b5018a9e49af1d235f}\index{main.h@{main.h}!Clamp\_M2\_Prox\_Interrupt\_Pin@{Clamp\_M2\_Prox\_Interrupt\_Pin}}
+\index{Clamp\_M2\_Prox\_Interrupt\_Pin@{Clamp\_M2\_Prox\_Interrupt\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Clamp\_M2\_Prox\_Interrupt\_Pin}{Clamp\_M2\_Prox\_Interrupt\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a05382d9b0baa24b5018a9e49af1d235f} 
+\#define Clamp\+\_\+\+M2\+\_\+\+Prox\+\_\+\+Interrupt\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+0}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00270}{270}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aa1c1297a793d3aa28ecdcea0d3f83230}\index{main.h@{main.h}!Clamp\_M2\_PWM\_GPIO\_Port@{Clamp\_M2\_PWM\_GPIO\_Port}}
+\index{Clamp\_M2\_PWM\_GPIO\_Port@{Clamp\_M2\_PWM\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Clamp\_M2\_PWM\_GPIO\_Port}{Clamp\_M2\_PWM\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_aa1c1297a793d3aa28ecdcea0d3f83230} 
+\#define Clamp\+\_\+\+M2\+\_\+\+PWM\+\_\+\+GPIO\+\_\+\+Port~GPIOD}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00254}{254}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a1c4b4c42af98b76029a29d756e5d8b74}\index{main.h@{main.h}!Clamp\_M2\_PWM\_Pin@{Clamp\_M2\_PWM\_Pin}}
+\index{Clamp\_M2\_PWM\_Pin@{Clamp\_M2\_PWM\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Clamp\_M2\_PWM\_Pin}{Clamp\_M2\_PWM\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a1c4b4c42af98b76029a29d756e5d8b74} 
+\#define Clamp\+\_\+\+M2\+\_\+\+PWM\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+12}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00253}{253}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_ab8ebcd2d67414e396dd40335214e0aac}\index{main.h@{main.h}!Curr\_Sensor\_Clamp\_ADC\_Input\_GPIO\_Port@{Curr\_Sensor\_Clamp\_ADC\_Input\_GPIO\_Port}}
+\index{Curr\_Sensor\_Clamp\_ADC\_Input\_GPIO\_Port@{Curr\_Sensor\_Clamp\_ADC\_Input\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Curr\_Sensor\_Clamp\_ADC\_Input\_GPIO\_Port}{Curr\_Sensor\_Clamp\_ADC\_Input\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_ab8ebcd2d67414e396dd40335214e0aac} 
+\#define Curr\+\_\+\+Sensor\+\_\+\+Clamp\+\_\+\+ADC\+\_\+\+Input\+\_\+\+GPIO\+\_\+\+Port~GPIOC}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00307}{307}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a53c28d048be2c0cf640aa9f4cfc7be58}\index{main.h@{main.h}!Curr\_Sensor\_Clamp\_ADC\_Input\_Pin@{Curr\_Sensor\_Clamp\_ADC\_Input\_Pin}}
+\index{Curr\_Sensor\_Clamp\_ADC\_Input\_Pin@{Curr\_Sensor\_Clamp\_ADC\_Input\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Curr\_Sensor\_Clamp\_ADC\_Input\_Pin}{Curr\_Sensor\_Clamp\_ADC\_Input\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a53c28d048be2c0cf640aa9f4cfc7be58} 
+\#define Curr\+\_\+\+Sensor\+\_\+\+Clamp\+\_\+\+ADC\+\_\+\+Input\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+3}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00306}{306}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aab2c8b572fe337f46e2a3abc302cf190}\index{main.h@{main.h}!Curr\_Sensor\_ServoDC\_ADC\_Input\_GPIO\_Port@{Curr\_Sensor\_ServoDC\_ADC\_Input\_GPIO\_Port}}
+\index{Curr\_Sensor\_ServoDC\_ADC\_Input\_GPIO\_Port@{Curr\_Sensor\_ServoDC\_ADC\_Input\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Curr\_Sensor\_ServoDC\_ADC\_Input\_GPIO\_Port}{Curr\_Sensor\_ServoDC\_ADC\_Input\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_aab2c8b572fe337f46e2a3abc302cf190} 
+\#define Curr\+\_\+\+Sensor\+\_\+\+Servo\+DC\+\_\+\+ADC\+\_\+\+Input\+\_\+\+GPIO\+\_\+\+Port~GPIOC}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00305}{305}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a42be503e0333a8947b4e492103f0a096}\index{main.h@{main.h}!Curr\_Sensor\_ServoDC\_ADC\_Input\_Pin@{Curr\_Sensor\_ServoDC\_ADC\_Input\_Pin}}
+\index{Curr\_Sensor\_ServoDC\_ADC\_Input\_Pin@{Curr\_Sensor\_ServoDC\_ADC\_Input\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Curr\_Sensor\_ServoDC\_ADC\_Input\_Pin}{Curr\_Sensor\_ServoDC\_ADC\_Input\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a42be503e0333a8947b4e492103f0a096} 
+\#define Curr\+\_\+\+Sensor\+\_\+\+Servo\+DC\+\_\+\+ADC\+\_\+\+Input\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+2}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00304}{304}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a3a939f702b81c3ea5a64ead29ef3d195}\index{main.h@{main.h}!Curr\_Sensor\_Spindle\_ADC\_Input\_GPIO\_Port@{Curr\_Sensor\_Spindle\_ADC\_Input\_GPIO\_Port}}
+\index{Curr\_Sensor\_Spindle\_ADC\_Input\_GPIO\_Port@{Curr\_Sensor\_Spindle\_ADC\_Input\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Curr\_Sensor\_Spindle\_ADC\_Input\_GPIO\_Port}{Curr\_Sensor\_Spindle\_ADC\_Input\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a3a939f702b81c3ea5a64ead29ef3d195} 
+\#define Curr\+\_\+\+Sensor\+\_\+\+Spindle\+\_\+\+ADC\+\_\+\+Input\+\_\+\+GPIO\+\_\+\+Port~GPIOA}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00313}{313}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_abe6443277c88f2259ad25802bd5bc0ee}\index{main.h@{main.h}!Curr\_Sensor\_Spindle\_ADC\_Input\_Pin@{Curr\_Sensor\_Spindle\_ADC\_Input\_Pin}}
+\index{Curr\_Sensor\_Spindle\_ADC\_Input\_Pin@{Curr\_Sensor\_Spindle\_ADC\_Input\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Curr\_Sensor\_Spindle\_ADC\_Input\_Pin}{Curr\_Sensor\_Spindle\_ADC\_Input\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_abe6443277c88f2259ad25802bd5bc0ee} 
+\#define Curr\+\_\+\+Sensor\+\_\+\+Spindle\+\_\+\+ADC\+\_\+\+Input\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+0}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00308}{308}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_ad65fd538af48f8ffe2e7642e6bfde044}\index{main.h@{main.h}!EN\_DCDC\_5V\_Output\_GPIO\_Port@{EN\_DCDC\_5V\_Output\_GPIO\_Port}}
+\index{EN\_DCDC\_5V\_Output\_GPIO\_Port@{EN\_DCDC\_5V\_Output\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{EN\_DCDC\_5V\_Output\_GPIO\_Port}{EN\_DCDC\_5V\_Output\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_ad65fd538af48f8ffe2e7642e6bfde044} 
+\#define EN\+\_\+\+DCDC\+\_\+5\+V\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port~GPIOC}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00246}{246}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a91164e110e2e3b41ad86b83b1f4e119b}\index{main.h@{main.h}!EN\_DCDC\_5V\_Output\_Pin@{EN\_DCDC\_5V\_Output\_Pin}}
+\index{EN\_DCDC\_5V\_Output\_Pin@{EN\_DCDC\_5V\_Output\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{EN\_DCDC\_5V\_Output\_Pin}{EN\_DCDC\_5V\_Output\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a91164e110e2e3b41ad86b83b1f4e119b} 
+\#define EN\+\_\+\+DCDC\+\_\+5\+V\+\_\+\+Output\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+14}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00245}{245}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a97f99f142480eedbeeb348d2a3cc66c9}\index{main.h@{main.h}!EN\_DCDC\_8V\_Output\_GPIO\_Port@{EN\_DCDC\_8V\_Output\_GPIO\_Port}}
+\index{EN\_DCDC\_8V\_Output\_GPIO\_Port@{EN\_DCDC\_8V\_Output\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{EN\_DCDC\_8V\_Output\_GPIO\_Port}{EN\_DCDC\_8V\_Output\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a97f99f142480eedbeeb348d2a3cc66c9} 
+\#define EN\+\_\+\+DCDC\+\_\+8\+V\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port~GPIOC}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00248}{248}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_acde35056e1f0d88eacb40dcd85af96b1}\index{main.h@{main.h}!EN\_DCDC\_8V\_Output\_Pin@{EN\_DCDC\_8V\_Output\_Pin}}
+\index{EN\_DCDC\_8V\_Output\_Pin@{EN\_DCDC\_8V\_Output\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{EN\_DCDC\_8V\_Output\_Pin}{EN\_DCDC\_8V\_Output\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_acde35056e1f0d88eacb40dcd85af96b1} 
+\#define EN\+\_\+\+DCDC\+\_\+8\+V\+\_\+\+Output\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+15}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00247}{247}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a4c3d826a406dae3ea6e088928da5fa02}\index{main.h@{main.h}!LCD\_Contrast\_PWM\_GPIO\_Port@{LCD\_Contrast\_PWM\_GPIO\_Port}}
+\index{LCD\_Contrast\_PWM\_GPIO\_Port@{LCD\_Contrast\_PWM\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_Contrast\_PWM\_GPIO\_Port}{LCD\_Contrast\_PWM\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a4c3d826a406dae3ea6e088928da5fa02} 
+\#define LCD\+\_\+\+Contrast\+\_\+\+PWM\+\_\+\+GPIO\+\_\+\+Port~GPIOC}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00359}{359}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a65b1445e76cdd22516da1a01851d4c18}\index{main.h@{main.h}!LCD\_Contrast\_PWM\_Pin@{LCD\_Contrast\_PWM\_Pin}}
+\index{LCD\_Contrast\_PWM\_Pin@{LCD\_Contrast\_PWM\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_Contrast\_PWM\_Pin}{LCD\_Contrast\_PWM\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a65b1445e76cdd22516da1a01851d4c18} 
+\#define LCD\+\_\+\+Contrast\+\_\+\+PWM\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+6}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00358}{358}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_af160c46bba79e6ffef166d28efd18b35}\index{main.h@{main.h}!LCD\_D4\_Output\_GPIO\_Port@{LCD\_D4\_Output\_GPIO\_Port}}
+\index{LCD\_D4\_Output\_GPIO\_Port@{LCD\_D4\_Output\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_D4\_Output\_GPIO\_Port}{LCD\_D4\_Output\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_af160c46bba79e6ffef166d28efd18b35} 
+\#define LCD\+\_\+\+D4\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port~GPIOD}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00367}{367}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_acc87fbc2dcde57eede61e876bfe7fb42}\index{main.h@{main.h}!LCD\_D4\_Output\_Pin@{LCD\_D4\_Output\_Pin}}
+\index{LCD\_D4\_Output\_Pin@{LCD\_D4\_Output\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_D4\_Output\_Pin}{LCD\_D4\_Output\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_acc87fbc2dcde57eede61e876bfe7fb42} 
+\#define LCD\+\_\+\+D4\+\_\+\+Output\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+3}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00366}{366}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aa47ab935a7ba13d802863f32dee7a78d}\index{main.h@{main.h}!LCD\_D5\_Output\_GPIO\_Port@{LCD\_D5\_Output\_GPIO\_Port}}
+\index{LCD\_D5\_Output\_GPIO\_Port@{LCD\_D5\_Output\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_D5\_Output\_GPIO\_Port}{LCD\_D5\_Output\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_aa47ab935a7ba13d802863f32dee7a78d} 
+\#define LCD\+\_\+\+D5\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port~GPIOD}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00369}{369}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_adc35134a442ed2e12830e028423bf4c3}\index{main.h@{main.h}!LCD\_D5\_Output\_Pin@{LCD\_D5\_Output\_Pin}}
+\index{LCD\_D5\_Output\_Pin@{LCD\_D5\_Output\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_D5\_Output\_Pin}{LCD\_D5\_Output\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_adc35134a442ed2e12830e028423bf4c3} 
+\#define LCD\+\_\+\+D5\+\_\+\+Output\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+4}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00368}{368}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_ae178f43df35628a704979de316429af1}\index{main.h@{main.h}!LCD\_D6\_Output\_GPIO\_Port@{LCD\_D6\_Output\_GPIO\_Port}}
+\index{LCD\_D6\_Output\_GPIO\_Port@{LCD\_D6\_Output\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_D6\_Output\_GPIO\_Port}{LCD\_D6\_Output\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_ae178f43df35628a704979de316429af1} 
+\#define LCD\+\_\+\+D6\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port~GPIOD}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00371}{371}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a5bc81caa5af3ea604e0b9d61e7954077}\index{main.h@{main.h}!LCD\_D6\_Output\_Pin@{LCD\_D6\_Output\_Pin}}
+\index{LCD\_D6\_Output\_Pin@{LCD\_D6\_Output\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_D6\_Output\_Pin}{LCD\_D6\_Output\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a5bc81caa5af3ea604e0b9d61e7954077} 
+\#define LCD\+\_\+\+D6\+\_\+\+Output\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+6}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00370}{370}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aad97169142fafbe76404c32c9fa30734}\index{main.h@{main.h}!LCD\_D7\_Output\_GPIO\_Port@{LCD\_D7\_Output\_GPIO\_Port}}
+\index{LCD\_D7\_Output\_GPIO\_Port@{LCD\_D7\_Output\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_D7\_Output\_GPIO\_Port}{LCD\_D7\_Output\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_aad97169142fafbe76404c32c9fa30734} 
+\#define LCD\+\_\+\+D7\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port~GPIOD}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00373}{373}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_abac0d3026773a299b1d99288a87e179b}\index{main.h@{main.h}!LCD\_D7\_Output\_Pin@{LCD\_D7\_Output\_Pin}}
+\index{LCD\_D7\_Output\_Pin@{LCD\_D7\_Output\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_D7\_Output\_Pin}{LCD\_D7\_Output\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_abac0d3026773a299b1d99288a87e179b} 
+\#define LCD\+\_\+\+D7\+\_\+\+Output\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+7}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00372}{372}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_ae1c9c65b1420b9f6995c81daf799eade}\index{main.h@{main.h}!LCD\_EN\_Output\_GPIO\_Port@{LCD\_EN\_Output\_GPIO\_Port}}
+\index{LCD\_EN\_Output\_GPIO\_Port@{LCD\_EN\_Output\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_EN\_Output\_GPIO\_Port}{LCD\_EN\_Output\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_ae1c9c65b1420b9f6995c81daf799eade} 
+\#define LCD\+\_\+\+EN\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port~GPIOD}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00365}{365}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a27df7cb0ee37c925c83fcad974501658}\index{main.h@{main.h}!LCD\_EN\_Output\_Pin@{LCD\_EN\_Output\_Pin}}
+\index{LCD\_EN\_Output\_Pin@{LCD\_EN\_Output\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_EN\_Output\_Pin}{LCD\_EN\_Output\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a27df7cb0ee37c925c83fcad974501658} 
+\#define LCD\+\_\+\+EN\+\_\+\+Output\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+2}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00364}{364}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_af9e752914cfe1e36b406f0182cacc906}\index{main.h@{main.h}!LCD\_LED\_PWM\_GPIO\_Port@{LCD\_LED\_PWM\_GPIO\_Port}}
+\index{LCD\_LED\_PWM\_GPIO\_Port@{LCD\_LED\_PWM\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_LED\_PWM\_GPIO\_Port}{LCD\_LED\_PWM\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_af9e752914cfe1e36b406f0182cacc906} 
+\#define LCD\+\_\+\+LED\+\_\+\+PWM\+\_\+\+GPIO\+\_\+\+Port~GPIOC}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00361}{361}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_ace9a12c8b073c014ee9485012c057d7f}\index{main.h@{main.h}!LCD\_LED\_PWM\_Pin@{LCD\_LED\_PWM\_Pin}}
+\index{LCD\_LED\_PWM\_Pin@{LCD\_LED\_PWM\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_LED\_PWM\_Pin}{LCD\_LED\_PWM\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_ace9a12c8b073c014ee9485012c057d7f} 
+\#define LCD\+\_\+\+LED\+\_\+\+PWM\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+7}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00360}{360}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a528352df81203d99e7175f54c516f3a9}\index{main.h@{main.h}!LCD\_RS\_Output\_GPIO\_Port@{LCD\_RS\_Output\_GPIO\_Port}}
+\index{LCD\_RS\_Output\_GPIO\_Port@{LCD\_RS\_Output\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_RS\_Output\_GPIO\_Port}{LCD\_RS\_Output\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a528352df81203d99e7175f54c516f3a9} 
+\#define LCD\+\_\+\+RS\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port~GPIOD}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00363}{363}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_afd1f29c0c8096b76a2d8bd09b67cf15c}\index{main.h@{main.h}!LCD\_RS\_Output\_Pin@{LCD\_RS\_Output\_Pin}}
+\index{LCD\_RS\_Output\_Pin@{LCD\_RS\_Output\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_RS\_Output\_Pin}{LCD\_RS\_Output\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_afd1f29c0c8096b76a2d8bd09b67cf15c} 
+\#define LCD\+\_\+\+RS\+\_\+\+Output\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+1}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00362}{362}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_ab10b2013116b10d71d9b0af93e3c6376}\index{main.h@{main.h}!nRESET\_LPC\_Output\_GPIO\_Port@{nRESET\_LPC\_Output\_GPIO\_Port}}
+\index{nRESET\_LPC\_Output\_GPIO\_Port@{nRESET\_LPC\_Output\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{nRESET\_LPC\_Output\_GPIO\_Port}{nRESET\_LPC\_Output\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_ab10b2013116b10d71d9b0af93e3c6376} 
+\#define n\+RESET\+\_\+\+LPC\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port~GPIOD}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00416}{416}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_adebf4dca8469340c099f6df9b04c74fe}\index{main.h@{main.h}!nRESET\_LPC\_Output\_Pin@{nRESET\_LPC\_Output\_Pin}}
+\index{nRESET\_LPC\_Output\_Pin@{nRESET\_LPC\_Output\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{nRESET\_LPC\_Output\_Pin}{nRESET\_LPC\_Output\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_adebf4dca8469340c099f6df9b04c74fe} 
+\#define n\+RESET\+\_\+\+LPC\+\_\+\+Output\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+8}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00415}{415}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_af8885fc2f50640cd8bb5084cd998088b}\index{main.h@{main.h}!PH0\_OSC\_IN\_GPIO\_Port@{PH0\_OSC\_IN\_GPIO\_Port}}
+\index{PH0\_OSC\_IN\_GPIO\_Port@{PH0\_OSC\_IN\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{PH0\_OSC\_IN\_GPIO\_Port}{PH0\_OSC\_IN\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_af8885fc2f50640cd8bb5084cd998088b} 
+\#define PH0\+\_\+\+OSC\+\_\+\+IN\+\_\+\+GPIO\+\_\+\+Port~GPIOH}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00238}{238}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_addb0c037a01bd73baaf9f7d5a0379ac4}\index{main.h@{main.h}!PH0\_OSC\_IN\_Pin@{PH0\_OSC\_IN\_Pin}}
+\index{PH0\_OSC\_IN\_Pin@{PH0\_OSC\_IN\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{PH0\_OSC\_IN\_Pin}{PH0\_OSC\_IN\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_addb0c037a01bd73baaf9f7d5a0379ac4} 
+\#define PH0\+\_\+\+OSC\+\_\+\+IN\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+0}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00237}{237}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a5b80653bbe01e9d4f334c74bdc5bc9f6}\index{main.h@{main.h}!PH1\_OSC\_OUT\_GPIO\_Port@{PH1\_OSC\_OUT\_GPIO\_Port}}
+\index{PH1\_OSC\_OUT\_GPIO\_Port@{PH1\_OSC\_OUT\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{PH1\_OSC\_OUT\_GPIO\_Port}{PH1\_OSC\_OUT\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a5b80653bbe01e9d4f334c74bdc5bc9f6} 
+\#define PH1\+\_\+\+OSC\+\_\+\+OUT\+\_\+\+GPIO\+\_\+\+Port~GPIOH}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00240}{240}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_ac4d4c1fdbc6cd7491c705bd332f15693}\index{main.h@{main.h}!PH1\_OSC\_OUT\_Pin@{PH1\_OSC\_OUT\_Pin}}
+\index{PH1\_OSC\_OUT\_Pin@{PH1\_OSC\_OUT\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{PH1\_OSC\_OUT\_Pin}{PH1\_OSC\_OUT\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_ac4d4c1fdbc6cd7491c705bd332f15693} 
+\#define PH1\+\_\+\+OSC\+\_\+\+OUT\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+1}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00239}{239}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a84eaf27909e0ec3053f54051869ecb16}\index{main.h@{main.h}!Power\_LED\_Output\_GPIO\_Port@{Power\_LED\_Output\_GPIO\_Port}}
+\index{Power\_LED\_Output\_GPIO\_Port@{Power\_LED\_Output\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Power\_LED\_Output\_GPIO\_Port}{Power\_LED\_Output\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a84eaf27909e0ec3053f54051869ecb16} 
+\#define Power\+\_\+\+LED\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port~GPIOA}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00244}{244}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_ad307e9a1778ed6950df3569c0a8f204c}\index{main.h@{main.h}!Power\_LED\_Output\_Pin@{Power\_LED\_Output\_Pin}}
+\index{Power\_LED\_Output\_Pin@{Power\_LED\_Output\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Power\_LED\_Output\_Pin}{Power\_LED\_Output\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_ad307e9a1778ed6950df3569c0a8f204c} 
+\#define Power\+\_\+\+LED\+\_\+\+Output\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+3}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00243}{243}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_adda62a1624de948adf678d2d1508177b}\index{main.h@{main.h}!Relay\_Output\_GPIO\_Port@{Relay\_Output\_GPIO\_Port}}
+\index{Relay\_Output\_GPIO\_Port@{Relay\_Output\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Relay\_Output\_GPIO\_Port}{Relay\_Output\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_adda62a1624de948adf678d2d1508177b} 
+\#define Relay\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port~GPIOD}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00250}{250}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a2ec153f6ca415f2b13881ebcdaf099f4}\index{main.h@{main.h}!Relay\_Output\_Pin@{Relay\_Output\_Pin}}
+\index{Relay\_Output\_Pin@{Relay\_Output\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Relay\_Output\_Pin}{Relay\_Output\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a2ec153f6ca415f2b13881ebcdaf099f4} 
+\#define Relay\+\_\+\+Output\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+9}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00249}{249}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a809b2bc5a3750de7b32b9bd4ff0894c5}\index{main.h@{main.h}!Sensor\_BottlePosition\_Input\_GPIO\_Port@{Sensor\_BottlePosition\_Input\_GPIO\_Port}}
+\index{Sensor\_BottlePosition\_Input\_GPIO\_Port@{Sensor\_BottlePosition\_Input\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Sensor\_BottlePosition\_Input\_GPIO\_Port}{Sensor\_BottlePosition\_Input\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a809b2bc5a3750de7b32b9bd4ff0894c5} 
+\#define Sensor\+\_\+\+Bottle\+Position\+\_\+\+Input\+\_\+\+GPIO\+\_\+\+Port~GPIOE}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00310}{310}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_afb3fba738b4fc7f12e01cd4662e80cb4}\index{main.h@{main.h}!Sensor\_BottlePosition\_Input\_Pin@{Sensor\_BottlePosition\_Input\_Pin}}
+\index{Sensor\_BottlePosition\_Input\_Pin@{Sensor\_BottlePosition\_Input\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Sensor\_BottlePosition\_Input\_Pin}{Sensor\_BottlePosition\_Input\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_afb3fba738b4fc7f12e01cd4662e80cb4} 
+\#define Sensor\+\_\+\+Bottle\+Position\+\_\+\+Input\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+2}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00309}{309}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aa0591eb27335af469250f9c0b24960c1}\index{main.h@{main.h}!Sensor\_Pressure\_ADC\_Input\_GPIO\_Port@{Sensor\_Pressure\_ADC\_Input\_GPIO\_Port}}
+\index{Sensor\_Pressure\_ADC\_Input\_GPIO\_Port@{Sensor\_Pressure\_ADC\_Input\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Sensor\_Pressure\_ADC\_Input\_GPIO\_Port}{Sensor\_Pressure\_ADC\_Input\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_aa0591eb27335af469250f9c0b24960c1} 
+\#define Sensor\+\_\+\+Pressure\+\_\+\+ADC\+\_\+\+Input\+\_\+\+GPIO\+\_\+\+Port~GPIOC}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00317}{317}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a10b6f461bd6edc998e945234f2f9567a}\index{main.h@{main.h}!Sensor\_Pressure\_ADC\_Input\_Pin@{Sensor\_Pressure\_ADC\_Input\_Pin}}
+\index{Sensor\_Pressure\_ADC\_Input\_Pin@{Sensor\_Pressure\_ADC\_Input\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Sensor\_Pressure\_ADC\_Input\_Pin}{Sensor\_Pressure\_ADC\_Input\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a10b6f461bd6edc998e945234f2f9567a} 
+\#define Sensor\+\_\+\+Pressure\+\_\+\+ADC\+\_\+\+Input\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+4}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00316}{316}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a83494dbf7ac444f70e521d6351ab1ad0}\index{main.h@{main.h}!Sensor\_RES\_Input\_GPIO\_Port@{Sensor\_RES\_Input\_GPIO\_Port}}
+\index{Sensor\_RES\_Input\_GPIO\_Port@{Sensor\_RES\_Input\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Sensor\_RES\_Input\_GPIO\_Port}{Sensor\_RES\_Input\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a83494dbf7ac444f70e521d6351ab1ad0} 
+\#define Sensor\+\_\+\+RES\+\_\+\+Input\+\_\+\+GPIO\+\_\+\+Port~GPIOE}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00312}{312}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aeded7a9c7aea7c98deb3a295ad639926}\index{main.h@{main.h}!Sensor\_RES\_Input\_Pin@{Sensor\_RES\_Input\_Pin}}
+\index{Sensor\_RES\_Input\_Pin@{Sensor\_RES\_Input\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Sensor\_RES\_Input\_Pin}{Sensor\_RES\_Input\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_aeded7a9c7aea7c98deb3a295ad639926} 
+\#define Sensor\+\_\+\+RES\+\_\+\+Input\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+4}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00311}{311}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a3f8ee3c69a0e8a4576da7506099f9dae}\index{main.h@{main.h}!Servo@{Servo}}
+\index{Servo@{Servo}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Servo}{Servo}}
+{\footnotesize\ttfamily \label{main_8h_a3f8ee3c69a0e8a4576da7506099f9dae} 
+\#define Servo}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00034}{34}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a5cb01d1b18a800d086cc4308aaa7c693}\index{main.h@{main.h}!Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt\_GPIO\_Port@{Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt\_GPIO\_Port}}
+\index{Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt\_GPIO\_Port@{Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt\_GPIO\_Port}{Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a5cb01d1b18a800d086cc4308aaa7c693} 
+\#define Servo\+\_\+\+PWM\+\_\+\+OR\+\_\+\+DC\+\_\+\+M1\+\_\+\+Enc\+A\+\_\+\+Interrupt\+\_\+\+GPIO\+\_\+\+Port~GPIOB}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00297}{297}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aa97925ee1239f8e5b31e14bc3fce5de9}\index{main.h@{main.h}!Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt\_Pin@{Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt\_Pin}}
+\index{Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt\_Pin@{Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt\_Pin}{Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_aa97925ee1239f8e5b31e14bc3fce5de9} 
+\#define Servo\+\_\+\+PWM\+\_\+\+OR\+\_\+\+DC\+\_\+\+M1\+\_\+\+Enc\+A\+\_\+\+Interrupt\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+9}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00296}{296}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a629e8fc5d6e158f95d6957a36f9fdfc3}\index{main.h@{main.h}!ServoDC\_M1\_Dir\_Output\_GPIO\_Port@{ServoDC\_M1\_Dir\_Output\_GPIO\_Port}}
+\index{ServoDC\_M1\_Dir\_Output\_GPIO\_Port@{ServoDC\_M1\_Dir\_Output\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{ServoDC\_M1\_Dir\_Output\_GPIO\_Port}{ServoDC\_M1\_Dir\_Output\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a629e8fc5d6e158f95d6957a36f9fdfc3} 
+\#define Servo\+DC\+\_\+\+M1\+\_\+\+Dir\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port~GPIOB}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00266}{266}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_ace11d991ecc8a7d2cee8377042537dbf}\index{main.h@{main.h}!ServoDC\_M1\_Dir\_Output\_Pin@{ServoDC\_M1\_Dir\_Output\_Pin}}
+\index{ServoDC\_M1\_Dir\_Output\_Pin@{ServoDC\_M1\_Dir\_Output\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{ServoDC\_M1\_Dir\_Output\_Pin}{ServoDC\_M1\_Dir\_Output\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_ace11d991ecc8a7d2cee8377042537dbf} 
+\#define Servo\+DC\+\_\+\+M1\+\_\+\+Dir\+\_\+\+Output\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+15}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00265}{265}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a18367d7d5cc42206a0d7d225b78e81a0}\index{main.h@{main.h}!ServoDC\_M1\_EncB\_Interrupt\_EXTI\_IRQn@{ServoDC\_M1\_EncB\_Interrupt\_EXTI\_IRQn}}
+\index{ServoDC\_M1\_EncB\_Interrupt\_EXTI\_IRQn@{ServoDC\_M1\_EncB\_Interrupt\_EXTI\_IRQn}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{ServoDC\_M1\_EncB\_Interrupt\_EXTI\_IRQn}{ServoDC\_M1\_EncB\_Interrupt\_EXTI\_IRQn}}
+{\footnotesize\ttfamily \label{main_8h_a18367d7d5cc42206a0d7d225b78e81a0} 
+\#define Servo\+DC\+\_\+\+M1\+\_\+\+Enc\+B\+\_\+\+Interrupt\+\_\+\+EXTI\+\_\+\+IRQn~EXTI15\+\_\+10\+\_\+\+IRQn}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00295}{295}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a71a10fa550d691d874b9c2f79e01847b}\index{main.h@{main.h}!ServoDC\_M1\_EncB\_Interrupt\_GPIO\_Port@{ServoDC\_M1\_EncB\_Interrupt\_GPIO\_Port}}
+\index{ServoDC\_M1\_EncB\_Interrupt\_GPIO\_Port@{ServoDC\_M1\_EncB\_Interrupt\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{ServoDC\_M1\_EncB\_Interrupt\_GPIO\_Port}{ServoDC\_M1\_EncB\_Interrupt\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a71a10fa550d691d874b9c2f79e01847b} 
+\#define Servo\+DC\+\_\+\+M1\+\_\+\+Enc\+B\+\_\+\+Interrupt\+\_\+\+GPIO\+\_\+\+Port~GPIOD}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00294}{294}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aeb316f2d067a453e7c83ad8ef05ba752}\index{main.h@{main.h}!ServoDC\_M1\_EncB\_Interrupt\_Pin@{ServoDC\_M1\_EncB\_Interrupt\_Pin}}
+\index{ServoDC\_M1\_EncB\_Interrupt\_Pin@{ServoDC\_M1\_EncB\_Interrupt\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{ServoDC\_M1\_EncB\_Interrupt\_Pin}{ServoDC\_M1\_EncB\_Interrupt\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_aeb316f2d067a453e7c83ad8ef05ba752} 
+\#define Servo\+DC\+\_\+\+M1\+\_\+\+Enc\+B\+\_\+\+Interrupt\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+15}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00293}{293}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a7a83c5d393607fec47fc373d4bdf755a}\index{main.h@{main.h}!ServoDC\_M1\_Prox\_Interrupt\_EXTI\_IRQn@{ServoDC\_M1\_Prox\_Interrupt\_EXTI\_IRQn}}
+\index{ServoDC\_M1\_Prox\_Interrupt\_EXTI\_IRQn@{ServoDC\_M1\_Prox\_Interrupt\_EXTI\_IRQn}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{ServoDC\_M1\_Prox\_Interrupt\_EXTI\_IRQn}{ServoDC\_M1\_Prox\_Interrupt\_EXTI\_IRQn}}
+{\footnotesize\ttfamily \label{main_8h_a7a83c5d393607fec47fc373d4bdf755a} 
+\#define Servo\+DC\+\_\+\+M1\+\_\+\+Prox\+\_\+\+Interrupt\+\_\+\+EXTI\+\_\+\+IRQn~EXTI9\+\_\+5\+\_\+\+IRQn}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00292}{292}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a0b6ed9faba4c46f381e142ea70ba50be}\index{main.h@{main.h}!ServoDC\_M1\_Prox\_Interrupt\_GPIO\_Port@{ServoDC\_M1\_Prox\_Interrupt\_GPIO\_Port}}
+\index{ServoDC\_M1\_Prox\_Interrupt\_GPIO\_Port@{ServoDC\_M1\_Prox\_Interrupt\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{ServoDC\_M1\_Prox\_Interrupt\_GPIO\_Port}{ServoDC\_M1\_Prox\_Interrupt\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a0b6ed9faba4c46f381e142ea70ba50be} 
+\#define Servo\+DC\+\_\+\+M1\+\_\+\+Prox\+\_\+\+Interrupt\+\_\+\+GPIO\+\_\+\+Port~GPIOA}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00291}{291}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a7a10698054a5f3ab68dad66239cf47ad}\index{main.h@{main.h}!ServoDC\_M1\_Prox\_Interrupt\_Pin@{ServoDC\_M1\_Prox\_Interrupt\_Pin}}
+\index{ServoDC\_M1\_Prox\_Interrupt\_Pin@{ServoDC\_M1\_Prox\_Interrupt\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{ServoDC\_M1\_Prox\_Interrupt\_Pin}{ServoDC\_M1\_Prox\_Interrupt\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a7a10698054a5f3ab68dad66239cf47ad} 
+\#define Servo\+DC\+\_\+\+M1\+\_\+\+Prox\+\_\+\+Interrupt\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+8}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00290}{290}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a3314d1ee9d4a50bfc2e453fdef7f550c}\index{main.h@{main.h}!ServoDC\_M1\_PWM\_GPIO\_Port@{ServoDC\_M1\_PWM\_GPIO\_Port}}
+\index{ServoDC\_M1\_PWM\_GPIO\_Port@{ServoDC\_M1\_PWM\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{ServoDC\_M1\_PWM\_GPIO\_Port}{ServoDC\_M1\_PWM\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a3314d1ee9d4a50bfc2e453fdef7f550c} 
+\#define Servo\+DC\+\_\+\+M1\+\_\+\+PWM\+\_\+\+GPIO\+\_\+\+Port~GPIOC}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00258}{258}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_ad842afd98b05b30933f2ee39509444e9}\index{main.h@{main.h}!ServoDC\_M1\_PWM\_Pin@{ServoDC\_M1\_PWM\_Pin}}
+\index{ServoDC\_M1\_PWM\_Pin@{ServoDC\_M1\_PWM\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{ServoDC\_M1\_PWM\_Pin}{ServoDC\_M1\_PWM\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_ad842afd98b05b30933f2ee39509444e9} 
+\#define Servo\+DC\+\_\+\+M1\+\_\+\+PWM\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+8}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00257}{257}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_acefbb4f623273b9808c5dd75f0f0c7ee}\index{main.h@{main.h}!SPI\_MISO\_GPIO\_Port@{SPI\_MISO\_GPIO\_Port}}
+\index{SPI\_MISO\_GPIO\_Port@{SPI\_MISO\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_MISO\_GPIO\_Port}{SPI\_MISO\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_acefbb4f623273b9808c5dd75f0f0c7ee} 
+\#define SPI\+\_\+\+MISO\+\_\+\+GPIO\+\_\+\+Port~GPIOB}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00389}{389}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a96f125c65f6d8a90050ebb72cf459e95}\index{main.h@{main.h}!SPI\_MISO\_Pin@{SPI\_MISO\_Pin}}
+\index{SPI\_MISO\_Pin@{SPI\_MISO\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_MISO\_Pin}{SPI\_MISO\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a96f125c65f6d8a90050ebb72cf459e95} 
+\#define SPI\+\_\+\+MISO\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+4}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00388}{388}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_af86c484e6065ee32b61f1b141cb0014e}\index{main.h@{main.h}!SPI\_MOSI\_GPIO\_Port@{SPI\_MOSI\_GPIO\_Port}}
+\index{SPI\_MOSI\_GPIO\_Port@{SPI\_MOSI\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_MOSI\_GPIO\_Port}{SPI\_MOSI\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_af86c484e6065ee32b61f1b141cb0014e} 
+\#define SPI\+\_\+\+MOSI\+\_\+\+GPIO\+\_\+\+Port~GPIOB}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00391}{391}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a4312169e5b462272dc4be10d4ffa4e40}\index{main.h@{main.h}!SPI\_MOSI\_Pin@{SPI\_MOSI\_Pin}}
+\index{SPI\_MOSI\_Pin@{SPI\_MOSI\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_MOSI\_Pin}{SPI\_MOSI\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a4312169e5b462272dc4be10d4ffa4e40} 
+\#define SPI\+\_\+\+MOSI\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+5}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00390}{390}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_afa04f499dba41dd6dfe3db23cfeda779}\index{main.h@{main.h}!SPI\_nSS\_GPIO\_Port@{SPI\_nSS\_GPIO\_Port}}
+\index{SPI\_nSS\_GPIO\_Port@{SPI\_nSS\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_nSS\_GPIO\_Port}{SPI\_nSS\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_afa04f499dba41dd6dfe3db23cfeda779} 
+\#define SPI\+\_\+n\+SS\+\_\+\+GPIO\+\_\+\+Port~GPIOA}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00385}{385}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a9c51784c4e9bbdd053a6a09aa46788a7}\index{main.h@{main.h}!SPI\_nSS\_Pin@{SPI\_nSS\_Pin}}
+\index{SPI\_nSS\_Pin@{SPI\_nSS\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_nSS\_Pin}{SPI\_nSS\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a9c51784c4e9bbdd053a6a09aa46788a7} 
+\#define SPI\+\_\+n\+SS\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+15}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00384}{384}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_af11fcfd383a93709c4c4bf7733d1577c}\index{main.h@{main.h}!SPI\_SCK\_GPIO\_Port@{SPI\_SCK\_GPIO\_Port}}
+\index{SPI\_SCK\_GPIO\_Port@{SPI\_SCK\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_SCK\_GPIO\_Port}{SPI\_SCK\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_af11fcfd383a93709c4c4bf7733d1577c} 
+\#define SPI\+\_\+\+SCK\+\_\+\+GPIO\+\_\+\+Port~GPIOB}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00387}{387}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a4d945ae8ab12a775e471548bfe0dcf73}\index{main.h@{main.h}!SPI\_SCK\_Pin@{SPI\_SCK\_Pin}}
+\index{SPI\_SCK\_Pin@{SPI\_SCK\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_SCK\_Pin}{SPI\_SCK\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a4d945ae8ab12a775e471548bfe0dcf73} 
+\#define SPI\+\_\+\+SCK\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+3}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00386}{386}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a632ffd724c65f3b1d38e360a523ab705}\index{main.h@{main.h}!Spindle\_M3\_Dir\_Output\_GPIO\_Port@{Spindle\_M3\_Dir\_Output\_GPIO\_Port}}
+\index{Spindle\_M3\_Dir\_Output\_GPIO\_Port@{Spindle\_M3\_Dir\_Output\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Spindle\_M3\_Dir\_Output\_GPIO\_Port}{Spindle\_M3\_Dir\_Output\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a632ffd724c65f3b1d38e360a523ab705} 
+\#define Spindle\+\_\+\+M3\+\_\+\+Dir\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port~GPIOD}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00262}{262}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a3feb696cae6fed88a7714f13431da683}\index{main.h@{main.h}!Spindle\_M3\_Dir\_Output\_Pin@{Spindle\_M3\_Dir\_Output\_Pin}}
+\index{Spindle\_M3\_Dir\_Output\_Pin@{Spindle\_M3\_Dir\_Output\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Spindle\_M3\_Dir\_Output\_Pin}{Spindle\_M3\_Dir\_Output\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a3feb696cae6fed88a7714f13431da683} 
+\#define Spindle\+\_\+\+M3\+\_\+\+Dir\+\_\+\+Output\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+10}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00261}{261}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a3b61b240a5826a19e3127493e815f3b8}\index{main.h@{main.h}!Spindle\_M3\_EncA\_Interrupt\_EXTI\_IRQn@{Spindle\_M3\_EncA\_Interrupt\_EXTI\_IRQn}}
+\index{Spindle\_M3\_EncA\_Interrupt\_EXTI\_IRQn@{Spindle\_M3\_EncA\_Interrupt\_EXTI\_IRQn}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Spindle\_M3\_EncA\_Interrupt\_EXTI\_IRQn}{Spindle\_M3\_EncA\_Interrupt\_EXTI\_IRQn}}
+{\footnotesize\ttfamily \label{main_8h_a3b61b240a5826a19e3127493e815f3b8} 
+\#define Spindle\+\_\+\+M3\+\_\+\+Enc\+A\+\_\+\+Interrupt\+\_\+\+EXTI\+\_\+\+IRQn~EXTI9\+\_\+5\+\_\+\+IRQn}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00285}{285}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_af6b7614f5893990b292b9cc8dc260f38}\index{main.h@{main.h}!Spindle\_M3\_EncA\_Interrupt\_GPIO\_Port@{Spindle\_M3\_EncA\_Interrupt\_GPIO\_Port}}
+\index{Spindle\_M3\_EncA\_Interrupt\_GPIO\_Port@{Spindle\_M3\_EncA\_Interrupt\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Spindle\_M3\_EncA\_Interrupt\_GPIO\_Port}{Spindle\_M3\_EncA\_Interrupt\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_af6b7614f5893990b292b9cc8dc260f38} 
+\#define Spindle\+\_\+\+M3\+\_\+\+Enc\+A\+\_\+\+Interrupt\+\_\+\+GPIO\+\_\+\+Port~GPIOE}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00284}{284}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a3904ee1f8d95877d6353f45849e02317}\index{main.h@{main.h}!Spindle\_M3\_EncA\_Interrupt\_Pin@{Spindle\_M3\_EncA\_Interrupt\_Pin}}
+\index{Spindle\_M3\_EncA\_Interrupt\_Pin@{Spindle\_M3\_EncA\_Interrupt\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Spindle\_M3\_EncA\_Interrupt\_Pin}{Spindle\_M3\_EncA\_Interrupt\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a3904ee1f8d95877d6353f45849e02317} 
+\#define Spindle\+\_\+\+M3\+\_\+\+Enc\+A\+\_\+\+Interrupt\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+6}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00283}{283}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aa14aea1a34db2de41b1eb10690ebb8ab}\index{main.h@{main.h}!Spindle\_M3\_EncB\_Interrupt\_EXTI\_IRQn@{Spindle\_M3\_EncB\_Interrupt\_EXTI\_IRQn}}
+\index{Spindle\_M3\_EncB\_Interrupt\_EXTI\_IRQn@{Spindle\_M3\_EncB\_Interrupt\_EXTI\_IRQn}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Spindle\_M3\_EncB\_Interrupt\_EXTI\_IRQn}{Spindle\_M3\_EncB\_Interrupt\_EXTI\_IRQn}}
+{\footnotesize\ttfamily \label{main_8h_aa14aea1a34db2de41b1eb10690ebb8ab} 
+\#define Spindle\+\_\+\+M3\+\_\+\+Enc\+B\+\_\+\+Interrupt\+\_\+\+EXTI\+\_\+\+IRQn~EXTI15\+\_\+10\+\_\+\+IRQn}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00288}{288}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aeeaa357346892b10b1bb9b00cea40139}\index{main.h@{main.h}!Spindle\_M3\_EncB\_Interrupt\_GPIO\_Port@{Spindle\_M3\_EncB\_Interrupt\_GPIO\_Port}}
+\index{Spindle\_M3\_EncB\_Interrupt\_GPIO\_Port@{Spindle\_M3\_EncB\_Interrupt\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Spindle\_M3\_EncB\_Interrupt\_GPIO\_Port}{Spindle\_M3\_EncB\_Interrupt\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_aeeaa357346892b10b1bb9b00cea40139} 
+\#define Spindle\+\_\+\+M3\+\_\+\+Enc\+B\+\_\+\+Interrupt\+\_\+\+GPIO\+\_\+\+Port~GPIOC}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00287}{287}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aca2dde7e30d3d5115681202f28602bdb}\index{main.h@{main.h}!Spindle\_M3\_EncB\_Interrupt\_Pin@{Spindle\_M3\_EncB\_Interrupt\_Pin}}
+\index{Spindle\_M3\_EncB\_Interrupt\_Pin@{Spindle\_M3\_EncB\_Interrupt\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Spindle\_M3\_EncB\_Interrupt\_Pin}{Spindle\_M3\_EncB\_Interrupt\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_aca2dde7e30d3d5115681202f28602bdb} 
+\#define Spindle\+\_\+\+M3\+\_\+\+Enc\+B\+\_\+\+Interrupt\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+13}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00286}{286}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a5a4d6f2e2a202fb21e77f201bf3660cd}\index{main.h@{main.h}!Spindle\_M3\_Prox\_Interrupt\_EXTI\_IRQn@{Spindle\_M3\_Prox\_Interrupt\_EXTI\_IRQn}}
+\index{Spindle\_M3\_Prox\_Interrupt\_EXTI\_IRQn@{Spindle\_M3\_Prox\_Interrupt\_EXTI\_IRQn}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Spindle\_M3\_Prox\_Interrupt\_EXTI\_IRQn}{Spindle\_M3\_Prox\_Interrupt\_EXTI\_IRQn}}
+{\footnotesize\ttfamily \label{main_8h_a5a4d6f2e2a202fb21e77f201bf3660cd} 
+\#define Spindle\+\_\+\+M3\+\_\+\+Prox\+\_\+\+Interrupt\+\_\+\+EXTI\+\_\+\+IRQn~EXTI15\+\_\+10\+\_\+\+IRQn}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00282}{282}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a57bd6305445de620f7134c7e61d3f427}\index{main.h@{main.h}!Spindle\_M3\_Prox\_Interrupt\_GPIO\_Port@{Spindle\_M3\_Prox\_Interrupt\_GPIO\_Port}}
+\index{Spindle\_M3\_Prox\_Interrupt\_GPIO\_Port@{Spindle\_M3\_Prox\_Interrupt\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Spindle\_M3\_Prox\_Interrupt\_GPIO\_Port}{Spindle\_M3\_Prox\_Interrupt\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a57bd6305445de620f7134c7e61d3f427} 
+\#define Spindle\+\_\+\+M3\+\_\+\+Prox\+\_\+\+Interrupt\+\_\+\+GPIO\+\_\+\+Port~GPIOA}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00281}{281}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a4a048b59b78a1926d50eb3b31d29b857}\index{main.h@{main.h}!Spindle\_M3\_Prox\_Interrupt\_Pin@{Spindle\_M3\_Prox\_Interrupt\_Pin}}
+\index{Spindle\_M3\_Prox\_Interrupt\_Pin@{Spindle\_M3\_Prox\_Interrupt\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Spindle\_M3\_Prox\_Interrupt\_Pin}{Spindle\_M3\_Prox\_Interrupt\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a4a048b59b78a1926d50eb3b31d29b857} 
+\#define Spindle\+\_\+\+M3\+\_\+\+Prox\+\_\+\+Interrupt\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+10}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00280}{280}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a4cf5364f97d6ad8a05b84ba52a5e1246}\index{main.h@{main.h}!Spindle\_M3\_PWM\_GPIO\_Port@{Spindle\_M3\_PWM\_GPIO\_Port}}
+\index{Spindle\_M3\_PWM\_GPIO\_Port@{Spindle\_M3\_PWM\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Spindle\_M3\_PWM\_GPIO\_Port}{Spindle\_M3\_PWM\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a4cf5364f97d6ad8a05b84ba52a5e1246} 
+\#define Spindle\+\_\+\+M3\+\_\+\+PWM\+\_\+\+GPIO\+\_\+\+Port~GPIOD}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00256}{256}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_ae501a61fb2db660009143c29606a47fe}\index{main.h@{main.h}!Spindle\_M3\_PWM\_Pin@{Spindle\_M3\_PWM\_Pin}}
+\index{Spindle\_M3\_PWM\_Pin@{Spindle\_M3\_PWM\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Spindle\_M3\_PWM\_Pin}{Spindle\_M3\_PWM\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_ae501a61fb2db660009143c29606a47fe} 
+\#define Spindle\+\_\+\+M3\+\_\+\+PWM\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+13}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00255}{255}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a955323df118a189bd380031d0166148d}\index{main.h@{main.h}!STMUART4\_RX\_ESPUART1TX\_GPIO\_Port@{STMUART4\_RX\_ESPUART1TX\_GPIO\_Port}}
+\index{STMUART4\_RX\_ESPUART1TX\_GPIO\_Port@{STMUART4\_RX\_ESPUART1TX\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{STMUART4\_RX\_ESPUART1TX\_GPIO\_Port}{STMUART4\_RX\_ESPUART1TX\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a955323df118a189bd380031d0166148d} 
+\#define STMUART4\+\_\+\+RX\+\_\+\+ESPUART1\+TX\+\_\+\+GPIO\+\_\+\+Port~GPIOC}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00381}{381}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a1cbb1ca5ae9389cf5d7d3e1899e2c20b}\index{main.h@{main.h}!STMUART4\_RX\_ESPUART1TX\_Pin@{STMUART4\_RX\_ESPUART1TX\_Pin}}
+\index{STMUART4\_RX\_ESPUART1TX\_Pin@{STMUART4\_RX\_ESPUART1TX\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{STMUART4\_RX\_ESPUART1TX\_Pin}{STMUART4\_RX\_ESPUART1TX\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a1cbb1ca5ae9389cf5d7d3e1899e2c20b} 
+\#define STMUART4\+\_\+\+RX\+\_\+\+ESPUART1\+TX\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+11}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00380}{380}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a73f7cd0ad85c91eb55dd1b4006fa8875}\index{main.h@{main.h}!STMUART4\_TX\_ESPUART1RX\_GPIO\_Port@{STMUART4\_TX\_ESPUART1RX\_GPIO\_Port}}
+\index{STMUART4\_TX\_ESPUART1RX\_GPIO\_Port@{STMUART4\_TX\_ESPUART1RX\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{STMUART4\_TX\_ESPUART1RX\_GPIO\_Port}{STMUART4\_TX\_ESPUART1RX\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a73f7cd0ad85c91eb55dd1b4006fa8875} 
+\#define STMUART4\+\_\+\+TX\+\_\+\+ESPUART1\+RX\+\_\+\+GPIO\+\_\+\+Port~GPIOC}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00379}{379}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_ad12635a0f2c0b8bd7f29bbe3155462a1}\index{main.h@{main.h}!STMUART4\_TX\_ESPUART1RX\_Pin@{STMUART4\_TX\_ESPUART1RX\_Pin}}
+\index{STMUART4\_TX\_ESPUART1RX\_Pin@{STMUART4\_TX\_ESPUART1RX\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{STMUART4\_TX\_ESPUART1RX\_Pin}{STMUART4\_TX\_ESPUART1RX\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_ad12635a0f2c0b8bd7f29bbe3155462a1} 
+\#define STMUART4\+\_\+\+TX\+\_\+\+ESPUART1\+RX\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+10}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00378}{378}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_ad76fa91e3d2b36d5c9bc8f450fa907fd}\index{main.h@{main.h}!UART1\_RX\_STLINK\_TX\_GPIO\_Port@{UART1\_RX\_STLINK\_TX\_GPIO\_Port}}
+\index{UART1\_RX\_STLINK\_TX\_GPIO\_Port@{UART1\_RX\_STLINK\_TX\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{UART1\_RX\_STLINK\_TX\_GPIO\_Port}{UART1\_RX\_STLINK\_TX\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_ad76fa91e3d2b36d5c9bc8f450fa907fd} 
+\#define UART1\+\_\+\+RX\+\_\+\+STLINK\+\_\+\+TX\+\_\+\+GPIO\+\_\+\+Port~GPIOB}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00404}{404}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a52d21170f07cf0187613e828be703ab8}\index{main.h@{main.h}!UART1\_RX\_STLINK\_TX\_Pin@{UART1\_RX\_STLINK\_TX\_Pin}}
+\index{UART1\_RX\_STLINK\_TX\_Pin@{UART1\_RX\_STLINK\_TX\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{UART1\_RX\_STLINK\_TX\_Pin}{UART1\_RX\_STLINK\_TX\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a52d21170f07cf0187613e828be703ab8} 
+\#define UART1\+\_\+\+RX\+\_\+\+STLINK\+\_\+\+TX\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+7}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00403}{403}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aa92d693f702912a0cc4fd99638b24df3}\index{main.h@{main.h}!UART1\_TX\_STLINK\_RX\_GPIO\_Port@{UART1\_TX\_STLINK\_RX\_GPIO\_Port}}
+\index{UART1\_TX\_STLINK\_RX\_GPIO\_Port@{UART1\_TX\_STLINK\_RX\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{UART1\_TX\_STLINK\_RX\_GPIO\_Port}{UART1\_TX\_STLINK\_RX\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_aa92d693f702912a0cc4fd99638b24df3} 
+\#define UART1\+\_\+\+TX\+\_\+\+STLINK\+\_\+\+RX\+\_\+\+GPIO\+\_\+\+Port~GPIOB}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00402}{402}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a9f0cd5c822f98b96d977ce97e848c580}\index{main.h@{main.h}!UART1\_TX\_STLINK\_RX\_Pin@{UART1\_TX\_STLINK\_RX\_Pin}}
+\index{UART1\_TX\_STLINK\_RX\_Pin@{UART1\_TX\_STLINK\_RX\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{UART1\_TX\_STLINK\_RX\_Pin}{UART1\_TX\_STLINK\_RX\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a9f0cd5c822f98b96d977ce97e848c580} 
+\#define UART1\+\_\+\+TX\+\_\+\+STLINK\+\_\+\+RX\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+6}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00401}{401}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_abb95d18d95cb5e1afae5aef420f7b697}\index{main.h@{main.h}!UART3CTS\_FC1RTS\_GPIO\_Port@{UART3CTS\_FC1RTS\_GPIO\_Port}}
+\index{UART3CTS\_FC1RTS\_GPIO\_Port@{UART3CTS\_FC1RTS\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{UART3CTS\_FC1RTS\_GPIO\_Port}{UART3CTS\_FC1RTS\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_abb95d18d95cb5e1afae5aef420f7b697} 
+\#define UART3\+CTS\+\_\+\+FC1\+RTS\+\_\+\+GPIO\+\_\+\+Port~GPIOB}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00412}{412}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_adf80495a1ccb4306cab9b817be20be3b}\index{main.h@{main.h}!UART3CTS\_FC1RTS\_Pin@{UART3CTS\_FC1RTS\_Pin}}
+\index{UART3CTS\_FC1RTS\_Pin@{UART3CTS\_FC1RTS\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{UART3CTS\_FC1RTS\_Pin}{UART3CTS\_FC1RTS\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_adf80495a1ccb4306cab9b817be20be3b} 
+\#define UART3\+CTS\+\_\+\+FC1\+RTS\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+13}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00411}{411}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_abce7743b22a261322113a4aeb54cad48}\index{main.h@{main.h}!UART3RTS\_FC1CTS\_GPIO\_Port@{UART3RTS\_FC1CTS\_GPIO\_Port}}
+\index{UART3RTS\_FC1CTS\_GPIO\_Port@{UART3RTS\_FC1CTS\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{UART3RTS\_FC1CTS\_GPIO\_Port}{UART3RTS\_FC1CTS\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_abce7743b22a261322113a4aeb54cad48} 
+\#define UART3\+RTS\+\_\+\+FC1\+CTS\+\_\+\+GPIO\+\_\+\+Port~GPIOB}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00414}{414}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a94e82dece778e2ab48ada0ee3473cb22}\index{main.h@{main.h}!UART3RTS\_FC1CTS\_Pin@{UART3RTS\_FC1CTS\_Pin}}
+\index{UART3RTS\_FC1CTS\_Pin@{UART3RTS\_FC1CTS\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{UART3RTS\_FC1CTS\_Pin}{UART3RTS\_FC1CTS\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a94e82dece778e2ab48ada0ee3473cb22} 
+\#define UART3\+RTS\+\_\+\+FC1\+CTS\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+14}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00413}{413}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a55e3b6a60ba2c26dfdf6c88d0ad87a94}\index{main.h@{main.h}!UART3RX\_FC1TX\_GPIO\_Port@{UART3RX\_FC1TX\_GPIO\_Port}}
+\index{UART3RX\_FC1TX\_GPIO\_Port@{UART3RX\_FC1TX\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{UART3RX\_FC1TX\_GPIO\_Port}{UART3RX\_FC1TX\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a55e3b6a60ba2c26dfdf6c88d0ad87a94} 
+\#define UART3\+RX\+\_\+\+FC1\+TX\+\_\+\+GPIO\+\_\+\+Port~GPIOB}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00410}{410}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a63332c478c8a85e37a32692b5d61d0f7}\index{main.h@{main.h}!UART3RX\_FC1TX\_Pin@{UART3RX\_FC1TX\_Pin}}
+\index{UART3RX\_FC1TX\_Pin@{UART3RX\_FC1TX\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{UART3RX\_FC1TX\_Pin}{UART3RX\_FC1TX\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a63332c478c8a85e37a32692b5d61d0f7} 
+\#define UART3\+RX\+\_\+\+FC1\+TX\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+11}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00409}{409}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a4b0bf7a5216b6b777745f1df2b43596b}\index{main.h@{main.h}!UART3TX\_FC1RX\_GPIO\_Port@{UART3TX\_FC1RX\_GPIO\_Port}}
+\index{UART3TX\_FC1RX\_GPIO\_Port@{UART3TX\_FC1RX\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{UART3TX\_FC1RX\_GPIO\_Port}{UART3TX\_FC1RX\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a4b0bf7a5216b6b777745f1df2b43596b} 
+\#define UART3\+TX\+\_\+\+FC1\+RX\+\_\+\+GPIO\+\_\+\+Port~GPIOB}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00408}{408}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a07c2700872282625b05bb245c542bcd2}\index{main.h@{main.h}!UART3TX\_FC1RX\_Pin@{UART3TX\_FC1RX\_Pin}}
+\index{UART3TX\_FC1RX\_Pin@{UART3TX\_FC1RX\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{UART3TX\_FC1RX\_Pin}{UART3TX\_FC1RX\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a07c2700872282625b05bb245c542bcd2} 
+\#define UART3\+TX\+\_\+\+FC1\+RX\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+10}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00407}{407}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a55e840a2d282407ffcfb7fb02a9b7ede}\index{main.h@{main.h}!USB\_EN\_Output\_GPIO\_Port@{USB\_EN\_Output\_GPIO\_Port}}
+\index{USB\_EN\_Output\_GPIO\_Port@{USB\_EN\_Output\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{USB\_EN\_Output\_GPIO\_Port}{USB\_EN\_Output\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a55e840a2d282407ffcfb7fb02a9b7ede} 
+\#define USB\+\_\+\+EN\+\_\+\+Output\+\_\+\+GPIO\+\_\+\+Port~GPIOB}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00398}{398}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a7bcc35d9dc9f7683bf3b75b88033e597}\index{main.h@{main.h}!USB\_EN\_Output\_Pin@{USB\_EN\_Output\_Pin}}
+\index{USB\_EN\_Output\_Pin@{USB\_EN\_Output\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{USB\_EN\_Output\_Pin}{USB\_EN\_Output\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a7bcc35d9dc9f7683bf3b75b88033e597} 
+\#define USB\+\_\+\+EN\+\_\+\+Output\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+8}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00397}{397}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aa0d6c8ac35df56d803b6f222ce7b333f}\index{main.h@{main.h}!USBFlag\_Interrupt\_PullUp\_EXTI\_IRQn@{USBFlag\_Interrupt\_PullUp\_EXTI\_IRQn}}
+\index{USBFlag\_Interrupt\_PullUp\_EXTI\_IRQn@{USBFlag\_Interrupt\_PullUp\_EXTI\_IRQn}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{USBFlag\_Interrupt\_PullUp\_EXTI\_IRQn}{USBFlag\_Interrupt\_PullUp\_EXTI\_IRQn}}
+{\footnotesize\ttfamily \label{main_8h_aa0d6c8ac35df56d803b6f222ce7b333f} 
+\#define USBFlag\+\_\+\+Interrupt\+\_\+\+Pull\+Up\+\_\+\+EXTI\+\_\+\+IRQn~EXTI15\+\_\+10\+\_\+\+IRQn}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00396}{396}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_aaf59637db163d80796def34a606c2341}\index{main.h@{main.h}!USBFlag\_Interrupt\_PullUp\_GPIO\_Port@{USBFlag\_Interrupt\_PullUp\_GPIO\_Port}}
+\index{USBFlag\_Interrupt\_PullUp\_GPIO\_Port@{USBFlag\_Interrupt\_PullUp\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{USBFlag\_Interrupt\_PullUp\_GPIO\_Port}{USBFlag\_Interrupt\_PullUp\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_aaf59637db163d80796def34a606c2341} 
+\#define USBFlag\+\_\+\+Interrupt\+\_\+\+Pull\+Up\+\_\+\+GPIO\+\_\+\+Port~GPIOB}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00395}{395}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a67815959222f5479e13c699e5c25dc9d}\index{main.h@{main.h}!USBFlag\_Interrupt\_PullUp\_Pin@{USBFlag\_Interrupt\_PullUp\_Pin}}
+\index{USBFlag\_Interrupt\_PullUp\_Pin@{USBFlag\_Interrupt\_PullUp\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{USBFlag\_Interrupt\_PullUp\_Pin}{USBFlag\_Interrupt\_PullUp\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a67815959222f5479e13c699e5c25dc9d} 
+\#define USBFlag\+\_\+\+Interrupt\+\_\+\+Pull\+Up\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+12}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00394}{394}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a87941fed03402afa022fc793c299b65c}\index{main.h@{main.h}!V12\_ADC\_Input\_GPIO\_Port@{V12\_ADC\_Input\_GPIO\_Port}}
+\index{V12\_ADC\_Input\_GPIO\_Port@{V12\_ADC\_Input\_GPIO\_Port}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{V12\_ADC\_Input\_GPIO\_Port}{V12\_ADC\_Input\_GPIO\_Port}}
+{\footnotesize\ttfamily \label{main_8h_a87941fed03402afa022fc793c299b65c} 
+\#define V12\+\_\+\+ADC\+\_\+\+Input\+\_\+\+GPIO\+\_\+\+Port~GPIOA}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00315}{315}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+\Hypertarget{main_8h_a639a90d426f56f8cb5ed93bec342ffe6}\index{main.h@{main.h}!V12\_ADC\_Input\_Pin@{V12\_ADC\_Input\_Pin}}
+\index{V12\_ADC\_Input\_Pin@{V12\_ADC\_Input\_Pin}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{V12\_ADC\_Input\_Pin}{V12\_ADC\_Input\_Pin}}
+{\footnotesize\ttfamily \label{main_8h_a639a90d426f56f8cb5ed93bec342ffe6} 
+\#define V12\+\_\+\+ADC\+\_\+\+Input\+\_\+\+Pin~GPIO\+\_\+\+PIN\+\_\+1}
+
+
+
+Definition at line \mbox{\hyperlink{main_8h_source_l00314}{314}} of file \mbox{\hyperlink{main_8h_source}{main.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8h_a1730ffe1e560465665eb47d9264826f9}\index{main.h@{main.h}!Error\_Handler@{Error\_Handler}}
+\index{Error\_Handler@{Error\_Handler}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Error\_Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily \label{main_8h_a1730ffe1e560465665eb47d9264826f9} 
+void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00216}{216}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+

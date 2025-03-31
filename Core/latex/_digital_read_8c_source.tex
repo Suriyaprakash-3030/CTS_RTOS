@@ -1,0 +1,51 @@
+\doxysection{Digital\+Read.\+c}
+\hypertarget{_digital_read_8c_source}{}\label{_digital_read_8c_source}\index{Src/DigitalRead.c@{Src/DigitalRead.c}}
+\mbox{\hyperlink{_digital_read_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00002}00002\ \textcolor{comment}{\ *\ DigitalRead.c}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00003}00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00004}00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Aug\ 30,\ 2024}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ mhmaq}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00006}00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{main_8h}{main.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_digital_read_8h}{DigitalRead.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00011}\mbox{\hyperlink{struct_g_p_i_o___map}{00011}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00012}\mbox{\hyperlink{struct_g_p_i_o___map_a82241972e0292c7de95ea1e293e11be3}{00012}}\ \ \ \ \ GPIO\_TypeDef*\ \mbox{\hyperlink{struct_g_p_i_o___map_a82241972e0292c7de95ea1e293e11be3}{port}};}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00013}\mbox{\hyperlink{struct_g_p_i_o___map_a4144813adfa4dfe7e7cbeea17d1b06eb}{00013}}\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_g_p_i_o___map_a4144813adfa4dfe7e7cbeea17d1b06eb}{pin}};}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00014}00014\ \}\ \mbox{\hyperlink{struct_g_p_i_o___map}{GPIO\_Map}};}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00016}00016\ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_g_p_i_o___map}{GPIO\_Map}}\ gpioMap[]\ =}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00017}00017\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Labels:}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00018}00018\ \ \ \ \ \{\mbox{\hyperlink{main_8h_aa4da77ad1e3bb24dd1f8c81ed9b9620c}{Button\_ManAuto\_Input\_PullUp\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_ac3573efffbb8f32fb545cff74eb5119f}{Button\_ManAuto\_Input\_PullUp\_Pin}}\},\ \ \ \textcolor{comment}{//\ BUTTON\_MANAUTO\_Input\_Pullup}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00019}00019\ \ \ \ \ \{\mbox{\hyperlink{main_8h_a010b6b95dffb1c00b53b595c9c615422}{Button\_PlayStop\_Input\_PullUp\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_a4680dd429c0b8eb35c26396455fd9a4a}{Button\_PlayStop\_Input\_PullUp\_Pin}}\},\ \textcolor{comment}{//\ BUTTON\_PLAYSTOP\_Input\_Pullup}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00020}00020\ \ \ \ \ \{\mbox{\hyperlink{main_8h_a97ad5e14b9c72dfdb8c4d04276cc978d}{Button\_DelBack\_Input\_PullUp\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_a70308283f07e614d11e38b5de82a7d11}{Button\_DelBack\_Input\_PullUp\_Pin}}\},\ \ \ \textcolor{comment}{//\ BUTTON\_DEL\_Input\_Pullup}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00021}00021\ \ \ \ \ \{\mbox{\hyperlink{main_8h_a5519d593abdc2076a12b2fa1e06aa4d4}{Button\_1\_Input\_PullUp\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_a4fe63b2dc552de1763170017d41a415d}{Button\_1\_Input\_PullUp\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ BUTTON\_1\_Input\_Pullup}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00022}00022\ \ \ \ \ \{\mbox{\hyperlink{main_8h_a33ce556cd7d4ff328958942d264e046d}{Button\_2\_Input\_PullUp\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_aa699eda09e5a31107690906585fa046b}{Button\_2\_Input\_PullUp\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ BUTTON\_2\_Input\_Pullup}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00023}00023\ \ \ \ \ \{\mbox{\hyperlink{main_8h_abd5c14f1af83b2e32981941fde68419f}{Button\_3\_Input\_PullUp\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_aa6608ea3ab4d6cf264a50bd7490c0109}{Button\_3\_Input\_PullUp\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ BUTTON\_3\_Input\_Pullup}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00024}00024\ \ \ \ \ \{\mbox{\hyperlink{main_8h_a9a0dd00fb751868673cf513d7d3df971}{Button\_4\_Input\_PullUp\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_a6fb540619af34b8ec892fbdba3066b5e}{Button\_4\_Input\_PullUp\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ BUTTON\_4\_Input\_Pullup}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00025}00025\ \ \ \ \ \{\mbox{\hyperlink{main_8h_a2a41656a26ed577c0032dd9bf6dc5319}{Button\_5\_Input\_PullUp\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_af3a970686b91646c32eb22e681cd34fe}{Button\_5\_Input\_PullUp\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ BUTTON\_5\_Input\_Pullup}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00026}00026\ \ \ \ \ \{\mbox{\hyperlink{main_8h_a10656a806d481a40a69ab11378eea56b}{Button\_6\_Input\_PullUp\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_ad1fca6822abd18caa50732644fb41452}{Button\_6\_Input\_PullUp\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ BUTTON\_6\_Input\_Pullup}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00027}00027\ \ \ \ \ \{\mbox{\hyperlink{main_8h_a149cdb871b7b737cc4cd3825ba0b1411}{Button\_7\_Input\_PullUp\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_a5cc6c64afcb9bec51bc748120b1841af}{Button\_7\_Input\_PullUp\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ BUTTON\_7\_Input\_Pullup}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00028}00028\ \ \ \ \ \{\mbox{\hyperlink{main_8h_a7557d572c84fde6220f6fee9c0d20b0a}{Button\_8\_Input\_PullUp\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_a4373c2e74fc40ce061ef5ffd5346b83c}{Button\_8\_Input\_PullUp\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ BUTTON\_8\_Input\_Pullup}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00029}00029\ \ \ \ \ \{\mbox{\hyperlink{main_8h_a43eb3078406a8410ed2c3e9c97f38009}{Button\_9\_Input\_PullUp\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_a6ff316691c01db77e0b9334368102976}{Button\_9\_Input\_PullUp\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ BUTTON\_9\_Input\_Pullup}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00030}00030\ \ \ \ \ \{\mbox{\hyperlink{main_8h_afcba0894ee70a45aa55b67ba47421ef9}{Button\_0\_Input\_PullUp\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_aa9e0fa06c53af9cd139dacfea68e3e21}{Button\_0\_Input\_PullUp\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ BUTTON\_0\_Input\_Pullup}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00031}00031\ \ \ \ \ \{\mbox{\hyperlink{main_8h_aa96399b89507a33f2a36895490698033}{Button\_Enter\_Input\_PullUp\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_aadefbe18cf967c0d45f79cabaf6e3a2e}{Button\_Enter\_Input\_PullUp\_Pin}}\},\ \ \ \ \ \ \ \textcolor{comment}{//\ BUTTON\_ENTER\_Input\_Pullup}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00032}00032\ \ \ \ \ \{\mbox{\hyperlink{main_8h_a090ac49c9b542c9438fca84b52a60c13}{Button\_Comma\_Input\_PullUp\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_a19d77dff3d4411932941ee6a209ac248}{Button\_Comma\_Input\_PullUp\_Pin}}\}\ \ \ \ \ \ \ \ \textcolor{comment}{//\ BUTTON\_COMMA\_Input\_Pullup}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00033}00033\ \};}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00036}\mbox{\hyperlink{_digital_read_8h_a1269727a93ce7ca245ec3937999206cd}{00036}}\ GPIO\_PinState\ \mbox{\hyperlink{_digital_read_8c_a1269727a93ce7ca245ec3937999206cd}{digitalRead}}(\mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6}{UserLabel}}\ label)\ \{}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (label\ >=\ \textcolor{keyword}{sizeof}(gpioMap)\ /\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_g_p_i_o___map}{GPIO\_Map}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Handle\ invalid\ label}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GPIO\_PIN\_RESET;}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{struct_g_p_i_o___map}{GPIO\_Map}}\ map\ =\ gpioMap[label];}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{return}\ HAL\_GPIO\_ReadPin(map.\mbox{\hyperlink{struct_g_p_i_o___map_a82241972e0292c7de95ea1e293e11be3}{port}},\ map.\mbox{\hyperlink{struct_g_p_i_o___map_a4144813adfa4dfe7e7cbeea17d1b06eb}{pin}});}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8c_source_l00045}00045\ }
+
+\end{DoxyCode}

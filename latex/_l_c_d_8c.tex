@@ -1,0 +1,340 @@
+\doxysection{Core/\+Src/\+LCD.c File Reference}
+\hypertarget{_l_c_d_8c}{}\label{_l_c_d_8c}\index{Core/Src/LCD.c@{Core/Src/LCD.c}}
+{\ttfamily \#include $<$LCD.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_l_c_d_8c_ad484cc22a9a6bec640097f26d9b35722}{LCD\+\_\+\+Init}} ()
+\item 
+void \mbox{\hyperlink{_l_c_d_8c_a04644cd2fff967e2ea5b6b412a7f97af}{LCD\+\_\+\+Send\+Command}} (uint8\+\_\+t cmd)
+\item 
+void \mbox{\hyperlink{_l_c_d_8c_aa09da605411449b125a3734940ca8f41}{LCD\+\_\+\+Send\+Data}} (uint8\+\_\+t data)
+\item 
+void \mbox{\hyperlink{_l_c_d_8c_a85b2b3a39391bb87f488e465ed94d0cf}{LCD\+\_\+\+Create\+Custom\+Char}} (uint8\+\_\+t location, uint8\+\_\+t charmap\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{_l_c_d_8c_a976c96eaf59a5c2bcb52cbae19a45493}{LCD\+\_\+\+Set\+Cursor}} (uint8\+\_\+t row, uint8\+\_\+t col)
+\item 
+void \mbox{\hyperlink{_l_c_d_8c_ae60d0b62d7eb3fa31266c095d7b3c245}{LCD\+\_\+\+Clear}} (void)
+\item 
+void \mbox{\hyperlink{_l_c_d_8c_ab5ba6482f0e6759c34a879cf329df56f}{LCD\+\_\+\+Send\+Half\+Byte}} (uint8\+\_\+t data)
+\item 
+void \mbox{\hyperlink{_l_c_d_8c_ae8ec81b954d2f83d3cafa2aa317bc8a5}{LCD\+\_\+\+Clear\+String\+Buffer}} (void)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_l_c_d_8c_a93a5407ea098817ab6fbb75308cff344}{combine\+Strings}} (const char \texorpdfstring{$\ast$}{*}string1, float x)
+\item 
+void \mbox{\hyperlink{_l_c_d_8c_a47c13a042dc772be71d5d4127a82afcf}{LCD\+\_\+\+Store\+Value\+In\+Buffer}} (float value)
+\item 
+void \mbox{\hyperlink{_l_c_d_8c_ab68bcef9306a55523eed58479b719660}{print\+LCD\+\_\+\+PERFORM}} (int row, char \texorpdfstring{$\ast$}{*}data, int smiley)
+\item 
+void \mbox{\hyperlink{_l_c_d_8c_abd29acdd64e4cf57c79100a32503e21e}{print\+LCD\+\_\+\+CMD}} ()
+\item 
+void \mbox{\hyperlink{_l_c_d_8c_a8d356ca1ac368ba09e0127e9273f24a3}{print\+LCD}} (int row, char \texorpdfstring{$\ast$}{*}data, int smiley)
+\item 
+void \mbox{\hyperlink{_l_c_d_8c_afc1938c4f9749a45be79183241b051e1}{LCDRGBControl}} (int brightness)
+\item 
+void \mbox{\hyperlink{_l_c_d_8c_ae3b601825103a1a17548a70eb4ed0590}{retrieve\+LCDLast\+Data}} ()
+\item 
+void \mbox{\hyperlink{_l_c_d_8c_aefc3f1cfbbe83b40716f8d042ddafbb5}{power\+LEDControl}} (int state)
+\item 
+void \mbox{\hyperlink{_l_c_d_8c_a2631f22ce2b0e6b58f06a2966b877ebf}{control\+LCDContrast}} (int contrast\+Level)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{_l_c_d_8c_a248ad383714d4950f9d710cbd718a9c6}{last\+LCDData}} \mbox{[}LCD\+\_\+\+ROW\+\_\+\+COUNT\mbox{]}\mbox{[}MAX\+\_\+\+STRING\+\_\+\+LENGTH\mbox{]}
+\item 
+int \mbox{\hyperlink{_l_c_d_8c_a5598e54bc416bb04a263bb47ac63a078}{last\+LCDCustom}} \mbox{[}LCD\+\_\+\+COLUMN\+\_\+\+COUNT\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_l_c_d_8c_a166212e858e3194de25adc52db2db3c8}{is\+Power\+LEDBlinking}} = FALSE
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_l_c_d_8c_a1c180386b84086759b6df4c30f52c193}{is\+Power\+LEDOn}} = FALSE
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_l_c_d_8c_acbebf20214ef55eaa297aa6937953e22}{is\+Screen\+Loading}} = FALSE
+\item 
+char \mbox{\hyperlink{_l_c_d_8c_a634c248da100299ef5cc0959a2a887f9}{Dot\+String}} \mbox{[}LCD\+\_\+\+COLUMN\+\_\+\+COUNT+1\mbox{]} = "{}"{}
+\item 
+char \mbox{\hyperlink{_l_c_d_8c_a00445749d8e365b4285d8f4f118b4150}{string\+Buffer}} \mbox{[}21\mbox{]}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_l_c_d_8c_a715be82677ec928de48e53c8d43a6b4c}{LCD\+\_\+\+BUF\+\_\+\+ARR}} \mbox{[}4\mbox{]}
+\item 
+int \mbox{\hyperlink{_l_c_d_8c_ab3cda40c01897844723dbfbe01acef3e}{LCD\+\_\+\+SMILE\+\_\+\+ARR}} \mbox{[}4\mbox{]} = \{0, 0, 0, 0\}
+\item 
+int \mbox{\hyperlink{_l_c_d_8c_aea002c1af4f5d365b73df50ad168a044}{New\+\_\+\+LCD\+\_\+\+Data}} \mbox{[}4\mbox{]} = \{0, 0, 0, 0\}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_l_c_d_8c_a486340442536648f9696aa4ccb935f08}{Custom\+\_\+\+Blank\+\_\+\+Symbol}} \mbox{[}8\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_l_c_d_8c_a45f1619eda51135901620988036c7fae}{Custom\+\_\+\+Enter\+\_\+\+Symbol}} \mbox{[}8\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_l_c_d_8c_a9eeaff3c8955cc72561c40759a112bc9}{Custom\+\_\+\+Reclean\+\_\+\+Symbol}} \mbox{[}8\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_l_c_d_8c_a2debc6c138186438295d55cfc6adc531}{Custom\+\_\+\+Cursor\+\_\+\+Symbol}} \mbox{[}8\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_l_c_d_8c_a2c5e13c14bb83c52282ae859a9997cef}{Custom\+\_\+demo\+\_\+cursor\+\_\+\+Symbol}} \mbox{[}8\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_l_c_d_8c_a93a5407ea098817ab6fbb75308cff344}\index{LCD.c@{LCD.c}!combineStrings@{combineStrings}}
+\index{combineStrings@{combineStrings}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{combineStrings()}{combineStrings()}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_a93a5407ea098817ab6fbb75308cff344} 
+char \texorpdfstring{$\ast$}{*} combine\+Strings (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{string1}{, }\item[{float}]{x}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_c_d_8c_a2631f22ce2b0e6b58f06a2966b877ebf}\index{LCD.c@{LCD.c}!controlLCDContrast@{controlLCDContrast}}
+\index{controlLCDContrast@{controlLCDContrast}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{controlLCDContrast()}{controlLCDContrast()}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_a2631f22ce2b0e6b58f06a2966b877ebf} 
+void control\+LCDContrast (\begin{DoxyParamCaption}\item[{int}]{contrast\+Level}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_c_d_8c_ae60d0b62d7eb3fa31266c095d7b3c245}\index{LCD.c@{LCD.c}!LCD\_Clear@{LCD\_Clear}}
+\index{LCD\_Clear@{LCD\_Clear}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_Clear()}{LCD\_Clear()}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_ae60d0b62d7eb3fa31266c095d7b3c245} 
+void LCD\+\_\+\+Clear (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_c_d_8c_ae8ec81b954d2f83d3cafa2aa317bc8a5}\index{LCD.c@{LCD.c}!LCD\_ClearStringBuffer@{LCD\_ClearStringBuffer}}
+\index{LCD\_ClearStringBuffer@{LCD\_ClearStringBuffer}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_ClearStringBuffer()}{LCD\_ClearStringBuffer()}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_ae8ec81b954d2f83d3cafa2aa317bc8a5} 
+void LCD\+\_\+\+Clear\+String\+Buffer (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_c_d_8c_a85b2b3a39391bb87f488e465ed94d0cf}\index{LCD.c@{LCD.c}!LCD\_CreateCustomChar@{LCD\_CreateCustomChar}}
+\index{LCD\_CreateCustomChar@{LCD\_CreateCustomChar}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_CreateCustomChar()}{LCD\_CreateCustomChar()}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_a85b2b3a39391bb87f488e465ed94d0cf} 
+void LCD\+\_\+\+Create\+Custom\+Char (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{location}{, }\item[{uint8\+\_\+t}]{charmap}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_c_d_8c_ad484cc22a9a6bec640097f26d9b35722}\index{LCD.c@{LCD.c}!LCD\_Init@{LCD\_Init}}
+\index{LCD\_Init@{LCD\_Init}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_Init()}{LCD\_Init()}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_ad484cc22a9a6bec640097f26d9b35722} 
+void LCD\+\_\+\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_c_d_8c_a04644cd2fff967e2ea5b6b412a7f97af}\index{LCD.c@{LCD.c}!LCD\_SendCommand@{LCD\_SendCommand}}
+\index{LCD\_SendCommand@{LCD\_SendCommand}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_SendCommand()}{LCD\_SendCommand()}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_a04644cd2fff967e2ea5b6b412a7f97af} 
+void LCD\+\_\+\+Send\+Command (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_c_d_8c_aa09da605411449b125a3734940ca8f41}\index{LCD.c@{LCD.c}!LCD\_SendData@{LCD\_SendData}}
+\index{LCD\_SendData@{LCD\_SendData}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_SendData()}{LCD\_SendData()}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_aa09da605411449b125a3734940ca8f41} 
+void LCD\+\_\+\+Send\+Data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_c_d_8c_ab5ba6482f0e6759c34a879cf329df56f}\index{LCD.c@{LCD.c}!LCD\_SendHalfByte@{LCD\_SendHalfByte}}
+\index{LCD\_SendHalfByte@{LCD\_SendHalfByte}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_SendHalfByte()}{LCD\_SendHalfByte()}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_ab5ba6482f0e6759c34a879cf329df56f} 
+void LCD\+\_\+\+Send\+Half\+Byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_c_d_8c_a976c96eaf59a5c2bcb52cbae19a45493}\index{LCD.c@{LCD.c}!LCD\_SetCursor@{LCD\_SetCursor}}
+\index{LCD\_SetCursor@{LCD\_SetCursor}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_SetCursor()}{LCD\_SetCursor()}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_a976c96eaf59a5c2bcb52cbae19a45493} 
+void LCD\+\_\+\+Set\+Cursor (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{row}{, }\item[{uint8\+\_\+t}]{col}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_c_d_8c_a47c13a042dc772be71d5d4127a82afcf}\index{LCD.c@{LCD.c}!LCD\_StoreValueInBuffer@{LCD\_StoreValueInBuffer}}
+\index{LCD\_StoreValueInBuffer@{LCD\_StoreValueInBuffer}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_StoreValueInBuffer()}{LCD\_StoreValueInBuffer()}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_a47c13a042dc772be71d5d4127a82afcf} 
+void LCD\+\_\+\+Store\+Value\+In\+Buffer (\begin{DoxyParamCaption}\item[{float}]{value}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_c_d_8c_afc1938c4f9749a45be79183241b051e1}\index{LCD.c@{LCD.c}!LCDRGBControl@{LCDRGBControl}}
+\index{LCDRGBControl@{LCDRGBControl}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{LCDRGBControl()}{LCDRGBControl()}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_afc1938c4f9749a45be79183241b051e1} 
+void LCDRGBControl (\begin{DoxyParamCaption}\item[{int}]{brightness}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_c_d_8c_aefc3f1cfbbe83b40716f8d042ddafbb5}\index{LCD.c@{LCD.c}!powerLEDControl@{powerLEDControl}}
+\index{powerLEDControl@{powerLEDControl}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{powerLEDControl()}{powerLEDControl()}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_aefc3f1cfbbe83b40716f8d042ddafbb5} 
+void power\+LEDControl (\begin{DoxyParamCaption}\item[{int}]{state}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_c_d_8c_a8d356ca1ac368ba09e0127e9273f24a3}\index{LCD.c@{LCD.c}!printLCD@{printLCD}}
+\index{printLCD@{printLCD}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{printLCD()}{printLCD()}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_a8d356ca1ac368ba09e0127e9273f24a3} 
+void print\+LCD (\begin{DoxyParamCaption}\item[{int}]{row}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{int}]{smiley}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_c_d_8c_abd29acdd64e4cf57c79100a32503e21e}\index{LCD.c@{LCD.c}!printLCD\_CMD@{printLCD\_CMD}}
+\index{printLCD\_CMD@{printLCD\_CMD}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{printLCD\_CMD()}{printLCD\_CMD()}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_abd29acdd64e4cf57c79100a32503e21e} 
+void print\+LCD\+\_\+\+CMD (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_c_d_8c_ab68bcef9306a55523eed58479b719660}\index{LCD.c@{LCD.c}!printLCD\_PERFORM@{printLCD\_PERFORM}}
+\index{printLCD\_PERFORM@{printLCD\_PERFORM}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{printLCD\_PERFORM()}{printLCD\_PERFORM()}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_ab68bcef9306a55523eed58479b719660} 
+void print\+LCD\+\_\+\+PERFORM (\begin{DoxyParamCaption}\item[{int}]{row}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{int}]{smiley}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_l_c_d_8c_ae3b601825103a1a17548a70eb4ed0590}\index{LCD.c@{LCD.c}!retrieveLCDLastData@{retrieveLCDLastData}}
+\index{retrieveLCDLastData@{retrieveLCDLastData}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{retrieveLCDLastData()}{retrieveLCDLastData()}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_ae3b601825103a1a17548a70eb4ed0590} 
+void retrieve\+LCDLast\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_l_c_d_8c_a486340442536648f9696aa4ccb935f08}\index{LCD.c@{LCD.c}!Custom\_Blank\_Symbol@{Custom\_Blank\_Symbol}}
+\index{Custom\_Blank\_Symbol@{Custom\_Blank\_Symbol}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{Custom\_Blank\_Symbol}{Custom\_Blank\_Symbol}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_a486340442536648f9696aa4ccb935f08} 
+uint8\+\_\+t Custom\+\_\+\+Blank\+\_\+\+Symbol\mbox{[}8\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ 0B00000,}
+\DoxyCodeLine{\ \ 0B00000,}
+\DoxyCodeLine{\ \ 0B00000,}
+\DoxyCodeLine{\ \ 0B00000,}
+\DoxyCodeLine{\ \ 0B00000,}
+\DoxyCodeLine{\ \ 0B00000,}
+\DoxyCodeLine{\ \ 0B00000,}
+\DoxyCodeLine{\ \ 0B00000}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{_l_c_d_8c_a2debc6c138186438295d55cfc6adc531}\index{LCD.c@{LCD.c}!Custom\_Cursor\_Symbol@{Custom\_Cursor\_Symbol}}
+\index{Custom\_Cursor\_Symbol@{Custom\_Cursor\_Symbol}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{Custom\_Cursor\_Symbol}{Custom\_Cursor\_Symbol}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_a2debc6c138186438295d55cfc6adc531} 
+uint8\+\_\+t Custom\+\_\+\+Cursor\+\_\+\+Symbol\mbox{[}8\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ 0B00000,}
+\DoxyCodeLine{\ \ 0B00000,}
+\DoxyCodeLine{\ \ 0B00000,}
+\DoxyCodeLine{\ \ 0B00000,}
+\DoxyCodeLine{\ \ 0B00000,}
+\DoxyCodeLine{\ \ 0B00000,}
+\DoxyCodeLine{\ \ 0B11111,}
+\DoxyCodeLine{\ \ 0B11111}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{_l_c_d_8c_a2c5e13c14bb83c52282ae859a9997cef}\index{LCD.c@{LCD.c}!Custom\_demo\_cursor\_Symbol@{Custom\_demo\_cursor\_Symbol}}
+\index{Custom\_demo\_cursor\_Symbol@{Custom\_demo\_cursor\_Symbol}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{Custom\_demo\_cursor\_Symbol}{Custom\_demo\_cursor\_Symbol}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_a2c5e13c14bb83c52282ae859a9997cef} 
+uint8\+\_\+t Custom\+\_\+demo\+\_\+cursor\+\_\+\+Symbol\mbox{[}8\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ 0B01010,}
+\DoxyCodeLine{\ \ 0B01010,}
+\DoxyCodeLine{\ \ 0B11111,}
+\DoxyCodeLine{\ \ 0B01010,}
+\DoxyCodeLine{\ \ 0B11111,}
+\DoxyCodeLine{\ \ 0B01010,}
+\DoxyCodeLine{\ \ 0B01010}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{_l_c_d_8c_a45f1619eda51135901620988036c7fae}\index{LCD.c@{LCD.c}!Custom\_Enter\_Symbol@{Custom\_Enter\_Symbol}}
+\index{Custom\_Enter\_Symbol@{Custom\_Enter\_Symbol}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{Custom\_Enter\_Symbol}{Custom\_Enter\_Symbol}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_a45f1619eda51135901620988036c7fae} 
+uint8\+\_\+t Custom\+\_\+\+Enter\+\_\+\+Symbol\mbox{[}8\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ 0B00000,}
+\DoxyCodeLine{\ \ 0B00001,}
+\DoxyCodeLine{\ \ 0B00001,}
+\DoxyCodeLine{\ \ 0B00101,}
+\DoxyCodeLine{\ \ 0B01001,}
+\DoxyCodeLine{\ \ 0B11111,}
+\DoxyCodeLine{\ \ 0B01000,}
+\DoxyCodeLine{\ \ 0B00100}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{_l_c_d_8c_a9eeaff3c8955cc72561c40759a112bc9}\index{LCD.c@{LCD.c}!Custom\_Reclean\_Symbol@{Custom\_Reclean\_Symbol}}
+\index{Custom\_Reclean\_Symbol@{Custom\_Reclean\_Symbol}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{Custom\_Reclean\_Symbol}{Custom\_Reclean\_Symbol}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_a9eeaff3c8955cc72561c40759a112bc9} 
+uint8\+\_\+t Custom\+\_\+\+Reclean\+\_\+\+Symbol\mbox{[}8\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ 0B00000,}
+\DoxyCodeLine{\ \ 0B11111,}
+\DoxyCodeLine{\ \ 0B10001,}
+\DoxyCodeLine{\ \ 0B10001,}
+\DoxyCodeLine{\ \ 0B10100,}
+\DoxyCodeLine{\ \ 0B11110,}
+\DoxyCodeLine{\ \ 0B00100,}
+\DoxyCodeLine{\ \ 0B00000}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{_l_c_d_8c_a634c248da100299ef5cc0959a2a887f9}\index{LCD.c@{LCD.c}!DotString@{DotString}}
+\index{DotString@{DotString}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{DotString}{DotString}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_a634c248da100299ef5cc0959a2a887f9} 
+char Dot\+String\mbox{[}LCD\+\_\+\+COLUMN\+\_\+\+COUNT+1\mbox{]} = "{}"{}}
+
+\Hypertarget{_l_c_d_8c_a166212e858e3194de25adc52db2db3c8}\index{LCD.c@{LCD.c}!isPowerLEDBlinking@{isPowerLEDBlinking}}
+\index{isPowerLEDBlinking@{isPowerLEDBlinking}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{isPowerLEDBlinking}{isPowerLEDBlinking}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_a166212e858e3194de25adc52db2db3c8} 
+uint8\+\_\+t is\+Power\+LEDBlinking = FALSE}
+
+\Hypertarget{_l_c_d_8c_a1c180386b84086759b6df4c30f52c193}\index{LCD.c@{LCD.c}!isPowerLEDOn@{isPowerLEDOn}}
+\index{isPowerLEDOn@{isPowerLEDOn}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{isPowerLEDOn}{isPowerLEDOn}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_a1c180386b84086759b6df4c30f52c193} 
+uint8\+\_\+t is\+Power\+LEDOn = FALSE}
+
+\Hypertarget{_l_c_d_8c_acbebf20214ef55eaa297aa6937953e22}\index{LCD.c@{LCD.c}!isScreenLoading@{isScreenLoading}}
+\index{isScreenLoading@{isScreenLoading}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{isScreenLoading}{isScreenLoading}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_acbebf20214ef55eaa297aa6937953e22} 
+uint8\+\_\+t is\+Screen\+Loading = FALSE}
+
+\Hypertarget{_l_c_d_8c_a5598e54bc416bb04a263bb47ac63a078}\index{LCD.c@{LCD.c}!lastLCDCustom@{lastLCDCustom}}
+\index{lastLCDCustom@{lastLCDCustom}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{lastLCDCustom}{lastLCDCustom}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_a5598e54bc416bb04a263bb47ac63a078} 
+int last\+LCDCustom\mbox{[}LCD\+\_\+\+COLUMN\+\_\+\+COUNT\mbox{]}}
+
+\Hypertarget{_l_c_d_8c_a248ad383714d4950f9d710cbd718a9c6}\index{LCD.c@{LCD.c}!lastLCDData@{lastLCDData}}
+\index{lastLCDData@{lastLCDData}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{lastLCDData}{lastLCDData}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_a248ad383714d4950f9d710cbd718a9c6} 
+char last\+LCDData\mbox{[}LCD\+\_\+\+ROW\+\_\+\+COUNT\mbox{]}\mbox{[}MAX\+\_\+\+STRING\+\_\+\+LENGTH\mbox{]}}
+
+\Hypertarget{_l_c_d_8c_a715be82677ec928de48e53c8d43a6b4c}\index{LCD.c@{LCD.c}!LCD\_BUF\_ARR@{LCD\_BUF\_ARR}}
+\index{LCD\_BUF\_ARR@{LCD\_BUF\_ARR}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_BUF\_ARR}{LCD\_BUF\_ARR}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_a715be82677ec928de48e53c8d43a6b4c} 
+char\texorpdfstring{$\ast$}{*} LCD\+\_\+\+BUF\+\_\+\+ARR\mbox{[}4\mbox{]}}
+
+\Hypertarget{_l_c_d_8c_ab3cda40c01897844723dbfbe01acef3e}\index{LCD.c@{LCD.c}!LCD\_SMILE\_ARR@{LCD\_SMILE\_ARR}}
+\index{LCD\_SMILE\_ARR@{LCD\_SMILE\_ARR}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_SMILE\_ARR}{LCD\_SMILE\_ARR}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_ab3cda40c01897844723dbfbe01acef3e} 
+int LCD\+\_\+\+SMILE\+\_\+\+ARR\mbox{[}4\mbox{]} = \{0, 0, 0, 0\}}
+
+\Hypertarget{_l_c_d_8c_aea002c1af4f5d365b73df50ad168a044}\index{LCD.c@{LCD.c}!New\_LCD\_Data@{New\_LCD\_Data}}
+\index{New\_LCD\_Data@{New\_LCD\_Data}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{New\_LCD\_Data}{New\_LCD\_Data}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_aea002c1af4f5d365b73df50ad168a044} 
+int New\+\_\+\+LCD\+\_\+\+Data\mbox{[}4\mbox{]} = \{0, 0, 0, 0\}}
+
+\Hypertarget{_l_c_d_8c_a00445749d8e365b4285d8f4f118b4150}\index{LCD.c@{LCD.c}!stringBuffer@{stringBuffer}}
+\index{stringBuffer@{stringBuffer}!LCD.c@{LCD.c}}
+\doxysubsubsection{\texorpdfstring{stringBuffer}{stringBuffer}}
+{\footnotesize\ttfamily \label{_l_c_d_8c_a00445749d8e365b4285d8f4f118b4150} 
+char string\+Buffer\mbox{[}21\mbox{]}}
+

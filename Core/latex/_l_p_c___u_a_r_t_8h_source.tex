@@ -1,0 +1,40 @@
+\doxysection{LPC\+\_\+\+UART.\+h}
+\hypertarget{_l_p_c___u_a_r_t_8h_source}{}\label{_l_p_c___u_a_r_t_8h_source}\index{Inc/LPC\_UART.h@{Inc/LPC\_UART.h}}
+\mbox{\hyperlink{_l_p_c___u_a_r_t_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00002}00002\ \textcolor{comment}{\ *\ LPC\_UART.h}}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00003}00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Aug\ 30,\ 2024}}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ mhmaq}}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00006}00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00008}00008\ \textcolor{preprocessor}{\#ifndef\ LPC\_UART\_H}}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00009}00009\ \textcolor{preprocessor}{\#define\ LPC\_UART\_H}}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{main_8h}{main.h}}>}}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00013}00013\ \textcolor{comment}{/*\ Buffer\ to\ store\ incoming\ UART\ data\ */}}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00014}00014\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{_l_p_c___u_a_r_t_8h_ae1d8e16d410226058cbda648df605491}{LPC\_UART\_RxBuffer}}[30];}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00016}00016\ \textcolor{comment}{/*\ Send\ character\ data\ over\ UART3\ without\ a\ new\ line\ */}}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00017}00017\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_l_p_c___u_a_r_t_8h_a9602409c4c776e41d7bfaa7a254155c1}{LPC\_UART\_Send}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ Data);}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00019}00019\ \textcolor{comment}{/*\ Send\ character\ data\ over\ UART3\ with\ a\ new\ line\ */}}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00020}00020\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_l_p_c___u_a_r_t_8h_a8422a7cdc9878559a4298e6f967a8c7c}{LPC\_UART\_Sendln}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ Data);}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00022}00022\ \textcolor{comment}{/*\ Send\ numeric\ data\ over\ UART3\ with\ a\ new\ line\ */}}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00023}00023\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_l_p_c___u_a_r_t_8h_adb043c2ecf67def1cf7c26efb246152c}{LPC\_UART\_SendlnINT}}(\textcolor{keywordtype}{int}\ Data);}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00025}00025\ \textcolor{comment}{/*\ Send\ numeric\ data\ over\ UART3\ without\ a\ new\ line\ */}}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00026}00026\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_l_p_c___u_a_r_t_8h_ab502aef536ec81620ec2e3b0bc68d2e4}{LPC\_UART\_SendINT}}(\textcolor{keywordtype}{int}\ Data);}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00028}00028\ \textcolor{comment}{/*\ Receive\ data\ from\ UART3\ and\ store\ it\ in\ the\ buffer\ */}}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00029}00029\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_l_p_c___u_a_r_t_8h_a2faa30288eff2d710f9fd7132032821c}{LPC\_UART\_Receive}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00031}00031\ \textcolor{comment}{/*\ Clear\ the\ UART3\ receive\ buffer\ */}}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00032}00032\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_l_p_c___u_a_r_t_8h_af627e13d7a6b626ca52e9b05cdedbd58}{ClearLPC\_UART\_RxBuffer}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_l_p_c___u_a_r_t_8h_source_l00034}00034\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TO\_LPC\_UART\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,62 @@
+\doxysection{Core/\+Src/usb\+\_\+otg.c File Reference}
+\hypertarget{usb__otg_8c}{}\label{usb__otg_8c}\index{Core/Src/usb\_otg.c@{Core/Src/usb\_otg.c}}
+
+
+This file provides code for the configuration of the USB\+\_\+\+OTG instances.  
+
+
+{\ttfamily \#include "{}usb\+\_\+otg.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{usb__otg_8c_a59d5646c414f475f0101a2ec11147926}{MX\+\_\+\+USB\+\_\+\+OTG\+\_\+\+FS\+\_\+\+HCD\+\_\+\+Init}} (void)
+\item 
+void \mbox{\hyperlink{usb__otg_8c_ab745cd1515a40bf26795a7b946cf76c0}{HAL\+\_\+\+HCD\+\_\+\+Msp\+Init}} (HCD\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}hcd\+Handle)
+\item 
+void \mbox{\hyperlink{usb__otg_8c_a2200e3ef34340f2ba54596ea36f63e43}{HAL\+\_\+\+HCD\+\_\+\+Msp\+De\+Init}} (HCD\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}hcd\+Handle)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+HCD\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{usb__otg_8c_a135943d3578f7906d4be1d774650ecd0}{hhcd\+\_\+\+USB\+\_\+\+OTG\+\_\+\+FS}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides code for the configuration of the USB\+\_\+\+OTG instances. 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2024 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{usb__otg_8c_a2200e3ef34340f2ba54596ea36f63e43}\index{usb\_otg.c@{usb\_otg.c}!HAL\_HCD\_MspDeInit@{HAL\_HCD\_MspDeInit}}
+\index{HAL\_HCD\_MspDeInit@{HAL\_HCD\_MspDeInit}!usb\_otg.c@{usb\_otg.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_HCD\_MspDeInit()}{HAL\_HCD\_MspDeInit()}}
+{\footnotesize\ttfamily \label{usb__otg_8c_a2200e3ef34340f2ba54596ea36f63e43} 
+void HAL\+\_\+\+HCD\+\_\+\+Msp\+De\+Init (\begin{DoxyParamCaption}\item[{HCD\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}}]{hcd\+Handle}{}\end{DoxyParamCaption})}
+
+USB\+\_\+\+OTG\+\_\+\+FS GPIO Configuration PA11 -\/-\/-\/-\/-\/-\/\texorpdfstring{$>$}{>} USB\+\_\+\+OTG\+\_\+\+FS\+\_\+\+DM PA12 -\/-\/-\/-\/-\/-\/\texorpdfstring{$>$}{>} USB\+\_\+\+OTG\+\_\+\+FS\+\_\+\+DP\Hypertarget{usb__otg_8c_ab745cd1515a40bf26795a7b946cf76c0}\index{usb\_otg.c@{usb\_otg.c}!HAL\_HCD\_MspInit@{HAL\_HCD\_MspInit}}
+\index{HAL\_HCD\_MspInit@{HAL\_HCD\_MspInit}!usb\_otg.c@{usb\_otg.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_HCD\_MspInit()}{HAL\_HCD\_MspInit()}}
+{\footnotesize\ttfamily \label{usb__otg_8c_ab745cd1515a40bf26795a7b946cf76c0} 
+void HAL\+\_\+\+HCD\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{HCD\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}}]{hcd\+Handle}{}\end{DoxyParamCaption})}
+
+USB\+\_\+\+OTG\+\_\+\+FS GPIO Configuration PA11 -\/-\/-\/-\/-\/-\/\texorpdfstring{$>$}{>} USB\+\_\+\+OTG\+\_\+\+FS\+\_\+\+DM PA12 -\/-\/-\/-\/-\/-\/\texorpdfstring{$>$}{>} USB\+\_\+\+OTG\+\_\+\+FS\+\_\+\+DP\Hypertarget{usb__otg_8c_a59d5646c414f475f0101a2ec11147926}\index{usb\_otg.c@{usb\_otg.c}!MX\_USB\_OTG\_FS\_HCD\_Init@{MX\_USB\_OTG\_FS\_HCD\_Init}}
+\index{MX\_USB\_OTG\_FS\_HCD\_Init@{MX\_USB\_OTG\_FS\_HCD\_Init}!usb\_otg.c@{usb\_otg.c}}
+\doxysubsubsection{\texorpdfstring{MX\_USB\_OTG\_FS\_HCD\_Init()}{MX\_USB\_OTG\_FS\_HCD\_Init()}}
+{\footnotesize\ttfamily \label{usb__otg_8c_a59d5646c414f475f0101a2ec11147926} 
+void MX\+\_\+\+USB\+\_\+\+OTG\+\_\+\+FS\+\_\+\+HCD\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{usb__otg_8c_a135943d3578f7906d4be1d774650ecd0}\index{usb\_otg.c@{usb\_otg.c}!hhcd\_USB\_OTG\_FS@{hhcd\_USB\_OTG\_FS}}
+\index{hhcd\_USB\_OTG\_FS@{hhcd\_USB\_OTG\_FS}!usb\_otg.c@{usb\_otg.c}}
+\doxysubsubsection{\texorpdfstring{hhcd\_USB\_OTG\_FS}{hhcd\_USB\_OTG\_FS}}
+{\footnotesize\ttfamily \label{usb__otg_8c_a135943d3578f7906d4be1d774650ecd0} 
+HCD\+\_\+\+Handle\+Type\+Def hhcd\+\_\+\+USB\+\_\+\+OTG\+\_\+\+FS}
+

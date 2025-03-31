@@ -1,0 +1,381 @@
+\doxysection{Inc/\+Keypad.h File Reference}
+\hypertarget{_keypad_8h}{}\label{_keypad_8h}\index{Inc/Keypad.h@{Inc/Keypad.h}}
+{\ttfamily \#include $<$main.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_a792478b8ebd30fc1b0a1365aa9ef1a8f}{BUTTON\+\_\+\+POWER\+\_\+\+ACTIVE\+\_\+\+TIME}}~2400
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_aa7ae641840a5e6388fc07d25c84b0f3c}{NUMPAD}}~1
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_a1edd1ea8bddaf4d9c5eb3eae1ee1726a}{ALL}}~0
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_a553a124e1d5855773c74cb5561dec040}{CONTROL}}~2
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_adf608dfdafc6ae0e69128d9d207f33ed}{COMMAKEY}}~10
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_a94edc76852477ad7d610991193ac4d4e}{ENTERKEY}}~11
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_ace79a224651a859ca9773b639986369a}{MANAUTOKEY}}~12
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_aafd46898281717e1548d1791930dd384}{PLAYSTOPKEY}}~13
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_adb5ce1680b5ec047cfc1f0de10f4e3f0}{DELKEY}}~14
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_a004b9c0dbb8ed037a710ce18ab08c197}{CLEANKEY}}~15
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_a38eec52a7dccb94ff563e30eda32c891}{BLINK}}~2
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_a20b45ad3666cdddd0954424fb9d6fbb9}{LOADING}}~1
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_af1a376128671e7b2af0b111b665a9b0d}{NOT\+\_\+\+LOADING}}~0
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_a655c84af1b0034986ff56e12e84f983d}{NONE}}~-\/1
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_keypad_8h_aaf589f693a560feb75d11f25d637c6d8}{Read\+Keypad\+Var}} (int group)
+\item 
+int \mbox{\hyperlink{_keypad_8h_a46a5bf7179bd814efded60c93f395042}{read\+Keypad\+Non\+Block}} (int group)
+\item 
+int \mbox{\hyperlink{_keypad_8h_a853ca9c9a2cca59a7a44282eb869e1d3}{read\+Keypad}} (int group)
+\item 
+void \mbox{\hyperlink{_keypad_8h_a8ca2ff5fc8cdd825a8eaaf8f673ec33d}{Loading\+Func}} (int blink\+LED, uint8\+\_\+t Screen\+Load)
+\item 
+void \mbox{\hyperlink{_keypad_8h_a9b5ffa21783f4976e15c74aabf26b5de}{Take2\+Row\+Entries}} (char \texorpdfstring{$\ast$}{*}Row1\+Static\+String, char \texorpdfstring{$\ast$}{*}Row2\+Static\+String)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_keypad_8h_a46f4d9e355d06b097d9848df86f1e311}{Power\+Button\+Press\+Time}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_keypad_8h_afaaf75a8547eb937ee91f439b74e84f9}{is\+Auto\+Operation}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_keypad_8h_a5d4be5830b050d178dba49fd86569f07}{is\+Cleaning\+Operation}}
+\item 
+int \mbox{\hyperlink{_keypad_8h_a74e00b05dbee1427501caa6b3480837e}{last\+Key\+Pressed}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_keypad_8h_a7f268075d0081379a58847e91b242f82}{is\+Paused\+Operation}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_keypad_8h_a91f44bf55deb9b20360da1285f9151b6}{monitor\+Enter\+Key}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_keypad_8h_a019f7fa1d68dbe17ba66714688ef2f2e}{Enter\+Pressed}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_keypad_8h_a95f17785c03ac2c0ff362dadbdda87af}{monitor\+Clean\+Key}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_keypad_8h_a1f47a873f64119d43bd885cb1b0e08de}{clean\+Long\+Pressed}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_keypad_8h_a221ffe0b086a7832f683e0a946d593c5}{del\+Long\+Pressed}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_keypad_8h_ac60a0a612ea3a0c2e948d1c41d408919}{is\+Demo\+Cleaning}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_keypad_8h_a1edd1ea8bddaf4d9c5eb3eae1ee1726a}\index{Keypad.h@{Keypad.h}!ALL@{ALL}}
+\index{ALL@{ALL}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{ALL}{ALL}}
+{\footnotesize\ttfamily \label{_keypad_8h_a1edd1ea8bddaf4d9c5eb3eae1ee1726a} 
+\#define ALL~0}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8h_source_l00016}{16}} of file \mbox{\hyperlink{_keypad_8h_source}{Keypad.\+h}}.
+
+\Hypertarget{_keypad_8h_a38eec52a7dccb94ff563e30eda32c891}\index{Keypad.h@{Keypad.h}!BLINK@{BLINK}}
+\index{BLINK@{BLINK}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{BLINK}{BLINK}}
+{\footnotesize\ttfamily \label{_keypad_8h_a38eec52a7dccb94ff563e30eda32c891} 
+\#define BLINK~2}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8h_source_l00024}{24}} of file \mbox{\hyperlink{_keypad_8h_source}{Keypad.\+h}}.
+
+\Hypertarget{_keypad_8h_a792478b8ebd30fc1b0a1365aa9ef1a8f}\index{Keypad.h@{Keypad.h}!BUTTON\_POWER\_ACTIVE\_TIME@{BUTTON\_POWER\_ACTIVE\_TIME}}
+\index{BUTTON\_POWER\_ACTIVE\_TIME@{BUTTON\_POWER\_ACTIVE\_TIME}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{BUTTON\_POWER\_ACTIVE\_TIME}{BUTTON\_POWER\_ACTIVE\_TIME}}
+{\footnotesize\ttfamily \label{_keypad_8h_a792478b8ebd30fc1b0a1365aa9ef1a8f} 
+\#define BUTTON\+\_\+\+POWER\+\_\+\+ACTIVE\+\_\+\+TIME~2400}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8h_source_l00014}{14}} of file \mbox{\hyperlink{_keypad_8h_source}{Keypad.\+h}}.
+
+\Hypertarget{_keypad_8h_a004b9c0dbb8ed037a710ce18ab08c197}\index{Keypad.h@{Keypad.h}!CLEANKEY@{CLEANKEY}}
+\index{CLEANKEY@{CLEANKEY}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{CLEANKEY}{CLEANKEY}}
+{\footnotesize\ttfamily \label{_keypad_8h_a004b9c0dbb8ed037a710ce18ab08c197} 
+\#define CLEANKEY~15}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8h_source_l00023}{23}} of file \mbox{\hyperlink{_keypad_8h_source}{Keypad.\+h}}.
+
+\Hypertarget{_keypad_8h_adf608dfdafc6ae0e69128d9d207f33ed}\index{Keypad.h@{Keypad.h}!COMMAKEY@{COMMAKEY}}
+\index{COMMAKEY@{COMMAKEY}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{COMMAKEY}{COMMAKEY}}
+{\footnotesize\ttfamily \label{_keypad_8h_adf608dfdafc6ae0e69128d9d207f33ed} 
+\#define COMMAKEY~10}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8h_source_l00018}{18}} of file \mbox{\hyperlink{_keypad_8h_source}{Keypad.\+h}}.
+
+\Hypertarget{_keypad_8h_a553a124e1d5855773c74cb5561dec040}\index{Keypad.h@{Keypad.h}!CONTROL@{CONTROL}}
+\index{CONTROL@{CONTROL}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{CONTROL}{CONTROL}}
+{\footnotesize\ttfamily \label{_keypad_8h_a553a124e1d5855773c74cb5561dec040} 
+\#define CONTROL~2}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8h_source_l00017}{17}} of file \mbox{\hyperlink{_keypad_8h_source}{Keypad.\+h}}.
+
+\Hypertarget{_keypad_8h_adb5ce1680b5ec047cfc1f0de10f4e3f0}\index{Keypad.h@{Keypad.h}!DELKEY@{DELKEY}}
+\index{DELKEY@{DELKEY}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{DELKEY}{DELKEY}}
+{\footnotesize\ttfamily \label{_keypad_8h_adb5ce1680b5ec047cfc1f0de10f4e3f0} 
+\#define DELKEY~14}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8h_source_l00022}{22}} of file \mbox{\hyperlink{_keypad_8h_source}{Keypad.\+h}}.
+
+\Hypertarget{_keypad_8h_a94edc76852477ad7d610991193ac4d4e}\index{Keypad.h@{Keypad.h}!ENTERKEY@{ENTERKEY}}
+\index{ENTERKEY@{ENTERKEY}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{ENTERKEY}{ENTERKEY}}
+{\footnotesize\ttfamily \label{_keypad_8h_a94edc76852477ad7d610991193ac4d4e} 
+\#define ENTERKEY~11}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8h_source_l00019}{19}} of file \mbox{\hyperlink{_keypad_8h_source}{Keypad.\+h}}.
+
+\Hypertarget{_keypad_8h_a20b45ad3666cdddd0954424fb9d6fbb9}\index{Keypad.h@{Keypad.h}!LOADING@{LOADING}}
+\index{LOADING@{LOADING}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{LOADING}{LOADING}}
+{\footnotesize\ttfamily \label{_keypad_8h_a20b45ad3666cdddd0954424fb9d6fbb9} 
+\#define LOADING~1}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8h_source_l00025}{25}} of file \mbox{\hyperlink{_keypad_8h_source}{Keypad.\+h}}.
+
+\Hypertarget{_keypad_8h_ace79a224651a859ca9773b639986369a}\index{Keypad.h@{Keypad.h}!MANAUTOKEY@{MANAUTOKEY}}
+\index{MANAUTOKEY@{MANAUTOKEY}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{MANAUTOKEY}{MANAUTOKEY}}
+{\footnotesize\ttfamily \label{_keypad_8h_ace79a224651a859ca9773b639986369a} 
+\#define MANAUTOKEY~12}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8h_source_l00020}{20}} of file \mbox{\hyperlink{_keypad_8h_source}{Keypad.\+h}}.
+
+\Hypertarget{_keypad_8h_a655c84af1b0034986ff56e12e84f983d}\index{Keypad.h@{Keypad.h}!NONE@{NONE}}
+\index{NONE@{NONE}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{NONE}{NONE}}
+{\footnotesize\ttfamily \label{_keypad_8h_a655c84af1b0034986ff56e12e84f983d} 
+\#define NONE~-\/1}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8h_source_l00027}{27}} of file \mbox{\hyperlink{_keypad_8h_source}{Keypad.\+h}}.
+
+\Hypertarget{_keypad_8h_af1a376128671e7b2af0b111b665a9b0d}\index{Keypad.h@{Keypad.h}!NOT\_LOADING@{NOT\_LOADING}}
+\index{NOT\_LOADING@{NOT\_LOADING}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{NOT\_LOADING}{NOT\_LOADING}}
+{\footnotesize\ttfamily \label{_keypad_8h_af1a376128671e7b2af0b111b665a9b0d} 
+\#define NOT\+\_\+\+LOADING~0}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8h_source_l00026}{26}} of file \mbox{\hyperlink{_keypad_8h_source}{Keypad.\+h}}.
+
+\Hypertarget{_keypad_8h_aa7ae641840a5e6388fc07d25c84b0f3c}\index{Keypad.h@{Keypad.h}!NUMPAD@{NUMPAD}}
+\index{NUMPAD@{NUMPAD}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{NUMPAD}{NUMPAD}}
+{\footnotesize\ttfamily \label{_keypad_8h_aa7ae641840a5e6388fc07d25c84b0f3c} 
+\#define NUMPAD~1}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8h_source_l00015}{15}} of file \mbox{\hyperlink{_keypad_8h_source}{Keypad.\+h}}.
+
+\Hypertarget{_keypad_8h_aafd46898281717e1548d1791930dd384}\index{Keypad.h@{Keypad.h}!PLAYSTOPKEY@{PLAYSTOPKEY}}
+\index{PLAYSTOPKEY@{PLAYSTOPKEY}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{PLAYSTOPKEY}{PLAYSTOPKEY}}
+{\footnotesize\ttfamily \label{_keypad_8h_aafd46898281717e1548d1791930dd384} 
+\#define PLAYSTOPKEY~13}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8h_source_l00021}{21}} of file \mbox{\hyperlink{_keypad_8h_source}{Keypad.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_keypad_8h_a8ca2ff5fc8cdd825a8eaaf8f673ec33d}\index{Keypad.h@{Keypad.h}!LoadingFunc@{LoadingFunc}}
+\index{LoadingFunc@{LoadingFunc}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{LoadingFunc()}{LoadingFunc()}}
+{\footnotesize\ttfamily \label{_keypad_8h_a8ca2ff5fc8cdd825a8eaaf8f673ec33d} 
+void Loading\+Func (\begin{DoxyParamCaption}\item[{int}]{blink\+LED}{, }\item[{uint8\+\_\+t}]{Screen\+Load}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8c_source_l00204}{204}} of file \mbox{\hyperlink{_keypad_8c_source}{Keypad.\+c}}.
+
+\Hypertarget{_keypad_8h_a853ca9c9a2cca59a7a44282eb869e1d3}\index{Keypad.h@{Keypad.h}!readKeypad@{readKeypad}}
+\index{readKeypad@{readKeypad}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{readKeypad()}{readKeypad()}}
+{\footnotesize\ttfamily \label{_keypad_8h_a853ca9c9a2cca59a7a44282eb869e1d3} 
+int read\+Keypad (\begin{DoxyParamCaption}\item[{int}]{group}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8c_source_l00087}{87}} of file \mbox{\hyperlink{_keypad_8c_source}{Keypad.\+c}}.
+
+\Hypertarget{_keypad_8h_a46a5bf7179bd814efded60c93f395042}\index{Keypad.h@{Keypad.h}!readKeypadNonBlock@{readKeypadNonBlock}}
+\index{readKeypadNonBlock@{readKeypadNonBlock}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{readKeypadNonBlock()}{readKeypadNonBlock()}}
+{\footnotesize\ttfamily \label{_keypad_8h_a46a5bf7179bd814efded60c93f395042} 
+int read\+Keypad\+Non\+Block (\begin{DoxyParamCaption}\item[{int}]{group}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8c_source_l00038}{38}} of file \mbox{\hyperlink{_keypad_8c_source}{Keypad.\+c}}.
+
+\Hypertarget{_keypad_8h_aaf589f693a560feb75d11f25d637c6d8}\index{Keypad.h@{Keypad.h}!ReadKeypadVar@{ReadKeypadVar}}
+\index{ReadKeypadVar@{ReadKeypadVar}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{ReadKeypadVar()}{ReadKeypadVar()}}
+{\footnotesize\ttfamily \label{_keypad_8h_aaf589f693a560feb75d11f25d637c6d8} 
+int Read\+Keypad\+Var (\begin{DoxyParamCaption}\item[{int}]{group}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8c_source_l00023}{23}} of file \mbox{\hyperlink{_keypad_8c_source}{Keypad.\+c}}.
+
+\Hypertarget{_keypad_8h_a9b5ffa21783f4976e15c74aabf26b5de}\index{Keypad.h@{Keypad.h}!Take2RowEntries@{Take2RowEntries}}
+\index{Take2RowEntries@{Take2RowEntries}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{Take2RowEntries()}{Take2RowEntries()}}
+{\footnotesize\ttfamily \label{_keypad_8h_a9b5ffa21783f4976e15c74aabf26b5de} 
+void Take2\+Row\+Entries (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{Row1\+Static\+String}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{Row2\+Static\+String}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8c_source_l00224}{224}} of file \mbox{\hyperlink{_keypad_8c_source}{Keypad.\+c}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_keypad_8h_a1f47a873f64119d43bd885cb1b0e08de}\index{Keypad.h@{Keypad.h}!cleanLongPressed@{cleanLongPressed}}
+\index{cleanLongPressed@{cleanLongPressed}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{cleanLongPressed}{cleanLongPressed}}
+{\footnotesize\ttfamily \label{_keypad_8h_a1f47a873f64119d43bd885cb1b0e08de} 
+uint8\+\_\+t clean\+Long\+Pressed\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8c_source_l00018}{18}} of file \mbox{\hyperlink{_keypad_8c_source}{Keypad.\+c}}.
+
+\Hypertarget{_keypad_8h_a221ffe0b086a7832f683e0a946d593c5}\index{Keypad.h@{Keypad.h}!delLongPressed@{delLongPressed}}
+\index{delLongPressed@{delLongPressed}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{delLongPressed}{delLongPressed}}
+{\footnotesize\ttfamily \label{_keypad_8h_a221ffe0b086a7832f683e0a946d593c5} 
+uint8\+\_\+t del\+Long\+Pressed\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8c_source_l00019}{19}} of file \mbox{\hyperlink{_keypad_8c_source}{Keypad.\+c}}.
+
+\Hypertarget{_keypad_8h_a019f7fa1d68dbe17ba66714688ef2f2e}\index{Keypad.h@{Keypad.h}!EnterPressed@{EnterPressed}}
+\index{EnterPressed@{EnterPressed}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{EnterPressed}{EnterPressed}}
+{\footnotesize\ttfamily \label{_keypad_8h_a019f7fa1d68dbe17ba66714688ef2f2e} 
+uint8\+\_\+t Enter\+Pressed\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8c_source_l00016}{16}} of file \mbox{\hyperlink{_keypad_8c_source}{Keypad.\+c}}.
+
+\Hypertarget{_keypad_8h_afaaf75a8547eb937ee91f439b74e84f9}\index{Keypad.h@{Keypad.h}!isAutoOperation@{isAutoOperation}}
+\index{isAutoOperation@{isAutoOperation}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{isAutoOperation}{isAutoOperation}}
+{\footnotesize\ttfamily \label{_keypad_8h_afaaf75a8547eb937ee91f439b74e84f9} 
+uint8\+\_\+t is\+Auto\+Operation\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8c_source_l00011}{11}} of file \mbox{\hyperlink{_keypad_8c_source}{Keypad.\+c}}.
+
+\Hypertarget{_keypad_8h_a5d4be5830b050d178dba49fd86569f07}\index{Keypad.h@{Keypad.h}!isCleaningOperation@{isCleaningOperation}}
+\index{isCleaningOperation@{isCleaningOperation}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{isCleaningOperation}{isCleaningOperation}}
+{\footnotesize\ttfamily \label{_keypad_8h_a5d4be5830b050d178dba49fd86569f07} 
+uint8\+\_\+t is\+Cleaning\+Operation\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8c_source_l00012}{12}} of file \mbox{\hyperlink{_keypad_8c_source}{Keypad.\+c}}.
+
+\Hypertarget{_keypad_8h_ac60a0a612ea3a0c2e948d1c41d408919}\index{Keypad.h@{Keypad.h}!isDemoCleaning@{isDemoCleaning}}
+\index{isDemoCleaning@{isDemoCleaning}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{isDemoCleaning}{isDemoCleaning}}
+{\footnotesize\ttfamily \label{_keypad_8h_ac60a0a612ea3a0c2e948d1c41d408919} 
+uint8\+\_\+t is\+Demo\+Cleaning\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8c_source_l00020}{20}} of file \mbox{\hyperlink{_keypad_8c_source}{Keypad.\+c}}.
+
+\Hypertarget{_keypad_8h_a7f268075d0081379a58847e91b242f82}\index{Keypad.h@{Keypad.h}!isPausedOperation@{isPausedOperation}}
+\index{isPausedOperation@{isPausedOperation}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{isPausedOperation}{isPausedOperation}}
+{\footnotesize\ttfamily \label{_keypad_8h_a7f268075d0081379a58847e91b242f82} 
+uint8\+\_\+t is\+Paused\+Operation\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8c_source_l00014}{14}} of file \mbox{\hyperlink{_keypad_8c_source}{Keypad.\+c}}.
+
+\Hypertarget{_keypad_8h_a74e00b05dbee1427501caa6b3480837e}\index{Keypad.h@{Keypad.h}!lastKeyPressed@{lastKeyPressed}}
+\index{lastKeyPressed@{lastKeyPressed}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{lastKeyPressed}{lastKeyPressed}}
+{\footnotesize\ttfamily \label{_keypad_8h_a74e00b05dbee1427501caa6b3480837e} 
+int last\+Key\+Pressed\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8c_source_l00013}{13}} of file \mbox{\hyperlink{_keypad_8c_source}{Keypad.\+c}}.
+
+\Hypertarget{_keypad_8h_a95f17785c03ac2c0ff362dadbdda87af}\index{Keypad.h@{Keypad.h}!monitorCleanKey@{monitorCleanKey}}
+\index{monitorCleanKey@{monitorCleanKey}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{monitorCleanKey}{monitorCleanKey}}
+{\footnotesize\ttfamily \label{_keypad_8h_a95f17785c03ac2c0ff362dadbdda87af} 
+uint8\+\_\+t monitor\+Clean\+Key\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8c_source_l00017}{17}} of file \mbox{\hyperlink{_keypad_8c_source}{Keypad.\+c}}.
+
+\Hypertarget{_keypad_8h_a91f44bf55deb9b20360da1285f9151b6}\index{Keypad.h@{Keypad.h}!monitorEnterKey@{monitorEnterKey}}
+\index{monitorEnterKey@{monitorEnterKey}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{monitorEnterKey}{monitorEnterKey}}
+{\footnotesize\ttfamily \label{_keypad_8h_a91f44bf55deb9b20360da1285f9151b6} 
+uint8\+\_\+t monitor\+Enter\+Key\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8c_source_l00015}{15}} of file \mbox{\hyperlink{_keypad_8c_source}{Keypad.\+c}}.
+
+\Hypertarget{_keypad_8h_a46f4d9e355d06b097d9848df86f1e311}\index{Keypad.h@{Keypad.h}!PowerButtonPressTime@{PowerButtonPressTime}}
+\index{PowerButtonPressTime@{PowerButtonPressTime}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{PowerButtonPressTime}{PowerButtonPressTime}}
+{\footnotesize\ttfamily \label{_keypad_8h_a46f4d9e355d06b097d9848df86f1e311} 
+uint32\+\_\+t Power\+Button\+Press\+Time\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{_keypad_8c_source_l00010}{10}} of file \mbox{\hyperlink{_keypad_8c_source}{Keypad.\+c}}.
+

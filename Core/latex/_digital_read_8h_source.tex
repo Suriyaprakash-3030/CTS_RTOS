@@ -1,0 +1,40 @@
+\doxysection{Digital\+Read.\+h}
+\hypertarget{_digital_read_8h_source}{}\label{_digital_read_8h_source}\index{Inc/DigitalRead.h@{Inc/DigitalRead.h}}
+\mbox{\hyperlink{_digital_read_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00002}00002\ \textcolor{comment}{\ *\ DigitalRead.h}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00003}00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Aug\ 30,\ 2024}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ mhmaq}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00006}00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00008}00008\ \textcolor{comment}{/*This\ is\ the\ header\ file\ for\ DigitalRead\ functions\ that\ will\ provide\ similar\ code\ reading\ as\ Arduino*/}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00009}00009\ \textcolor{preprocessor}{\#ifndef\ DIGITALREAD\_H}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00010}00010\ \textcolor{preprocessor}{\#define\ DIGITALREAD\_H}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00014}\mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6}{00014}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00015}\mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6a9118edc80f13d06b747e0b9a3ad3d62e}{00015}}\ \ \ \ \ \mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6a9118edc80f13d06b747e0b9a3ad3d62e}{Button\_ManAuto\_Input\_PullUp}},}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00016}\mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6af0108e06e953ebea574be79c20a95de9}{00016}}\ \ \ \ \ \mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6af0108e06e953ebea574be79c20a95de9}{Button\_PlayStop\_Input\_PullUp}},}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00017}\mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6ab54621d676823d0d6ab973f61e950d2b}{00017}}\ \ \ \ \ \mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6ab54621d676823d0d6ab973f61e950d2b}{Button\_DelBack\_Input\_PullUp}},}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00018}\mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6a4d1e5aa315b4a6a5d0124a7285f99f4e}{00018}}\ \ \ \ \ \mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6a4d1e5aa315b4a6a5d0124a7285f99f4e}{Button\_1\_Input\_PullUp}},}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00019}\mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6aa5be0d8089a8ea2eade5f328aa449c9f}{00019}}\ \ \ \ \ \mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6aa5be0d8089a8ea2eade5f328aa449c9f}{Button\_2\_Input\_PullUp}},}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00020}\mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6a315a7a5a9b7bfa8be4278fb128c9618e}{00020}}\ \ \ \ \ \mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6a315a7a5a9b7bfa8be4278fb128c9618e}{Button\_3\_Input\_PullUp}},}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00021}\mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6a0a60e96326153e375dc0dae8913b3621}{00021}}\ \ \ \ \ \mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6a0a60e96326153e375dc0dae8913b3621}{Button\_4\_Input\_PullUp}},}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00022}\mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6ac7717982faff21d3c353a796c4ea9d57}{00022}}\ \ \ \ \ \mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6ac7717982faff21d3c353a796c4ea9d57}{Button\_5\_Input\_PullUp}},}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00023}\mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6a9801be9501c7a175e629ead56bffc288}{00023}}\ \ \ \ \ \mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6a9801be9501c7a175e629ead56bffc288}{Button\_6\_Input\_PullUp}},}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00024}\mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6acb368b4c630c228534e6c802d8e99a6d}{00024}}\ \ \ \ \ \mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6acb368b4c630c228534e6c802d8e99a6d}{Button\_7\_Input\_PullUp}},}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00025}\mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6a37f96536ec29b136f302e413bc027699}{00025}}\ \ \ \ \ \mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6a37f96536ec29b136f302e413bc027699}{Button\_8\_Input\_PullUp}},}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00026}\mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6a7700dde539fda58dd11e00cf634cfc14}{00026}}\ \ \ \ \ \mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6a7700dde539fda58dd11e00cf634cfc14}{Button\_9\_Input\_PullUp}},}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00027}\mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6acba8ee6c9efb20c298e8f35cf1141832}{00027}}\ \ \ \ \ \mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6acba8ee6c9efb20c298e8f35cf1141832}{Button\_0\_Input\_PullUp}},}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00028}\mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6a5c046311b59a76acba8aa514737bd0e9}{00028}}\ \ \ \ \ \mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6a5c046311b59a76acba8aa514737bd0e9}{Button\_Enter\_Input\_PullUp}},}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6a9f09a83992e05c733ee41b17a9e29111}{Button\_Comma\_Input\_PullUp}}}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00030}\mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6a9f09a83992e05c733ee41b17a9e29111}{00030}}\ \}\ \mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6}{UserLabel}};}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00032}00032\ GPIO\_PinState\ \mbox{\hyperlink{_digital_read_8h_a1269727a93ce7ca245ec3937999206cd}{digitalRead}}(\mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6}{UserLabel}}\ label);}
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_digital_read_8h_source_l00034}00034\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

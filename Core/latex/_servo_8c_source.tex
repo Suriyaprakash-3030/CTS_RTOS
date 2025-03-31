@@ -1,0 +1,81 @@
+\doxysection{Servo.\+c}
+\hypertarget{_servo_8c_source}{}\label{_servo_8c_source}\index{Src/Servo.c@{Src/Servo.c}}
+\mbox{\hyperlink{_servo_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00002}00002\ \textcolor{comment}{\ *\ Servo.c}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00003}00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00004}00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Sep\ 2,\ 2024}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ mhmaq}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00006}00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_servo_8h}{servo.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00010}\mbox{\hyperlink{_servo_8h_a0674cf41ba25ce1925233d55ea692994}{00010}}\ int16\_t\ \mbox{\hyperlink{_servo_8c_a0674cf41ba25ce1925233d55ea692994}{angle}}\ =\ 0;\ \textcolor{comment}{//Servo\ Angle}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00011}\mbox{\hyperlink{_servo_8h_a4f9bdeb78667c8ab59d8d6f0c70a2cc3}{00011}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_servo_8c_a4f9bdeb78667c8ab59d8d6f0c70a2cc3}{percent}}\ =\ 0;\ \textcolor{comment}{//Servo\ Percentage}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00013}00013\ \textcolor{keyword}{extern}\ TIM\_HandleTypeDef\ \mbox{\hyperlink{_servo_8c_a2f22f985c4f33318fdcd4cc996623bf4}{htim11}};\ \textcolor{comment}{//\ Timer\ 11\ is\ dedicated\ to\ the\ servo}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00015}00015\ \textcolor{comment}{//\ Initialize\ the\ servo\ control}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00016}\mbox{\hyperlink{_servo_8h_a4363bf9b248b133828855ea668bdb3a4}{00016}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_servo_8c_a4363bf9b248b133828855ea668bdb3a4}{Servo\_Init}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//\ Start\ the\ PWM\ signal\ on\ Timer\ 11,\ Channel\ 1}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00018}00018\ \ \ \ \ HAL\_TIM\_PWM\_Start(\&\mbox{\hyperlink{_servo_8c_a2f22f985c4f33318fdcd4cc996623bf4}{htim11}},\ TIM\_CHANNEL\_1);}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00021}00021\ \textcolor{comment}{//\ Set\ the\ servo\ angle}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00022}\mbox{\hyperlink{_servo_8h_a219ac6cea6e3304154534bef9b66b46e}{00022}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_servo_8c_a219ac6cea6e3304154534bef9b66b46e}{Servo\_SetAngle}}(int16\_t\ degree)\ \{}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00023}00023\ \ \ \ \ \textcolor{comment}{//\ Constrain\ the\ angle\ within\ the\ defined\ minimum\ and\ maximum\ limits}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (degree\ >\ \mbox{\hyperlink{_servo_8h_a546558e3ca760d619e3544e8dafe5ba0}{SERVO\_MAX\_ANGLE}})\ \{}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00025}00025\ \ \ \ \ \ \ \ \ degree\ =\ \mbox{\hyperlink{_servo_8h_a546558e3ca760d619e3544e8dafe5ba0}{SERVO\_MAX\_ANGLE}};}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00026}00026\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (degree\ <\ \mbox{\hyperlink{_servo_8h_ab5daaf504dc4acbea99d2373ead7ef17}{SERVO\_MIN\_ANGLE}})\ \{}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00027}00027\ \ \ \ \ \ \ \ \ degree\ =\ \mbox{\hyperlink{_servo_8h_ab5daaf504dc4acbea99d2373ead7ef17}{SERVO\_MIN\_ANGLE}};}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//\ Map\ the\ angle\ to\ the\ pulse\ width\ in\ microseconds}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00031}00031\ \ \ \ \ uint32\_t\ pulseWidth\ =\ \mbox{\hyperlink{_servo_8h_af57fc5a6c84fb0b43c66cd23e3500435}{SERVO\_MIN\_PULSE\_WIDTH}}\ +\ (uint32\_t)\ ((\textcolor{keywordtype}{float})\ (degree\ -\/\ \mbox{\hyperlink{_servo_8h_ab5daaf504dc4acbea99d2373ead7ef17}{SERVO\_MIN\_ANGLE}})}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ /\ (\textcolor{keywordtype}{float})\ (\mbox{\hyperlink{_servo_8h_a546558e3ca760d619e3544e8dafe5ba0}{SERVO\_MAX\_ANGLE}}\ -\/\ \mbox{\hyperlink{_servo_8h_ab5daaf504dc4acbea99d2373ead7ef17}{SERVO\_MIN\_ANGLE}})\ *\ (\mbox{\hyperlink{_servo_8h_a59f73ee44c74d7e8581205d8e9e817b6}{SERVO\_MAX\_PULSE\_WIDTH}}\ -\/\ \mbox{\hyperlink{_servo_8h_af57fc5a6c84fb0b43c66cd23e3500435}{SERVO\_MIN\_PULSE\_WIDTH}}));}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//\ Set\ the\ pulse\ width\ for\ PWM}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00035}00035\ \ \ \ \ \_\_HAL\_TIM\_SET\_COMPARE(\&\mbox{\hyperlink{_servo_8c_a2f22f985c4f33318fdcd4cc996623bf4}{htim11}},\ TIM\_CHANNEL\_1,\ pulseWidth);}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00036}00036\ \}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00038}00038\ \textcolor{comment}{//\ Set\ the\ servo\ position\ based\ on\ a\ percentage}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00039}\mbox{\hyperlink{_servo_8h_a2edf7a5eac0c0a95130cc3cc54286598}{00039}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_servo_8c_a2edf7a5eac0c0a95130cc3cc54286598}{Servo\_SetPercent}}(\textcolor{keywordtype}{int}\ percentage)\ \{}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{static}\ int16\_t\ old\_angle\ =\ 1000;\ \textcolor{comment}{//Illogical\ number\ to\ ensure\ its\ not\ same\ as\ 1st\ input\ to\ function}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00042}00042\ \ \ \ \ \textcolor{comment}{//\ Constrain\ the\ percentage\ to\ be\ between\ 0\%\ and\ 100\%}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (percentage\ >\ 100)\ \{}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00044}00044\ \ \ \ \ \ \ \ \ percentage\ =\ 100;}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00045}00045\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (percentage\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ percentage\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//\ Map\ the\ percentage\ to\ the\ corresponding\ angle}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00050}00050\ \ \ \ \ int16\_t\ \mbox{\hyperlink{_servo_8c_a0674cf41ba25ce1925233d55ea692994}{angle}}\ =\ \mbox{\hyperlink{_servo_8h_ab5daaf504dc4acbea99d2373ead7ef17}{SERVO\_MIN\_ANGLE}}\ +\ (int16\_t)\ ((\textcolor{keywordtype}{float})\ percentage\ /\ 100.0f\ *\ (\mbox{\hyperlink{_servo_8h_a546558e3ca760d619e3544e8dafe5ba0}{SERVO\_MAX\_ANGLE}}\ -\/\ \mbox{\hyperlink{_servo_8h_ab5daaf504dc4acbea99d2373ead7ef17}{SERVO\_MIN\_ANGLE}}));}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//\ Set\ the\ servo\ angle}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{_servo_8c_a219ac6cea6e3304154534bef9b66b46e}{Servo\_SetAngle}}(\mbox{\hyperlink{_servo_8c_a0674cf41ba25ce1925233d55ea692994}{angle}});}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00055}00055\ \ \ \ \ \textcolor{comment}{//Relax\ servo\ only\ if\ new\ angle\ is\ more\ than\ 10\ degrees\ different\ than\ old\ one,\ plus\ conditions\ inside\ this}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{if}\ (abs(old\_angle\ -\/\ \mbox{\hyperlink{_servo_8c_a0674cf41ba25ce1925233d55ea692994}{angle}})\ >\ 10)\ \{}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (abs(percentage\ -\/\ \mbox{\hyperlink{_servo_8h_a3192dc76235b3e36ec4465d0f385545c}{ValveOpen}})\ <\ 10)\ \{}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_Delay(1000);}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_servo_8h_aee3c24557d1a621cf2dc97c0a623968b}{ISSERVOINTERTED}}\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_servo_8c_a219ac6cea6e3304154534bef9b66b46e}{Servo\_SetAngle}}(\mbox{\hyperlink{_servo_8h_a546558e3ca760d619e3544e8dafe5ba0}{SERVO\_MAX\_ANGLE}}\ -\/\ 5);}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_servo_8c_a219ac6cea6e3304154534bef9b66b46e}{Servo\_SetAngle}}(\mbox{\hyperlink{_servo_8h_ab5daaf504dc4acbea99d2373ead7ef17}{SERVO\_MIN\_ANGLE}}\ +\ 5);}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00064}00064\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (abs(percentage\ -\/\ \mbox{\hyperlink{_servo_8h_abdc6a27b2a75f109b4199b9b88ca7c7f}{ValveClose}})\ <\ 10)\ \{}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_Delay(1000);}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_servo_8h_aee3c24557d1a621cf2dc97c0a623968b}{ISSERVOINTERTED}}\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_servo_8c_a219ac6cea6e3304154534bef9b66b46e}{Servo\_SetAngle}}(\mbox{\hyperlink{_servo_8h_ab5daaf504dc4acbea99d2373ead7ef17}{SERVO\_MIN\_ANGLE}}\ +\ 5);}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_servo_8c_a219ac6cea6e3304154534bef9b66b46e}{Servo\_SetAngle}}(\mbox{\hyperlink{_servo_8h_a546558e3ca760d619e3544e8dafe5ba0}{SERVO\_MAX\_ANGLE}}\ -\/\ 5);}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00073}00073\ \ \ \ \ old\_angle\ =\ \mbox{\hyperlink{_servo_8c_a0674cf41ba25ce1925233d55ea692994}{angle}};}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{_servo_8c_source_l00075}00075\ }
+
+\end{DoxyCode}

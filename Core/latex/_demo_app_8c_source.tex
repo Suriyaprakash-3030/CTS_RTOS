@@ -1,0 +1,184 @@
+\doxysection{Demo\+App.\+c}
+\hypertarget{_demo_app_8c_source}{}\label{_demo_app_8c_source}\index{Src/DemoApp.c@{Src/DemoApp.c}}
+\mbox{\hyperlink{_demo_app_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00002}00002\ \textcolor{comment}{\ *\ DemoApp.c}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00003}00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00004}00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Sep\ 6,\ 2024}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ mhmaq}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00006}00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{main_8h}{main.h}}>}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_demo_app_8h}{DemoApp.h}}>}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00011}\mbox{\hyperlink{_demo_app_8h_a8593f44441f28a1170fc6a3062314bba}{00011}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_demo_app_8c_af8220f247cc52d5ed9a7655fe2ee3362}{DemoApp}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a166212e858e3194de25adc52db2db3c8}{isPowerLEDBlinking}}\ =\ \mbox{\hyperlink{_global_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}};}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(\textcolor{stringliteral}{"{}DEMO"{}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a72e6c60b9bc089c15b5e469fe6f55770}{LCDRGBControl}}(\mbox{\hyperlink{_l_c_d_8h_a87b537f5fa5c109d3c05c13d6b18f382}{WHITE}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_ae60d0b62d7eb3fa31266c095d7b3c245}{LCD\_Clear}}();}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{_keypad_8h_a8ca2ff5fc8cdd825a8eaaf8f673ec33d}{LoadingFunc}}(\mbox{\hyperlink{_keypad_8h_a38eec52a7dccb94ff563e30eda32c891}{BLINK}},\ \mbox{\hyperlink{_keypad_8h_a20b45ad3666cdddd0954424fb9d6fbb9}{LOADING}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{_initialize_8h_a38660f6581d495a5dcf3ed3b0e4dfa58}{InitializeMachine}}();}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{_keypad_8h_a8ca2ff5fc8cdd825a8eaaf8f673ec33d}{LoadingFunc}}(\mbox{\hyperlink{_global_8h_ad76d1750a6cdeebd506bfcd6752554d2}{ON}},\ \mbox{\hyperlink{_keypad_8h_af1a376128671e7b2af0b111b665a9b0d}{NOT\_LOADING}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00019}00019\ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(0,\ \textcolor{stringliteral}{"{}Put\ Cannister\ On\ "{}},\ \mbox{\hyperlink{_l_c_d_8h_a3aeced1a56494fc61062cc987ddfa813}{ENTER\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00020}00020\ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(1,\ \textcolor{stringliteral}{"{}\ "{}},\ \mbox{\hyperlink{_l_c_d_8h_a717476da1e2de127b1bc96380b7b5e11}{NO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(2,\ \textcolor{stringliteral}{"{}\ "{}},\ \mbox{\hyperlink{_l_c_d_8h_a717476da1e2de127b1bc96380b7b5e11}{NO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(3,\ \textcolor{stringliteral}{"{}DEMO"{}},\ \mbox{\hyperlink{_l_c_d_8h_a717476da1e2de127b1bc96380b7b5e11}{NO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00023}00023\ \ \ \ \ \textcolor{comment}{//While\ enter\ key\ is\ not\ pressed.\ Here\ we\ did\ not\ use\ read\ key\ func\ as\ we\ want\ to\ enter\ dev\ menu}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//Dev\ menu\ reads\ keys,\ and\ as\ read\ key\ func\ is\ a\ blocking\ one,\ it\ will\ cause\ issues}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{_digital_read_8h_a1269727a93ce7ca245ec3937999206cd}{digitalRead}}(\mbox{\hyperlink{_digital_read_8h_abc9a06cf52a4700888b1ba43013deef6a5c046311b59a76acba8aa514737bd0e9}{Button\_Enter\_Input\_PullUp}})\ ==\ \mbox{\hyperlink{_global_8h_a5bb885982ff66a2e0a0a45a8ee9c35e2}{HIGH}})\ \{}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//What\ is\ inside\ this\ loop\ is\ just\ for\ testing\ and\ developer\ use,\ not\ by\ customer\ app}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00027}00027\ \ \ \ \ \ \ \ \ HAL\_Delay(1);}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00028}00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_test_8h_acccee807c9b3ef3ff8e6470913271890}{DeveloperMenu}}();}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(3,\ \textcolor{stringliteral}{"{}\ "{}},\ \mbox{\hyperlink{_l_c_d_8h_a717476da1e2de127b1bc96380b7b5e11}{NO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ 5;\ k++)\ \{}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00033}00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_ae60d0b62d7eb3fa31266c095d7b3c245}{LCD\_Clear}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Make\ sure\ nothing\ is\ written\ on\ LCD\ screen}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00034}00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(0,\ \textcolor{stringliteral}{"{}DEMO\ APP\ active"{}},\ \mbox{\hyperlink{_l_c_d_8h_a717476da1e2de127b1bc96380b7b5e11}{NO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00035}00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_hardware_level_8h_ab0cc80ab0fbf99f1715dce89f42d5713}{moveMotorClampToLocBlock}}(\mbox{\hyperlink{_global_8h_a866c87b53cea555549eba11e92ef044b}{M1POS2VAL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00036}00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_keypad_8h_a8ca2ff5fc8cdd825a8eaaf8f673ec33d}{LoadingFunc}}(\mbox{\hyperlink{_global_8h_ad76d1750a6cdeebd506bfcd6752554d2}{ON}},\ \mbox{\hyperlink{_keypad_8h_af1a376128671e7b2af0b111b665a9b0d}{NOT\_LOADING}});\ \textcolor{comment}{//Power\ LED\ (off,\ on,\ blink),\ loading\ screen\ (LOADING,\ NOT\_LOADING)}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00037}00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(1,\ \textcolor{stringliteral}{"{}Liters:\ "{}},\ \mbox{\hyperlink{_l_c_d_8h_a1f84322ccc721c5628a11268d272a0e3}{CURSOR\_DEMO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00038}00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(2,\ \textcolor{stringliteral}{"{}Kg/Liters:\ "{}},\ \mbox{\hyperlink{_l_c_d_8h_a717476da1e2de127b1bc96380b7b5e11}{NO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00039}00039\ \ \ \ \ \ \ \ \ HAL\_Delay(1500);}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(1,\ \textcolor{stringliteral}{"{}Liters:\ 2"{}},\ \mbox{\hyperlink{_l_c_d_8h_a1f84322ccc721c5628a11268d272a0e3}{CURSOR\_DEMO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00041}00041\ \ \ \ \ \ \ \ \ HAL\_Delay(400);}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(1,\ \textcolor{stringliteral}{"{}Liters:\ 2."{}},\ \mbox{\hyperlink{_l_c_d_8h_a1f84322ccc721c5628a11268d272a0e3}{CURSOR\_DEMO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00043}00043\ \ \ \ \ \ \ \ \ HAL\_Delay(400);}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(1,\ \textcolor{stringliteral}{"{}Liters:\ 2.5"{}},\ \mbox{\hyperlink{_l_c_d_8h_a1f84322ccc721c5628a11268d272a0e3}{CURSOR\_DEMO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00045}00045\ \ \ \ \ \ \ \ \ HAL\_Delay(400);}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(1,\ \textcolor{stringliteral}{"{}Liters:\ 2.5"{}},\ \mbox{\hyperlink{_l_c_d_8h_a717476da1e2de127b1bc96380b7b5e11}{NO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(2,\ \textcolor{stringliteral}{"{}Kg/Liters:\ "{}},\ \mbox{\hyperlink{_l_c_d_8h_a1f84322ccc721c5628a11268d272a0e3}{CURSOR\_DEMO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00048}00048\ \ \ \ \ \ \ \ \ HAL\_Delay(400);}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(2,\ \textcolor{stringliteral}{"{}Kg/Liters:\ 1"{}},\ \mbox{\hyperlink{_l_c_d_8h_a1f84322ccc721c5628a11268d272a0e3}{CURSOR\_DEMO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00050}00050\ \ \ \ \ \ \ \ \ HAL\_Delay(400);}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(2,\ \textcolor{stringliteral}{"{}Kg/Liters:\ 1."{}},\ \mbox{\hyperlink{_l_c_d_8h_a1f84322ccc721c5628a11268d272a0e3}{CURSOR\_DEMO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00052}00052\ \ \ \ \ \ \ \ \ HAL\_Delay(400);}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00053}00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(2,\ \textcolor{stringliteral}{"{}Kg/Liters:\ 1.1"{}},\ \mbox{\hyperlink{_l_c_d_8h_a1f84322ccc721c5628a11268d272a0e3}{CURSOR\_DEMO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00054}00054\ \ \ \ \ \ \ \ \ HAL\_Delay(400);}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00055}00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(2,\ \textcolor{stringliteral}{"{}Kg/Liters:\ 1.1"{}},\ \mbox{\hyperlink{_l_c_d_8h_a717476da1e2de127b1bc96380b7b5e11}{NO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00056}00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_keypad_8h_a8ca2ff5fc8cdd825a8eaaf8f673ec33d}{LoadingFunc}}(\mbox{\hyperlink{_keypad_8h_a38eec52a7dccb94ff563e30eda32c891}{BLINK}},\ \mbox{\hyperlink{_keypad_8h_af1a376128671e7b2af0b111b665a9b0d}{NOT\_LOADING}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00057}00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(0,\ \textcolor{stringliteral}{"{}0.00\ /\ 2.5L"{}},\ \mbox{\hyperlink{_l_c_d_8h_a717476da1e2de127b1bc96380b7b5e11}{NO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ i\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ LitersOf[20];\ \textcolor{comment}{//\ Ensure\ the\ array\ is\ large\ enough\ for\ your\ string}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00060}00060\ \ \ \ \ \ \ \ \ strcpy(LitersOf,\ \textcolor{stringliteral}{"{}0.00\ /\ 2.5L"{}});\ \textcolor{comment}{//\ Initialize\ the\ array\ with\ your\ string}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ temptmr\ =\ HAL\_GetTick();\ \textcolor{comment}{//millis();}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Clamp\ motor\ moves\ to\ open\ valve\ position}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Once\ spindle\ motor\ (Cap)\ penetrates\ the\ CAN,\ then\ liquid\ starts\ flowing}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//While\ spindle\ is\ moving\ up\ inside\ the\ CAN,\ the\ liquid\ is\ still\ flawing}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//We\ need\ to\ show\ dispensed\ amount\ on\ the\ LCD,\ while\ the\ spindle\ is\ still\ moving!}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Move\ M1\ to\ clamp\ position\ POS2}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00069}00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_hardware_level_8h_ab0cc80ab0fbf99f1715dce89f42d5713}{moveMotorClampToLocBlock}}(\mbox{\hyperlink{_global_8h_a866c87b53cea555549eba11e92ef044b}{M1POS2VAL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_i_s_r_8h_a9afdc73666802411201b3e9fe602c8de}{Clamp\_M2\_EncA\_Pulses}}\ >=\ \mbox{\hyperlink{_global_8h_a866c87b53cea555549eba11e92ef044b}{M1POS2VAL}})\ \{}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Move\ spindle\ to\ POS3}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_hardware_level_8h_ab4fc5119c6427ea0d2d18a7f601e4db2}{moveMotorSpindleToLocBlock}}(\mbox{\hyperlink{_global_8h_a77991e569dd28206e2ff129ce005d5df}{M2POS3VAL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_i_s_r_8h_a2f9df0008a2a82c8bb12d1be70504c3d}{Spindle\_M3\_EncA\_Pulses}}\ >=\ \mbox{\hyperlink{_global_8h_a77991e569dd28206e2ff129ce005d5df}{M2POS3VAL}})\ \{}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Open\ valve\ servo\ by\ 100\%}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_servo_8h_a2edf7a5eac0c0a95130cc3cc54286598}{Servo\_SetPercent}}(\mbox{\hyperlink{_servo_8h_a3192dc76235b3e36ec4465d0f385545c}{ValveOpen}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Update\ LCD\ with\ dispensed\ amount\ until\ 2.0\ L\ (quick\ update)\ -\/-\/\ liquid\ rush}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (HAL\_GetTick()\ >\ temptmr\ +\ 2\ \&\&\ i\ <=\ 2.0)\ \{\ \textcolor{comment}{//Update\ screen\ only\ if\ M1\ reaches\ open\ position,\ once\ every\ 100mS,\ and\ if\ dosing\ <\ needed\ 2.5L}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temptmr\ =\ HAL\_GetTick();\ \textcolor{comment}{//millis();}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sprintf(LitersOf,\ \textcolor{stringliteral}{"{}\%.2f\ /\ 2.0L"{}},\ i);\ \textcolor{comment}{//\ Formats\ 'i'\ as\ a\ floating-\/point\ and\ stores\ in\ LitersOf}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(0,\ LitersOf,\ \mbox{\hyperlink{_l_c_d_8h_a717476da1e2de127b1bc96380b7b5e11}{NO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ i\ +\ 0.1;}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_servo_8h_a2edf7a5eac0c0a95130cc3cc54286598}{Servo\_SetPercent}}(15);}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//update\ LCD\ with\ dispensed\ amount\ until\ 2.5\ L\ (slower\ update)\ -\/-\/\ precise\ measurement}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ 2.5)\ \{\ \textcolor{comment}{//Complete\ dosing}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//char\ LitersOf[20];\ \ //\ Make\ sure\ this\ is\ large\ enough}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sprintf(LitersOf,\ \textcolor{stringliteral}{"{}\%.2f\ /\ 2.5L"{}},\ i);}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(0,\ LitersOf,\ \mbox{\hyperlink{_l_c_d_8h_a717476da1e2de127b1bc96380b7b5e11}{NO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_Delay(100);}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ i\ +\ 0.1;}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//close\ valve\ servo\ to\ 0\%}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_servo_8h_a2edf7a5eac0c0a95130cc3cc54286598}{Servo\_SetPercent}}(\mbox{\hyperlink{_servo_8h_abdc6a27b2a75f109b4199b9b88ca7c7f}{ValveClose}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00097}00097\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00098}00098\ \textcolor{comment}{//\ \ \ \ \ \ while\ ((percent\ !=\ ValveOpen)}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00099}00099\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ (moveMotorSpindleToLocNoneBlock(M2POS3VAL)\ ==\ FALSE))\ \{\ //While\ none\ blocking\ func\ did\ not\ report\ new\ loc\ of\ motors}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00100}00100\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ if\ (percent\ >=\ ValveClose\ \&\&\ HAL\_GetTick()\ >\ temptmr\ +\ 2}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00101}00101\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ i\ <=\ 2.5)\ \{\ //Update\ screen\ only\ if\ M1\ reaches\ open\ position,\ once\ every\ 100mS,\ and\ if\ dosing\ <\ needed\ 2.5L}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00102}00102\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ temptmr\ =\ HAL\_GetTick();\ //millis();}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00103}00103\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ sprintf(LitersOf,\ "{}\%.2f\ /\ 2.5L"{},\ i);\ //\ Formats\ 'i'\ as\ a\ floating-\/point\ and\ stores\ in\ LitersOf}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00104}00104\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00105}00105\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ //LitersOf\ =\ ((String)\ i)\ +\ "{}/\ 2.5L"{});}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00106}00106\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ printLCD(0,\ LitersOf,\ NO\_SYMBOL);}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00107}00107\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ i\ +\ 0.1;}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00108}00108\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00109}00109\ \textcolor{comment}{//\ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00110}00110\ \textcolor{comment}{//\ \ \ \ \ \ //After\ spindle\ reaches\ position,\ dispensed\ amount\ is\ still\ not\ done}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00111}00111\ \textcolor{comment}{//\ \ \ \ \ \ //So\ update\ LCD\ until\ it\ is\ done}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00112}00112\ \textcolor{comment}{//\ \ \ \ \ \ while\ (i\ <\ 2.5)\ \{\ //Complete\ dosing}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00113}00113\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ //LitersOf\ =\ ((String)\ i)\ +\ "{}/\ 2.5L"{};}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00114}00114\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ char\ LitersOf[20];\ \ //\ Make\ sure\ this\ is\ large\ enough}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00115}00115\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ sprintf(LitersOf,\ "{}\%.2f\ /\ 2.5L"{},\ i);}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00116}00116\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00117}00117\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ printLCD(0,\ LitersOf,\ NO\_SYMBOL);}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00118}00118\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ HAL\_Delay(1);}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00119}00119\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ i\ =\ i\ +\ 0.1;}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00120}00120\ \textcolor{comment}{//\ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00121}00121\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00122}00122\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00123}00123\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ moveMotorToLoc(M1POS4VAL,\ M2POS3VAL);}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00124}00124\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ LoadingFunc(BLINK,\ NOT\_LOADING);\ \ \ \ \ \ \ //Power\ LED\ (off,\ on,\ blink),\ loading\ screen\ (LOADING,\ NOT\_LOADING)}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00125}00125\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ printLCD(0,\ F("{}0.00\ /\ 2.5L"{}));}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00126}00126\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ String\ LitersOf\ =\ "{}0.00\ /\ 2.5L"{};}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00127}00127\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ for\ (float\ i\ =\ 0;\ i\ <\ 2.5;\ i\ =\ i\ +\ 0.05)\ \{\ \ \ \ //\ DOSING\ STARTS\ WHEN\ M1\ REACHES\ VALVE\ OPEN\ POSITION}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00128}00128\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ LitersOf\ =\ ((String)i)\ +\ "{}/\ 2.5L"{};}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00129}00129\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ printLCD(0,\ LitersOf);}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00130}00130\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ HAL\_Delay(100);}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00131}00131\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00132}00132\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00134}00134\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_keypad_8h_a8ca2ff5fc8cdd825a8eaaf8f673ec33d}{LoadingFunc}}(\mbox{\hyperlink{_global_8h_ad76d1750a6cdeebd506bfcd6752554d2}{ON}},\ \mbox{\hyperlink{_keypad_8h_af1a376128671e7b2af0b111b665a9b0d}{NOT\_LOADING}});\ \textcolor{comment}{//Power\ LED\ (off,\ on,\ blink),\ loading\ screen\ (LOADING,\ NOT\_LOADING)}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00135}00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(0,\ \textcolor{stringliteral}{"{}Transfer\ Complete"{}},\ \mbox{\hyperlink{_l_c_d_8h_a717476da1e2de127b1bc96380b7b5e11}{NO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00136}00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_hardware_level_8h_ab0cc80ab0fbf99f1715dce89f42d5713}{moveMotorClampToLocBlock}}(\mbox{\hyperlink{_global_8h_a866c87b53cea555549eba11e92ef044b}{M1POS2VAL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00137}00137\ \ \ \ \ \ \ \ \ HAL\_Delay(1000);}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00138}00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_keypad_8h_ac60a0a612ea3a0c2e948d1c41d408919}{isDemoCleaning}}\ =\ \mbox{\hyperlink{_global_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}};}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00139}00139\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(3,\ \textcolor{stringliteral}{"{}CLEANING"{}},\ \mbox{\hyperlink{_l_c_d_8h_a717476da1e2de127b1bc96380b7b5e11}{NO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00140}00140\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(\textcolor{stringliteral}{"{}X0"{}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00141}00141\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_keypad_8h_a8ca2ff5fc8cdd825a8eaaf8f673ec33d}{LoadingFunc}}(\mbox{\hyperlink{_keypad_8h_a38eec52a7dccb94ff563e30eda32c891}{BLINK}},\ \mbox{\hyperlink{_keypad_8h_a20b45ad3666cdddd0954424fb9d6fbb9}{LOADING}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00142}00142\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(\textcolor{stringliteral}{"{}X1"{}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00143}00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_hardware_level_8h_ab4fc5119c6427ea0d2d18a7f601e4db2}{moveMotorSpindleToLocBlock}}(\mbox{\hyperlink{_global_8h_abf7179015b26b3e238b0736b61767d09}{M2POS2VAL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00144}00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(\textcolor{stringliteral}{"{}X2"{}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00145}00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_hardware_level_8h_adc70191246723a06c94296ec08eb8720}{moveMotor}}(\mbox{\hyperlink{_global_8h_a54a55de7d9bc59aaa04082e08ea20582}{VALVEMOTOR}},\ \mbox{\hyperlink{_global_8h_ad76d1750a6cdeebd506bfcd6752554d2}{ON}},\ \mbox{\hyperlink{_global_8h_a37a25c9d7ae45bdcc4b97ca017b0bdb6}{INT\_INF}});\ \textcolor{comment}{//Relay\ On}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00146}00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(\textcolor{stringliteral}{"{}X3"{}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00147}00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_hardware_level_8h_ab4fc5119c6427ea0d2d18a7f601e4db2}{moveMotorSpindleToLocBlock}}(\mbox{\hyperlink{_global_8h_ae001cf61ad3df318e6860b570fc9c005}{M2POS4VAL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00148}00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(\textcolor{stringliteral}{"{}X4"{}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00149}00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_hardware_level_8h_ab4fc5119c6427ea0d2d18a7f601e4db2}{moveMotorSpindleToLocBlock}}(\mbox{\hyperlink{_global_8h_a77991e569dd28206e2ff129ce005d5df}{M2POS3VAL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00150}00150\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_serial_handler_8h_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(\textcolor{stringliteral}{"{}X5"{}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00151}00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_hardware_level_8h_ab4fc5119c6427ea0d2d18a7f601e4db2}{moveMotorSpindleToLocBlock}}(\mbox{\hyperlink{_global_8h_ae001cf61ad3df318e6860b570fc9c005}{M2POS4VAL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00152}00152\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_hardware_level_8h_adc70191246723a06c94296ec08eb8720}{moveMotor}}(\mbox{\hyperlink{_global_8h_a54a55de7d9bc59aaa04082e08ea20582}{VALVEMOTOR}},\ \mbox{\hyperlink{_global_8h_a29e413f6725b2ba32d165ffaa35b01e5}{OFF}},\ \mbox{\hyperlink{_global_8h_a37a25c9d7ae45bdcc4b97ca017b0bdb6}{INT\_INF}});\ \textcolor{comment}{//Relay\ Off}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00153}00153\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_hardware_level_8h_ab4fc5119c6427ea0d2d18a7f601e4db2}{moveMotorSpindleToLocBlock}}(\mbox{\hyperlink{_global_8h_ac250240ae8ae1191e92e7dadcb6beb61}{M2POS1VAL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00154}00154\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_hardware_level_8h_adc70191246723a06c94296ec08eb8720}{moveMotor}}(\mbox{\hyperlink{_global_8h_a54a55de7d9bc59aaa04082e08ea20582}{VALVEMOTOR}},\ \mbox{\hyperlink{_global_8h_ad76d1750a6cdeebd506bfcd6752554d2}{ON}},\ \mbox{\hyperlink{_global_8h_a37a25c9d7ae45bdcc4b97ca017b0bdb6}{INT\_INF}});\ \textcolor{comment}{//Relay\ On}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00155}00155\ \ \ \ \ \ \ \ \ HAL\_Delay(3000);}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00156}00156\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_hardware_level_8h_adc70191246723a06c94296ec08eb8720}{moveMotor}}(\mbox{\hyperlink{_global_8h_a54a55de7d9bc59aaa04082e08ea20582}{VALVEMOTOR}},\ \mbox{\hyperlink{_global_8h_a29e413f6725b2ba32d165ffaa35b01e5}{OFF}},\ \mbox{\hyperlink{_global_8h_a37a25c9d7ae45bdcc4b97ca017b0bdb6}{INT\_INF}});\ \textcolor{comment}{//Relay\ Off}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00157}00157\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_keypad_8h_ac60a0a612ea3a0c2e948d1c41d408919}{isDemoCleaning}}\ =\ \mbox{\hyperlink{_global_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}};}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00158}00158\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(3,\ \textcolor{stringliteral}{"{}\ "{}},\ \mbox{\hyperlink{_l_c_d_8h_a717476da1e2de127b1bc96380b7b5e11}{NO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00159}00159\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_hardware_level_8h_ab0cc80ab0fbf99f1715dce89f42d5713}{moveMotorClampToLocBlock}}(\mbox{\hyperlink{_global_8h_ade9761f41665102c4dac0094427dcf1f}{M1POS1VAL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00160}00160\ \ \ \ \ \ \ \ \ ;}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00161}00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_keypad_8h_a8ca2ff5fc8cdd825a8eaaf8f673ec33d}{LoadingFunc}}(\mbox{\hyperlink{_global_8h_ad76d1750a6cdeebd506bfcd6752554d2}{ON}},\ \mbox{\hyperlink{_keypad_8h_af1a376128671e7b2af0b111b665a9b0d}{NOT\_LOADING}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00162}00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(0,\ \textcolor{stringliteral}{"{}Cannister\ Unlocked"{}},\ \mbox{\hyperlink{_l_c_d_8h_a717476da1e2de127b1bc96380b7b5e11}{NO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00163}00163\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(1,\ \textcolor{stringliteral}{"{}Next\ Cannister\ Please"{}},\ \mbox{\hyperlink{_l_c_d_8h_a717476da1e2de127b1bc96380b7b5e11}{NO\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00164}00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d_8h_a8d356ca1ac368ba09e0127e9273f24a3}{printLCD}}(2,\ \textcolor{stringliteral}{"{}Put\ Cannister\ On\ "{}},\ \mbox{\hyperlink{_l_c_d_8h_a3aeced1a56494fc61062cc987ddfa813}{ENTER\_SYMBOL}});}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00165}00165\ \ \ \ \ \ \ \ \ HAL\_Delay(3000);}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{comment}{//lcd.begin(LCD\_COLUMN\_COUNT,\ LCD\_ROW\_COUNT);}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00167}00167\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00169}00169\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00170}00170\ \textcolor{comment}{\ \ \ \ isMachineOn\ =\ TRUE;}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00171}00171\ \textcolor{comment}{\ \ \ \ ProgramToRun\ =\ DEMOAPP;}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00172}00172\ \textcolor{comment}{\ \ \ \ EEPROMHandleWrite();}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00173}00173\ \textcolor{comment}{\ \ \ \ resetFunc();\ \ //\ Implement\ this\ function\ to\ reset\ the\ STM32}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00174}00174\ \textcolor{comment}{\ \ \ \ NVIC\_SystemReset();}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00175}00175\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00177}00177\ \}}
+\DoxyCodeLine{\Hypertarget{_demo_app_8c_source_l00178}00178\ }
+
+\end{DoxyCode}

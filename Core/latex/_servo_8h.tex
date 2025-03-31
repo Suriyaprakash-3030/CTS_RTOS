@@ -1,0 +1,165 @@
+\doxysection{Inc/\+Servo.h File Reference}
+\hypertarget{_servo_8h}{}\label{_servo_8h}\index{Inc/Servo.h@{Inc/Servo.h}}
+{\ttfamily \#include $<$main.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_servo_8h_af57fc5a6c84fb0b43c66cd23e3500435}{SERVO\+\_\+\+MIN\+\_\+\+PULSE\+\_\+\+WIDTH}}~500
+\item 
+\#define \mbox{\hyperlink{_servo_8h_a59f73ee44c74d7e8581205d8e9e817b6}{SERVO\+\_\+\+MAX\+\_\+\+PULSE\+\_\+\+WIDTH}}~2500
+\item 
+\#define \mbox{\hyperlink{_servo_8h_a546558e3ca760d619e3544e8dafe5ba0}{SERVO\+\_\+\+MAX\+\_\+\+ANGLE}}~175
+\item 
+\#define \mbox{\hyperlink{_servo_8h_ab5daaf504dc4acbea99d2373ead7ef17}{SERVO\+\_\+\+MIN\+\_\+\+ANGLE}}~40
+\item 
+\#define \mbox{\hyperlink{_servo_8h_aee3c24557d1a621cf2dc97c0a623968b}{ISSERVOINTERTED}}~1
+\item 
+\#define \mbox{\hyperlink{_servo_8h_abdc6a27b2a75f109b4199b9b88ca7c7f}{Valve\+Close}}~0
+\item 
+\#define \mbox{\hyperlink{_servo_8h_a3192dc76235b3e36ec4465d0f385545c}{Valve\+Open}}~100
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_servo_8h_a4363bf9b248b133828855ea668bdb3a4}{Servo\+\_\+\+Init}} (void)
+\item 
+void \mbox{\hyperlink{_servo_8h_a219ac6cea6e3304154534bef9b66b46e}{Servo\+\_\+\+Set\+Angle}} (int16\+\_\+t degree)
+\item 
+void \mbox{\hyperlink{_servo_8h_a2edf7a5eac0c0a95130cc3cc54286598}{Servo\+\_\+\+Set\+Percent}} (int percentage)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int16\+\_\+t \mbox{\hyperlink{_servo_8h_a0674cf41ba25ce1925233d55ea692994}{angle}}
+\item 
+int \mbox{\hyperlink{_servo_8h_a4f9bdeb78667c8ab59d8d6f0c70a2cc3}{percent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_servo_8h_aee3c24557d1a621cf2dc97c0a623968b}\index{Servo.h@{Servo.h}!ISSERVOINTERTED@{ISSERVOINTERTED}}
+\index{ISSERVOINTERTED@{ISSERVOINTERTED}!Servo.h@{Servo.h}}
+\doxysubsubsection{\texorpdfstring{ISSERVOINTERTED}{ISSERVOINTERTED}}
+{\footnotesize\ttfamily \label{_servo_8h_aee3c24557d1a621cf2dc97c0a623968b} 
+\#define ISSERVOINTERTED~1}
+
+
+
+Definition at line \mbox{\hyperlink{_servo_8h_source_l00017}{17}} of file \mbox{\hyperlink{_servo_8h_source}{Servo.\+h}}.
+
+\Hypertarget{_servo_8h_a546558e3ca760d619e3544e8dafe5ba0}\index{Servo.h@{Servo.h}!SERVO\_MAX\_ANGLE@{SERVO\_MAX\_ANGLE}}
+\index{SERVO\_MAX\_ANGLE@{SERVO\_MAX\_ANGLE}!Servo.h@{Servo.h}}
+\doxysubsubsection{\texorpdfstring{SERVO\_MAX\_ANGLE}{SERVO\_MAX\_ANGLE}}
+{\footnotesize\ttfamily \label{_servo_8h_a546558e3ca760d619e3544e8dafe5ba0} 
+\#define SERVO\+\_\+\+MAX\+\_\+\+ANGLE~175}
+
+
+
+Definition at line \mbox{\hyperlink{_servo_8h_source_l00015}{15}} of file \mbox{\hyperlink{_servo_8h_source}{Servo.\+h}}.
+
+\Hypertarget{_servo_8h_a59f73ee44c74d7e8581205d8e9e817b6}\index{Servo.h@{Servo.h}!SERVO\_MAX\_PULSE\_WIDTH@{SERVO\_MAX\_PULSE\_WIDTH}}
+\index{SERVO\_MAX\_PULSE\_WIDTH@{SERVO\_MAX\_PULSE\_WIDTH}!Servo.h@{Servo.h}}
+\doxysubsubsection{\texorpdfstring{SERVO\_MAX\_PULSE\_WIDTH}{SERVO\_MAX\_PULSE\_WIDTH}}
+{\footnotesize\ttfamily \label{_servo_8h_a59f73ee44c74d7e8581205d8e9e817b6} 
+\#define SERVO\+\_\+\+MAX\+\_\+\+PULSE\+\_\+\+WIDTH~2500}
+
+
+
+Definition at line \mbox{\hyperlink{_servo_8h_source_l00014}{14}} of file \mbox{\hyperlink{_servo_8h_source}{Servo.\+h}}.
+
+\Hypertarget{_servo_8h_ab5daaf504dc4acbea99d2373ead7ef17}\index{Servo.h@{Servo.h}!SERVO\_MIN\_ANGLE@{SERVO\_MIN\_ANGLE}}
+\index{SERVO\_MIN\_ANGLE@{SERVO\_MIN\_ANGLE}!Servo.h@{Servo.h}}
+\doxysubsubsection{\texorpdfstring{SERVO\_MIN\_ANGLE}{SERVO\_MIN\_ANGLE}}
+{\footnotesize\ttfamily \label{_servo_8h_ab5daaf504dc4acbea99d2373ead7ef17} 
+\#define SERVO\+\_\+\+MIN\+\_\+\+ANGLE~40}
+
+
+
+Definition at line \mbox{\hyperlink{_servo_8h_source_l00016}{16}} of file \mbox{\hyperlink{_servo_8h_source}{Servo.\+h}}.
+
+\Hypertarget{_servo_8h_af57fc5a6c84fb0b43c66cd23e3500435}\index{Servo.h@{Servo.h}!SERVO\_MIN\_PULSE\_WIDTH@{SERVO\_MIN\_PULSE\_WIDTH}}
+\index{SERVO\_MIN\_PULSE\_WIDTH@{SERVO\_MIN\_PULSE\_WIDTH}!Servo.h@{Servo.h}}
+\doxysubsubsection{\texorpdfstring{SERVO\_MIN\_PULSE\_WIDTH}{SERVO\_MIN\_PULSE\_WIDTH}}
+{\footnotesize\ttfamily \label{_servo_8h_af57fc5a6c84fb0b43c66cd23e3500435} 
+\#define SERVO\+\_\+\+MIN\+\_\+\+PULSE\+\_\+\+WIDTH~500}
+
+
+
+Definition at line \mbox{\hyperlink{_servo_8h_source_l00013}{13}} of file \mbox{\hyperlink{_servo_8h_source}{Servo.\+h}}.
+
+\Hypertarget{_servo_8h_abdc6a27b2a75f109b4199b9b88ca7c7f}\index{Servo.h@{Servo.h}!ValveClose@{ValveClose}}
+\index{ValveClose@{ValveClose}!Servo.h@{Servo.h}}
+\doxysubsubsection{\texorpdfstring{ValveClose}{ValveClose}}
+{\footnotesize\ttfamily \label{_servo_8h_abdc6a27b2a75f109b4199b9b88ca7c7f} 
+\#define Valve\+Close~0}
+
+
+
+Definition at line \mbox{\hyperlink{_servo_8h_source_l00018}{18}} of file \mbox{\hyperlink{_servo_8h_source}{Servo.\+h}}.
+
+\Hypertarget{_servo_8h_a3192dc76235b3e36ec4465d0f385545c}\index{Servo.h@{Servo.h}!ValveOpen@{ValveOpen}}
+\index{ValveOpen@{ValveOpen}!Servo.h@{Servo.h}}
+\doxysubsubsection{\texorpdfstring{ValveOpen}{ValveOpen}}
+{\footnotesize\ttfamily \label{_servo_8h_a3192dc76235b3e36ec4465d0f385545c} 
+\#define Valve\+Open~100}
+
+
+
+Definition at line \mbox{\hyperlink{_servo_8h_source_l00019}{19}} of file \mbox{\hyperlink{_servo_8h_source}{Servo.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_servo_8h_a4363bf9b248b133828855ea668bdb3a4}\index{Servo.h@{Servo.h}!Servo\_Init@{Servo\_Init}}
+\index{Servo\_Init@{Servo\_Init}!Servo.h@{Servo.h}}
+\doxysubsubsection{\texorpdfstring{Servo\_Init()}{Servo\_Init()}}
+{\footnotesize\ttfamily \label{_servo_8h_a4363bf9b248b133828855ea668bdb3a4} 
+void Servo\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_servo_8c_source_l00016}{16}} of file \mbox{\hyperlink{_servo_8c_source}{Servo.\+c}}.
+
+\Hypertarget{_servo_8h_a219ac6cea6e3304154534bef9b66b46e}\index{Servo.h@{Servo.h}!Servo\_SetAngle@{Servo\_SetAngle}}
+\index{Servo\_SetAngle@{Servo\_SetAngle}!Servo.h@{Servo.h}}
+\doxysubsubsection{\texorpdfstring{Servo\_SetAngle()}{Servo\_SetAngle()}}
+{\footnotesize\ttfamily \label{_servo_8h_a219ac6cea6e3304154534bef9b66b46e} 
+void Servo\+\_\+\+Set\+Angle (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{degree}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_servo_8c_source_l00022}{22}} of file \mbox{\hyperlink{_servo_8c_source}{Servo.\+c}}.
+
+\Hypertarget{_servo_8h_a2edf7a5eac0c0a95130cc3cc54286598}\index{Servo.h@{Servo.h}!Servo\_SetPercent@{Servo\_SetPercent}}
+\index{Servo\_SetPercent@{Servo\_SetPercent}!Servo.h@{Servo.h}}
+\doxysubsubsection{\texorpdfstring{Servo\_SetPercent()}{Servo\_SetPercent()}}
+{\footnotesize\ttfamily \label{_servo_8h_a2edf7a5eac0c0a95130cc3cc54286598} 
+void Servo\+\_\+\+Set\+Percent (\begin{DoxyParamCaption}\item[{int}]{percentage}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_servo_8c_source_l00039}{39}} of file \mbox{\hyperlink{_servo_8c_source}{Servo.\+c}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_servo_8h_a0674cf41ba25ce1925233d55ea692994}\index{Servo.h@{Servo.h}!angle@{angle}}
+\index{angle@{angle}!Servo.h@{Servo.h}}
+\doxysubsubsection{\texorpdfstring{angle}{angle}}
+{\footnotesize\ttfamily \label{_servo_8h_a0674cf41ba25ce1925233d55ea692994} 
+int16\+\_\+t angle\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{_servo_8c_source_l00010}{10}} of file \mbox{\hyperlink{_servo_8c_source}{Servo.\+c}}.
+
+\Hypertarget{_servo_8h_a4f9bdeb78667c8ab59d8d6f0c70a2cc3}\index{Servo.h@{Servo.h}!percent@{percent}}
+\index{percent@{percent}!Servo.h@{Servo.h}}
+\doxysubsubsection{\texorpdfstring{percent}{percent}}
+{\footnotesize\ttfamily \label{_servo_8h_a4f9bdeb78667c8ab59d8d6f0c70a2cc3} 
+int percent\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{_servo_8c_source_l00011}{11}} of file \mbox{\hyperlink{_servo_8c_source}{Servo.\+c}}.
+

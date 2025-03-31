@@ -1,0 +1,95 @@
+\doxysection{Inc/\+ESP\+\_\+\+UART.h File Reference}
+\hypertarget{_e_s_p___u_a_r_t_8h}{}\label{_e_s_p___u_a_r_t_8h}\index{Inc/ESP\_UART.h@{Inc/ESP\_UART.h}}
+{\ttfamily \#include $<$main.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_e_s_p___u_a_r_t_8h_a1c527ab38b898f0e09c83ef03b11b193}{ESP\+\_\+\+UART\+\_\+\+Send}} (const char \texorpdfstring{$\ast$}{*}Data)
+\item 
+void \mbox{\hyperlink{_e_s_p___u_a_r_t_8h_a23993f2c3586515ccbf0e772f516aaaa}{ESP\+\_\+\+UART\+\_\+\+Sendln}} (const char \texorpdfstring{$\ast$}{*}Data)
+\item 
+void \mbox{\hyperlink{_e_s_p___u_a_r_t_8h_ae90d39e74ca4c617a34e184316889356}{ESP\+\_\+\+UART\+\_\+\+Sendln\+INT}} (int Data)
+\item 
+void \mbox{\hyperlink{_e_s_p___u_a_r_t_8h_a615a1ee23e1f44a6d809ad4664a77955}{ESP\+\_\+\+UART\+\_\+\+Send\+INT}} (int Data)
+\item 
+void \mbox{\hyperlink{_e_s_p___u_a_r_t_8h_a2052a2402c3e7273b492c490b8a50eba}{ESP\+\_\+\+UART\+\_\+\+Receive}} (void)
+\item 
+void \mbox{\hyperlink{_e_s_p___u_a_r_t_8h_a439d530b4c7ab9032c194c3fae96ae64}{Clear\+ESP\+\_\+\+UART\+\_\+\+Rx\+Buffer}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{_e_s_p___u_a_r_t_8h_a0a36c5429ce323ddcddef44acb91602c}{ESP\+\_\+\+UART\+\_\+\+Rx\+Buffer}} \mbox{[}30\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_e_s_p___u_a_r_t_8h_a439d530b4c7ab9032c194c3fae96ae64}\index{ESP\_UART.h@{ESP\_UART.h}!ClearESP\_UART\_RxBuffer@{ClearESP\_UART\_RxBuffer}}
+\index{ClearESP\_UART\_RxBuffer@{ClearESP\_UART\_RxBuffer}!ESP\_UART.h@{ESP\_UART.h}}
+\doxysubsubsection{\texorpdfstring{ClearESP\_UART\_RxBuffer()}{ClearESP\_UART\_RxBuffer()}}
+{\footnotesize\ttfamily \label{_e_s_p___u_a_r_t_8h_a439d530b4c7ab9032c194c3fae96ae64} 
+void Clear\+ESP\+\_\+\+UART\+\_\+\+Rx\+Buffer (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_e_s_p___u_a_r_t_8h_a2052a2402c3e7273b492c490b8a50eba}\index{ESP\_UART.h@{ESP\_UART.h}!ESP\_UART\_Receive@{ESP\_UART\_Receive}}
+\index{ESP\_UART\_Receive@{ESP\_UART\_Receive}!ESP\_UART.h@{ESP\_UART.h}}
+\doxysubsubsection{\texorpdfstring{ESP\_UART\_Receive()}{ESP\_UART\_Receive()}}
+{\footnotesize\ttfamily \label{_e_s_p___u_a_r_t_8h_a2052a2402c3e7273b492c490b8a50eba} 
+void ESP\+\_\+\+UART\+\_\+\+Receive (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Receive data from UART4 and store it in the buffer 
+
+Definition at line \mbox{\hyperlink{_e_s_p___u_a_r_t_8c_source_l00046}{46}} of file \mbox{\hyperlink{_e_s_p___u_a_r_t_8c_source}{ESP\+\_\+\+UART.\+c}}.
+
+\Hypertarget{_e_s_p___u_a_r_t_8h_a1c527ab38b898f0e09c83ef03b11b193}\index{ESP\_UART.h@{ESP\_UART.h}!ESP\_UART\_Send@{ESP\_UART\_Send}}
+\index{ESP\_UART\_Send@{ESP\_UART\_Send}!ESP\_UART.h@{ESP\_UART.h}}
+\doxysubsubsection{\texorpdfstring{ESP\_UART\_Send()}{ESP\_UART\_Send()}}
+{\footnotesize\ttfamily \label{_e_s_p___u_a_r_t_8h_a1c527ab38b898f0e09c83ef03b11b193} 
+void ESP\+\_\+\+UART\+\_\+\+Send (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{Data}{}\end{DoxyParamCaption})}
+
+Send character data over UART4 without a new line 
+
+Definition at line \mbox{\hyperlink{_e_s_p___u_a_r_t_8c_source_l00016}{16}} of file \mbox{\hyperlink{_e_s_p___u_a_r_t_8c_source}{ESP\+\_\+\+UART.\+c}}.
+
+\Hypertarget{_e_s_p___u_a_r_t_8h_a615a1ee23e1f44a6d809ad4664a77955}\index{ESP\_UART.h@{ESP\_UART.h}!ESP\_UART\_SendINT@{ESP\_UART\_SendINT}}
+\index{ESP\_UART\_SendINT@{ESP\_UART\_SendINT}!ESP\_UART.h@{ESP\_UART.h}}
+\doxysubsubsection{\texorpdfstring{ESP\_UART\_SendINT()}{ESP\_UART\_SendINT()}}
+{\footnotesize\ttfamily \label{_e_s_p___u_a_r_t_8h_a615a1ee23e1f44a6d809ad4664a77955} 
+void ESP\+\_\+\+UART\+\_\+\+Send\+INT (\begin{DoxyParamCaption}\item[{int}]{Data}{}\end{DoxyParamCaption})}
+
+Send numeric data over UART4 without a new line 
+
+Definition at line \mbox{\hyperlink{_e_s_p___u_a_r_t_8c_source_l00038}{38}} of file \mbox{\hyperlink{_e_s_p___u_a_r_t_8c_source}{ESP\+\_\+\+UART.\+c}}.
+
+\Hypertarget{_e_s_p___u_a_r_t_8h_a23993f2c3586515ccbf0e772f516aaaa}\index{ESP\_UART.h@{ESP\_UART.h}!ESP\_UART\_Sendln@{ESP\_UART\_Sendln}}
+\index{ESP\_UART\_Sendln@{ESP\_UART\_Sendln}!ESP\_UART.h@{ESP\_UART.h}}
+\doxysubsubsection{\texorpdfstring{ESP\_UART\_Sendln()}{ESP\_UART\_Sendln()}}
+{\footnotesize\ttfamily \label{_e_s_p___u_a_r_t_8h_a23993f2c3586515ccbf0e772f516aaaa} 
+void ESP\+\_\+\+UART\+\_\+\+Sendln (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{Data}{}\end{DoxyParamCaption})}
+
+Send character data over UART4 with a new line 
+
+Definition at line \mbox{\hyperlink{_e_s_p___u_a_r_t_8c_source_l00022}{22}} of file \mbox{\hyperlink{_e_s_p___u_a_r_t_8c_source}{ESP\+\_\+\+UART.\+c}}.
+
+\Hypertarget{_e_s_p___u_a_r_t_8h_ae90d39e74ca4c617a34e184316889356}\index{ESP\_UART.h@{ESP\_UART.h}!ESP\_UART\_SendlnINT@{ESP\_UART\_SendlnINT}}
+\index{ESP\_UART\_SendlnINT@{ESP\_UART\_SendlnINT}!ESP\_UART.h@{ESP\_UART.h}}
+\doxysubsubsection{\texorpdfstring{ESP\_UART\_SendlnINT()}{ESP\_UART\_SendlnINT()}}
+{\footnotesize\ttfamily \label{_e_s_p___u_a_r_t_8h_ae90d39e74ca4c617a34e184316889356} 
+void ESP\+\_\+\+UART\+\_\+\+Sendln\+INT (\begin{DoxyParamCaption}\item[{int}]{Data}{}\end{DoxyParamCaption})}
+
+Send numeric data over UART4 with a new line 
+
+Definition at line \mbox{\hyperlink{_e_s_p___u_a_r_t_8c_source_l00030}{30}} of file \mbox{\hyperlink{_e_s_p___u_a_r_t_8c_source}{ESP\+\_\+\+UART.\+c}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_e_s_p___u_a_r_t_8h_a0a36c5429ce323ddcddef44acb91602c}\index{ESP\_UART.h@{ESP\_UART.h}!ESP\_UART\_RxBuffer@{ESP\_UART\_RxBuffer}}
+\index{ESP\_UART\_RxBuffer@{ESP\_UART\_RxBuffer}!ESP\_UART.h@{ESP\_UART.h}}
+\doxysubsubsection{\texorpdfstring{ESP\_UART\_RxBuffer}{ESP\_UART\_RxBuffer}}
+{\footnotesize\ttfamily \label{_e_s_p___u_a_r_t_8h_a0a36c5429ce323ddcddef44acb91602c} 
+char ESP\+\_\+\+UART\+\_\+\+Rx\+Buffer\mbox{[}30\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+Buffer to store incoming UART data 
+
+Definition at line \mbox{\hyperlink{_e_s_p___u_a_r_t_8c_source_l00013}{13}} of file \mbox{\hyperlink{_e_s_p___u_a_r_t_8c_source}{ESP\+\_\+\+UART.\+c}}.
+

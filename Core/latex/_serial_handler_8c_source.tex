@@ -1,0 +1,50 @@
+\doxysection{Serial\+Handler.\+c}
+\hypertarget{_serial_handler_8c_source}{}\label{_serial_handler_8c_source}\index{Src/SerialHandler.c@{Src/SerialHandler.c}}
+\mbox{\hyperlink{_serial_handler_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00002}00002\ \textcolor{comment}{\ *\ SerialHandler.c}}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00003}00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00004}00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Aug\ 30,\ 2024}}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ mhmaq}}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00006}00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_serial_handler_8h}{SerialHandler.h}}>}}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00011}00011\ \textcolor{keyword}{extern}\ UART\_HandleTypeDef\ \mbox{\hyperlink{_serial_handler_8c_a2cf715bef37f7e8ef385a30974a5f0d5}{huart1}};}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00014}00014\ \textcolor{comment}{/*Print\ character\ data\ without\ the\ new\ line\ at\ the\ end*/}}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00015}\mbox{\hyperlink{_serial_handler_8h_af7a13111f23cd864e4151358bc176a46}{00015}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_serial_handler_8c_af7a13111f23cd864e4151358bc176a46}{SerialPrint}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ Data)}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00017}00017\ \ \ \ \ HAL\_UART\_Transmit(\&\mbox{\hyperlink{_serial_handler_8c_a2cf715bef37f7e8ef385a30974a5f0d5}{huart1}},\ (uint8\_t*)Data,\ strlen(Data),\ HAL\_MAX\_DELAY);}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00020}00020\ \textcolor{comment}{/*Print\ character\ data\ with\ the\ new\ line\ at\ the\ end*/}}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00021}\mbox{\hyperlink{_serial_handler_8h_a7dfac151ee564fc3668bfb1dd4bf24af}{00021}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_serial_handler_8c_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ Data)}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00022}00022\ \{}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00023}00023\ \ \ \ \ HAL\_UART\_Transmit(\&\mbox{\hyperlink{_serial_handler_8c_a2cf715bef37f7e8ef385a30974a5f0d5}{huart1}},\ (uint8\_t*)Data,\ strlen(Data),\ HAL\_MAX\_DELAY);}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ newline[2]\ =\ \textcolor{stringliteral}{"{}\(\backslash\)r\(\backslash\)n"{}};\ \textcolor{comment}{//\ Newline\ characters\ for\ UART}}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00025}00025\ \ \ \ \ HAL\_UART\_Transmit(\&\mbox{\hyperlink{_serial_handler_8c_a2cf715bef37f7e8ef385a30974a5f0d5}{huart1}},\ (uint8\_t*)newline,\ 2,\ HAL\_MAX\_DELAY);}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00026}00026\ \}}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00028}00028\ \textcolor{comment}{/*Print\ Numeric\ data\ with\ the\ new\ line\ at\ the\ end*/}}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00029}\mbox{\hyperlink{_serial_handler_8h_a63b6142839a1d58f1358d84a9b0c7aed}{00029}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_serial_handler_8c_a63b6142839a1d58f1358d84a9b0c7aed}{SerialPrintlnINT}}(\textcolor{keywordtype}{int}\ Data)}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00030}00030\ \{}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00031}00031\ \ \ \ \ \textcolor{comment}{/*Here\ the\ UART\ Buffer\ is\ being\ used\ to\ store\ the\ numeric\ values\ and\ present\ then\ as\ character\ array*/}}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{char}\ buffer[10];}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00033}00033\ \ \ \ \ sprintf(buffer,\ \textcolor{stringliteral}{"{}\%d"{}},\ Data);}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{_serial_handler_8c_a7dfac151ee564fc3668bfb1dd4bf24af}{SerialPrintln}}(buffer);}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00037}00037\ \textcolor{comment}{/*Print\ Numeric\ data\ without\ the\ new\ line\ at\ the\ end*/}}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00038}\mbox{\hyperlink{_serial_handler_8h_aac8053e7d2a06ec13076bc96da8bf5cb}{00038}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_serial_handler_8c_aac8053e7d2a06ec13076bc96da8bf5cb}{SerialPrintINT}}(\textcolor{keywordtype}{int}\ Data)}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00039}00039\ \{}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00040}00040\ \ \ \ \ \textcolor{comment}{/*Here\ the\ UART\ Buffer\ is\ being\ used\ to\ store\ the\ numeric\ values\ and\ present\ then\ as\ character\ array*/}}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{char}\ buffer[10];}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00042}00042\ \ \ \ \ sprintf(buffer,\ \textcolor{stringliteral}{"{}\%d"{}},\ Data);}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{_serial_handler_8c_af7a13111f23cd864e4151358bc176a46}{SerialPrint}}(buffer);}
+\DoxyCodeLine{\Hypertarget{_serial_handler_8c_source_l00044}00044\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,161 @@
+\doxysection{Core/\+Src/\+ISR.c File Reference}
+\hypertarget{_i_s_r_8c}{}\label{_i_s_r_8c}\index{Core/Src/ISR.c@{Core/Src/ISR.c}}
+{\ttfamily \#include "{}main.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_i_s_r_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}{HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+Callback}} (uint16\+\_\+t GPIO\+\_\+\+Pin)
+\item 
+void \mbox{\hyperlink{_i_s_r_8c_a5adad5f1f21deb8eaba8ddc208b41761}{Blink}} ()
+\item 
+void \mbox{\hyperlink{_i_s_r_8c_a8a3b0ad512a6e6c6157440b68d395eac}{HAL\+\_\+\+TIM\+\_\+\+Period\+Elapsed\+Callback}} (TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}htim)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+UART\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{_i_s_r_8c_a2cf715bef37f7e8ef385a30974a5f0d5}{huart1}}
+\item 
+TIM\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{_i_s_r_8c_abb71bf3ee68e2a051fbeec6c3ab3012d}{htim7}}
+\item 
+TIM\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{_i_s_r_8c_a2c80fd5510e2990a59a5c90d745c716c}{htim2}}
+\item 
+long \mbox{\hyperlink{_i_s_r_8c_aa87e922aa98a5cc27a1ca0c457c0e6a7}{Servo\+DC\+\_\+\+M1\+\_\+\+Enc\+A\+\_\+\+Pulses}} = 1
+\item 
+long \mbox{\hyperlink{_i_s_r_8c_a71cd1c2bc245b36e113836d29c431450}{Servo\+DC\+\_\+\+M1\+\_\+\+Enc\+B\+\_\+\+Pulses}} = 1
+\item 
+long \mbox{\hyperlink{_i_s_r_8c_a9afdc73666802411201b3e9fe602c8de}{Clamp\+\_\+\+M2\+\_\+\+Enc\+A\+\_\+\+Pulses}} = 1
+\item 
+long \mbox{\hyperlink{_i_s_r_8c_a85b46fa72af59c2326de2f00c0aa9885}{Clamp\+\_\+\+M2\+\_\+\+Enc\+B\+\_\+\+Pulses}} = 1
+\item 
+long \mbox{\hyperlink{_i_s_r_8c_a2f9df0008a2a82c8bb12d1be70504c3d}{Spindle\+\_\+\+M3\+\_\+\+Enc\+A\+\_\+\+Pulses}} = 1
+\item 
+long \mbox{\hyperlink{_i_s_r_8c_a950bab6fe475152299089fcfbe1f4ad9}{Spindle\+\_\+\+M3\+\_\+\+Enc\+B\+\_\+\+Pulses}} = 1
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_i_s_r_8c_a0dd6456a4244c5dd899964e7ccf90024}{is\+Clamp\+Limit\+Switch\+Reached}} = TRUE
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_i_s_r_8c_a9f753385f263fc40b10c16b028bde1dd}{is\+Spindle\+Limit\+Switch\+Reached}} = TRUE
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_i_s_r_8c_a2f89df21eabc2e588e582a83cd72b475}{is\+Servo\+Limit\+Switch\+Reached}} = TRUE
+\item 
+int \mbox{\hyperlink{_i_s_r_8c_a33b9291c34130521f946574235fc798f}{Clamp\+Motor\+State}} = OFF
+\item 
+int \mbox{\hyperlink{_i_s_r_8c_a68347e8f6133b4d0301a04d5edcf680e}{Spindle\+Motor\+State}} = OFF
+\item 
+int \mbox{\hyperlink{_i_s_r_8c_ae97bf9cab186879d3006d47b0dd8a175}{Servo\+DCMotor\+State}} =OFF
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_i_s_r_8c_a5adad5f1f21deb8eaba8ddc208b41761}\index{ISR.c@{ISR.c}!Blink@{Blink}}
+\index{Blink@{Blink}!ISR.c@{ISR.c}}
+\doxysubsubsection{\texorpdfstring{Blink()}{Blink()}}
+{\footnotesize\ttfamily \label{_i_s_r_8c_a5adad5f1f21deb8eaba8ddc208b41761} 
+void Blink (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_i_s_r_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}\index{ISR.c@{ISR.c}!HAL\_GPIO\_EXTI\_Callback@{HAL\_GPIO\_EXTI\_Callback}}
+\index{HAL\_GPIO\_EXTI\_Callback@{HAL\_GPIO\_EXTI\_Callback}!ISR.c@{ISR.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_GPIO\_EXTI\_Callback()}{HAL\_GPIO\_EXTI\_Callback()}}
+{\footnotesize\ttfamily \label{_i_s_r_8c_a0cd91fd3a9608559c2a87a8ba6cba55f} 
+void HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+Callback (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{GPIO\+\_\+\+Pin}{}\end{DoxyParamCaption})}
+
+Check which pin triggered the interrupt and Callbacks Power Button Interrupts for turning on and turning off the machine
+
+Clamp Motor Interrupts such that Limit Switch, Feedback Pulses\Hypertarget{_i_s_r_8c_a8a3b0ad512a6e6c6157440b68d395eac}\index{ISR.c@{ISR.c}!HAL\_TIM\_PeriodElapsedCallback@{HAL\_TIM\_PeriodElapsedCallback}}
+\index{HAL\_TIM\_PeriodElapsedCallback@{HAL\_TIM\_PeriodElapsedCallback}!ISR.c@{ISR.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_TIM\_PeriodElapsedCallback()}{HAL\_TIM\_PeriodElapsedCallback()}}
+{\footnotesize\ttfamily \label{_i_s_r_8c_a8a3b0ad512a6e6c6157440b68d395eac} 
+void HAL\+\_\+\+TIM\+\_\+\+Period\+Elapsed\+Callback (\begin{DoxyParamCaption}\item[{TIM\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}}]{htim}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_i_s_r_8c_a9afdc73666802411201b3e9fe602c8de}\index{ISR.c@{ISR.c}!Clamp\_M2\_EncA\_Pulses@{Clamp\_M2\_EncA\_Pulses}}
+\index{Clamp\_M2\_EncA\_Pulses@{Clamp\_M2\_EncA\_Pulses}!ISR.c@{ISR.c}}
+\doxysubsubsection{\texorpdfstring{Clamp\_M2\_EncA\_Pulses}{Clamp\_M2\_EncA\_Pulses}}
+{\footnotesize\ttfamily \label{_i_s_r_8c_a9afdc73666802411201b3e9fe602c8de} 
+long Clamp\+\_\+\+M2\+\_\+\+Enc\+A\+\_\+\+Pulses = 1}
+
+\Hypertarget{_i_s_r_8c_a85b46fa72af59c2326de2f00c0aa9885}\index{ISR.c@{ISR.c}!Clamp\_M2\_EncB\_Pulses@{Clamp\_M2\_EncB\_Pulses}}
+\index{Clamp\_M2\_EncB\_Pulses@{Clamp\_M2\_EncB\_Pulses}!ISR.c@{ISR.c}}
+\doxysubsubsection{\texorpdfstring{Clamp\_M2\_EncB\_Pulses}{Clamp\_M2\_EncB\_Pulses}}
+{\footnotesize\ttfamily \label{_i_s_r_8c_a85b46fa72af59c2326de2f00c0aa9885} 
+long Clamp\+\_\+\+M2\+\_\+\+Enc\+B\+\_\+\+Pulses = 1}
+
+\Hypertarget{_i_s_r_8c_a33b9291c34130521f946574235fc798f}\index{ISR.c@{ISR.c}!ClampMotorState@{ClampMotorState}}
+\index{ClampMotorState@{ClampMotorState}!ISR.c@{ISR.c}}
+\doxysubsubsection{\texorpdfstring{ClampMotorState}{ClampMotorState}}
+{\footnotesize\ttfamily \label{_i_s_r_8c_a33b9291c34130521f946574235fc798f} 
+int Clamp\+Motor\+State = OFF}
+
+\Hypertarget{_i_s_r_8c_a2c80fd5510e2990a59a5c90d745c716c}\index{ISR.c@{ISR.c}!htim2@{htim2}}
+\index{htim2@{htim2}!ISR.c@{ISR.c}}
+\doxysubsubsection{\texorpdfstring{htim2}{htim2}}
+{\footnotesize\ttfamily \label{_i_s_r_8c_a2c80fd5510e2990a59a5c90d745c716c} 
+TIM\+\_\+\+Handle\+Type\+Def htim2\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{_i_s_r_8c_abb71bf3ee68e2a051fbeec6c3ab3012d}\index{ISR.c@{ISR.c}!htim7@{htim7}}
+\index{htim7@{htim7}!ISR.c@{ISR.c}}
+\doxysubsubsection{\texorpdfstring{htim7}{htim7}}
+{\footnotesize\ttfamily \label{_i_s_r_8c_abb71bf3ee68e2a051fbeec6c3ab3012d} 
+TIM\+\_\+\+Handle\+Type\+Def htim7\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{_i_s_r_8c_a2cf715bef37f7e8ef385a30974a5f0d5}\index{ISR.c@{ISR.c}!huart1@{huart1}}
+\index{huart1@{huart1}!ISR.c@{ISR.c}}
+\doxysubsubsection{\texorpdfstring{huart1}{huart1}}
+{\footnotesize\ttfamily \label{_i_s_r_8c_a2cf715bef37f7e8ef385a30974a5f0d5} 
+UART\+\_\+\+Handle\+Type\+Def huart1\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{_i_s_r_8c_a0dd6456a4244c5dd899964e7ccf90024}\index{ISR.c@{ISR.c}!isClampLimitSwitchReached@{isClampLimitSwitchReached}}
+\index{isClampLimitSwitchReached@{isClampLimitSwitchReached}!ISR.c@{ISR.c}}
+\doxysubsubsection{\texorpdfstring{isClampLimitSwitchReached}{isClampLimitSwitchReached}}
+{\footnotesize\ttfamily \label{_i_s_r_8c_a0dd6456a4244c5dd899964e7ccf90024} 
+uint8\+\_\+t is\+Clamp\+Limit\+Switch\+Reached = TRUE}
+
+\Hypertarget{_i_s_r_8c_a2f89df21eabc2e588e582a83cd72b475}\index{ISR.c@{ISR.c}!isServoLimitSwitchReached@{isServoLimitSwitchReached}}
+\index{isServoLimitSwitchReached@{isServoLimitSwitchReached}!ISR.c@{ISR.c}}
+\doxysubsubsection{\texorpdfstring{isServoLimitSwitchReached}{isServoLimitSwitchReached}}
+{\footnotesize\ttfamily \label{_i_s_r_8c_a2f89df21eabc2e588e582a83cd72b475} 
+uint8\+\_\+t is\+Servo\+Limit\+Switch\+Reached = TRUE}
+
+\Hypertarget{_i_s_r_8c_a9f753385f263fc40b10c16b028bde1dd}\index{ISR.c@{ISR.c}!isSpindleLimitSwitchReached@{isSpindleLimitSwitchReached}}
+\index{isSpindleLimitSwitchReached@{isSpindleLimitSwitchReached}!ISR.c@{ISR.c}}
+\doxysubsubsection{\texorpdfstring{isSpindleLimitSwitchReached}{isSpindleLimitSwitchReached}}
+{\footnotesize\ttfamily \label{_i_s_r_8c_a9f753385f263fc40b10c16b028bde1dd} 
+uint8\+\_\+t is\+Spindle\+Limit\+Switch\+Reached = TRUE}
+
+\Hypertarget{_i_s_r_8c_aa87e922aa98a5cc27a1ca0c457c0e6a7}\index{ISR.c@{ISR.c}!ServoDC\_M1\_EncA\_Pulses@{ServoDC\_M1\_EncA\_Pulses}}
+\index{ServoDC\_M1\_EncA\_Pulses@{ServoDC\_M1\_EncA\_Pulses}!ISR.c@{ISR.c}}
+\doxysubsubsection{\texorpdfstring{ServoDC\_M1\_EncA\_Pulses}{ServoDC\_M1\_EncA\_Pulses}}
+{\footnotesize\ttfamily \label{_i_s_r_8c_aa87e922aa98a5cc27a1ca0c457c0e6a7} 
+long Servo\+DC\+\_\+\+M1\+\_\+\+Enc\+A\+\_\+\+Pulses = 1}
+
+\Hypertarget{_i_s_r_8c_a71cd1c2bc245b36e113836d29c431450}\index{ISR.c@{ISR.c}!ServoDC\_M1\_EncB\_Pulses@{ServoDC\_M1\_EncB\_Pulses}}
+\index{ServoDC\_M1\_EncB\_Pulses@{ServoDC\_M1\_EncB\_Pulses}!ISR.c@{ISR.c}}
+\doxysubsubsection{\texorpdfstring{ServoDC\_M1\_EncB\_Pulses}{ServoDC\_M1\_EncB\_Pulses}}
+{\footnotesize\ttfamily \label{_i_s_r_8c_a71cd1c2bc245b36e113836d29c431450} 
+long Servo\+DC\+\_\+\+M1\+\_\+\+Enc\+B\+\_\+\+Pulses = 1}
+
+\Hypertarget{_i_s_r_8c_ae97bf9cab186879d3006d47b0dd8a175}\index{ISR.c@{ISR.c}!ServoDCMotorState@{ServoDCMotorState}}
+\index{ServoDCMotorState@{ServoDCMotorState}!ISR.c@{ISR.c}}
+\doxysubsubsection{\texorpdfstring{ServoDCMotorState}{ServoDCMotorState}}
+{\footnotesize\ttfamily \label{_i_s_r_8c_ae97bf9cab186879d3006d47b0dd8a175} 
+int Servo\+DCMotor\+State =OFF}
+
+\Hypertarget{_i_s_r_8c_a2f9df0008a2a82c8bb12d1be70504c3d}\index{ISR.c@{ISR.c}!Spindle\_M3\_EncA\_Pulses@{Spindle\_M3\_EncA\_Pulses}}
+\index{Spindle\_M3\_EncA\_Pulses@{Spindle\_M3\_EncA\_Pulses}!ISR.c@{ISR.c}}
+\doxysubsubsection{\texorpdfstring{Spindle\_M3\_EncA\_Pulses}{Spindle\_M3\_EncA\_Pulses}}
+{\footnotesize\ttfamily \label{_i_s_r_8c_a2f9df0008a2a82c8bb12d1be70504c3d} 
+long Spindle\+\_\+\+M3\+\_\+\+Enc\+A\+\_\+\+Pulses = 1}
+
+\Hypertarget{_i_s_r_8c_a950bab6fe475152299089fcfbe1f4ad9}\index{ISR.c@{ISR.c}!Spindle\_M3\_EncB\_Pulses@{Spindle\_M3\_EncB\_Pulses}}
+\index{Spindle\_M3\_EncB\_Pulses@{Spindle\_M3\_EncB\_Pulses}!ISR.c@{ISR.c}}
+\doxysubsubsection{\texorpdfstring{Spindle\_M3\_EncB\_Pulses}{Spindle\_M3\_EncB\_Pulses}}
+{\footnotesize\ttfamily \label{_i_s_r_8c_a950bab6fe475152299089fcfbe1f4ad9} 
+long Spindle\+\_\+\+M3\+\_\+\+Enc\+B\+\_\+\+Pulses = 1}
+
+\Hypertarget{_i_s_r_8c_a68347e8f6133b4d0301a04d5edcf680e}\index{ISR.c@{ISR.c}!SpindleMotorState@{SpindleMotorState}}
+\index{SpindleMotorState@{SpindleMotorState}!ISR.c@{ISR.c}}
+\doxysubsubsection{\texorpdfstring{SpindleMotorState}{SpindleMotorState}}
+{\footnotesize\ttfamily \label{_i_s_r_8c_a68347e8f6133b4d0301a04d5edcf680e} 
+int Spindle\+Motor\+State = OFF}
+

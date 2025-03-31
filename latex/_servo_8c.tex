@@ -1,0 +1,63 @@
+\doxysection{Core/\+Src/\+Servo.c File Reference}
+\hypertarget{_servo_8c}{}\label{_servo_8c}\index{Core/Src/Servo.c@{Core/Src/Servo.c}}
+{\ttfamily \#include "{}servo.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_servo_8c_a4363bf9b248b133828855ea668bdb3a4}{Servo\+\_\+\+Init}} (void)
+\item 
+void \mbox{\hyperlink{_servo_8c_a219ac6cea6e3304154534bef9b66b46e}{Servo\+\_\+\+Set\+Angle}} (int16\+\_\+t degree)
+\item 
+void \mbox{\hyperlink{_servo_8c_a2edf7a5eac0c0a95130cc3cc54286598}{Servo\+\_\+\+Set\+Percent}} (int percentage)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int16\+\_\+t \mbox{\hyperlink{_servo_8c_a0674cf41ba25ce1925233d55ea692994}{angle}} = 0
+\item 
+int \mbox{\hyperlink{_servo_8c_a4f9bdeb78667c8ab59d8d6f0c70a2cc3}{percent}} = 0
+\item 
+TIM\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{_servo_8c_a2f22f985c4f33318fdcd4cc996623bf4}{htim11}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_servo_8c_a4363bf9b248b133828855ea668bdb3a4}\index{Servo.c@{Servo.c}!Servo\_Init@{Servo\_Init}}
+\index{Servo\_Init@{Servo\_Init}!Servo.c@{Servo.c}}
+\doxysubsubsection{\texorpdfstring{Servo\_Init()}{Servo\_Init()}}
+{\footnotesize\ttfamily \label{_servo_8c_a4363bf9b248b133828855ea668bdb3a4} 
+void Servo\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_servo_8c_a219ac6cea6e3304154534bef9b66b46e}\index{Servo.c@{Servo.c}!Servo\_SetAngle@{Servo\_SetAngle}}
+\index{Servo\_SetAngle@{Servo\_SetAngle}!Servo.c@{Servo.c}}
+\doxysubsubsection{\texorpdfstring{Servo\_SetAngle()}{Servo\_SetAngle()}}
+{\footnotesize\ttfamily \label{_servo_8c_a219ac6cea6e3304154534bef9b66b46e} 
+void Servo\+\_\+\+Set\+Angle (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{degree}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_servo_8c_a2edf7a5eac0c0a95130cc3cc54286598}\index{Servo.c@{Servo.c}!Servo\_SetPercent@{Servo\_SetPercent}}
+\index{Servo\_SetPercent@{Servo\_SetPercent}!Servo.c@{Servo.c}}
+\doxysubsubsection{\texorpdfstring{Servo\_SetPercent()}{Servo\_SetPercent()}}
+{\footnotesize\ttfamily \label{_servo_8c_a2edf7a5eac0c0a95130cc3cc54286598} 
+void Servo\+\_\+\+Set\+Percent (\begin{DoxyParamCaption}\item[{int}]{percentage}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_servo_8c_a0674cf41ba25ce1925233d55ea692994}\index{Servo.c@{Servo.c}!angle@{angle}}
+\index{angle@{angle}!Servo.c@{Servo.c}}
+\doxysubsubsection{\texorpdfstring{angle}{angle}}
+{\footnotesize\ttfamily \label{_servo_8c_a0674cf41ba25ce1925233d55ea692994} 
+int16\+\_\+t angle = 0}
+
+\Hypertarget{_servo_8c_a2f22f985c4f33318fdcd4cc996623bf4}\index{Servo.c@{Servo.c}!htim11@{htim11}}
+\index{htim11@{htim11}!Servo.c@{Servo.c}}
+\doxysubsubsection{\texorpdfstring{htim11}{htim11}}
+{\footnotesize\ttfamily \label{_servo_8c_a2f22f985c4f33318fdcd4cc996623bf4} 
+TIM\+\_\+\+Handle\+Type\+Def htim11\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{_servo_8c_a4f9bdeb78667c8ab59d8d6f0c70a2cc3}\index{Servo.c@{Servo.c}!percent@{percent}}
+\index{percent@{percent}!Servo.c@{Servo.c}}
+\doxysubsubsection{\texorpdfstring{percent}{percent}}
+{\footnotesize\ttfamily \label{_servo_8c_a4f9bdeb78667c8ab59d8d6f0c70a2cc3} 
+int percent = 0}
+

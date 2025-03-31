@@ -1,0 +1,251 @@
+\doxysection{Inc/\+ISR.h File Reference}
+\hypertarget{_i_s_r_8h}{}\label{_i_s_r_8h}\index{Inc/ISR.h@{Inc/ISR.h}}
+{\ttfamily \#include $<$main.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_i_s_r_8h_a0cd91fd3a9608559c2a87a8ba6cba55f}{HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+Callback}} (uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Function prototypes for ISR callbacks (to be defined as needed) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_i_s_r_8h_a22ccc7366c248b5d48730a09c62f24bc}{Blink}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+long \mbox{\hyperlink{_i_s_r_8h_aa87e922aa98a5cc27a1ca0c457c0e6a7}{Servo\+DC\+\_\+\+M1\+\_\+\+Enc\+A\+\_\+\+Pulses}}
+\item 
+long \mbox{\hyperlink{_i_s_r_8h_a71cd1c2bc245b36e113836d29c431450}{Servo\+DC\+\_\+\+M1\+\_\+\+Enc\+B\+\_\+\+Pulses}}
+\begin{DoxyCompactList}\small\item\em Encoder pulses for Motor 1 Servo\+DC. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{_i_s_r_8h_a9afdc73666802411201b3e9fe602c8de}{Clamp\+\_\+\+M2\+\_\+\+Enc\+A\+\_\+\+Pulses}}
+\begin{DoxyCompactList}\small\item\em Encoder pulses for Motor 1 Servo\+DC. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{_i_s_r_8h_a85b46fa72af59c2326de2f00c0aa9885}{Clamp\+\_\+\+M2\+\_\+\+Enc\+B\+\_\+\+Pulses}}
+\begin{DoxyCompactList}\small\item\em Encoder pulses for Motor 2 Clamp. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{_i_s_r_8h_a2f9df0008a2a82c8bb12d1be70504c3d}{Spindle\+\_\+\+M3\+\_\+\+Enc\+A\+\_\+\+Pulses}}
+\begin{DoxyCompactList}\small\item\em Encoder pulses for Motor 2 Clamp. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{_i_s_r_8h_a950bab6fe475152299089fcfbe1f4ad9}{Spindle\+\_\+\+M3\+\_\+\+Enc\+B\+\_\+\+Pulses}}
+\begin{DoxyCompactList}\small\item\em Encoder pulses for Motor 3 Spindle. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_i_s_r_8h_a0dd6456a4244c5dd899964e7ccf90024}{is\+Clamp\+Limit\+Switch\+Reached}}
+\begin{DoxyCompactList}\small\item\em Encoder pulses for Motor 3 Spindle. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_i_s_r_8h_a9f753385f263fc40b10c16b028bde1dd}{is\+Spindle\+Limit\+Switch\+Reached}}
+\begin{DoxyCompactList}\small\item\em State of Motor 1 limit switch. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_i_s_r_8h_a2f89df21eabc2e588e582a83cd72b475}{is\+Servo\+Limit\+Switch\+Reached}}
+\begin{DoxyCompactList}\small\item\em State of Motor 2 limit switch. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_i_s_r_8h_a33b9291c34130521f946574235fc798f}{Clamp\+Motor\+State}}
+\begin{DoxyCompactList}\small\item\em State of Motor 2 limit switch. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_i_s_r_8h_a68347e8f6133b4d0301a04d5edcf680e}{Spindle\+Motor\+State}}
+\begin{DoxyCompactList}\small\item\em State of Motor 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_i_s_r_8h_a22ccc7366c248b5d48730a09c62f24bc}\index{ISR.h@{ISR.h}!Blink@{Blink}}
+\index{Blink@{Blink}!ISR.h@{ISR.h}}
+\doxysubsubsection{\texorpdfstring{Blink()}{Blink()}}
+{\footnotesize\ttfamily \label{_i_s_r_8h_a22ccc7366c248b5d48730a09c62f24bc} 
+void Blink (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Toggle the machine state
+
+Reset the STM32 when turning off
+
+If LED supposed to blink
+
+Buffer to hold the formatted string
+
+Definition at line \mbox{\hyperlink{_i_s_r_8c_source_l00189}{189}} of file \mbox{\hyperlink{_i_s_r_8c_source}{ISR.\+c}}.
+
+\Hypertarget{_i_s_r_8h_a0cd91fd3a9608559c2a87a8ba6cba55f}\index{ISR.h@{ISR.h}!HAL\_GPIO\_EXTI\_Callback@{HAL\_GPIO\_EXTI\_Callback}}
+\index{HAL\_GPIO\_EXTI\_Callback@{HAL\_GPIO\_EXTI\_Callback}!ISR.h@{ISR.h}}
+\doxysubsubsection{\texorpdfstring{HAL\_GPIO\_EXTI\_Callback()}{HAL\_GPIO\_EXTI\_Callback()}}
+{\footnotesize\ttfamily \label{_i_s_r_8h_a0cd91fd3a9608559c2a87a8ba6cba55f} 
+void HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+Callback (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{GPIO\+\_\+\+Pin}{}\end{DoxyParamCaption})}
+
+
+
+Function prototypes for ISR callbacks (to be defined as needed) 
+
+State of Motor 2 Check which pin triggered the interrupt and Callbacks Power Button Interrupts for turning on and turning off the machine
+
+Handle the interrupt caused by Power Button
+
+Handle the interrupt caused by Clean Button
+
+Clamp Motor Interrupts such that Limit Switch, Feedback Pulses
+
+Handle the interrupt caused by Clamp Motor Limit Switch
+
+Handle the interrupt caused by Clamp Motor Feedback Encoder A
+
+Handle the interrupt caused by Clamp Motor Feedback Encoder B
+
+Spindle Motor Interrupts such that Limit Switch, Feedback Pulses
+
+Handle the interrupt caused by Spindle Motor Limit switch
+
+Handle the interrupt caused by Spindle Motor Feedback Encoder A
+
+Handle the interrupt caused by Spindle Motor Feedback Encoder B
+
+Servo Motor Interrupts such that Limit Switch, Feedback Pulses plus also if the DC is attached instead of Servo
+
+Handle the interrupt caused by Servo Motor Limit Switch
+
+This part will run only if the DC motor is being used instead of the servo motor.
+
+Handle the interrupt caused by Spindle Motor Limit switch
+
+Handle the interrupt caused by Spindle Motor Feedback Encoder A
+
+Definition at line \mbox{\hyperlink{_i_s_r_8c_source_l00032}{32}} of file \mbox{\hyperlink{_i_s_r_8c_source}{ISR.\+c}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_i_s_r_8h_a9afdc73666802411201b3e9fe602c8de}\index{ISR.h@{ISR.h}!Clamp\_M2\_EncA\_Pulses@{Clamp\_M2\_EncA\_Pulses}}
+\index{Clamp\_M2\_EncA\_Pulses@{Clamp\_M2\_EncA\_Pulses}!ISR.h@{ISR.h}}
+\doxysubsubsection{\texorpdfstring{Clamp\_M2\_EncA\_Pulses}{Clamp\_M2\_EncA\_Pulses}}
+{\footnotesize\ttfamily \label{_i_s_r_8h_a9afdc73666802411201b3e9fe602c8de} 
+long Clamp\+\_\+\+M2\+\_\+\+Enc\+A\+\_\+\+Pulses\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Encoder pulses for Motor 1 Servo\+DC. 
+
+
+
+Definition at line \mbox{\hyperlink{_i_s_r_8c_source_l00018}{18}} of file \mbox{\hyperlink{_i_s_r_8c_source}{ISR.\+c}}.
+
+\Hypertarget{_i_s_r_8h_a85b46fa72af59c2326de2f00c0aa9885}\index{ISR.h@{ISR.h}!Clamp\_M2\_EncB\_Pulses@{Clamp\_M2\_EncB\_Pulses}}
+\index{Clamp\_M2\_EncB\_Pulses@{Clamp\_M2\_EncB\_Pulses}!ISR.h@{ISR.h}}
+\doxysubsubsection{\texorpdfstring{Clamp\_M2\_EncB\_Pulses}{Clamp\_M2\_EncB\_Pulses}}
+{\footnotesize\ttfamily \label{_i_s_r_8h_a85b46fa72af59c2326de2f00c0aa9885} 
+long Clamp\+\_\+\+M2\+\_\+\+Enc\+B\+\_\+\+Pulses\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Encoder pulses for Motor 2 Clamp. 
+
+
+
+Definition at line \mbox{\hyperlink{_i_s_r_8c_source_l00019}{19}} of file \mbox{\hyperlink{_i_s_r_8c_source}{ISR.\+c}}.
+
+\Hypertarget{_i_s_r_8h_a33b9291c34130521f946574235fc798f}\index{ISR.h@{ISR.h}!ClampMotorState@{ClampMotorState}}
+\index{ClampMotorState@{ClampMotorState}!ISR.h@{ISR.h}}
+\doxysubsubsection{\texorpdfstring{ClampMotorState}{ClampMotorState}}
+{\footnotesize\ttfamily \label{_i_s_r_8h_a33b9291c34130521f946574235fc798f} 
+int Clamp\+Motor\+State\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+State of Motor 2 limit switch. 
+
+
+
+Definition at line \mbox{\hyperlink{_i_s_r_8c_source_l00028}{28}} of file \mbox{\hyperlink{_i_s_r_8c_source}{ISR.\+c}}.
+
+\Hypertarget{_i_s_r_8h_a0dd6456a4244c5dd899964e7ccf90024}\index{ISR.h@{ISR.h}!isClampLimitSwitchReached@{isClampLimitSwitchReached}}
+\index{isClampLimitSwitchReached@{isClampLimitSwitchReached}!ISR.h@{ISR.h}}
+\doxysubsubsection{\texorpdfstring{isClampLimitSwitchReached}{isClampLimitSwitchReached}}
+{\footnotesize\ttfamily \label{_i_s_r_8h_a0dd6456a4244c5dd899964e7ccf90024} 
+uint8\+\_\+t is\+Clamp\+Limit\+Switch\+Reached\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Encoder pulses for Motor 3 Spindle. 
+
+
+
+Definition at line \mbox{\hyperlink{_i_s_r_8c_source_l00024}{24}} of file \mbox{\hyperlink{_i_s_r_8c_source}{ISR.\+c}}.
+
+\Hypertarget{_i_s_r_8h_a2f89df21eabc2e588e582a83cd72b475}\index{ISR.h@{ISR.h}!isServoLimitSwitchReached@{isServoLimitSwitchReached}}
+\index{isServoLimitSwitchReached@{isServoLimitSwitchReached}!ISR.h@{ISR.h}}
+\doxysubsubsection{\texorpdfstring{isServoLimitSwitchReached}{isServoLimitSwitchReached}}
+{\footnotesize\ttfamily \label{_i_s_r_8h_a2f89df21eabc2e588e582a83cd72b475} 
+uint8\+\_\+t is\+Servo\+Limit\+Switch\+Reached\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+State of Motor 2 limit switch. 
+
+State of Motor 2 limit switch. 
+
+Definition at line \mbox{\hyperlink{_i_s_r_8c_source_l00026}{26}} of file \mbox{\hyperlink{_i_s_r_8c_source}{ISR.\+c}}.
+
+\Hypertarget{_i_s_r_8h_a9f753385f263fc40b10c16b028bde1dd}\index{ISR.h@{ISR.h}!isSpindleLimitSwitchReached@{isSpindleLimitSwitchReached}}
+\index{isSpindleLimitSwitchReached@{isSpindleLimitSwitchReached}!ISR.h@{ISR.h}}
+\doxysubsubsection{\texorpdfstring{isSpindleLimitSwitchReached}{isSpindleLimitSwitchReached}}
+{\footnotesize\ttfamily \label{_i_s_r_8h_a9f753385f263fc40b10c16b028bde1dd} 
+uint8\+\_\+t is\+Spindle\+Limit\+Switch\+Reached\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+State of Motor 1 limit switch. 
+
+State of Motor 1 limit switch. 
+
+Definition at line \mbox{\hyperlink{_i_s_r_8c_source_l00025}{25}} of file \mbox{\hyperlink{_i_s_r_8c_source}{ISR.\+c}}.
+
+\Hypertarget{_i_s_r_8h_aa87e922aa98a5cc27a1ca0c457c0e6a7}\index{ISR.h@{ISR.h}!ServoDC\_M1\_EncA\_Pulses@{ServoDC\_M1\_EncA\_Pulses}}
+\index{ServoDC\_M1\_EncA\_Pulses@{ServoDC\_M1\_EncA\_Pulses}!ISR.h@{ISR.h}}
+\doxysubsubsection{\texorpdfstring{ServoDC\_M1\_EncA\_Pulses}{ServoDC\_M1\_EncA\_Pulses}}
+{\footnotesize\ttfamily \label{_i_s_r_8h_aa87e922aa98a5cc27a1ca0c457c0e6a7} 
+long Servo\+DC\+\_\+\+M1\+\_\+\+Enc\+A\+\_\+\+Pulses\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{_i_s_r_8c_source_l00015}{15}} of file \mbox{\hyperlink{_i_s_r_8c_source}{ISR.\+c}}.
+
+\Hypertarget{_i_s_r_8h_a71cd1c2bc245b36e113836d29c431450}\index{ISR.h@{ISR.h}!ServoDC\_M1\_EncB\_Pulses@{ServoDC\_M1\_EncB\_Pulses}}
+\index{ServoDC\_M1\_EncB\_Pulses@{ServoDC\_M1\_EncB\_Pulses}!ISR.h@{ISR.h}}
+\doxysubsubsection{\texorpdfstring{ServoDC\_M1\_EncB\_Pulses}{ServoDC\_M1\_EncB\_Pulses}}
+{\footnotesize\ttfamily \label{_i_s_r_8h_a71cd1c2bc245b36e113836d29c431450} 
+long Servo\+DC\+\_\+\+M1\+\_\+\+Enc\+B\+\_\+\+Pulses\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Encoder pulses for Motor 1 Servo\+DC. 
+
+
+
+Definition at line \mbox{\hyperlink{_i_s_r_8c_source_l00016}{16}} of file \mbox{\hyperlink{_i_s_r_8c_source}{ISR.\+c}}.
+
+\Hypertarget{_i_s_r_8h_a2f9df0008a2a82c8bb12d1be70504c3d}\index{ISR.h@{ISR.h}!Spindle\_M3\_EncA\_Pulses@{Spindle\_M3\_EncA\_Pulses}}
+\index{Spindle\_M3\_EncA\_Pulses@{Spindle\_M3\_EncA\_Pulses}!ISR.h@{ISR.h}}
+\doxysubsubsection{\texorpdfstring{Spindle\_M3\_EncA\_Pulses}{Spindle\_M3\_EncA\_Pulses}}
+{\footnotesize\ttfamily \label{_i_s_r_8h_a2f9df0008a2a82c8bb12d1be70504c3d} 
+long Spindle\+\_\+\+M3\+\_\+\+Enc\+A\+\_\+\+Pulses\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Encoder pulses for Motor 2 Clamp. 
+
+
+
+Definition at line \mbox{\hyperlink{_i_s_r_8c_source_l00021}{21}} of file \mbox{\hyperlink{_i_s_r_8c_source}{ISR.\+c}}.
+
+\Hypertarget{_i_s_r_8h_a950bab6fe475152299089fcfbe1f4ad9}\index{ISR.h@{ISR.h}!Spindle\_M3\_EncB\_Pulses@{Spindle\_M3\_EncB\_Pulses}}
+\index{Spindle\_M3\_EncB\_Pulses@{Spindle\_M3\_EncB\_Pulses}!ISR.h@{ISR.h}}
+\doxysubsubsection{\texorpdfstring{Spindle\_M3\_EncB\_Pulses}{Spindle\_M3\_EncB\_Pulses}}
+{\footnotesize\ttfamily \label{_i_s_r_8h_a950bab6fe475152299089fcfbe1f4ad9} 
+long Spindle\+\_\+\+M3\+\_\+\+Enc\+B\+\_\+\+Pulses\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Encoder pulses for Motor 3 Spindle. 
+
+
+
+Definition at line \mbox{\hyperlink{_i_s_r_8c_source_l00022}{22}} of file \mbox{\hyperlink{_i_s_r_8c_source}{ISR.\+c}}.
+
+\Hypertarget{_i_s_r_8h_a68347e8f6133b4d0301a04d5edcf680e}\index{ISR.h@{ISR.h}!SpindleMotorState@{SpindleMotorState}}
+\index{SpindleMotorState@{SpindleMotorState}!ISR.h@{ISR.h}}
+\doxysubsubsection{\texorpdfstring{SpindleMotorState}{SpindleMotorState}}
+{\footnotesize\ttfamily \label{_i_s_r_8h_a68347e8f6133b4d0301a04d5edcf680e} 
+int Spindle\+Motor\+State\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+State of Motor 1. 
+
+State of Motor 1. 
+
+Definition at line \mbox{\hyperlink{_i_s_r_8c_source_l00029}{29}} of file \mbox{\hyperlink{_i_s_r_8c_source}{ISR.\+c}}.
+

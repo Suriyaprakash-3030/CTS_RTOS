@@ -1,0 +1,412 @@
+\doxysection{main.\+h}
+\hypertarget{main_8h_source}{}\label{main_8h_source}\index{Inc/main.h@{Inc/main.h}}
+\mbox{\hyperlink{main_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00001}00001\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ Header\ */}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00019}00019\ \textcolor{comment}{/*\ USER\ CODE\ END\ Header\ */}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00021}00021\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00022}00022\ \textcolor{preprocessor}{\#ifndef\ \_\_MAIN\_H}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00023}00023\ \textcolor{preprocessor}{\#define\ \_\_MAIN\_H}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00025}00025\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00026}00026\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00027}00027\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00029}00029\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00032}00032\ \textcolor{comment}{/*\ Private\ includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00033}00033\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ Includes\ */}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00034}\mbox{\hyperlink{main_8h_a3f8ee3c69a0e8a4576da7506099f9dae}{00034}}\ \textcolor{preprocessor}{\#define\ Servo}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00035}00035\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00036}00036\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00038}00038\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_analog_read_8h}{AnalogRead.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00039}00039\ \textcolor{comment}{//\#include\ <CustomerApp.h>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00040}00040\ \textcolor{comment}{//\#include\ <DemoApp.h>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00041}00041\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_digital_read_8h}{DigitalRead.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00042}00042\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_digital_write_8h}{DigitalWrite.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00043}00043\ \textcolor{comment}{//\#include\ <FX29K.h>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00044}00044\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_global_8h}{Global.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00045}00045\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_hardware_level_8h}{HardwareLevel.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00046}00046\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_initialize_8h}{Initialize.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00047}00047\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_i_s_r_8h}{ISR.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00048}00048\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_keypad_8h}{Keypad.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00049}00049\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_l_c_d_8h}{LCD.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00050}00050\ \textcolor{comment}{//\#include\ <LoadCells.h>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00051}00051\ \textcolor{comment}{//\#include\ <Millis.h>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00052}00052\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{pwm_8h}{pwm.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00053}00053\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00054}00054\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_serial_handler_8h}{SerialHandler.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00055}00055\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_l_p_c___u_a_r_t_8h}{LPC\_UART.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00056}00056\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_e_s_p___u_a_r_t_8h}{ESP\_UART.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00057}00057\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_servo_8h}{Servo.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00058}00058\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_test_8h}{Test.h}}>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00059}00059\ \textcolor{comment}{/*\ USER\ CODE\ END\ Includes\ */}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00061}00061\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00062}00062\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ ET\ */}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00064}00064\ \textcolor{comment}{/*\ USER\ CODE\ END\ ET\ */}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00066}00066\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00067}00067\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ EC\ */}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00069}00069\ \textcolor{comment}{/*\ USER\ CODE\ END\ EC\ */}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00071}00071\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00072}00072\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ EM\ */}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00074}00074\ \textcolor{comment}{/*\ USER\ CODE\ END\ EM\ */}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00076}00076\ \textcolor{comment}{/*\ Exported\ functions\ prototypes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00077}00077\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00079}00079\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ EFP\ */}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00081}00081\ \textcolor{comment}{/*\ USER\ CODE\ END\ EFP\ */}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00083}00083\ \textcolor{comment}{/*\ Private\ defines\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00084}00084\ \textcolor{comment}{//\#define\ Sensor\_BottlePosition\_Input\_Pin\ GPIO\_PIN\_2}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00085}00085\ \textcolor{comment}{//\#define\ Sensor\_BottlePosition\_Input\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00086}00086\ \textcolor{comment}{//\#define\ Sensor\_RES\_Input\_Pin\ GPIO\_PIN\_4}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00087}00087\ \textcolor{comment}{//\#define\ Sensor\_RES\_Input\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00088}00088\ \textcolor{comment}{//\#define\ Clamp\_M2\_EncA\_Interrupt\_Pin\ GPIO\_PIN\_5}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00089}00089\ \textcolor{comment}{//\#define\ Clamp\_M2\_EncA\_Interrupt\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00090}00090\ \textcolor{comment}{//\#define\ Clamp\_M2\_EncA\_Interrupt\_EXTI\_IRQn\ EXTI9\_5\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00091}00091\ \textcolor{comment}{//\#define\ Spindle\_M3\_EncA\_Interrupt\_Pin\ GPIO\_PIN\_6}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00092}00092\ \textcolor{comment}{//\#define\ Spindle\_M3\_EncA\_Interrupt\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00093}00093\ \textcolor{comment}{//\#define\ Spindle\_M3\_EncA\_Interrupt\_EXTI\_IRQn\ EXTI9\_5\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00094}00094\ \textcolor{comment}{//\#define\ Spindle\_M3\_EncB\_Interrupt\_Pin\ GPIO\_PIN\_13}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00095}00095\ \textcolor{comment}{//\#define\ Spindle\_M3\_EncB\_Interrupt\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00096}00096\ \textcolor{comment}{//\#define\ Spindle\_M3\_EncB\_Interrupt\_EXTI\_IRQn\ EXTI15\_10\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00097}00097\ \textcolor{comment}{//\#define\ EN\_DCDC\_5V\_Output\_Pin\ GPIO\_PIN\_14}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00098}00098\ \textcolor{comment}{//\#define\ EN\_DCDC\_5V\_Output\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00099}00099\ \textcolor{comment}{//\#define\ EN\_DCDC\_8V\_Output\_Pin\ GPIO\_PIN\_15}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00100}00100\ \textcolor{comment}{//\#define\ EN\_DCDC\_8V\_Output\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00101}00101\ \textcolor{comment}{//\#define\ PH0\_OSC\_IN\_Pin\ GPIO\_PIN\_0}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00102}00102\ \textcolor{comment}{//\#define\ PH0\_OSC\_IN\_GPIO\_Port\ GPIOH}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00103}00103\ \textcolor{comment}{//\#define\ PH1\_OSC\_OUT\_Pin\ GPIO\_PIN\_1}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00104}00104\ \textcolor{comment}{//\#define\ PH1\_OSC\_OUT\_GPIO\_Port\ GPIOH}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00105}00105\ \textcolor{comment}{//\#define\ Clamp\_M2\_Prox\_Interrupt\_Pin\ GPIO\_PIN\_0}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00106}00106\ \textcolor{comment}{//\#define\ Clamp\_M2\_Prox\_Interrupt\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00107}00107\ \textcolor{comment}{//\#define\ Clamp\_M2\_Prox\_Interrupt\_EXTI\_IRQn\ EXTI0\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00108}00108\ \textcolor{comment}{//\#define\ Clamp\_M2\_EncB\_\_Interrupt\_Pin\ GPIO\_PIN\_1}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00109}00109\ \textcolor{comment}{//\#define\ Clamp\_M2\_EncB\_\_Interrupt\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00110}00110\ \textcolor{comment}{//\#define\ Clamp\_M2\_EncB\_\_Interrupt\_EXTI\_IRQn\ EXTI1\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00111}00111\ \textcolor{comment}{//\#define\ Curr\_Sensor\_ServoDC\_ADC\_Input\_Pin\ GPIO\_PIN\_2}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00112}00112\ \textcolor{comment}{//\#define\ Curr\_Sensor\_ServoDC\_ADC\_Input\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00113}00113\ \textcolor{comment}{//\#define\ Curr\_Sensor\_Clamp\_ADC\_Input\_Pin\ GPIO\_PIN\_3}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00114}00114\ \textcolor{comment}{//\#define\ Curr\_Sensor\_Clamp\_ADC\_Input\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00115}00115\ \textcolor{comment}{//\#define\ Curr\_Sensor\_Spindle\_ADC\_Input\_Pin\ GPIO\_PIN\_0}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00116}00116\ \textcolor{comment}{//\#define\ Curr\_Sensor\_Spindle\_ADC\_Input\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00117}00117\ \textcolor{comment}{//\#define\ V12\_ADC\_Input\_Pin\ GPIO\_PIN\_1}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00118}00118\ \textcolor{comment}{//\#define\ V12\_ADC\_Input\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00119}00119\ \textcolor{comment}{//\#define\ Button\_Clean\_Interrupt\_PullUp\_Pin\ GPIO\_PIN\_2}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00120}00120\ \textcolor{comment}{//\#define\ Button\_Clean\_Interrupt\_PullUp\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00121}00121\ \textcolor{comment}{//\#define\ Button\_Clean\_Interrupt\_PullUp\_EXTI\_IRQn\ EXTI2\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00122}00122\ \textcolor{comment}{//\#define\ Power\_LED\_Output\_Pin\ GPIO\_PIN\_3}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00123}00123\ \textcolor{comment}{//\#define\ Power\_LED\_Output\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00124}00124\ \textcolor{comment}{//\#define\ Button\_Power\_Interrupt\_PullUp\_Pin\ GPIO\_PIN\_4}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00125}00125\ \textcolor{comment}{//\#define\ Button\_Power\_Interrupt\_PullUp\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00126}00126\ \textcolor{comment}{//\#define\ Button\_Power\_Interrupt\_PullUp\_EXTI\_IRQn\ EXTI4\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00127}00127\ \textcolor{comment}{//\#define\ Button\_ManAuto\_Input\_PullUp\_Pin\ GPIO\_PIN\_5}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00128}00128\ \textcolor{comment}{//\#define\ Button\_ManAuto\_Input\_PullUp\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00129}00129\ \textcolor{comment}{//\#define\ Button\_PlayStop\_Input\_PullUp\_Pin\ GPIO\_PIN\_6}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00130}00130\ \textcolor{comment}{//\#define\ Button\_PlayStop\_Input\_PullUp\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00131}00131\ \textcolor{comment}{//\#define\ Button\_DelBack\_Input\_PullUp\_Pin\ GPIO\_PIN\_7}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00132}00132\ \textcolor{comment}{//\#define\ Button\_DelBack\_Input\_PullUp\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00133}00133\ \textcolor{comment}{//\#define\ Sensor\_Pressure\_ADC\_Input\_Pin\ GPIO\_PIN\_4}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00134}00134\ \textcolor{comment}{//\#define\ Sensor\_Pressure\_ADC\_Input\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00135}00135\ \textcolor{comment}{//\#define\ Button\_1\_Input\_PullUp\_Pin\ GPIO\_PIN\_5}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00136}00136\ \textcolor{comment}{//\#define\ Button\_1\_Input\_PullUp\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00137}00137\ \textcolor{comment}{//\#define\ Button\_2\_Input\_PullUp\_Pin\ GPIO\_PIN\_0}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00138}00138\ \textcolor{comment}{//\#define\ Button\_2\_Input\_PullUp\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00139}00139\ \textcolor{comment}{//\#define\ Button\_3\_Input\_PullUp\_Pin\ GPIO\_PIN\_1}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00140}00140\ \textcolor{comment}{//\#define\ Button\_3\_Input\_PullUp\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00141}00141\ \textcolor{comment}{//\#define\ Button\_4\_Input\_PullUp\_Pin\ GPIO\_PIN\_2}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00142}00142\ \textcolor{comment}{//\#define\ Button\_4\_Input\_PullUp\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00143}00143\ \textcolor{comment}{//\#define\ Button\_5\_Input\_PullUp\_Pin\ GPIO\_PIN\_7}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00144}00144\ \textcolor{comment}{//\#define\ Button\_5\_Input\_PullUp\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00145}00145\ \textcolor{comment}{//\#define\ Button\_6\_Input\_PullUp\_Pin\ GPIO\_PIN\_8}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00146}00146\ \textcolor{comment}{//\#define\ Button\_6\_Input\_PullUp\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00147}00147\ \textcolor{comment}{//\#define\ Button\_7\_Input\_PullUp\_Pin\ GPIO\_PIN\_9}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00148}00148\ \textcolor{comment}{//\#define\ Button\_7\_Input\_PullUp\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00149}00149\ \textcolor{comment}{//\#define\ Button\_8\_Input\_PullUp\_Pin\ GPIO\_PIN\_10}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00150}00150\ \textcolor{comment}{//\#define\ Button\_8\_Input\_PullUp\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00151}00151\ \textcolor{comment}{//\#define\ Button\_9\_Input\_PullUp\_Pin\ GPIO\_PIN\_11}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00152}00152\ \textcolor{comment}{//\#define\ Button\_9\_Input\_PullUp\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00153}00153\ \textcolor{comment}{//\#define\ Button\_0\_Input\_PullUp\_Pin\ GPIO\_PIN\_12}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00154}00154\ \textcolor{comment}{//\#define\ Button\_0\_Input\_PullUp\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00155}00155\ \textcolor{comment}{//\#define\ Button\_Enter\_Input\_PullUp\_Pin\ GPIO\_PIN\_13}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00156}00156\ \textcolor{comment}{//\#define\ Button\_Enter\_Input\_PullUp\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00157}00157\ \textcolor{comment}{//\#define\ Button\_Comma\_Input\_PullUp\_Pin\ GPIO\_PIN\_14}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00158}00158\ \textcolor{comment}{//\#define\ Button\_Comma\_Input\_PullUp\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00159}00159\ \textcolor{comment}{//\#define\ UART3TX\_FC1RX\_Pin\ GPIO\_PIN\_10}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00160}00160\ \textcolor{comment}{//\#define\ UART3TX\_FC1RX\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00161}00161\ \textcolor{comment}{//\#define\ UART3RX\_FC1TX\_Pin\ GPIO\_PIN\_11}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00162}00162\ \textcolor{comment}{//\#define\ UART3RX\_FC1TX\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00163}00163\ \textcolor{comment}{//\#define\ USBFlag\_Interrupt\_PullUp\_Pin\ GPIO\_PIN\_12}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00164}00164\ \textcolor{comment}{//\#define\ USBFlag\_Interrupt\_PullUp\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00165}00165\ \textcolor{comment}{//\#define\ USBFlag\_Interrupt\_PullUp\_EXTI\_IRQn\ EXTI15\_10\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00166}00166\ \textcolor{comment}{//\#define\ UART3CTS\_FC1RTS\_Pin\ GPIO\_PIN\_13}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00167}00167\ \textcolor{comment}{//\#define\ UART3CTS\_FC1RTS\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00168}00168\ \textcolor{comment}{//\#define\ UART3RTS\_FC1CTS\_Pin\ GPIO\_PIN\_14}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00169}00169\ \textcolor{comment}{//\#define\ UART3RTS\_FC1CTS\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00170}00170\ \textcolor{comment}{//\#define\ ServoDC\_M1\_Dir\_Output\_Pin\ GPIO\_PIN\_15}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00171}00171\ \textcolor{comment}{//\#define\ ServoDC\_M1\_Dir\_Output\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00172}00172\ \textcolor{comment}{//\#define\ nRESET\_LPC\_Output\_Pin\ GPIO\_PIN\_8}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00173}00173\ \textcolor{comment}{//\#define\ nRESET\_LPC\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00174}00174\ \textcolor{comment}{//\#define\ Relay\_Output\_Pin\ GPIO\_PIN\_9}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00175}00175\ \textcolor{comment}{//\#define\ Relay\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00176}00176\ \textcolor{comment}{//\#define\ Spindle\_M3\_Dir\_Output\_Pin\ GPIO\_PIN\_10}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00177}00177\ \textcolor{comment}{//\#define\ Spindle\_M3\_Dir\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00178}00178\ \textcolor{comment}{//\#define\ Clamp\_M2\_PWM\_Pin\ GPIO\_PIN\_12}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00179}00179\ \textcolor{comment}{//\#define\ Clamp\_M2\_PWM\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00180}00180\ \textcolor{comment}{//\#define\ Spindle\_M3\_PWM\_Pin\ GPIO\_PIN\_13}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00181}00181\ \textcolor{comment}{//\#define\ Spindle\_M3\_PWM\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00182}00182\ \textcolor{comment}{//\#define\ Clamp\_M2\_Dir\_Output\_Pin\ GPIO\_PIN\_14}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00183}00183\ \textcolor{comment}{//\#define\ Clamp\_M2\_Dir\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00184}00184\ \textcolor{comment}{//\#define\ ServoDC\_M1\_EncB\_Interrupt\_Pin\ GPIO\_PIN\_15}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00185}00185\ \textcolor{comment}{//\#define\ ServoDC\_M1\_EncB\_Interrupt\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00186}00186\ \textcolor{comment}{//\#define\ ServoDC\_M1\_EncB\_Interrupt\_EXTI\_IRQn\ EXTI15\_10\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00187}00187\ \textcolor{comment}{//\#define\ LCD\_Contrast\_PWM\_Pin\ GPIO\_PIN\_6}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00188}00188\ \textcolor{comment}{//\#define\ LCD\_Contrast\_PWM\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00189}00189\ \textcolor{comment}{//\#define\ LCD\_LED\_PWM\_Pin\ GPIO\_PIN\_7}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00190}00190\ \textcolor{comment}{//\#define\ LCD\_LED\_PWM\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00191}00191\ \textcolor{comment}{//\#define\ ServoDC\_M1\_PWM\_Pin\ GPIO\_PIN\_8}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00192}00192\ \textcolor{comment}{//\#define\ ServoDC\_M1\_PWM\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00193}00193\ \textcolor{comment}{//\#define\ ServoDC\_M1\_Prox\_Interrupt\_Pin\ GPIO\_PIN\_8}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00194}00194\ \textcolor{comment}{//\#define\ ServoDC\_M1\_Prox\_Interrupt\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00195}00195\ \textcolor{comment}{//\#define\ ServoDC\_M1\_Prox\_Interrupt\_EXTI\_IRQn\ EXTI9\_5\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00196}00196\ \textcolor{comment}{//\#define\ Spindle\_M3\_Prox\_Interrupt\_Pin\ GPIO\_PIN\_10}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00197}00197\ \textcolor{comment}{//\#define\ Spindle\_M3\_Prox\_Interrupt\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00198}00198\ \textcolor{comment}{//\#define\ Spindle\_M3\_Prox\_Interrupt\_EXTI\_IRQn\ EXTI15\_10\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00199}00199\ \textcolor{comment}{//\#define\ SPI\_nSS\_Pin\ GPIO\_PIN\_15}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00200}00200\ \textcolor{comment}{//\#define\ SPI\_nSS\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00201}00201\ \textcolor{comment}{//\#define\ STMUART4\_TX\_ESPUART1RX\_Pin\ GPIO\_PIN\_10}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00202}00202\ \textcolor{comment}{//\#define\ STMUART4\_TX\_ESPUART1RX\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00203}00203\ \textcolor{comment}{//\#define\ STMUART4\_RX\_ESPUART1TX\_Pin\ GPIO\_PIN\_11}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00204}00204\ \textcolor{comment}{//\#define\ STMUART4\_RX\_ESPUART1TX\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00205}00205\ \textcolor{comment}{//\#define\ LCD\_RS\_Output\_Pin\ GPIO\_PIN\_1}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00206}00206\ \textcolor{comment}{//\#define\ LCD\_RS\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00207}00207\ \textcolor{comment}{//\#define\ LCD\_EN\_Output\_Pin\ GPIO\_PIN\_2}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00208}00208\ \textcolor{comment}{//\#define\ LCD\_EN\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00209}00209\ \textcolor{comment}{//\#define\ LCD\_D4\_Output\_Pin\ GPIO\_PIN\_3}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00210}00210\ \textcolor{comment}{//\#define\ LCD\_D4\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00211}00211\ \textcolor{comment}{//\#define\ LCD\_D5\_Output\_Pin\ GPIO\_PIN\_4}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00212}00212\ \textcolor{comment}{//\#define\ LCD\_D5\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00213}00213\ \textcolor{comment}{//\#define\ LCD\_D6\_Output\_Pin\ GPIO\_PIN\_6}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00214}00214\ \textcolor{comment}{//\#define\ LCD\_D6\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00215}00215\ \textcolor{comment}{//\#define\ LCD\_D7\_Output\_Pin\ GPIO\_PIN\_7}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00216}00216\ \textcolor{comment}{//\#define\ LCD\_D7\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00217}00217\ \textcolor{comment}{//\#define\ SPI\_SCK\_Pin\ GPIO\_PIN\_3}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00218}00218\ \textcolor{comment}{//\#define\ SPI\_SCK\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00219}00219\ \textcolor{comment}{//\#define\ SPI\_MISO\_Pin\ GPIO\_PIN\_4}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00220}00220\ \textcolor{comment}{//\#define\ SPI\_MISO\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00221}00221\ \textcolor{comment}{//\#define\ SPI\_MOSI\_Pin\ GPIO\_PIN\_5}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00222}00222\ \textcolor{comment}{//\#define\ SPI\_MOSI\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00223}00223\ \textcolor{comment}{//\#define\ UART1\_TX\_STLINK\_RX\_Pin\ GPIO\_PIN\_6}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00224}00224\ \textcolor{comment}{//\#define\ UART1\_TX\_STLINK\_RX\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00225}00225\ \textcolor{comment}{//\#define\ UART1\_RX\_STLINK\_TX\_Pin\ GPIO\_PIN\_7}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00226}00226\ \textcolor{comment}{//\#define\ UART1\_RX\_STLINK\_TX\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00227}00227\ \textcolor{comment}{//\#define\ USB\_EN\_Output\_Pin\ GPIO\_PIN\_8}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00228}00228\ \textcolor{comment}{//\#define\ USB\_EN\_Output\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00229}00229\ \textcolor{comment}{//\#define\ Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt\_Pin\ GPIO\_PIN\_9}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00230}00230\ \textcolor{comment}{//\#define\ Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00232}00232\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ Private\ defines\ */}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00234}00234\ \textcolor{comment}{//*\ PreProcessor\ Directives\ (MACROS)}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00236}00236\ \textcolor{comment}{//*\ Oscillator\ Pins}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00237}\mbox{\hyperlink{main_8h_addb0c037a01bd73baaf9f7d5a0379ac4}{00237}}\ \textcolor{preprocessor}{\#define\ PH0\_OSC\_IN\_Pin\ GPIO\_PIN\_0}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00238}\mbox{\hyperlink{main_8h_af8885fc2f50640cd8bb5084cd998088b}{00238}}\ \textcolor{preprocessor}{\#define\ PH0\_OSC\_IN\_GPIO\_Port\ GPIOH}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00239}\mbox{\hyperlink{main_8h_ac4d4c1fdbc6cd7491c705bd332f15693}{00239}}\ \textcolor{preprocessor}{\#define\ PH1\_OSC\_OUT\_Pin\ GPIO\_PIN\_1}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00240}\mbox{\hyperlink{main_8h_a5b80653bbe01e9d4f334c74bdc5bc9f6}{00240}}\ \textcolor{preprocessor}{\#define\ PH1\_OSC\_OUT\_GPIO\_Port\ GPIOH}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00241}00241\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00242}00242\ \textcolor{comment}{//*\ System\ Outputs}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00243}\mbox{\hyperlink{main_8h_ad307e9a1778ed6950df3569c0a8f204c}{00243}}\ \textcolor{preprocessor}{\#define\ Power\_LED\_Output\_Pin\ GPIO\_PIN\_3}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00244}\mbox{\hyperlink{main_8h_a84eaf27909e0ec3053f54051869ecb16}{00244}}\ \textcolor{preprocessor}{\#define\ Power\_LED\_Output\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00245}\mbox{\hyperlink{main_8h_a91164e110e2e3b41ad86b83b1f4e119b}{00245}}\ \textcolor{preprocessor}{\#define\ EN\_DCDC\_5V\_Output\_Pin\ GPIO\_PIN\_14}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00246}\mbox{\hyperlink{main_8h_ad65fd538af48f8ffe2e7642e6bfde044}{00246}}\ \textcolor{preprocessor}{\#define\ EN\_DCDC\_5V\_Output\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00247}\mbox{\hyperlink{main_8h_acde35056e1f0d88eacb40dcd85af96b1}{00247}}\ \textcolor{preprocessor}{\#define\ EN\_DCDC\_8V\_Output\_Pin\ GPIO\_PIN\_15}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00248}\mbox{\hyperlink{main_8h_a97f99f142480eedbeeb348d2a3cc66c9}{00248}}\ \textcolor{preprocessor}{\#define\ EN\_DCDC\_8V\_Output\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00249}\mbox{\hyperlink{main_8h_a2ec153f6ca415f2b13881ebcdaf099f4}{00249}}\ \textcolor{preprocessor}{\#define\ Relay\_Output\_Pin\ GPIO\_PIN\_9}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00250}\mbox{\hyperlink{main_8h_adda62a1624de948adf678d2d1508177b}{00250}}\ \textcolor{preprocessor}{\#define\ Relay\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00252}00252\ \textcolor{comment}{//*\ Motors\ PWM\ Pins}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00253}\mbox{\hyperlink{main_8h_a1c4b4c42af98b76029a29d756e5d8b74}{00253}}\ \textcolor{preprocessor}{\#define\ Clamp\_M2\_PWM\_Pin\ GPIO\_PIN\_12}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00254}\mbox{\hyperlink{main_8h_aa1c1297a793d3aa28ecdcea0d3f83230}{00254}}\ \textcolor{preprocessor}{\#define\ Clamp\_M2\_PWM\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00255}\mbox{\hyperlink{main_8h_ae501a61fb2db660009143c29606a47fe}{00255}}\ \textcolor{preprocessor}{\#define\ Spindle\_M3\_PWM\_Pin\ GPIO\_PIN\_13}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00256}\mbox{\hyperlink{main_8h_a4cf5364f97d6ad8a05b84ba52a5e1246}{00256}}\ \textcolor{preprocessor}{\#define\ Spindle\_M3\_PWM\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00257}\mbox{\hyperlink{main_8h_ad842afd98b05b30933f2ee39509444e9}{00257}}\ \textcolor{preprocessor}{\#define\ ServoDC\_M1\_PWM\_Pin\ GPIO\_PIN\_8}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00258}\mbox{\hyperlink{main_8h_a3314d1ee9d4a50bfc2e453fdef7f550c}{00258}}\ \textcolor{preprocessor}{\#define\ ServoDC\_M1\_PWM\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00260}00260\ \textcolor{comment}{//*\ Motor\ Directions\ Output}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00261}\mbox{\hyperlink{main_8h_a3feb696cae6fed88a7714f13431da683}{00261}}\ \textcolor{preprocessor}{\#define\ Spindle\_M3\_Dir\_Output\_Pin\ GPIO\_PIN\_10}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00262}\mbox{\hyperlink{main_8h_a632ffd724c65f3b1d38e360a523ab705}{00262}}\ \textcolor{preprocessor}{\#define\ Spindle\_M3\_Dir\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00263}\mbox{\hyperlink{main_8h_a9239c0fb268785f4b1f836d8ddb25286}{00263}}\ \textcolor{preprocessor}{\#define\ Clamp\_M2\_Dir\_Output\_Pin\ GPIO\_PIN\_14}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00264}\mbox{\hyperlink{main_8h_aa10fbf9b2585e7e1d94c471905b1e6b1}{00264}}\ \textcolor{preprocessor}{\#define\ Clamp\_M2\_Dir\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00265}\mbox{\hyperlink{main_8h_ace11d991ecc8a7d2cee8377042537dbf}{00265}}\ \textcolor{preprocessor}{\#define\ ServoDC\_M1\_Dir\_Output\_Pin\ GPIO\_PIN\_15}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00266}\mbox{\hyperlink{main_8h_a629e8fc5d6e158f95d6957a36f9fdfc3}{00266}}\ \textcolor{preprocessor}{\#define\ ServoDC\_M1\_Dir\_Output\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00267}00267\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00268}00268\ \textcolor{comment}{//*\ Motor\ Interrupts}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00269}00269\ \textcolor{comment}{//Clamp\ Motor}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00270}\mbox{\hyperlink{main_8h_a05382d9b0baa24b5018a9e49af1d235f}{00270}}\ \textcolor{preprocessor}{\#define\ Clamp\_M2\_Prox\_Interrupt\_Pin\ GPIO\_PIN\_0}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00271}\mbox{\hyperlink{main_8h_a7ab74e303e58bd4e196e50bde8764bf9}{00271}}\ \textcolor{preprocessor}{\#define\ Clamp\_M2\_Prox\_Interrupt\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00272}\mbox{\hyperlink{main_8h_a052fcc9f3742bdba1a273f8dcf18149c}{00272}}\ \textcolor{preprocessor}{\#define\ Clamp\_M2\_Prox\_Interrupt\_EXTI\_IRQn\ EXTI0\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00273}\mbox{\hyperlink{main_8h_a56a3d7ef63069253be2ec2d84c80b244}{00273}}\ \textcolor{preprocessor}{\#define\ Clamp\_M2\_EncB\_\_Interrupt\_Pin\ GPIO\_PIN\_1}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00274}\mbox{\hyperlink{main_8h_a7f433b9a9945ef96ae04cd7491437f43}{00274}}\ \textcolor{preprocessor}{\#define\ Clamp\_M2\_EncB\_\_Interrupt\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00275}\mbox{\hyperlink{main_8h_a9d2b87503df4ee4103473b288a3ed0e3}{00275}}\ \textcolor{preprocessor}{\#define\ Clamp\_M2\_EncB\_\_Interrupt\_EXTI\_IRQn\ EXTI1\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00276}\mbox{\hyperlink{main_8h_a1f1b5dbc74ada51f6e3b17854fee1a90}{00276}}\ \textcolor{preprocessor}{\#define\ Clamp\_M2\_EncA\_Interrupt\_Pin\ GPIO\_PIN\_5}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00277}\mbox{\hyperlink{main_8h_ad77c20fb322f3224efdf7717d11b4fa7}{00277}}\ \textcolor{preprocessor}{\#define\ Clamp\_M2\_EncA\_Interrupt\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00278}\mbox{\hyperlink{main_8h_acdea5f3679309b9a75b26001cb5b9ffb}{00278}}\ \textcolor{preprocessor}{\#define\ Clamp\_M2\_EncA\_Interrupt\_EXTI\_IRQn\ EXTI9\_5\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00279}00279\ \textcolor{comment}{//Spindle\ Motor}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00280}\mbox{\hyperlink{main_8h_a4a048b59b78a1926d50eb3b31d29b857}{00280}}\ \textcolor{preprocessor}{\#define\ Spindle\_M3\_Prox\_Interrupt\_Pin\ GPIO\_PIN\_10}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00281}\mbox{\hyperlink{main_8h_a57bd6305445de620f7134c7e61d3f427}{00281}}\ \textcolor{preprocessor}{\#define\ Spindle\_M3\_Prox\_Interrupt\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00282}\mbox{\hyperlink{main_8h_a5a4d6f2e2a202fb21e77f201bf3660cd}{00282}}\ \textcolor{preprocessor}{\#define\ Spindle\_M3\_Prox\_Interrupt\_EXTI\_IRQn\ EXTI15\_10\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00283}\mbox{\hyperlink{main_8h_a3904ee1f8d95877d6353f45849e02317}{00283}}\ \textcolor{preprocessor}{\#define\ Spindle\_M3\_EncA\_Interrupt\_Pin\ GPIO\_PIN\_6}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00284}\mbox{\hyperlink{main_8h_af6b7614f5893990b292b9cc8dc260f38}{00284}}\ \textcolor{preprocessor}{\#define\ Spindle\_M3\_EncA\_Interrupt\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00285}\mbox{\hyperlink{main_8h_a3b61b240a5826a19e3127493e815f3b8}{00285}}\ \textcolor{preprocessor}{\#define\ Spindle\_M3\_EncA\_Interrupt\_EXTI\_IRQn\ EXTI9\_5\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00286}\mbox{\hyperlink{main_8h_aca2dde7e30d3d5115681202f28602bdb}{00286}}\ \textcolor{preprocessor}{\#define\ Spindle\_M3\_EncB\_Interrupt\_Pin\ GPIO\_PIN\_13}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00287}\mbox{\hyperlink{main_8h_aeeaa357346892b10b1bb9b00cea40139}{00287}}\ \textcolor{preprocessor}{\#define\ Spindle\_M3\_EncB\_Interrupt\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00288}\mbox{\hyperlink{main_8h_aa14aea1a34db2de41b1eb10690ebb8ab}{00288}}\ \textcolor{preprocessor}{\#define\ Spindle\_M3\_EncB\_Interrupt\_EXTI\_IRQn\ EXTI15\_10\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00289}00289\ \textcolor{comment}{//Servo/DC\ Motor}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00290}\mbox{\hyperlink{main_8h_a7a10698054a5f3ab68dad66239cf47ad}{00290}}\ \textcolor{preprocessor}{\#define\ ServoDC\_M1\_Prox\_Interrupt\_Pin\ GPIO\_PIN\_8}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00291}\mbox{\hyperlink{main_8h_a0b6ed9faba4c46f381e142ea70ba50be}{00291}}\ \textcolor{preprocessor}{\#define\ ServoDC\_M1\_Prox\_Interrupt\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00292}\mbox{\hyperlink{main_8h_a7a83c5d393607fec47fc373d4bdf755a}{00292}}\ \textcolor{preprocessor}{\#define\ ServoDC\_M1\_Prox\_Interrupt\_EXTI\_IRQn\ EXTI9\_5\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00293}\mbox{\hyperlink{main_8h_aeb316f2d067a453e7c83ad8ef05ba752}{00293}}\ \textcolor{preprocessor}{\#define\ ServoDC\_M1\_EncB\_Interrupt\_Pin\ GPIO\_PIN\_15}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00294}\mbox{\hyperlink{main_8h_a71a10fa550d691d874b9c2f79e01847b}{00294}}\ \textcolor{preprocessor}{\#define\ ServoDC\_M1\_EncB\_Interrupt\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00295}\mbox{\hyperlink{main_8h_a18367d7d5cc42206a0d7d225b78e81a0}{00295}}\ \textcolor{preprocessor}{\#define\ ServoDC\_M1\_EncB\_Interrupt\_EXTI\_IRQn\ EXTI15\_10\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00296}\mbox{\hyperlink{main_8h_aa97925ee1239f8e5b31e14bc3fce5de9}{00296}}\ \textcolor{preprocessor}{\#define\ Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt\_Pin\ GPIO\_PIN\_9}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00297}\mbox{\hyperlink{main_8h_a5cb01d1b18a800d086cc4308aaa7c693}{00297}}\ \textcolor{preprocessor}{\#define\ Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00298}00298\ \textcolor{preprocessor}{\#ifndef\ Servo}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00299}00299\ \textcolor{preprocessor}{\#define\ Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt\_EXTI\_IRQn\ EXTI9\_5\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00300}00300\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00301}00301\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00302}00302\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00303}00303\ \textcolor{comment}{//*\ Sensors\ \&\ ADCs}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00304}\mbox{\hyperlink{main_8h_a42be503e0333a8947b4e492103f0a096}{00304}}\ \textcolor{preprocessor}{\#define\ Curr\_Sensor\_ServoDC\_ADC\_Input\_Pin\ GPIO\_PIN\_2}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00305}\mbox{\hyperlink{main_8h_aab2c8b572fe337f46e2a3abc302cf190}{00305}}\ \textcolor{preprocessor}{\#define\ Curr\_Sensor\_ServoDC\_ADC\_Input\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00306}\mbox{\hyperlink{main_8h_a53c28d048be2c0cf640aa9f4cfc7be58}{00306}}\ \textcolor{preprocessor}{\#define\ Curr\_Sensor\_Clamp\_ADC\_Input\_Pin\ GPIO\_PIN\_3}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00307}\mbox{\hyperlink{main_8h_ab8ebcd2d67414e396dd40335214e0aac}{00307}}\ \textcolor{preprocessor}{\#define\ Curr\_Sensor\_Clamp\_ADC\_Input\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00308}\mbox{\hyperlink{main_8h_abe6443277c88f2259ad25802bd5bc0ee}{00308}}\ \textcolor{preprocessor}{\#define\ Curr\_Sensor\_Spindle\_ADC\_Input\_Pin\ GPIO\_PIN\_0}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00309}\mbox{\hyperlink{main_8h_afb3fba738b4fc7f12e01cd4662e80cb4}{00309}}\ \textcolor{preprocessor}{\#define\ Sensor\_BottlePosition\_Input\_Pin\ GPIO\_PIN\_2}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00310}\mbox{\hyperlink{main_8h_a809b2bc5a3750de7b32b9bd4ff0894c5}{00310}}\ \textcolor{preprocessor}{\#define\ Sensor\_BottlePosition\_Input\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00311}\mbox{\hyperlink{main_8h_aeded7a9c7aea7c98deb3a295ad639926}{00311}}\ \textcolor{preprocessor}{\#define\ Sensor\_RES\_Input\_Pin\ GPIO\_PIN\_4}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00312}\mbox{\hyperlink{main_8h_a83494dbf7ac444f70e521d6351ab1ad0}{00312}}\ \textcolor{preprocessor}{\#define\ Sensor\_RES\_Input\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00313}\mbox{\hyperlink{main_8h_a3a939f702b81c3ea5a64ead29ef3d195}{00313}}\ \textcolor{preprocessor}{\#define\ Curr\_Sensor\_Spindle\_ADC\_Input\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00314}\mbox{\hyperlink{main_8h_a639a90d426f56f8cb5ed93bec342ffe6}{00314}}\ \textcolor{preprocessor}{\#define\ V12\_ADC\_Input\_Pin\ GPIO\_PIN\_1}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00315}\mbox{\hyperlink{main_8h_a87941fed03402afa022fc793c299b65c}{00315}}\ \textcolor{preprocessor}{\#define\ V12\_ADC\_Input\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00316}\mbox{\hyperlink{main_8h_a10b6f461bd6edc998e945234f2f9567a}{00316}}\ \textcolor{preprocessor}{\#define\ Sensor\_Pressure\_ADC\_Input\_Pin\ GPIO\_PIN\_4}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00317}\mbox{\hyperlink{main_8h_aa0591eb27335af469250f9c0b24960c1}{00317}}\ \textcolor{preprocessor}{\#define\ Sensor\_Pressure\_ADC\_Input\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00318}00318\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00319}00319\ \textcolor{comment}{//*\ Buttons\ Input\ \&\ Interrupts}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00320}\mbox{\hyperlink{main_8h_abfff0803c8e123f65d527c65fe32ac51}{00320}}\ \textcolor{preprocessor}{\#define\ Button\_Clean\_Interrupt\_PullUp\_Pin\ GPIO\_PIN\_2}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00321}\mbox{\hyperlink{main_8h_a376d85bf2797e36c9bd279d6dce8ce35}{00321}}\ \textcolor{preprocessor}{\#define\ Button\_Clean\_Interrupt\_PullUp\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00322}\mbox{\hyperlink{main_8h_ad2265a3f6abb606b60ead61ff36189e1}{00322}}\ \textcolor{preprocessor}{\#define\ Button\_Clean\_Interrupt\_PullUp\_EXTI\_IRQn\ EXTI2\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00323}\mbox{\hyperlink{main_8h_a38bbd447cbff02935df30c83e58a481c}{00323}}\ \textcolor{preprocessor}{\#define\ Button\_Power\_Interrupt\_PullUp\_Pin\ GPIO\_PIN\_4}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00324}\mbox{\hyperlink{main_8h_a0e214b421e1c52cf914f4dae02f03bf2}{00324}}\ \textcolor{preprocessor}{\#define\ Button\_Power\_Interrupt\_PullUp\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00325}\mbox{\hyperlink{main_8h_aa6f8fe7ae3bc5e7d2d5e108c232e0946}{00325}}\ \textcolor{preprocessor}{\#define\ Button\_Power\_Interrupt\_PullUp\_EXTI\_IRQn\ EXTI4\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00326}\mbox{\hyperlink{main_8h_ac3573efffbb8f32fb545cff74eb5119f}{00326}}\ \textcolor{preprocessor}{\#define\ Button\_ManAuto\_Input\_PullUp\_Pin\ GPIO\_PIN\_5}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00327}\mbox{\hyperlink{main_8h_aa4da77ad1e3bb24dd1f8c81ed9b9620c}{00327}}\ \textcolor{preprocessor}{\#define\ Button\_ManAuto\_Input\_PullUp\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00328}\mbox{\hyperlink{main_8h_a4680dd429c0b8eb35c26396455fd9a4a}{00328}}\ \textcolor{preprocessor}{\#define\ Button\_PlayStop\_Input\_PullUp\_Pin\ GPIO\_PIN\_6}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00329}\mbox{\hyperlink{main_8h_a010b6b95dffb1c00b53b595c9c615422}{00329}}\ \textcolor{preprocessor}{\#define\ Button\_PlayStop\_Input\_PullUp\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00330}\mbox{\hyperlink{main_8h_a70308283f07e614d11e38b5de82a7d11}{00330}}\ \textcolor{preprocessor}{\#define\ Button\_DelBack\_Input\_PullUp\_Pin\ GPIO\_PIN\_7}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00331}\mbox{\hyperlink{main_8h_a97ad5e14b9c72dfdb8c4d04276cc978d}{00331}}\ \textcolor{preprocessor}{\#define\ Button\_DelBack\_Input\_PullUp\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00332}\mbox{\hyperlink{main_8h_a4fe63b2dc552de1763170017d41a415d}{00332}}\ \textcolor{preprocessor}{\#define\ Button\_1\_Input\_PullUp\_Pin\ GPIO\_PIN\_5}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00333}\mbox{\hyperlink{main_8h_a5519d593abdc2076a12b2fa1e06aa4d4}{00333}}\ \textcolor{preprocessor}{\#define\ Button\_1\_Input\_PullUp\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00334}\mbox{\hyperlink{main_8h_aa699eda09e5a31107690906585fa046b}{00334}}\ \textcolor{preprocessor}{\#define\ Button\_2\_Input\_PullUp\_Pin\ GPIO\_PIN\_0}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00335}\mbox{\hyperlink{main_8h_a33ce556cd7d4ff328958942d264e046d}{00335}}\ \textcolor{preprocessor}{\#define\ Button\_2\_Input\_PullUp\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00336}\mbox{\hyperlink{main_8h_aa6608ea3ab4d6cf264a50bd7490c0109}{00336}}\ \textcolor{preprocessor}{\#define\ Button\_3\_Input\_PullUp\_Pin\ GPIO\_PIN\_1}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00337}\mbox{\hyperlink{main_8h_abd5c14f1af83b2e32981941fde68419f}{00337}}\ \textcolor{preprocessor}{\#define\ Button\_3\_Input\_PullUp\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00338}\mbox{\hyperlink{main_8h_a6fb540619af34b8ec892fbdba3066b5e}{00338}}\ \textcolor{preprocessor}{\#define\ Button\_4\_Input\_PullUp\_Pin\ GPIO\_PIN\_2}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00339}\mbox{\hyperlink{main_8h_a9a0dd00fb751868673cf513d7d3df971}{00339}}\ \textcolor{preprocessor}{\#define\ Button\_4\_Input\_PullUp\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00340}\mbox{\hyperlink{main_8h_af3a970686b91646c32eb22e681cd34fe}{00340}}\ \textcolor{preprocessor}{\#define\ Button\_5\_Input\_PullUp\_Pin\ GPIO\_PIN\_7}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00341}\mbox{\hyperlink{main_8h_a2a41656a26ed577c0032dd9bf6dc5319}{00341}}\ \textcolor{preprocessor}{\#define\ Button\_5\_Input\_PullUp\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00342}\mbox{\hyperlink{main_8h_ad1fca6822abd18caa50732644fb41452}{00342}}\ \textcolor{preprocessor}{\#define\ Button\_6\_Input\_PullUp\_Pin\ GPIO\_PIN\_8}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00343}\mbox{\hyperlink{main_8h_a10656a806d481a40a69ab11378eea56b}{00343}}\ \textcolor{preprocessor}{\#define\ Button\_6\_Input\_PullUp\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00344}\mbox{\hyperlink{main_8h_a5cc6c64afcb9bec51bc748120b1841af}{00344}}\ \textcolor{preprocessor}{\#define\ Button\_7\_Input\_PullUp\_Pin\ GPIO\_PIN\_9}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00345}\mbox{\hyperlink{main_8h_a149cdb871b7b737cc4cd3825ba0b1411}{00345}}\ \textcolor{preprocessor}{\#define\ Button\_7\_Input\_PullUp\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00346}\mbox{\hyperlink{main_8h_a4373c2e74fc40ce061ef5ffd5346b83c}{00346}}\ \textcolor{preprocessor}{\#define\ Button\_8\_Input\_PullUp\_Pin\ GPIO\_PIN\_10}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00347}\mbox{\hyperlink{main_8h_a7557d572c84fde6220f6fee9c0d20b0a}{00347}}\ \textcolor{preprocessor}{\#define\ Button\_8\_Input\_PullUp\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00348}\mbox{\hyperlink{main_8h_a6ff316691c01db77e0b9334368102976}{00348}}\ \textcolor{preprocessor}{\#define\ Button\_9\_Input\_PullUp\_Pin\ GPIO\_PIN\_11}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00349}\mbox{\hyperlink{main_8h_a43eb3078406a8410ed2c3e9c97f38009}{00349}}\ \textcolor{preprocessor}{\#define\ Button\_9\_Input\_PullUp\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00350}\mbox{\hyperlink{main_8h_aa9e0fa06c53af9cd139dacfea68e3e21}{00350}}\ \textcolor{preprocessor}{\#define\ Button\_0\_Input\_PullUp\_Pin\ GPIO\_PIN\_12}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00351}\mbox{\hyperlink{main_8h_afcba0894ee70a45aa55b67ba47421ef9}{00351}}\ \textcolor{preprocessor}{\#define\ Button\_0\_Input\_PullUp\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00352}\mbox{\hyperlink{main_8h_aadefbe18cf967c0d45f79cabaf6e3a2e}{00352}}\ \textcolor{preprocessor}{\#define\ Button\_Enter\_Input\_PullUp\_Pin\ GPIO\_PIN\_13}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00353}\mbox{\hyperlink{main_8h_aa96399b89507a33f2a36895490698033}{00353}}\ \textcolor{preprocessor}{\#define\ Button\_Enter\_Input\_PullUp\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00354}\mbox{\hyperlink{main_8h_a19d77dff3d4411932941ee6a209ac248}{00354}}\ \textcolor{preprocessor}{\#define\ Button\_Comma\_Input\_PullUp\_Pin\ GPIO\_PIN\_14}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00355}\mbox{\hyperlink{main_8h_a090ac49c9b542c9438fca84b52a60c13}{00355}}\ \textcolor{preprocessor}{\#define\ Button\_Comma\_Input\_PullUp\_GPIO\_Port\ GPIOE}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00356}00356\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00357}00357\ \textcolor{comment}{//*\ LCD\ Pins\ Output}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00358}\mbox{\hyperlink{main_8h_a65b1445e76cdd22516da1a01851d4c18}{00358}}\ \textcolor{preprocessor}{\#define\ LCD\_Contrast\_PWM\_Pin\ GPIO\_PIN\_6}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00359}\mbox{\hyperlink{main_8h_a4c3d826a406dae3ea6e088928da5fa02}{00359}}\ \textcolor{preprocessor}{\#define\ LCD\_Contrast\_PWM\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00360}\mbox{\hyperlink{main_8h_ace9a12c8b073c014ee9485012c057d7f}{00360}}\ \textcolor{preprocessor}{\#define\ LCD\_LED\_PWM\_Pin\ GPIO\_PIN\_7}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00361}\mbox{\hyperlink{main_8h_af9e752914cfe1e36b406f0182cacc906}{00361}}\ \textcolor{preprocessor}{\#define\ LCD\_LED\_PWM\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00362}\mbox{\hyperlink{main_8h_afd1f29c0c8096b76a2d8bd09b67cf15c}{00362}}\ \textcolor{preprocessor}{\#define\ LCD\_RS\_Output\_Pin\ GPIO\_PIN\_1}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00363}\mbox{\hyperlink{main_8h_a528352df81203d99e7175f54c516f3a9}{00363}}\ \textcolor{preprocessor}{\#define\ LCD\_RS\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00364}\mbox{\hyperlink{main_8h_a27df7cb0ee37c925c83fcad974501658}{00364}}\ \textcolor{preprocessor}{\#define\ LCD\_EN\_Output\_Pin\ GPIO\_PIN\_2}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00365}\mbox{\hyperlink{main_8h_ae1c9c65b1420b9f6995c81daf799eade}{00365}}\ \textcolor{preprocessor}{\#define\ LCD\_EN\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00366}\mbox{\hyperlink{main_8h_acc87fbc2dcde57eede61e876bfe7fb42}{00366}}\ \textcolor{preprocessor}{\#define\ LCD\_D4\_Output\_Pin\ GPIO\_PIN\_3}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00367}\mbox{\hyperlink{main_8h_af160c46bba79e6ffef166d28efd18b35}{00367}}\ \textcolor{preprocessor}{\#define\ LCD\_D4\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00368}\mbox{\hyperlink{main_8h_adc35134a442ed2e12830e028423bf4c3}{00368}}\ \textcolor{preprocessor}{\#define\ LCD\_D5\_Output\_Pin\ GPIO\_PIN\_4}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00369}\mbox{\hyperlink{main_8h_aa47ab935a7ba13d802863f32dee7a78d}{00369}}\ \textcolor{preprocessor}{\#define\ LCD\_D5\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00370}\mbox{\hyperlink{main_8h_a5bc81caa5af3ea604e0b9d61e7954077}{00370}}\ \textcolor{preprocessor}{\#define\ LCD\_D6\_Output\_Pin\ GPIO\_PIN\_6}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00371}\mbox{\hyperlink{main_8h_ae178f43df35628a704979de316429af1}{00371}}\ \textcolor{preprocessor}{\#define\ LCD\_D6\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00372}\mbox{\hyperlink{main_8h_abac0d3026773a299b1d99288a87e179b}{00372}}\ \textcolor{preprocessor}{\#define\ LCD\_D7\_Output\_Pin\ GPIO\_PIN\_7}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00373}\mbox{\hyperlink{main_8h_aad97169142fafbe76404c32c9fa30734}{00373}}\ \textcolor{preprocessor}{\#define\ LCD\_D7\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00374}00374\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00375}00375\ \textcolor{comment}{//*\ Communication\ Defines}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00376}00376\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00377}00377\ \textcolor{comment}{//*\ UART4\ For\ ESP}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00378}\mbox{\hyperlink{main_8h_ad12635a0f2c0b8bd7f29bbe3155462a1}{00378}}\ \textcolor{preprocessor}{\#define\ STMUART4\_TX\_ESPUART1RX\_Pin\ GPIO\_PIN\_10}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00379}\mbox{\hyperlink{main_8h_a73f7cd0ad85c91eb55dd1b4006fa8875}{00379}}\ \textcolor{preprocessor}{\#define\ STMUART4\_TX\_ESPUART1RX\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00380}\mbox{\hyperlink{main_8h_a1cbb1ca5ae9389cf5d7d3e1899e2c20b}{00380}}\ \textcolor{preprocessor}{\#define\ STMUART4\_RX\_ESPUART1TX\_Pin\ GPIO\_PIN\_11}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00381}\mbox{\hyperlink{main_8h_a955323df118a189bd380031d0166148d}{00381}}\ \textcolor{preprocessor}{\#define\ STMUART4\_RX\_ESPUART1TX\_GPIO\_Port\ GPIOC}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00382}00382\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00383}00383\ \textcolor{comment}{//*\ SPI}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00384}\mbox{\hyperlink{main_8h_a9c51784c4e9bbdd053a6a09aa46788a7}{00384}}\ \textcolor{preprocessor}{\#define\ SPI\_nSS\_Pin\ GPIO\_PIN\_15}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00385}\mbox{\hyperlink{main_8h_afa04f499dba41dd6dfe3db23cfeda779}{00385}}\ \textcolor{preprocessor}{\#define\ SPI\_nSS\_GPIO\_Port\ GPIOA}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00386}\mbox{\hyperlink{main_8h_a4d945ae8ab12a775e471548bfe0dcf73}{00386}}\ \textcolor{preprocessor}{\#define\ SPI\_SCK\_Pin\ GPIO\_PIN\_3}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00387}\mbox{\hyperlink{main_8h_af11fcfd383a93709c4c4bf7733d1577c}{00387}}\ \textcolor{preprocessor}{\#define\ SPI\_SCK\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00388}\mbox{\hyperlink{main_8h_a96f125c65f6d8a90050ebb72cf459e95}{00388}}\ \textcolor{preprocessor}{\#define\ SPI\_MISO\_Pin\ GPIO\_PIN\_4}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00389}\mbox{\hyperlink{main_8h_acefbb4f623273b9808c5dd75f0f0c7ee}{00389}}\ \textcolor{preprocessor}{\#define\ SPI\_MISO\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00390}\mbox{\hyperlink{main_8h_a4312169e5b462272dc4be10d4ffa4e40}{00390}}\ \textcolor{preprocessor}{\#define\ SPI\_MOSI\_Pin\ GPIO\_PIN\_5}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00391}\mbox{\hyperlink{main_8h_af86c484e6065ee32b61f1b141cb0014e}{00391}}\ \textcolor{preprocessor}{\#define\ SPI\_MOSI\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00392}00392\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00393}00393\ \textcolor{comment}{//USB\ Flag\ Check}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00394}\mbox{\hyperlink{main_8h_a67815959222f5479e13c699e5c25dc9d}{00394}}\ \textcolor{preprocessor}{\#define\ USBFlag\_Interrupt\_PullUp\_Pin\ GPIO\_PIN\_12}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00395}\mbox{\hyperlink{main_8h_aaf59637db163d80796def34a606c2341}{00395}}\ \textcolor{preprocessor}{\#define\ USBFlag\_Interrupt\_PullUp\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00396}\mbox{\hyperlink{main_8h_aa0d6c8ac35df56d803b6f222ce7b333f}{00396}}\ \textcolor{preprocessor}{\#define\ USBFlag\_Interrupt\_PullUp\_EXTI\_IRQn\ EXTI15\_10\_IRQn}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00397}\mbox{\hyperlink{main_8h_a7bcc35d9dc9f7683bf3b75b88033e597}{00397}}\ \textcolor{preprocessor}{\#define\ USB\_EN\_Output\_Pin\ GPIO\_PIN\_8}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00398}\mbox{\hyperlink{main_8h_a55e840a2d282407ffcfb7fb02a9b7ede}{00398}}\ \textcolor{preprocessor}{\#define\ USB\_EN\_Output\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00399}00399\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00400}00400\ \textcolor{comment}{//*USART1\ For\ Debugging\ \&\ STlink}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00401}\mbox{\hyperlink{main_8h_a9f0cd5c822f98b96d977ce97e848c580}{00401}}\ \textcolor{preprocessor}{\#define\ UART1\_TX\_STLINK\_RX\_Pin\ GPIO\_PIN\_6}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00402}\mbox{\hyperlink{main_8h_aa92d693f702912a0cc4fd99638b24df3}{00402}}\ \textcolor{preprocessor}{\#define\ UART1\_TX\_STLINK\_RX\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00403}\mbox{\hyperlink{main_8h_a52d21170f07cf0187613e828be703ab8}{00403}}\ \textcolor{preprocessor}{\#define\ UART1\_RX\_STLINK\_TX\_Pin\ GPIO\_PIN\_7}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00404}\mbox{\hyperlink{main_8h_ad76fa91e3d2b36d5c9bc8f450fa907fd}{00404}}\ \textcolor{preprocessor}{\#define\ UART1\_RX\_STLINK\_TX\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00405}00405\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00406}00406\ \textcolor{comment}{//*USART3\ For\ LPC\ Controller}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00407}\mbox{\hyperlink{main_8h_a07c2700872282625b05bb245c542bcd2}{00407}}\ \textcolor{preprocessor}{\#define\ UART3TX\_FC1RX\_Pin\ GPIO\_PIN\_10}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00408}\mbox{\hyperlink{main_8h_a4b0bf7a5216b6b777745f1df2b43596b}{00408}}\ \textcolor{preprocessor}{\#define\ UART3TX\_FC1RX\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00409}\mbox{\hyperlink{main_8h_a63332c478c8a85e37a32692b5d61d0f7}{00409}}\ \textcolor{preprocessor}{\#define\ UART3RX\_FC1TX\_Pin\ GPIO\_PIN\_11}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00410}\mbox{\hyperlink{main_8h_a55e3b6a60ba2c26dfdf6c88d0ad87a94}{00410}}\ \textcolor{preprocessor}{\#define\ UART3RX\_FC1TX\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00411}\mbox{\hyperlink{main_8h_adf80495a1ccb4306cab9b817be20be3b}{00411}}\ \textcolor{preprocessor}{\#define\ UART3CTS\_FC1RTS\_Pin\ GPIO\_PIN\_13}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00412}\mbox{\hyperlink{main_8h_abb95d18d95cb5e1afae5aef420f7b697}{00412}}\ \textcolor{preprocessor}{\#define\ UART3CTS\_FC1RTS\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00413}\mbox{\hyperlink{main_8h_a94e82dece778e2ab48ada0ee3473cb22}{00413}}\ \textcolor{preprocessor}{\#define\ UART3RTS\_FC1CTS\_Pin\ GPIO\_PIN\_14}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00414}\mbox{\hyperlink{main_8h_abce7743b22a261322113a4aeb54cad48}{00414}}\ \textcolor{preprocessor}{\#define\ UART3RTS\_FC1CTS\_GPIO\_Port\ GPIOB}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00415}\mbox{\hyperlink{main_8h_adebf4dca8469340c099f6df9b04c74fe}{00415}}\ \textcolor{preprocessor}{\#define\ nRESET\_LPC\_Output\_Pin\ GPIO\_PIN\_8}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00416}\mbox{\hyperlink{main_8h_ab10b2013116b10d71d9b0af93e3c6376}{00416}}\ \textcolor{preprocessor}{\#define\ nRESET\_LPC\_Output\_GPIO\_Port\ GPIOD}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00417}00417\ \textcolor{comment}{/*\ USER\ CODE\ END\ Private\ defines\ */}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00418}00418\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00419}00419\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00420}00420\ \}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00421}00421\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00422}00422\ }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00423}00423\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_MAIN\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

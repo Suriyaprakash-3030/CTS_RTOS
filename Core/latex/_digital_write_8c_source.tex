@@ -1,0 +1,51 @@
+\doxysection{Digital\+Write.\+c}
+\hypertarget{_digital_write_8c_source}{}\label{_digital_write_8c_source}\index{Src/DigitalWrite.c@{Src/DigitalWrite.c}}
+\mbox{\hyperlink{_digital_write_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00002}00002\ \textcolor{comment}{\ *\ DigitalWrite.c}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00003}00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00004}00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Aug\ 30,\ 2024}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ mhmaq}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00006}00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{main_8h}{main.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_digital_write_8h}{DigitalWrite.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00011}\mbox{\hyperlink{struct_g_p_i_o___output_map}{00011}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00012}\mbox{\hyperlink{struct_g_p_i_o___output_map_a82241972e0292c7de95ea1e293e11be3}{00012}}\ \ \ \ \ GPIO\_TypeDef*\ \mbox{\hyperlink{struct_g_p_i_o___output_map_a82241972e0292c7de95ea1e293e11be3}{port}};}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00013}\mbox{\hyperlink{struct_g_p_i_o___output_map_a4144813adfa4dfe7e7cbeea17d1b06eb}{00013}}\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_g_p_i_o___output_map_a4144813adfa4dfe7e7cbeea17d1b06eb}{pin}};}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00014}00014\ \}\ \mbox{\hyperlink{struct_g_p_i_o___output_map}{GPIO\_OutputMap}};}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00016}00016\ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_g_p_i_o___output_map}{GPIO\_OutputMap}}\ outputMap[]\ =\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Labels:}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00017}00017\ \ \ \ \ \{\mbox{\hyperlink{main_8h_a84eaf27909e0ec3053f54051869ecb16}{Power\_LED\_Output\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_ad307e9a1778ed6950df3569c0a8f204c}{Power\_LED\_Output\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Power\_LED\_Output}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00018}00018\ \ \ \ \ \{\mbox{\hyperlink{main_8h_a629e8fc5d6e158f95d6957a36f9fdfc3}{ServoDC\_M1\_Dir\_Output\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_ace11d991ecc8a7d2cee8377042537dbf}{ServoDC\_M1\_Dir\_Output\_Pin}}\},\ \ \ \ \ \ \ \textcolor{comment}{//\ ServoDC\_M1\_Dir\_Output}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00019}00019\ \ \ \ \ \{\mbox{\hyperlink{main_8h_ab10b2013116b10d71d9b0af93e3c6376}{nRESET\_LPC\_Output\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_adebf4dca8469340c099f6df9b04c74fe}{nRESET\_LPC\_Output\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ nRESET\_LPC\_Output}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00020}00020\ \ \ \ \ \{\mbox{\hyperlink{main_8h_adda62a1624de948adf678d2d1508177b}{Relay\_Output\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_a2ec153f6ca415f2b13881ebcdaf099f4}{Relay\_Output\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Relay\_Output}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00021}00021\ \ \ \ \ \{\mbox{\hyperlink{main_8h_a632ffd724c65f3b1d38e360a523ab705}{Spindle\_M3\_Dir\_Output\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_a3feb696cae6fed88a7714f13431da683}{Spindle\_M3\_Dir\_Output\_Pin}}\},\ \ \ \ \ \ \ \textcolor{comment}{//Spindle\_M3\_Dir\_Output}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00022}00022\ \ \ \ \ \{\mbox{\hyperlink{main_8h_aa10fbf9b2585e7e1d94c471905b1e6b1}{Clamp\_M2\_Dir\_Output\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_a9239c0fb268785f4b1f836d8ddb25286}{Clamp\_M2\_Dir\_Output\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Clamp\_M2\_Dir\_Output}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00023}00023\ \ \ \ \ \{\mbox{\hyperlink{main_8h_a528352df81203d99e7175f54c516f3a9}{LCD\_RS\_Output\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_afd1f29c0c8096b76a2d8bd09b67cf15c}{LCD\_RS\_Output\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ LCD\_RS\_Output}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00024}00024\ \ \ \ \ \{\mbox{\hyperlink{main_8h_ae1c9c65b1420b9f6995c81daf799eade}{LCD\_EN\_Output\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_a27df7cb0ee37c925c83fcad974501658}{LCD\_EN\_Output\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ LCD\_EN\_Output}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00025}00025\ \ \ \ \ \{\mbox{\hyperlink{main_8h_af160c46bba79e6ffef166d28efd18b35}{LCD\_D4\_Output\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_acc87fbc2dcde57eede61e876bfe7fb42}{LCD\_D4\_Output\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ LCD\_D4\_Output}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00026}00026\ \ \ \ \ \{\mbox{\hyperlink{main_8h_aa47ab935a7ba13d802863f32dee7a78d}{LCD\_D5\_Output\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_adc35134a442ed2e12830e028423bf4c3}{LCD\_D5\_Output\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ LCD\_D5\_Output}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00027}00027\ \ \ \ \ \{\mbox{\hyperlink{main_8h_ae178f43df35628a704979de316429af1}{LCD\_D6\_Output\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_a5bc81caa5af3ea604e0b9d61e7954077}{LCD\_D6\_Output\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ LCD\_D6\_Output}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00028}00028\ \ \ \ \ \{\mbox{\hyperlink{main_8h_aad97169142fafbe76404c32c9fa30734}{LCD\_D7\_Output\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_abac0d3026773a299b1d99288a87e179b}{LCD\_D7\_Output\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ LCD\_D7\_Output}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00029}00029\ \ \ \ \ \{\mbox{\hyperlink{main_8h_a55e840a2d282407ffcfb7fb02a9b7ede}{USB\_EN\_Output\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_a7bcc35d9dc9f7683bf3b75b88033e597}{USB\_EN\_Output\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ USB\_EN\_Output}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00030}00030\ \ \ \ \ \{\mbox{\hyperlink{main_8h_ad65fd538af48f8ffe2e7642e6bfde044}{EN\_DCDC\_5V\_Output\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_a91164e110e2e3b41ad86b83b1f4e119b}{EN\_DCDC\_5V\_Output\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ EN\_DCDC\_5V\_Output}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00031}00031\ \ \ \ \ \{\mbox{\hyperlink{main_8h_a97f99f142480eedbeeb348d2a3cc66c9}{EN\_DCDC\_8V\_Output\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_acde35056e1f0d88eacb40dcd85af96b1}{EN\_DCDC\_8V\_Output\_Pin}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ EN\_DCDC\_8V\_Output}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00032}00032\ \};}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00034}\mbox{\hyperlink{_digital_write_8h_a871c313584e0f22fe5066f95547d59f6}{00034}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_digital_write_8c_a871c313584e0f22fe5066f95547d59f6}{digitalWrite}}(\mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93}{OutputLabel}}\ label,\ \textcolor{keywordtype}{int}\ state)}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (label\ >=\ \textcolor{keyword}{sizeof}(outputMap)\ /\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_g_p_i_o___output_map}{GPIO\_OutputMap}}))}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00037}00037\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Handle\ invalid\ label}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{struct_g_p_i_o___output_map}{GPIO\_OutputMap}}\ map\ =\ outputMap[label];}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00043}00043\ \ \ \ \ HAL\_GPIO\_WritePin(map.\mbox{\hyperlink{struct_g_p_i_o___output_map_a82241972e0292c7de95ea1e293e11be3}{port}},\ map.\mbox{\hyperlink{struct_g_p_i_o___output_map_a4144813adfa4dfe7e7cbeea17d1b06eb}{pin}},\ (state\ !=\ 0)\ ?\ GPIO\_PIN\_SET\ :\ GPIO\_PIN\_RESET);}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8c_source_l00045}00045\ }
+
+\end{DoxyCode}

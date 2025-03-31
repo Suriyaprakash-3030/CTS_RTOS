@@ -1,0 +1,143 @@
+\doxysection{Core/\+Src/\+Keypad.c File Reference}
+\hypertarget{_keypad_8c}{}\label{_keypad_8c}\index{Core/Src/Keypad.c@{Core/Src/Keypad.c}}
+{\ttfamily \#include $<$keypad.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_keypad_8c_aaf589f693a560feb75d11f25d637c6d8}{Read\+Keypad\+Var}} (int group)
+\item 
+int \mbox{\hyperlink{_keypad_8c_a46a5bf7179bd814efded60c93f395042}{read\+Keypad\+Non\+Block}} (int group)
+\item 
+int \mbox{\hyperlink{_keypad_8c_a853ca9c9a2cca59a7a44282eb869e1d3}{read\+Keypad}} (int group)
+\item 
+void \mbox{\hyperlink{_keypad_8c_a8ca2ff5fc8cdd825a8eaaf8f673ec33d}{Loading\+Func}} (int blink\+LED, uint8\+\_\+t Screen\+Load)
+\item 
+void \mbox{\hyperlink{_keypad_8c_a9b5ffa21783f4976e15c74aabf26b5de}{Take2\+Row\+Entries}} (char \texorpdfstring{$\ast$}{*}Row1\+Static\+String, char \texorpdfstring{$\ast$}{*}Row2\+Static\+String)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_keypad_8c_a46f4d9e355d06b097d9848df86f1e311}{Power\+Button\+Press\+Time}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_keypad_8c_afaaf75a8547eb937ee91f439b74e84f9}{is\+Auto\+Operation}} = TRUE
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_keypad_8c_a5d4be5830b050d178dba49fd86569f07}{is\+Cleaning\+Operation}} = FALSE
+\item 
+int \mbox{\hyperlink{_keypad_8c_a74e00b05dbee1427501caa6b3480837e}{last\+Key\+Pressed}} = 255
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_keypad_8c_a7f268075d0081379a58847e91b242f82}{is\+Paused\+Operation}} = FALSE
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_keypad_8c_a91f44bf55deb9b20360da1285f9151b6}{monitor\+Enter\+Key}} = FALSE
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_keypad_8c_a019f7fa1d68dbe17ba66714688ef2f2e}{Enter\+Pressed}} = FALSE
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_keypad_8c_a95f17785c03ac2c0ff362dadbdda87af}{monitor\+Clean\+Key}} = FALSE
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_keypad_8c_a1f47a873f64119d43bd885cb1b0e08de}{clean\+Long\+Pressed}} = FALSE
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_keypad_8c_a221ffe0b086a7832f683e0a946d593c5}{del\+Long\+Pressed}} = FALSE
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_keypad_8c_ac60a0a612ea3a0c2e948d1c41d408919}{is\+Demo\+Cleaning}} = FALSE
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_keypad_8c_a8ca2ff5fc8cdd825a8eaaf8f673ec33d}\index{Keypad.c@{Keypad.c}!LoadingFunc@{LoadingFunc}}
+\index{LoadingFunc@{LoadingFunc}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{LoadingFunc()}{LoadingFunc()}}
+{\footnotesize\ttfamily \label{_keypad_8c_a8ca2ff5fc8cdd825a8eaaf8f673ec33d} 
+void Loading\+Func (\begin{DoxyParamCaption}\item[{int}]{blink\+LED}{, }\item[{uint8\+\_\+t}]{Screen\+Load}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_keypad_8c_a853ca9c9a2cca59a7a44282eb869e1d3}\index{Keypad.c@{Keypad.c}!readKeypad@{readKeypad}}
+\index{readKeypad@{readKeypad}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{readKeypad()}{readKeypad()}}
+{\footnotesize\ttfamily \label{_keypad_8c_a853ca9c9a2cca59a7a44282eb869e1d3} 
+int read\+Keypad (\begin{DoxyParamCaption}\item[{int}]{group}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_keypad_8c_a46a5bf7179bd814efded60c93f395042}\index{Keypad.c@{Keypad.c}!readKeypadNonBlock@{readKeypadNonBlock}}
+\index{readKeypadNonBlock@{readKeypadNonBlock}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{readKeypadNonBlock()}{readKeypadNonBlock()}}
+{\footnotesize\ttfamily \label{_keypad_8c_a46a5bf7179bd814efded60c93f395042} 
+int read\+Keypad\+Non\+Block (\begin{DoxyParamCaption}\item[{int}]{group}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_keypad_8c_aaf589f693a560feb75d11f25d637c6d8}\index{Keypad.c@{Keypad.c}!ReadKeypadVar@{ReadKeypadVar}}
+\index{ReadKeypadVar@{ReadKeypadVar}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{ReadKeypadVar()}{ReadKeypadVar()}}
+{\footnotesize\ttfamily \label{_keypad_8c_aaf589f693a560feb75d11f25d637c6d8} 
+int Read\+Keypad\+Var (\begin{DoxyParamCaption}\item[{int}]{group}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_keypad_8c_a9b5ffa21783f4976e15c74aabf26b5de}\index{Keypad.c@{Keypad.c}!Take2RowEntries@{Take2RowEntries}}
+\index{Take2RowEntries@{Take2RowEntries}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{Take2RowEntries()}{Take2RowEntries()}}
+{\footnotesize\ttfamily \label{_keypad_8c_a9b5ffa21783f4976e15c74aabf26b5de} 
+void Take2\+Row\+Entries (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{Row1\+Static\+String}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{Row2\+Static\+String}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_keypad_8c_a1f47a873f64119d43bd885cb1b0e08de}\index{Keypad.c@{Keypad.c}!cleanLongPressed@{cleanLongPressed}}
+\index{cleanLongPressed@{cleanLongPressed}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{cleanLongPressed}{cleanLongPressed}}
+{\footnotesize\ttfamily \label{_keypad_8c_a1f47a873f64119d43bd885cb1b0e08de} 
+uint8\+\_\+t clean\+Long\+Pressed = FALSE}
+
+\Hypertarget{_keypad_8c_a221ffe0b086a7832f683e0a946d593c5}\index{Keypad.c@{Keypad.c}!delLongPressed@{delLongPressed}}
+\index{delLongPressed@{delLongPressed}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{delLongPressed}{delLongPressed}}
+{\footnotesize\ttfamily \label{_keypad_8c_a221ffe0b086a7832f683e0a946d593c5} 
+uint8\+\_\+t del\+Long\+Pressed = FALSE}
+
+\Hypertarget{_keypad_8c_a019f7fa1d68dbe17ba66714688ef2f2e}\index{Keypad.c@{Keypad.c}!EnterPressed@{EnterPressed}}
+\index{EnterPressed@{EnterPressed}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{EnterPressed}{EnterPressed}}
+{\footnotesize\ttfamily \label{_keypad_8c_a019f7fa1d68dbe17ba66714688ef2f2e} 
+uint8\+\_\+t Enter\+Pressed = FALSE}
+
+\Hypertarget{_keypad_8c_afaaf75a8547eb937ee91f439b74e84f9}\index{Keypad.c@{Keypad.c}!isAutoOperation@{isAutoOperation}}
+\index{isAutoOperation@{isAutoOperation}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{isAutoOperation}{isAutoOperation}}
+{\footnotesize\ttfamily \label{_keypad_8c_afaaf75a8547eb937ee91f439b74e84f9} 
+uint8\+\_\+t is\+Auto\+Operation = TRUE}
+
+\Hypertarget{_keypad_8c_a5d4be5830b050d178dba49fd86569f07}\index{Keypad.c@{Keypad.c}!isCleaningOperation@{isCleaningOperation}}
+\index{isCleaningOperation@{isCleaningOperation}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{isCleaningOperation}{isCleaningOperation}}
+{\footnotesize\ttfamily \label{_keypad_8c_a5d4be5830b050d178dba49fd86569f07} 
+uint8\+\_\+t is\+Cleaning\+Operation = FALSE}
+
+\Hypertarget{_keypad_8c_ac60a0a612ea3a0c2e948d1c41d408919}\index{Keypad.c@{Keypad.c}!isDemoCleaning@{isDemoCleaning}}
+\index{isDemoCleaning@{isDemoCleaning}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{isDemoCleaning}{isDemoCleaning}}
+{\footnotesize\ttfamily \label{_keypad_8c_ac60a0a612ea3a0c2e948d1c41d408919} 
+uint8\+\_\+t is\+Demo\+Cleaning = FALSE}
+
+\Hypertarget{_keypad_8c_a7f268075d0081379a58847e91b242f82}\index{Keypad.c@{Keypad.c}!isPausedOperation@{isPausedOperation}}
+\index{isPausedOperation@{isPausedOperation}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{isPausedOperation}{isPausedOperation}}
+{\footnotesize\ttfamily \label{_keypad_8c_a7f268075d0081379a58847e91b242f82} 
+uint8\+\_\+t is\+Paused\+Operation = FALSE}
+
+\Hypertarget{_keypad_8c_a74e00b05dbee1427501caa6b3480837e}\index{Keypad.c@{Keypad.c}!lastKeyPressed@{lastKeyPressed}}
+\index{lastKeyPressed@{lastKeyPressed}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{lastKeyPressed}{lastKeyPressed}}
+{\footnotesize\ttfamily \label{_keypad_8c_a74e00b05dbee1427501caa6b3480837e} 
+int last\+Key\+Pressed = 255}
+
+\Hypertarget{_keypad_8c_a95f17785c03ac2c0ff362dadbdda87af}\index{Keypad.c@{Keypad.c}!monitorCleanKey@{monitorCleanKey}}
+\index{monitorCleanKey@{monitorCleanKey}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{monitorCleanKey}{monitorCleanKey}}
+{\footnotesize\ttfamily \label{_keypad_8c_a95f17785c03ac2c0ff362dadbdda87af} 
+uint8\+\_\+t monitor\+Clean\+Key = FALSE}
+
+\Hypertarget{_keypad_8c_a91f44bf55deb9b20360da1285f9151b6}\index{Keypad.c@{Keypad.c}!monitorEnterKey@{monitorEnterKey}}
+\index{monitorEnterKey@{monitorEnterKey}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{monitorEnterKey}{monitorEnterKey}}
+{\footnotesize\ttfamily \label{_keypad_8c_a91f44bf55deb9b20360da1285f9151b6} 
+uint8\+\_\+t monitor\+Enter\+Key = FALSE}
+
+\Hypertarget{_keypad_8c_a46f4d9e355d06b097d9848df86f1e311}\index{Keypad.c@{Keypad.c}!PowerButtonPressTime@{PowerButtonPressTime}}
+\index{PowerButtonPressTime@{PowerButtonPressTime}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{PowerButtonPressTime}{PowerButtonPressTime}}
+{\footnotesize\ttfamily \label{_keypad_8c_a46f4d9e355d06b097d9848df86f1e311} 
+uint32\+\_\+t Power\+Button\+Press\+Time = 0}
+

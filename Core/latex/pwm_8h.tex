@@ -1,0 +1,116 @@
+\doxysection{Inc/pwm.h File Reference}
+\hypertarget{pwm_8h}{}\label{pwm_8h}\index{Inc/pwm.h@{Inc/pwm.h}}
+{\ttfamily \#include "{}tim.\+h"{}}\newline
+{\ttfamily \#include $<$main.\+h$>$}\newline
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022dd}{PWM\+\_\+\+Label}} \{ \newline
+\mbox{\hyperlink{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022dda309b99a94782a383549be2bbebd7e16f}{Servo\+DC\+\_\+\+M1\+\_\+\+PWM}}
+, \mbox{\hyperlink{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022dda4c2b81a600105f62748d723d884c3197}{Clamp\+\_\+\+M2\+\_\+\+PWM}}
+, \mbox{\hyperlink{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022ddab92e1c99a4aad3bdd4273def233fbaa0}{Spindle\+\_\+\+M3\+\_\+\+PWM}}
+, \mbox{\hyperlink{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022dda207dfd0df01d370300af6a2bf4d4fa0c}{LCD\+\_\+\+Contrast\+\_\+\+PWM}}
+, \newline
+\mbox{\hyperlink{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022ddaef56188bef994614adb0d55ad5c9da0b}{LCD\+\_\+\+LED\+\_\+\+PWM}}
+, \mbox{\hyperlink{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022ddabe32272d80349d21c807295e3a2354d8}{Servo\+\_\+\+PWM\+\_\+\+OR\+\_\+\+DC\+\_\+\+M1\+\_\+\+Enc\+A\+\_\+\+Interrupt}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pwm_8h_a382b151b1848474b825c62e2fc12bff4}{pwm}} (\mbox{\hyperlink{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022dd}{PWM\+\_\+\+Label}} label, float percentage)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{pwm_8h_ad935d646c8c710a1758f00dd2d1fb38b}{PWM\+\_\+\+FAST}}
+\item 
+int \mbox{\hyperlink{pwm_8h_a13e033e1321b2c0a9d01ed9f5f86dfab}{PWM\+\_\+\+SLOW}}
+\item 
+int \mbox{\hyperlink{pwm_8h_ab14f7367958067f5cdf13417bd8f10bb}{PWM\+\_\+\+CLEANING}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022dd}\index{pwm.h@{pwm.h}!PWM\_Label@{PWM\_Label}}
+\index{PWM\_Label@{PWM\_Label}!pwm.h@{pwm.h}}
+\doxysubsubsection{\texorpdfstring{PWM\_Label}{PWM\_Label}}
+{\footnotesize\ttfamily \label{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022dd} 
+enum \mbox{\hyperlink{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022dd}{PWM\+\_\+\+Label}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ServoDC\_M1\_PWM@{ServoDC\_M1\_PWM}!pwm.h@{pwm.h}}\index{pwm.h@{pwm.h}!ServoDC\_M1\_PWM@{ServoDC\_M1\_PWM}}}\Hypertarget{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022dda309b99a94782a383549be2bbebd7e16f}\label{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022dd} 
+Servo\+DC\+\_\+\+M1\+\_\+\+PWM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Clamp\_M2\_PWM@{Clamp\_M2\_PWM}!pwm.h@{pwm.h}}\index{pwm.h@{pwm.h}!Clamp\_M2\_PWM@{Clamp\_M2\_PWM}}}\Hypertarget{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022dda4c2b81a600105f62748d723d884c3197}\label{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022dd} 
+Clamp\+\_\+\+M2\+\_\+\+PWM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Spindle\_M3\_PWM@{Spindle\_M3\_PWM}!pwm.h@{pwm.h}}\index{pwm.h@{pwm.h}!Spindle\_M3\_PWM@{Spindle\_M3\_PWM}}}\Hypertarget{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022ddab92e1c99a4aad3bdd4273def233fbaa0}\label{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022dd} 
+Spindle\+\_\+\+M3\+\_\+\+PWM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_Contrast\_PWM@{LCD\_Contrast\_PWM}!pwm.h@{pwm.h}}\index{pwm.h@{pwm.h}!LCD\_Contrast\_PWM@{LCD\_Contrast\_PWM}}}\Hypertarget{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022dda207dfd0df01d370300af6a2bf4d4fa0c}\label{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022dd} 
+LCD\+\_\+\+Contrast\+\_\+\+PWM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCD\_LED\_PWM@{LCD\_LED\_PWM}!pwm.h@{pwm.h}}\index{pwm.h@{pwm.h}!LCD\_LED\_PWM@{LCD\_LED\_PWM}}}\Hypertarget{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022ddaef56188bef994614adb0d55ad5c9da0b}\label{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022dd} 
+LCD\+\_\+\+LED\+\_\+\+PWM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt@{Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt}!pwm.h@{pwm.h}}\index{pwm.h@{pwm.h}!Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt@{Servo\_PWM\_OR\_DC\_M1\_EncA\_Interrupt}}}\Hypertarget{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022ddabe32272d80349d21c807295e3a2354d8}\label{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022dd} 
+Servo\+\_\+\+PWM\+\_\+\+OR\+\_\+\+DC\+\_\+\+M1\+\_\+\+Enc\+A\+\_\+\+Interrupt&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{pwm_8h_source_l00020}{20}} of file \mbox{\hyperlink{pwm_8h_source}{pwm.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pwm_8h_a382b151b1848474b825c62e2fc12bff4}\index{pwm.h@{pwm.h}!pwm@{pwm}}
+\index{pwm@{pwm}!pwm.h@{pwm.h}}
+\doxysubsubsection{\texorpdfstring{pwm()}{pwm()}}
+{\footnotesize\ttfamily \label{pwm_8h_a382b151b1848474b825c62e2fc12bff4} 
+void pwm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pwm_8h_a6d1e6ecd1989819e0cb9fe091ff022dd}{PWM\+\_\+\+Label}}}]{label}{, }\item[{float}]{percentage}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pwm_8c_source_l00014}{14}} of file \mbox{\hyperlink{pwm_8c_source}{pwm.\+c}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{pwm_8h_ab14f7367958067f5cdf13417bd8f10bb}\index{pwm.h@{pwm.h}!PWM\_CLEANING@{PWM\_CLEANING}}
+\index{PWM\_CLEANING@{PWM\_CLEANING}!pwm.h@{pwm.h}}
+\doxysubsubsection{\texorpdfstring{PWM\_CLEANING}{PWM\_CLEANING}}
+{\footnotesize\ttfamily \label{pwm_8h_ab14f7367958067f5cdf13417bd8f10bb} 
+int PWM\+\_\+\+CLEANING\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{pwm_8c_source_l00012}{12}} of file \mbox{\hyperlink{pwm_8c_source}{pwm.\+c}}.
+
+\Hypertarget{pwm_8h_ad935d646c8c710a1758f00dd2d1fb38b}\index{pwm.h@{pwm.h}!PWM\_FAST@{PWM\_FAST}}
+\index{PWM\_FAST@{PWM\_FAST}!pwm.h@{pwm.h}}
+\doxysubsubsection{\texorpdfstring{PWM\_FAST}{PWM\_FAST}}
+{\footnotesize\ttfamily \label{pwm_8h_ad935d646c8c710a1758f00dd2d1fb38b} 
+int PWM\+\_\+\+FAST\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{pwm_8c_source_l00010}{10}} of file \mbox{\hyperlink{pwm_8c_source}{pwm.\+c}}.
+
+\Hypertarget{pwm_8h_a13e033e1321b2c0a9d01ed9f5f86dfab}\index{pwm.h@{pwm.h}!PWM\_SLOW@{PWM\_SLOW}}
+\index{PWM\_SLOW@{PWM\_SLOW}!pwm.h@{pwm.h}}
+\doxysubsubsection{\texorpdfstring{PWM\_SLOW}{PWM\_SLOW}}
+{\footnotesize\ttfamily \label{pwm_8h_a13e033e1321b2c0a9d01ed9f5f86dfab} 
+int PWM\+\_\+\+SLOW\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{pwm_8c_source_l00011}{11}} of file \mbox{\hyperlink{pwm_8c_source}{pwm.\+c}}.
+

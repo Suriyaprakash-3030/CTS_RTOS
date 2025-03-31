@@ -1,0 +1,65 @@
+\doxysection{Core/\+Src/\+Hardware\+Level.c File Reference}
+\hypertarget{_hardware_level_8c}{}\label{_hardware_level_8c}\index{Core/Src/HardwareLevel.c@{Core/Src/HardwareLevel.c}}
+{\ttfamily \#include $<$main.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_hardware_level_8c_ab4fc5119c6427ea0d2d18a7f601e4db2}{move\+Motor\+Spindle\+To\+Loc\+Block}} (long pos\+M2)
+\item 
+void \mbox{\hyperlink{_hardware_level_8c_ab0cc80ab0fbf99f1715dce89f42d5713}{move\+Motor\+Clamp\+To\+Loc\+Block}} (long pos\+M1)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_hardware_level_8c_ae33cef6f70af927e8e063519ac36f6da}{move\+Motor\+Spindle\+To\+Loc\+None\+Block}} (long pos\+M2)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_hardware_level_8c_a150994140339d40207264a359cf38927}{move\+Motor\+Clamp\+To\+Loc\+None\+Block}} (long pos\+M1)
+\item 
+void \mbox{\hyperlink{_hardware_level_8c_adc70191246723a06c94296ec08eb8720}{move\+Motor}} (int motor\+Num, int Dir, int target\+Point)
+\item 
+void \mbox{\hyperlink{_hardware_level_8c_a9631fb67d435aab2834c45cc94341c3d}{check\+Faults\+Motors}} (uint8\+\_\+t x)
+\item 
+void \mbox{\hyperlink{_hardware_level_8c_ae804bb2745bb2118be56259f121a73b8}{Get\+ADC}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_hardware_level_8c_a9631fb67d435aab2834c45cc94341c3d}\index{HardwareLevel.c@{HardwareLevel.c}!checkFaultsMotors@{checkFaultsMotors}}
+\index{checkFaultsMotors@{checkFaultsMotors}!HardwareLevel.c@{HardwareLevel.c}}
+\doxysubsubsection{\texorpdfstring{checkFaultsMotors()}{checkFaultsMotors()}}
+{\footnotesize\ttfamily \label{_hardware_level_8c_a9631fb67d435aab2834c45cc94341c3d} 
+void check\+Faults\+Motors (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_hardware_level_8c_ae804bb2745bb2118be56259f121a73b8}\index{HardwareLevel.c@{HardwareLevel.c}!GetADC@{GetADC}}
+\index{GetADC@{GetADC}!HardwareLevel.c@{HardwareLevel.c}}
+\doxysubsubsection{\texorpdfstring{GetADC()}{GetADC()}}
+{\footnotesize\ttfamily \label{_hardware_level_8c_ae804bb2745bb2118be56259f121a73b8} 
+void Get\+ADC (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_hardware_level_8c_adc70191246723a06c94296ec08eb8720}\index{HardwareLevel.c@{HardwareLevel.c}!moveMotor@{moveMotor}}
+\index{moveMotor@{moveMotor}!HardwareLevel.c@{HardwareLevel.c}}
+\doxysubsubsection{\texorpdfstring{moveMotor()}{moveMotor()}}
+{\footnotesize\ttfamily \label{_hardware_level_8c_adc70191246723a06c94296ec08eb8720} 
+void move\+Motor (\begin{DoxyParamCaption}\item[{int}]{motor\+Num}{, }\item[{int}]{Dir}{, }\item[{int}]{target\+Point}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_hardware_level_8c_ab0cc80ab0fbf99f1715dce89f42d5713}\index{HardwareLevel.c@{HardwareLevel.c}!moveMotorClampToLocBlock@{moveMotorClampToLocBlock}}
+\index{moveMotorClampToLocBlock@{moveMotorClampToLocBlock}!HardwareLevel.c@{HardwareLevel.c}}
+\doxysubsubsection{\texorpdfstring{moveMotorClampToLocBlock()}{moveMotorClampToLocBlock()}}
+{\footnotesize\ttfamily \label{_hardware_level_8c_ab0cc80ab0fbf99f1715dce89f42d5713} 
+void move\+Motor\+Clamp\+To\+Loc\+Block (\begin{DoxyParamCaption}\item[{long}]{pos\+M1}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_hardware_level_8c_a150994140339d40207264a359cf38927}\index{HardwareLevel.c@{HardwareLevel.c}!moveMotorClampToLocNoneBlock@{moveMotorClampToLocNoneBlock}}
+\index{moveMotorClampToLocNoneBlock@{moveMotorClampToLocNoneBlock}!HardwareLevel.c@{HardwareLevel.c}}
+\doxysubsubsection{\texorpdfstring{moveMotorClampToLocNoneBlock()}{moveMotorClampToLocNoneBlock()}}
+{\footnotesize\ttfamily \label{_hardware_level_8c_a150994140339d40207264a359cf38927} 
+uint8\+\_\+t move\+Motor\+Clamp\+To\+Loc\+None\+Block (\begin{DoxyParamCaption}\item[{long}]{pos\+M1}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_hardware_level_8c_ab4fc5119c6427ea0d2d18a7f601e4db2}\index{HardwareLevel.c@{HardwareLevel.c}!moveMotorSpindleToLocBlock@{moveMotorSpindleToLocBlock}}
+\index{moveMotorSpindleToLocBlock@{moveMotorSpindleToLocBlock}!HardwareLevel.c@{HardwareLevel.c}}
+\doxysubsubsection{\texorpdfstring{moveMotorSpindleToLocBlock()}{moveMotorSpindleToLocBlock()}}
+{\footnotesize\ttfamily \label{_hardware_level_8c_ab4fc5119c6427ea0d2d18a7f601e4db2} 
+void move\+Motor\+Spindle\+To\+Loc\+Block (\begin{DoxyParamCaption}\item[{long}]{pos\+M2}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_hardware_level_8c_ae33cef6f70af927e8e063519ac36f6da}\index{HardwareLevel.c@{HardwareLevel.c}!moveMotorSpindleToLocNoneBlock@{moveMotorSpindleToLocNoneBlock}}
+\index{moveMotorSpindleToLocNoneBlock@{moveMotorSpindleToLocNoneBlock}!HardwareLevel.c@{HardwareLevel.c}}
+\doxysubsubsection{\texorpdfstring{moveMotorSpindleToLocNoneBlock()}{moveMotorSpindleToLocNoneBlock()}}
+{\footnotesize\ttfamily \label{_hardware_level_8c_ae33cef6f70af927e8e063519ac36f6da} 
+uint8\+\_\+t move\+Motor\+Spindle\+To\+Loc\+None\+Block (\begin{DoxyParamCaption}\item[{long}]{pos\+M2}{}\end{DoxyParamCaption})}
+

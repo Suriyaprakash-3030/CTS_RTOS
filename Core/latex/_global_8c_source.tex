@@ -1,0 +1,86 @@
+\doxysection{Global.\+c}
+\hypertarget{_global_8c_source}{}\label{_global_8c_source}\index{Src/Global.c@{Src/Global.c}}
+\mbox{\hyperlink{_global_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00010}00010\ \textcolor{comment}{//\ Global.c}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{main_8h}{main.h}}>}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_global_8h}{Global.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00014}00014\ \textcolor{comment}{/*\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ Variables\ BEGIN\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#*/}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00015}00015\ \textcolor{comment}{//\ Weight\ related\ variables}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00016}\mbox{\hyperlink{_global_8h_a655cccaee2480157753ba79f232d3cd5}{00016}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_global_8c_a655cccaee2480157753ba79f232d3cd5}{gram\_A}};\ \textcolor{comment}{//\ Weight\ obtained\ from\ load\ cell\ A}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00017}\mbox{\hyperlink{_global_8h_aad02c0012b594b3b26471cf90b2bfd38}{00017}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_global_8c_aad02c0012b594b3b26471cf90b2bfd38}{gram\_B}};\ \textcolor{comment}{//\ Weight\ obtained\ from\ load\ cell\ B}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00018}\mbox{\hyperlink{_global_8h_aca731f36e29b74d56e5379471f1ba842}{00018}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_global_8c_aca731f36e29b74d56e5379471f1ba842}{gram\_C}};\ \textcolor{comment}{//\ Weight\ obtained\ from\ load\ cell\ C}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00019}\mbox{\hyperlink{_global_8h_a817bd7de58003ca08f647c9a860c4b31}{00019}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_global_8c_a817bd7de58003ca08f647c9a860c4b31}{gram\_T}};\ \textcolor{comment}{//\ Total\ weight\ before\ processing}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00020}\mbox{\hyperlink{_global_8h_ab55e04a433be01429a052ab631946dc8}{00020}}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{_global_8c_ab55e04a433be01429a052ab631946dc8}{gram\_T\_I}};\ \textcolor{comment}{//\ Total\ weight\ after\ processing}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00023}00023\ \textcolor{comment}{//\ Smoothing\ and\ filtering\ variables}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00024}\mbox{\hyperlink{_global_8h_ab1856f040ae93ba7186c88f28ba5fd68}{00024}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_global_8c_ab1856f040ae93ba7186c88f28ba5fd68}{alpha}}\ =\ 40;\ \textcolor{comment}{//\ Smoothing\ factor}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00025}\mbox{\hyperlink{_global_8h_a5dba31da1d774a5c4b360a51e72028f0}{00025}}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{_global_8c_a5dba31da1d774a5c4b360a51e72028f0}{filteredValueA}}\ =\ 0;\ \textcolor{comment}{//\ Filtered\ sensor\ value\ A}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00026}\mbox{\hyperlink{_global_8h_adf9ccdbb04d028c20423bf1d0d5b0ebf}{00026}}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{_global_8c_adf9ccdbb04d028c20423bf1d0d5b0ebf}{filteredValueB}}\ =\ 0;\ \textcolor{comment}{//\ Filtered\ sensor\ value\ B}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00027}\mbox{\hyperlink{_global_8h_a71b29c74b378a90445f17d45a9afd1c5}{00027}}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{_global_8c_a71b29c74b378a90445f17d45a9afd1c5}{filteredValueC}}\ =\ 0;\ \textcolor{comment}{//\ Filtered\ sensor\ value\ C}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00028}\mbox{\hyperlink{_global_8h_a6c60cfcf563d4b39e2fdf1baa2a64f39}{00028}}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{_global_8c_a6c60cfcf563d4b39e2fdf1baa2a64f39}{filteredValueT}}\ =\ 0;\ \textcolor{comment}{//\ Filtered\ sensor\ value\ Total}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00029}\mbox{\hyperlink{_global_8h_aae8d722fc78cc2f2772baceb7985d59c}{00029}}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{_global_8c_aae8d722fc78cc2f2772baceb7985d59c}{AllReadings}}[\mbox{\hyperlink{_global_8h_a34bbf81a1304e2bfb26a83069dcc8b3c}{RDNUM}}];\ \textcolor{comment}{//\ Array\ for\ storing\ readings}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00030}\mbox{\hyperlink{_global_8h_afcc8289cc3096756c99245c851b56f5d}{00030}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_global_8c_afcc8289cc3096756c99245c851b56f5d}{maxDelta}}\ =\ 50;}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00031}\mbox{\hyperlink{_global_8h_a29c878a8c852ed7ed7dc8df729464175}{00031}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_global_8c_a29c878a8c852ed7ed7dc8df729464175}{inde}}\ =\ 0;\ \textcolor{comment}{//\ Index\ for\ readings\ array}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00032}\mbox{\hyperlink{_global_8h_aa70d51c1a1d7dbf52f393736c76267d2}{00032}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_global_8c_aa70d51c1a1d7dbf52f393736c76267d2}{pivot}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00034}00034\ \textcolor{comment}{//\ Machine\ state\ and\ operation\ variables}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00035}\mbox{\hyperlink{_global_8h_abadf15cf5e15bdced452136cfc7512dd}{00035}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_global_8c_abadf15cf5e15bdced452136cfc7512dd}{SelectedMotor}}\ =\ \mbox{\hyperlink{_keypad_8h_a655c84af1b0034986ff56e12e84f983d}{NONE}};}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00036}\mbox{\hyperlink{_global_8h_a74aa740f54f847c37642cf5b12d5b177}{00036}}\ uint8\_t\ \mbox{\hyperlink{_global_8c_a74aa740f54f847c37642cf5b12d5b177}{isMachineOn}}\ =\ \mbox{\hyperlink{_global_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}};\ \textcolor{comment}{//\ Machine\ state,\ 0\ for\ off,\ 1\ for\ on}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00039}\mbox{\hyperlink{_global_8h_a41da17d0e536f6b133c9e3eb483e2d89}{00039}}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{_global_8c_a41da17d0e536f6b133c9e3eb483e2d89}{Total\_Weight}}\ =\ 0;\ \textcolor{comment}{//\ Current\ total\ weight}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00040}\mbox{\hyperlink{_global_8h_a1b23b7b37a21da427f54cb039448f000}{00040}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_global_8c_a1b23b7b37a21da427f54cb039448f000}{Weight\_Initial}}\ =\ 0;\ \textcolor{comment}{//\ Initial\ weight}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00044}\mbox{\hyperlink{_global_8h_a7e706cc6c6a4d029629252f7588baca0}{00044}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_global_8c_a7e706cc6c6a4d029629252f7588baca0}{LitersVar}}\ =\ 0.0;\ \textcolor{comment}{//\ Liters\ entered\ by\ user}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00045}\mbox{\hyperlink{_global_8h_a7e28e991f7b848a9d53d2d47f576cc75}{00045}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_global_8c_a7e28e991f7b848a9d53d2d47f576cc75}{DensityVar}}\ =\ 0.0;\ \textcolor{comment}{//\ Density\ entered\ by\ user}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00046}\mbox{\hyperlink{_global_8h_a536ec034455f28ff8885100ea6728db1}{00046}}\ uint8\_t\ \mbox{\hyperlink{_global_8c_a536ec034455f28ff8885100ea6728db1}{isValveOpen}}\ =\ \mbox{\hyperlink{_global_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}};\ \textcolor{comment}{//\ Valve\ state}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00047}\mbox{\hyperlink{_global_8h_ae95cecab01b77e94288979ccbec4831a}{00047}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_global_8c_ae95cecab01b77e94288979ccbec4831a}{M1\_current\_mA}}\ =\ 0;\ \textcolor{comment}{//\ Motor\ 1\ current\ in\ mA}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00048}\mbox{\hyperlink{_global_8h_a11203331440c5052af9a346b97668eb4}{00048}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_global_8c_a11203331440c5052af9a346b97668eb4}{M2\_current\_mA}}\ =\ 0;\ \textcolor{comment}{//\ Motor\ 2\ current\ in\ mA}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00050}\mbox{\hyperlink{_global_8h_a3ba4ef114a7f49518eb8f8436ebdbc5b}{00050}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_global_8c_a3ba4ef114a7f49518eb8f8436ebdbc5b}{cleansRequired}}\ =\ 0;\ \textcolor{comment}{//\ Number\ of\ cleans\ required}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00051}\mbox{\hyperlink{_global_8h_a2d411655b65c0180e0863b799d740046}{00051}}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{_global_8c_a2d411655b65c0180e0863b799d740046}{Grams\_Required}}\ =\ 0;\ \textcolor{comment}{//\ Grams\ required\ to\ be\ dispensed}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00052}\mbox{\hyperlink{_global_8h_a4f67a8149294ee76471ac2b53f2dfe48}{00052}}\ uint8\_t\ \mbox{\hyperlink{_global_8c_a4f67a8149294ee76471ac2b53f2dfe48}{ProgramToRun}}=\mbox{\hyperlink{_global_8h_a1e146e6ea43e92daea74986b4379d937}{CUSTOMERAPP}};\ \ \textcolor{comment}{//Holds\ which\ program\ to\ run}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00053}\mbox{\hyperlink{_global_8h_ab492a5ef7d1b118fee71b6b81c95347f}{00053}}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{_global_8c_ab492a5ef7d1b118fee71b6b81c95347f}{Unclamped\_Weight}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00054}\mbox{\hyperlink{_global_8h_a0e6775f6e8fa3c1ff26561422d60205b}{00054}}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{_global_8c_a0e6775f6e8fa3c1ff26561422d60205b}{ValveStatus}}[10]=\textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00055}\mbox{\hyperlink{_global_8h_a6aec7b10aee9b57aa426201acf885bfa}{00055}}\ uint8\_t\ \mbox{\hyperlink{_global_8c_a6aec7b10aee9b57aa426201acf885bfa}{CleaningFlag}}=\mbox{\hyperlink{_global_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}};}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00057}\mbox{\hyperlink{_global_8h_acb1db82827d8588566c258dbffc0f916}{00057}}\ uint8\_t\ \mbox{\hyperlink{_global_8c_acb1db82827d8588566c258dbffc0f916}{CleaningOperationFlag}}=\mbox{\hyperlink{_global_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}};}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00058}\mbox{\hyperlink{_global_8h_a92411f70589dc63794f2ff0d131daa17}{00058}}\ uint8\_t\ \mbox{\hyperlink{_global_8c_a92411f70589dc63794f2ff0d131daa17}{CleaningExit}}=\mbox{\hyperlink{_global_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}};}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00059}\mbox{\hyperlink{_global_8h_a0f7626a86e2b21450f027ca863f707f1}{00059}}\ uint8\_t\ \mbox{\hyperlink{_global_8c_a0f7626a86e2b21450f027ca863f707f1}{CleaningExitCounter}}=0;}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00060}\mbox{\hyperlink{_global_8h_a8d28e94d6e6542daccc81282a08c12d2}{00060}}\ uint8\_t\ \mbox{\hyperlink{_global_8c_a8d28e94d6e6542daccc81282a08c12d2}{CleaningCycel}}=0;}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00063}\mbox{\hyperlink{_global_8h_a51adbc4bdaaafd744303ce3c9fb3cdaa}{00063}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_global_8c_a51adbc4bdaaafd744303ce3c9fb3cdaa}{DWT\_Init}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(CoreDebug-\/>DEMCR\ \&\ CoreDebug\_DEMCR\_TRCENA\_Msk))\ \{}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00065}00065\ \ \ \ \ \ \ \ \ CoreDebug-\/>DEMCR\ |=\ CoreDebug\_DEMCR\_TRCENA\_Msk;}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00066}00066\ \ \ \ \ \ \ \ \ DWT-\/>CYCCNT\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00067}00067\ \ \ \ \ \ \ \ \ DWT-\/>CTRL\ |=\ DWT\_CTRL\_CYCCNTENA\_Msk;}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00069}00069\ \}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00074}\mbox{\hyperlink{_global_8h_aaa91142d2b0af9460a82642a392278de}{00074}}\ uint16\_t\ \mbox{\hyperlink{_global_8c_aaa91142d2b0af9460a82642a392278de}{PulseCount1}}\ =\ 0;\ \textcolor{comment}{//Feedback\ Pulse\ Counter\ for\ Motor1}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00075}\mbox{\hyperlink{_global_8h_a7bb2381627293df0bbc8befd4d9ff2ef}{00075}}\ uint16\_t\ \mbox{\hyperlink{_global_8c_a7bb2381627293df0bbc8befd4d9ff2ef}{PulseCount2}}\ =\ 0;\ \textcolor{comment}{//Feedback\ Pulse\ Counter\ for\ Motor2}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00076}\mbox{\hyperlink{_global_8h_ab638ec988aee940d7931b24b9f961f22}{00076}}\ uint8\_t\ \mbox{\hyperlink{_global_8c_ab638ec988aee940d7931b24b9f961f22}{InitComp}}=\mbox{\hyperlink{_global_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}};}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00077}\mbox{\hyperlink{_global_8h_a6a56d052871c1eb4db09d497bafa1f7c}{00077}}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{_global_8c_a6a56d052871c1eb4db09d497bafa1f7c}{GramsToDispense}}=0;}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00078}\mbox{\hyperlink{_global_8h_a97127075abf5adcf325971fecc8ce970}{00078}}\ uint32\_t\ \mbox{\hyperlink{_global_8c_a97127075abf5adcf325971fecc8ce970}{adcValue}}=0;}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00079}\mbox{\hyperlink{_global_8h_a615f256b053799e0c792c20a04df902c}{00079}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_global_8c_a615f256b053799e0c792c20a04df902c}{MilliVolt}}=0;}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00082}\mbox{\hyperlink{_global_8h_a4fc0c2a383a93568a89a6d5c05b253f8}{00082}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_global_8c_a4fc0c2a383a93568a89a6d5c05b253f8}{gram\_A\_int}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00083}\mbox{\hyperlink{_global_8h_a7ca66e4dece63298217ef2235cb9b538}{00083}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_global_8c_a7ca66e4dece63298217ef2235cb9b538}{gram\_B\_int}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00084}\mbox{\hyperlink{_global_8h_a4fc00a5bf23c30c95bd8beb6abcfc45f}{00084}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_global_8c_a4fc00a5bf23c30c95bd8beb6abcfc45f}{gram\_C\_int}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00087}00087\ \textcolor{comment}{/*\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ Variables\ END\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#*/}}
+\DoxyCodeLine{\Hypertarget{_global_8c_source_l00088}00088\ }
+
+\end{DoxyCode}

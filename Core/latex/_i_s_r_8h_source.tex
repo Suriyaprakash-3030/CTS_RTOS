@@ -1,0 +1,37 @@
+\doxysection{ISR.\+h}
+\hypertarget{_i_s_r_8h_source}{}\label{_i_s_r_8h_source}\index{Inc/ISR.h@{Inc/ISR.h}}
+\mbox{\hyperlink{_i_s_r_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00002}00002\ \textcolor{comment}{\ *\ ISR.h}}
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00003}00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Sep\ 3,\ 2024}}
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ mhmaq}}
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00006}00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00008}00008\ \textcolor{preprocessor}{\#ifndef\ ISR\_H}}
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00009}00009\ \textcolor{preprocessor}{\#define\ ISR\_H}}
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00011}00011\ \textcolor{comment}{//\ Include\ directives\ for\ necessary\ headers,\ e.g.,\ HAL\ library}}
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{main_8h}{main.h}}>}\ \ \textcolor{comment}{//\ Adjust\ as\ per\ your\ STM32\ series}}
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00014}00014\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{_i_s_r_8h_aa87e922aa98a5cc27a1ca0c457c0e6a7}{ServoDC\_M1\_EncA\_Pulses}};\ }
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00015}00015\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{_i_s_r_8h_a71cd1c2bc245b36e113836d29c431450}{ServoDC\_M1\_EncB\_Pulses}};\ }
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00017}00017\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{_i_s_r_8h_a9afdc73666802411201b3e9fe602c8de}{Clamp\_M2\_EncA\_Pulses}};\ }
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00018}00018\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{_i_s_r_8h_a85b46fa72af59c2326de2f00c0aa9885}{Clamp\_M2\_EncB\_Pulses}};\ }
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00020}00020\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{_i_s_r_8h_a2f9df0008a2a82c8bb12d1be70504c3d}{Spindle\_M3\_EncA\_Pulses}};\ }
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00021}00021\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{_i_s_r_8h_a950bab6fe475152299089fcfbe1f4ad9}{Spindle\_M3\_EncB\_Pulses}};\ }
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00023}00023\ \textcolor{keyword}{extern}\ uint8\_t\ \mbox{\hyperlink{_i_s_r_8h_a0dd6456a4244c5dd899964e7ccf90024}{isClampLimitSwitchReached}};}
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00024}00024\ \textcolor{keyword}{extern}\ uint8\_t\ \mbox{\hyperlink{_i_s_r_8h_a9f753385f263fc40b10c16b028bde1dd}{isSpindleLimitSwitchReached}};}
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00025}00025\ \textcolor{keyword}{extern}\ uint8\_t\ \mbox{\hyperlink{_i_s_r_8h_a2f89df21eabc2e588e582a83cd72b475}{isServoLimitSwitchReached}};}
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00027}00027\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_i_s_r_8h_a33b9291c34130521f946574235fc798f}{ClampMotorState}};\ }
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00028}00028\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_i_s_r_8h_a68347e8f6133b4d0301a04d5edcf680e}{SpindleMotorState}};\ }
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00030}00030\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_i_s_r_8h_a0cd91fd3a9608559c2a87a8ba6cba55f}{HAL\_GPIO\_EXTI\_Callback}}(uint16\_t\ GPIO\_Pin);}
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00031}00031\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_i_s_r_8h_a22ccc7366c248b5d48730a09c62f24bc}{Blink}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_i_s_r_8h_source_l00032}00032\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ISR\_H}}
+
+\end{DoxyCode}

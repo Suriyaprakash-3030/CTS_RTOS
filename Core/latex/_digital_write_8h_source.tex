@@ -1,0 +1,40 @@
+\doxysection{Digital\+Write.\+h}
+\hypertarget{_digital_write_8h_source}{}\label{_digital_write_8h_source}\index{Inc/DigitalWrite.h@{Inc/DigitalWrite.h}}
+\mbox{\hyperlink{_digital_write_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00002}00002\ \textcolor{comment}{\ *\ DigitalWrite.h}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00003}00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00004}00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Aug\ 30,\ 2024}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ mhmaq}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00006}00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00008}00008\ \textcolor{preprocessor}{\#ifndef\ DIGITALWRITE\_H}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00009}00009\ \textcolor{preprocessor}{\#define\ DIGITALWRITE\_H}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00013}00013\ \textcolor{comment}{//\ Enumeration\ for\ output\ pin\ labels}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00014}\mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93}{00014}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00015}\mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93a752d95c4cd7d2220fd24faad1ea5e4c9}{00015}}\ \ \ \ \ \mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93a752d95c4cd7d2220fd24faad1ea5e4c9}{Power\_LED\_Output}},}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00016}\mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93ab2c07b312658c06ed8ba8adceb580992}{00016}}\ \ \ \ \ \mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93ab2c07b312658c06ed8ba8adceb580992}{ServoDC\_M1\_Dir\_Output}},}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00017}\mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93ad2cf1ac5b6fe15e389b38925ed7b9f8c}{00017}}\ \ \ \ \ \mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93ad2cf1ac5b6fe15e389b38925ed7b9f8c}{nRESET\_LPC\_Output}},}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00018}\mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93abf9e9b449d8bdd4fe71b9ef0ad8f9201}{00018}}\ \ \ \ \ \mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93abf9e9b449d8bdd4fe71b9ef0ad8f9201}{Relay\_Output}},}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00019}\mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93a2805cc1616326c8af6078f029bf1eedf}{00019}}\ \ \ \ \ \mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93a2805cc1616326c8af6078f029bf1eedf}{Spindle\_M3\_Dir\_Output}},}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00020}\mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93acb0e0c7334d2d4e0a451e877e76778fb}{00020}}\ \ \ \ \ \mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93acb0e0c7334d2d4e0a451e877e76778fb}{Clamp\_M2\_Dir\_Output}},}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00021}\mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93a89350a11ab813b06a527d843da65994b}{00021}}\ \ \ \ \ \mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93a89350a11ab813b06a527d843da65994b}{LCD\_RS\_Output}},}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00022}\mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93a29917bb6aca0dd2f40ea4570ba6a0690}{00022}}\ \ \ \ \ \mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93a29917bb6aca0dd2f40ea4570ba6a0690}{LCD\_EN\_Output}},}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00023}\mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93aaf1ac6718c64bc7c8a690f577b0ed712}{00023}}\ \ \ \ \ \mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93aaf1ac6718c64bc7c8a690f577b0ed712}{LCD\_D4\_Output}},}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00024}\mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93a9cd0328a4f55c61fa2f8466a782c4cae}{00024}}\ \ \ \ \ \mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93a9cd0328a4f55c61fa2f8466a782c4cae}{LCD\_D5\_Output}},}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00025}\mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93a4884f659f4d23b674c69945a0b9aa791}{00025}}\ \ \ \ \ \mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93a4884f659f4d23b674c69945a0b9aa791}{LCD\_D6\_Output}},}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00026}\mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93afdc89131532f7fd543f43b4a7b0903df}{00026}}\ \ \ \ \ \mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93afdc89131532f7fd543f43b4a7b0903df}{LCD\_D7\_Output}},}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00027}\mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93a1104cb638895c67898c6ee7c51237c50}{00027}}\ \ \ \ \ \mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93a1104cb638895c67898c6ee7c51237c50}{USB\_EN\_Output}},}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00028}\mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93a7511018f4f864fe7151beca5e52428ef}{00028}}\ \ \ \ \ \mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93a7511018f4f864fe7151beca5e52428ef}{EN\_DCDC\_5V\_Output}},}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93a9f6a835c488e2d51cc1a61f9195a51f1}{EN\_DCDC\_8V\_Output}}}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00030}\mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93a9f6a835c488e2d51cc1a61f9195a51f1}{00030}}\ \}\ \mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93}{OutputLabel}};}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00032}00032\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_digital_write_8h_a871c313584e0f22fe5066f95547d59f6}{digitalWrite}}(\mbox{\hyperlink{_digital_write_8h_a77b423c1e241c07d7e7cebf1166b8c93}{OutputLabel}}\ label,\ \textcolor{keywordtype}{int}\ state);}
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_digital_write_8h_source_l00034}00034\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
