@@ -443,6 +443,9 @@ void Blink() { // If the power button is not held, we can check for loadcell rea
  * @retval None
 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+	if (htim->Instance == TIM1) {
+	    HAL_IncTick();
+	  }
 	if(htim->Instance == TIM2){ /// Timer 2 Interrupt, called every 500mS
 	 Blink();
 	// If the cleaning button is still held, start the cleaning process if not already running

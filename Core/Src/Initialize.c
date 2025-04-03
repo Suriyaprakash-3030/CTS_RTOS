@@ -7,7 +7,7 @@
 
 #include <main.h>
 #include <Initialize.h>
-
+#include <FreeRTOS.h>
 extern const char valuetosend;
 void InitializeMachine2(void);
 
@@ -17,7 +17,8 @@ void InitializeMachine() {
 		do{
 			//UpdateTimeToSDCard( hours,  minutes,  seconds);
 			InitializeMachine2();
-			HAL_Delay(1000);
+			vTaskDelay(pdMS_TO_TICKS(1000));
+//			HAL_Delay(1000);
 		}while(isClampLimitSwitchReached == FALSE || isSpindleLimitSwitchReached == FALSE);
 
 		InitComp = TRUE;
@@ -113,7 +114,7 @@ void InitializeMachine2(void) {//Close valves, Drive down the Probe, Open clamps
     Servo_SetPercent(90);  //Normally set to ValveClose
 
     // Delay to give time for load cell values to stabilize after motor movement ends
-    HAL_Delay(1); // Use HAL_Delay for STM32
+  //  HAL_Delay(1); // Use HAL_Delay for STM32
     //SerialPrintln("Zero load cells");
 #if DEBUG == 1
     // Print finishing initialization message

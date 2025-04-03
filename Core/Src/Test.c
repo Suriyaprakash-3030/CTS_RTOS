@@ -6,17 +6,10 @@
  */
 
 #include <main.h>
-#include "CustomerApp.h"
-#include "FreeRTOS.h"
-#include "task.h"
-#include "semphr.h"
 
 void DeveloperMenu(void);
 int EnterPassword(void);
 static uint64_t StoringTimedev = 0;
-
-extern TaskHandle_t xCustomerAppTaskEndHandle;
-
 
 void MotorTest() {
 	//TareAll();
@@ -225,7 +218,7 @@ void MotorTest() {
 				break;
 
 			case  10:
-				xTaskNotifyGive(xCustomerAppTaskEndHandle);
+//				CustomerFrontEnd();
 				break;
 			case  13:
 				TareAll();

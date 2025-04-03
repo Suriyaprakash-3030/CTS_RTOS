@@ -18,7 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-//#include "cmsis_os.h"
+#include "cmsis_os.h"
 #include "adc.h"
 #include "dma.h"
 #include "fatfs.h"
@@ -27,15 +27,11 @@
 #include "usart.h"
 #include "usb_otg.h"
 #include "gpio.h"
-
+#include "RTOS.h"
+#include "CustomerApp.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "FreeRTOS.h"
-#include "task.h"
-//#include "timers.h"
-#include "queue.h"
-#include "semphr.h"
-//#include "event_groups.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -68,7 +64,7 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-//void MX_FREERTOS_Init(void);
+void MX_FREERTOS_Init(void);
 static void MX_NVIC_Init(void);
 /* USER CODE BEGIN PFP */
 
@@ -85,24 +81,6 @@ uint8_t rxBuffer1[11];
 uint8_t dst1[11];
 
 char VERSION_NO[10];  // Allocate a buffer for the version string
-
-
-
-//Mutex
-
-SemaphoreHandle_t Mutex_Instance;
-SemaphoreHandle_t LCDMutex;
-SemaphoreHandle_t SDCardMutex;
-SemaphoreHandle_t ButtonMutex;
-
-
-TaskHandle_t xCustomerAppTaskEndHandle;
-
-
-
-
-
-
 /* USER CODE END 0 */
 
 /**
@@ -155,7 +133,7 @@ int main(void)
   /* Initialize interrupts */
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
-  HAL_Delay(3000);
+//  HAL_Delay(3000);
 	// Start Timer 7 in interrupt mode
   HAL_TIM_Base_Start_IT(&htim7);
   HAL_TIM_Base_Start_IT(&htim2);
@@ -193,56 +171,41 @@ int main(void)
   /************************************************/
 
   CTS_Home_position();
-  HAL_Delay(100);
+//  HAL_Delay(100);
   HAL_UART_Receive_DMA(&huart3, rxBuffer, 8);
   HAL_UART_Receive_DMA(&huart1, rxBuffer1, 11);
   HAL_TIM_Base_Start_IT(&htim10);
   LoadTimeFromSDCard(0,0,0);
   UpdateTimeToSDCard(hours,  minutes,  seconds);
 
-
-
-
-  LCDMutex = xSemaphoreCreateMutex();
-  SDCardMutex = xSemaphoreCreateMutex();
-  ButtonMutex = xSemaphoreCreateMutex();
-
-
-  //Mutex Test
- /* if(xSemaphoreCreateMutex() != NULL)
-  {
-	  SerialPrint("Mutex_Working\n");
-  }*/
-
-//Task
-
-
-//  	 xTaskCreate(vTaskLCDHandler, "LCD_Handler", 256, NULL, 2, NULL);
-//     xTaskCreate(vTaskButtonHandler, "Button_Handler", 256, NULL, 3, NULL);
-//     xTaskCreate(vTaskSDCardLogger, "SDCard_Logger", 256, NULL, 2, NULL);
-//     xTaskCreate(vTaskMotorControl, "Motor_Control", 256, NULL, 4, NULL);
-     xTaskCreate(CustomerFrontEnd, "Customer_App", 256, NULL, 2, &xCustomerAppTaskEndHandle);
-
-
-vTaskStartScheduler();
   /* USER CODE END 2 */
 
+  /* Call init function for freertos objects (in freertos.c) */
+  MX_FREERTOS_Init();
 
+  /* Start scheduler */
+  //osKernelStart();
+  LCD_Q = xQueueCreate(5, sizeof(LCDMessage_t));
+  xTaskCreate(CustomerFrontEnd, "CustomerTask", 256, NULL, 2, NULL);
+  vTaskStartScheduler();
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
   while (1)
  {
-	  if (ProgramToRun == CUSTOMERAPP) {
-		  xTaskNotifyGive(xCustomerAppTaskEndHandle);
+
+	/*  if (ProgramToRun == CUSTOMERAPP) {
+			CustomerFrontEnd();
 		}
 	  else if (ProgramToRun == TESTAPP) {
 			MotorTest();
 	  }
 	  else {
 			DemoApp();
-	  }
+	  }*/
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

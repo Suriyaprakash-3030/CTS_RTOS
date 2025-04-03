@@ -11,6 +11,7 @@
 "./Core/Src/Keypad.o"
 "./Core/Src/LCD.o"
 "./Core/Src/LoadCells.o"
+"./Core/Src/RTOS.o"
 "./Core/Src/Sd_Card.o"
 "./Core/Src/SerialHandler.o"
 "./Core/Src/Servo.o"

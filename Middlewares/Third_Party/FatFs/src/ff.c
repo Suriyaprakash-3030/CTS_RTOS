@@ -457,7 +457,7 @@
 
 /* Reentrancy related */
 #if _FS_REENTRANT
-#if _USE_LFN == 1
+#if _USE_LFN == 0
 #error Static LFN work area cannot be used at thread-safe configuration
 #endif
 #define	ENTER_FF(fs)		{ if (!lock_fs(fs)) return FR_TIMEOUT; }

@@ -7,7 +7,7 @@
 
 // LoadCells.c
 #include <main.h>
-
+#include <FreeRTOS.h>
 #define SYNCWORD 0xAAAAAAAA    // Sync word at the beginning of the message
 #define  AVERAGE  1  //change 2 to 1 to deactivate average filter
 #define RDNUM 5
@@ -83,7 +83,8 @@ static void SendTareWeight(int Tareweight) {
   */
 void TareAll(void)
 {
-	 HAL_Delay(2000);
+	vTaskDelay(pdMS_TO_TICKS(2000));
+//	 HAL_Delay(2000);
     // Start interrupt-based transmission of the "TARE" string
 	   uint8_t tare[4] = "TARE";
 
@@ -92,10 +93,12 @@ void TareAll(void)
 	   {
 			  Error_Handler();
 	   }
-	   HAL_Delay(10);
+	   vTaskDelay(pdMS_TO_TICKS(10));
+//	   HAL_Delay(10);
 	   SendTareWeight(tareSend);
 	   SerialPrintln("Taring the system");
-	   HAL_Delay(1000);
+	   vTaskDelay(pdMS_TO_TICKS(1000));
+//	   HAL_Delay(1000);
 }
 
 /**

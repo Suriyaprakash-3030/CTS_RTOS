@@ -8,9 +8,11 @@
 #include <main.h>
 #include <CustomerApp.h>
 #include <math.h>
-#include "FreeRTOS.h"
+#include <FreeRTOS.h>
+#include <string.h>
+#include "RTOS.h"
+#include "queue.h"
 #include "task.h"
-#include "semphr.h"
 
 static uint64_t StoringTime = 0;
 
@@ -24,126 +26,98 @@ static void manualOperation(void);
 static void servoCleaning(void);
 
 
-extern SemaphoreHandle_t LCDMutex;
-extern SemaphoreHandle_t SDCardMutex;
-extern SemaphoreHandle_t ButtonMutex;
 
 
 
 
-extern TaskHandle_t xCustomerAppTaskEndHandle;
+void CustomerFrontEnd(void *pvParameters)
+{
+    LCDMessage_t msg;
 
-
-
-
-
-void CustomerFrontEnd(void *pvParameters) {
     LCDRGBControl(WHITE);
     TareAll();
 
-    while (1) {
-    	  ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-        vTaskDelay(pdMS_TO_TICKS(100));  // Prevent CPU overload
-
+    while (TRUE)
+    {
         LoadingFunc(BLINK, LOADING);
         LCD_Init();
+        LCD_Clear();
 
-
-            xSemaphoreTake(LCDMutex, pdMS_TO_TICKS(1000));
-            LCD_Clear();
-            xSemaphoreGive(LCDMutex);
-
-
-        do {
+        do
+        {
             InitializeMachine();
             LoadingFunc(ON, NOT_LOADING);
-            vTaskDelay(10);
+            vTaskDelay(pdMS_TO_TICKS(10));
+            LCD_Clear();
 
-            xSemaphoreTake(LCDMutex, pdMS_TO_TICKS(1000));
-            printLCD(0, "Can on ", ENTER_SYMBOL);
-            xSemaphoreGive(LCDMutex);
+            // Send "Can on" message
+            strcpy(msg.message, "Can on");
+            msg.symbol = ENTER_SYMBOL;
+            xQueueSend(LCD_Q, &msg, portMAX_DELAY);
 
-            while (digitalRead(Button_Enter_Input_PullUp) == HIGH) {
-                vTaskDelay(10);
+            while (digitalRead(Button_Enter_Input_PullUp) == HIGH)
+            {
+            	vTaskDelay(pdMS_TO_TICKS(10));
                 DeveloperMenu();
 
-                if (xTaskGetTickCount() - StoringTime >= 1000) {
-                    StoringTime = xTaskGetTickCount();
+                if (HAL_GetTick() - StoringTime >= 1000)
+                {
+                    StoringTime = HAL_GetTick();
                     tareSend = Tareweight;
                 }
 
-                xSemaphoreTake(ButtonMutex, pdMS_TO_TICKS(500));
-                if (readKeypadNonBlock(ALL) == PLAYSTOPKEY) {
-                    xSemaphoreTake(LCDMutex, pdMS_TO_TICKS(1000));
-                    printLCD(0, "TARE", NO_SYMBOL);
-                    xSemaphoreGive(LCDMutex);
+                if (readKeypadNonBlock(ALL) == PLAYSTOPKEY)
+                {
+                    // Send "TARE" message
+                    strcpy(msg.message, "TARE");
+                    msg.symbol = NO_SYMBOL;
+                    xQueueSend(LCD_Q, &msg, portMAX_DELAY);
 
                     SubInit();
                     TareAll();
-                    vTaskDelay(500);
+                    vTaskDelay(pdMS_TO_TICKS(500));
 
-                    xSemaphoreTake(LCDMutex, pdMS_TO_TICKS(1000));
-                    printLCD(0, "Can on ", ENTER_SYMBOL);
-                    xSemaphoreGive(LCDMutex);
+                    // Send "Can on" message again
+                    strcpy(msg.message, "Can on");
+                    msg.symbol = ENTER_SYMBOL;
+                    xQueueSend(LCD_Q, &msg, portMAX_DELAY);
                 }
-                xSemaphoreGive(ButtonMutex);
 
-                xSemaphoreTake(LCDMutex, pdMS_TO_TICKS(1000));
                 printLCDInt(2, "Curr.Weigh ", Tareweight, 0);
-                xSemaphoreGive(LCDMutex);
-
-                xSemaphoreTake(SDCardMutex, pdMS_TO_TICKS(1000));
                 UpdateTimeToSDCard(hours, minutes, seconds);
-                xSemaphoreGive(SDCardMutex);
             }
 
             Unclamped_Weight = Total_Weight;
             LoadingFunc(BLINK, LOADING);
             moveMotorClampToLocBlock(M1POS2VAL);
             LoadingFunc(BLINK, LOADING);
-            vTaskDelay(1000);
+            vTaskDelay(pdMS_TO_TICKS(1000));
 
-            if (Total_Weight <= NO_BOTTLE_WEIGHT) {
+            if (Total_Weight <= NO_BOTTLE_WEIGHT)
+            {
                 LoadingFunc(BLINK, NOT_LOADING);
-
-                xSemaphoreTake(LCDMutex, pdMS_TO_TICKS(1000));
                 LCD_Clear();
-                printLCD(0, "no can ", NO_SYMBOL);
-                xSemaphoreGive(LCDMutex);
 
-                vTaskDelay(5000);
+                // Send "no can" message
+                strcpy(msg.message, "no can");
+                msg.symbol = NO_SYMBOL;
+                xQueueSend(LCD_Q, &msg, portMAX_DELAY);
+
+                vTaskDelay(pdMS_TO_TICKS(5000));
                 LoadingFunc(BLINK, NOT_LOADING);
                 moveMotorSpindleToLocBlock(M2POS1VAL);
-                vTaskDelay(500);
+                vTaskDelay(pdMS_TO_TICKS(500));
                 UnlockCannister();
             }
         } while (Total_Weight <= NO_BOTTLE_WEIGHT);
 
         Servo_SetPercent(90);
         isAutoOperation = TRUE;
-
-        xSemaphoreTake(SDCardMutex, pdMS_TO_TICKS(1000));
-        UpdateTimeToSDCard(hours, minutes, seconds);
-        xSemaphoreGive(SDCardMutex);
-
-        CustomerApp();
+       // CustomerApp();
     }
+
+    UpdateTimeToSDCard(hours, minutes, seconds);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -169,7 +143,7 @@ void CustomerApp(void)
 			if(readKeypadNonBlock(CONTROL) == DELKEY)
 			{
 				moveMotorClampToLocBlock(M1POS1VAL);
-				xTaskNotifyGive(xCustomerAppTaskEndHandle);
+//				CustomerFrontEnd();
 				cleanLongPressed = 255;
 				CleaningExitCounter = 0;
 			}
@@ -189,7 +163,7 @@ void CustomerApp(void)
 			printLCD(3, "Cleaning? ", NO_SYMBOL);
 			if(readKeypadNonBlock(CONTROL) == ENTERKEY)
 			{
-				xTaskNotifyGive(xCustomerAppTaskEndHandle);
+//				CustomerFrontEnd();
 				cleanLongPressed = 255;
 				CleaningExitCounter = 0;
 				isAutoOperation = TRUE;
@@ -532,7 +506,7 @@ static void autoOperation(void)
 		else if(lastKeyPressed == DELKEY)
 		{
 			CleaningExitCounter = 0;
-			xTaskNotifyGive(xCustomerAppTaskEndHandle);
+//			CustomerFrontEnd();
 			lastKeyPressed =255;
 		}
 		else{
@@ -699,17 +673,20 @@ static void cleanOperation(void) {
 static void UnlockCannister(void)
 {
 	LCD_Clear();
-	HAL_Delay(500);
+	vTaskDelay(pdMS_TO_TICKS(500));
+//	HAL_Delay(500);
 	LoadingFunc(ON, NOT_LOADING);
 	printLCD(0, "Unlock ", ENTER_SYMBOL);
-	HAL_Delay(1000);
+	vTaskDelay(pdMS_TO_TICKS(1000));
+//	HAL_Delay(1000);
 	while(TRUE){
 		ReadKeypadVar(CONTROL);
 		if(lastKeyPressed == ENTERKEY){
 			moveMotorSpindleToLocBlock(M2POS1VAL);
 			moveMotorClampToLocBlock(M1POS1VAL);
 			LCD_Clear();
-			HAL_Delay(200);
+			vTaskDelay(pdMS_TO_TICKS(200));
+//			HAL_Delay(200);
 			CleaningExitCounter = 0;
 			LoadingFunc(BLINK, LOADING);
 			return;
